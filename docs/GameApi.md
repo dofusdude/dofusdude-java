@@ -21,11 +21,11 @@ Search in all names and descriptions of all supported types in the game. For the
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.GameApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.GameApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -99,11 +99,11 @@ Search in all names and descriptions of Dofus items (including all subtypes) wit
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.GameApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.GameApi;
 
 public class Example {
     public static void main(String[] args) {

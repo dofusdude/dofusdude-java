@@ -21,11 +21,11 @@ Get a single date. There are not more details in the returned object than the no
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.AlmanaxApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.AlmanaxApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -89,11 +89,11 @@ Get a range of dates, defaults to today + 6 following days but can specified by 
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.AlmanaxApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.AlmanaxApi;
 
 public class Example {
     public static void main(String[] args) {

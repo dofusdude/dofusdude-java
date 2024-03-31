@@ -23,11 +23,11 @@ Retrieve all resource items with one request. This endpoint is just an alias for
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.ResourcesApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.ResourcesApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -103,11 +103,11 @@ Search in all names and descriptions of resource items with a query.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.ResourcesApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.ResourcesApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -183,11 +183,11 @@ Retrieve a list of resource items.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.ResourcesApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.ResourcesApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -267,11 +267,11 @@ Retrieve a specific resource item with id.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.ResourcesApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.ResourcesApi;
 
 public class Example {
     public static void main(String[] args) {

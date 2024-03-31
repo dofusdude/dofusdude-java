@@ -23,11 +23,11 @@ Get all types for /{game}/{lang}/search available for filtering. All names are e
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.MetaApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.MetaApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -85,11 +85,11 @@ Get all the available bonuses and their id for filtering them in the range endpo
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.MetaApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.MetaApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -151,11 +151,11 @@ Search all the available bonuses and their id for filtering them in the range en
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.MetaApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.MetaApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -221,11 +221,11 @@ Get the mappings for all specific elements that are linked in the dataset. All n
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.MetaApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.MetaApi;
 
 public class Example {
     public static void main(String[] args) {

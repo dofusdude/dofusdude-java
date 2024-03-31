@@ -34,11 +34,11 @@ Delete a Webhook from the service.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -100,11 +100,11 @@ Delete a Webhook from the service.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -166,11 +166,11 @@ Delete a Webhook from the service.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -232,11 +232,11 @@ Get a list of all available subscriptions.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -294,11 +294,11 @@ Get a list of all available subscriptions.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -356,11 +356,11 @@ Get a list of all available subscriptions.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -418,11 +418,11 @@ Retrieve details about an existing Almanax Webhook with a given uuid.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -484,11 +484,11 @@ Retrieve details about an existing RSS Webhook with a given uuid.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -550,11 +550,11 @@ Retrieve details about an existing Twitter Webhook with a given uuid.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -616,11 +616,11 @@ Register a new Webhook to post Almanax updates.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -682,11 +682,11 @@ Register a new Webhook to post RSS news as soon as they are posted.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -748,11 +748,11 @@ Register a new Webhook to post Twitter updates as soon as they are posted.
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -814,11 +814,11 @@ Update the details of an Almanax Webhook. All fields are optional and arrays wil
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -882,11 +882,11 @@ Update the details of a RSS Webhook. All fields are optional and arrays will be 
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -950,11 +950,11 @@ Update the details of a Twitter Webhook. All fields are optional and arrays will
 
 ```java
 // Import classes:
-import de.dofusdude.client.ApiClient;
-import de.dofusdude.client.ApiException;
-import de.dofusdude.client.Configuration;
-import de.dofusdude.client.models.*;
-import de.dofusdude.client.api.WebhooksApi;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
     public static void main(String[] args) {
