@@ -22,8 +22,8 @@ jobs:
       run: echo "$GPG_PRIVATE_KEY" > private.key
       env: 
         GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE}}
-      run: gpg --import --batch private.key
     - name: Import GPG Key
+      run: gpg --import --batch private.key
     - name: Publish package
       run: mvn --batch-mode deploy
       env:

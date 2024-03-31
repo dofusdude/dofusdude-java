@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Create Key File
+      run: echo "$GPG_PRIVATE_KEY" > private.key
+      env: 
+        GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE}}
+    - name: Import GPG Key
+      run: gpg --import --batch private.key
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
