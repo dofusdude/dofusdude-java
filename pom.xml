@@ -136,7 +136,7 @@
         <version>${jakarta.annotation.version}</version>
         <scope>provided</scope>
     </dependency>
-  </dependencies>
+   <dependency><groupId>org.openapitools</groupId><artifactId>jackson-databind-nullable</artifactId><version>0.2.6</version></dependency></dependencies>
   <repositories>
     <repository>
       <id>sonatype-snapshots</id>
@@ -174,4 +174,4 @@
     <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-</project>
+ <distributionManagement><repository><id>github</id><name>GitHub dofusdude Apache Maven Packages</name><url>https://maven.pkg.github.com/dofusdude/dofusdude-java</url></repository></distributionManagement></project>

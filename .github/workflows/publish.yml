@@ -1,0 +1,21 @@
+name: Upload Java Maven Package
+on:
+  release:
+    types: [created]
+permissions:
+  contents: read
+  packages: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: "17"
+        distribution: "temurin"
+    - name: Publish package
+      run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
