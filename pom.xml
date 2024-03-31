@@ -174,4 +174,4 @@
     <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
- <distributionManagement><repository><id>github</id><name>GitHub dofusdude Apache Maven Packages</name><url>https://maven.pkg.github.com/dofusdude/dofusdude-java</url></repository></distributionManagement></project>
+ <distributionManagement><repository><id>ossrh</id><name>Central Repository OSSRH</name><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></repository></distributionManagement></project>
