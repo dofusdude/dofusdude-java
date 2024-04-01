@@ -174,4 +174,4 @@
     <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
- <distributionManagement><repository><id>github</id><name>GitHub Packages</name><url>https://maven.pkg.github.com/octocat/hello-world</url></repository></distributionManagement></project>
+ <distributionManagement><repository><id>github</id><name>GitHub Packages</name><url>https://maven.pkg.github.com/dofusdude/dofusdude-java</url></repository></distributionManagement></project>
