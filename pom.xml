@@ -53,7 +53,7 @@
           </execution>
         </executions>
       </plugin>
-    <plugin><groupId>org.sonatype.central</groupId><artifactId>central-publishing-maven-plugin</artifactId><version>0.4.0</version><extensions>true</extensions><configuration><publishingServerId>central</publishingServerId><autoPublish>true</autoPublish><tokenAuth>true</tokenAuth></configuration></plugin><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.6.3</version><executions><execution><id>attach-javadocs</id><goals><goal>jar</goal></goals></execution></executions></plugin><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId><version>3.3.0</version><executions><execution><id>attach-sources</id><goals><goal>jar</goal></goals></execution></executions></plugin><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-gpg-plugin</artifactId><version>3.2.2</version><executions><execution><id>sign-artifacts</id><phase>verify</phase><goals><goal>sign</goal></goals><configuration><gpgArguments><arg>--pinentry-mode</arg><arg>loopback</arg></gpgArguments></configuration></execution></executions></plugin></plugins>
+    <plugin><groupId>org.sonatype.central</groupId><artifactId>central-publishing-maven-plugin</artifactId><version>0.4.0</version><extensions>true</extensions><configuration><publishingServerId>central</publishingServerId><autoPublish>true</autoPublish><tokenAuth>true</tokenAuth></configuration></plugin><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.6.3</version><executions><execution><id>attach-javadocs</id><goals><goal>jar</goal></goals></execution></executions></plugin><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId><version>3.3.0</version><executions><execution><id>attach-sources</id><goals><goal>jar</goal></goals></execution></executions></plugin></plugins>
   </build>
   <dependencies>
    <dependency>
@@ -174,4 +174,4 @@
     <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
- <distributionManagement><repository><id>central</id><name>Central Repository Central</name><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></repository></distributionManagement></project>
+ <distributionManagement><repository><id>github</id><name>GitHub Packages</name><url>https://maven.pkg.github.com/octocat/hello-world</url></repository></distributionManagement></project>
