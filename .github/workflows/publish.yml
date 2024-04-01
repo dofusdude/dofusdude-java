@@ -9,17 +9,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Java
-      uses: actions/setup-java@v4
-      with:
-        java-version: "17"
-        distribution: "temurin"
-    - name: Release Maven package
-      uses: samuelmeuli/action-maven-publish@v1.4.0
-      with:
-        maven_profiles: deploy, verify
-        gpg_private_key: ${{secrets.GPG_PRIVATE}}
-        gpg_passphrase: ""
-        nexus_username: ${{secrets.OSSRH_USERNAME}}
-        nexus_password: ${{secrets.OSSRH_TOKEN}}
+      - uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+      - name: Release Maven package
+        uses: samuelmeuli/action-maven-publish@v1.4.0
+        env:
+          GPG_TTY: "$(tty)"
+        with:
+          maven_profiles: deploy, verify
+          gpg_private_key: ${{secrets.GPG_PRIVATE}}
+          gpg_passphrase: ""
+          nexus_username: ${{secrets.OSSRH_USERNAME}}
+          nexus_password: ${{secrets.OSSRH_TOKEN}}
