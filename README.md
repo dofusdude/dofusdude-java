@@ -2,7 +2,7 @@
 
 dofusdude
 - API version: 0.8.3
-  - Build date: 2024-04-07T13:48:16.474050177Z[Etc/UTC]
+  - Build date: 2024-04-07T13:58:51.912874548Z[Etc/UTC]
   - Generator version: 7.5.0-SNAPSHOT
 
 # A project for you - the developer.

@@ -7,17 +7,17 @@
     <name>dofusdude-java</name>
     <version>0.8.3</version>
     <url>https://github.com/dofusdude/dofusdude-java</url>
-    <description>dofusdude-client</description><url>https://github.com/dofusdude/dofusdude-java</url>
+    <description>dofusdude-client</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
+        <connection>scm:git:git@github.com:dofusdude/dofusdude-java.git</connection>
+        <developerConnection>scm:git:git@github.com:dofusdude/dofusdude-java.git</developerConnection>
         <url>https://github.com/openapitools/openapi-generator</url>
     </scm>
 
     <licenses>
         <license>
-            <name>Unlicense</name>
-            <url>http://unlicense.org</url>
+            <name>GPLv3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -31,7 +31,7 @@
         </developer>
     </developers>
 
-    <scm><connection>scm:git:git@github.com:dofusdude/dofusdude-java.git</connection><developerConnection>scm:git:git@github.com:dofusdude/dofusdude-java.git</developerConnection><url>https://github.com/dofusdude/dofusdude-java/tree/main</url></scm><licenses><license><name>GNU General Public License 3</name><url>https://www.gnu.org/licenses/gpl-3.0.txt</url><distribution>repo</distribution></license></licenses><developers><developer><id>stelzo</id><name>Christopher Sieh</name><url>https://github.com/stelzo</url><roles><role>developer</role></roles></developer></developers><build>
+    <build>
         <plugins>
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -236,7 +236,7 @@
     <profiles>
         <profile>
             <id>sign-artifacts</id>
-            <scm><connection>scm:git:git@github.com:dofusdude/dofusdude-java.git</connection><developerConnection>scm:git:git@github.com:dofusdude/dofusdude-java.git</developerConnection><url>https://github.com/dofusdude/dofusdude-java/tree/main</url></scm><licenses><license><name>GNU General Public License 3</name><url>https://www.gnu.org/licenses/gpl-3.0.txt</url><distribution>repo</distribution></license></licenses><developers><developer><id>stelzo</id><name>Christopher Sieh</name><url>https://github.com/stelzo</url><roles><role>developer</role></roles></developer></developers><build>
+            <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>

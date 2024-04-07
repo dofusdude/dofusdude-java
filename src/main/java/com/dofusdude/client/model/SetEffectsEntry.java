@@ -50,7 +50,7 @@ import com.dofusdude.client.JSON;
 /**
  * SetEffectsEntry
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T13:48:16.474050177Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T13:58:51.912874548Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
 public class SetEffectsEntry {
   public static final String SERIALIZED_NAME_INT_MINIMUM = "int_minimum";
   @SerializedName(SERIALIZED_NAME_INT_MINIMUM)
