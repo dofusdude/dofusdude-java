@@ -49,7 +49,7 @@ import com.dofusdude.client.JSON;
 /**
  * GetMetaAlmanaxBonuses200ResponseInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T13:58:51.912874548Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T14:00:59.454960382Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
 public class GetMetaAlmanaxBonuses200ResponseInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
