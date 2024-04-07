@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -10,7 +10,22 @@
  * Do not edit the class manually.
  */
 
+
 package com.dofusdude.client.api;
+
+import com.dofusdude.client.ApiCallback;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.ApiResponse;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.Pair;
+import com.dofusdude.client.ProgressRequestBody;
+import com.dofusdude.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
 
 import com.dofusdude.client.model.AlmanaxWebhook;
 import com.dofusdude.client.model.CreateAlmanaxWebhook;
@@ -23,194 +38,1832 @@ import com.dofusdude.client.model.PutTwitterWebhook;
 import com.dofusdude.client.model.RssWebhook;
 import com.dofusdude.client.model.TwitterWebhook;
 
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.MediaType;
-import org.apache.cxf.jaxrs.ext.multipart.*;
 
+public class WebhooksApi {
+    private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
-import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+    public WebhooksApi() {
+        this(Configuration.getDefaultApiClient());
+    }
 
-/**
- * dofusdude
- *
- * <p># A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
- *
- */
+    public WebhooksApi(ApiClient apiClient) {
+        this.localVarApiClient = apiClient;
+    }
 
-@RegisterRestClient
-@RegisterProvider(ApiExceptionMapper.class)
-@Path("")
-public interface WebhooksApi  {
+    public ApiClient getApiClient() {
+        return localVarApiClient;
+    }
+
+    public void setApiClient(ApiClient apiClient) {
+        this.localVarApiClient = apiClient;
+    }
+
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
+    /**
+     * Build call for deleteWebhooksAlmanaxId
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWebhooksAlmanaxIdCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/almanax/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteWebhooksAlmanaxIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksAlmanaxId(Async)");
+        }
+
+        return deleteWebhooksAlmanaxIdCall(id, _callback);
+
+    }
 
     /**
      * Unregister Almanax Hook
-     *
      * Delete a Webhook from the service.
-     *
+     * @param id  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
      */
-    @DELETE
-    @Path("/webhooks/almanax/{id}")
-    void deleteWebhooksAlmanaxId(@PathParam("id") String id) throws ApiException, ProcessingException;
+    public void deleteWebhooksAlmanaxId(String id) throws ApiException {
+        deleteWebhooksAlmanaxIdWithHttpInfo(id);
+    }
+
+    /**
+     * Unregister Almanax Hook
+     * Delete a Webhook from the service.
+     * @param id  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteWebhooksAlmanaxIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = deleteWebhooksAlmanaxIdValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Unregister Almanax Hook (asynchronously)
+     * Delete a Webhook from the service.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWebhooksAlmanaxIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteWebhooksAlmanaxIdValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteWebhooksRssId
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWebhooksRssIdCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/rss/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteWebhooksRssIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksRssId(Async)");
+        }
+
+        return deleteWebhooksRssIdCall(id, _callback);
+
+    }
 
     /**
      * Unregister RSS Hook
-     *
      * Delete a Webhook from the service.
-     *
+     * @param id  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
      */
-    @DELETE
-    @Path("/webhooks/rss/{id}")
-    void deleteWebhooksRssId(@PathParam("id") String id) throws ApiException, ProcessingException;
+    public void deleteWebhooksRssId(String id) throws ApiException {
+        deleteWebhooksRssIdWithHttpInfo(id);
+    }
+
+    /**
+     * Unregister RSS Hook
+     * Delete a Webhook from the service.
+     * @param id  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteWebhooksRssIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = deleteWebhooksRssIdValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Unregister RSS Hook (asynchronously)
+     * Delete a Webhook from the service.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWebhooksRssIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteWebhooksRssIdValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteWebhooksTwitterId
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWebhooksTwitterIdCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/twitter/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteWebhooksTwitterIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksTwitterId(Async)");
+        }
+
+        return deleteWebhooksTwitterIdCall(id, _callback);
+
+    }
 
     /**
      * Unregister Twitter Hook
-     *
      * Delete a Webhook from the service.
-     *
+     * @param id  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
      */
-    @DELETE
-    @Path("/webhooks/twitter/{id}")
-    void deleteWebhooksTwitterId(@PathParam("id") String id) throws ApiException, ProcessingException;
+    public void deleteWebhooksTwitterId(String id) throws ApiException {
+        deleteWebhooksTwitterIdWithHttpInfo(id);
+    }
+
+    /**
+     * Unregister Twitter Hook
+     * Delete a Webhook from the service.
+     * @param id  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteWebhooksTwitterIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = deleteWebhooksTwitterIdValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Unregister Twitter Hook (asynchronously)
+     * Delete a Webhook from the service.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWebhooksTwitterIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteWebhooksTwitterIdValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getMetaWebhooksAlmanax
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetaWebhooksAlmanaxCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/meta/webhooks/almanax";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getMetaWebhooksAlmanaxValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getMetaWebhooksAlmanaxCall(_callback);
+
+    }
 
     /**
      * Get Almanax Hook Metainfo
-     *
      * Get a list of all available subscriptions. 
-     *
+     * @return GetMetaWebhooksTwitter200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/meta/webhooks/almanax")
-    @Produces({ "application/json" })
-    GetMetaWebhooksTwitter200Response getMetaWebhooksAlmanax() throws ApiException, ProcessingException;
+    public GetMetaWebhooksTwitter200Response getMetaWebhooksAlmanax() throws ApiException {
+        ApiResponse<GetMetaWebhooksTwitter200Response> localVarResp = getMetaWebhooksAlmanaxWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Almanax Hook Metainfo
+     * Get a list of all available subscriptions. 
+     * @return ApiResponse&lt;GetMetaWebhooksTwitter200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetMetaWebhooksTwitter200Response> getMetaWebhooksAlmanaxWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getMetaWebhooksAlmanaxValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<GetMetaWebhooksTwitter200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Almanax Hook Metainfo (asynchronously)
+     * Get a list of all available subscriptions. 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetaWebhooksAlmanaxAsync(final ApiCallback<GetMetaWebhooksTwitter200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getMetaWebhooksAlmanaxValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<GetMetaWebhooksTwitter200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getMetaWebhooksRss
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetaWebhooksRssCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/meta/webhooks/rss";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getMetaWebhooksRssValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getMetaWebhooksRssCall(_callback);
+
+    }
 
     /**
      * Get RSS Hook Metainfo
-     *
      * Get a list of all available subscriptions. 
-     *
+     * @return GetMetaWebhooksTwitter200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/meta/webhooks/rss")
-    @Produces({ "application/json" })
-    GetMetaWebhooksTwitter200Response getMetaWebhooksRss() throws ApiException, ProcessingException;
+    public GetMetaWebhooksTwitter200Response getMetaWebhooksRss() throws ApiException {
+        ApiResponse<GetMetaWebhooksTwitter200Response> localVarResp = getMetaWebhooksRssWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get RSS Hook Metainfo
+     * Get a list of all available subscriptions. 
+     * @return ApiResponse&lt;GetMetaWebhooksTwitter200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetMetaWebhooksTwitter200Response> getMetaWebhooksRssWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getMetaWebhooksRssValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<GetMetaWebhooksTwitter200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get RSS Hook Metainfo (asynchronously)
+     * Get a list of all available subscriptions. 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetaWebhooksRssAsync(final ApiCallback<GetMetaWebhooksTwitter200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getMetaWebhooksRssValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<GetMetaWebhooksTwitter200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getMetaWebhooksTwitter
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetaWebhooksTwitterCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/meta/webhooks/twitter";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getMetaWebhooksTwitterValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getMetaWebhooksTwitterCall(_callback);
+
+    }
 
     /**
      * Get Twitter Hook Metainfo
-     *
      * Get a list of all available subscriptions. 
-     *
+     * @return GetMetaWebhooksTwitter200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/meta/webhooks/twitter")
-    @Produces({ "application/json" })
-    GetMetaWebhooksTwitter200Response getMetaWebhooksTwitter() throws ApiException, ProcessingException;
+    public GetMetaWebhooksTwitter200Response getMetaWebhooksTwitter() throws ApiException {
+        ApiResponse<GetMetaWebhooksTwitter200Response> localVarResp = getMetaWebhooksTwitterWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Twitter Hook Metainfo
+     * Get a list of all available subscriptions. 
+     * @return ApiResponse&lt;GetMetaWebhooksTwitter200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetMetaWebhooksTwitter200Response> getMetaWebhooksTwitterWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getMetaWebhooksTwitterValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<GetMetaWebhooksTwitter200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Twitter Hook Metainfo (asynchronously)
+     * Get a list of all available subscriptions. 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetaWebhooksTwitterAsync(final ApiCallback<GetMetaWebhooksTwitter200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getMetaWebhooksTwitterValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<GetMetaWebhooksTwitter200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getWebhooksAlmanaxId
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWebhooksAlmanaxIdCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/almanax/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getWebhooksAlmanaxIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getWebhooksAlmanaxId(Async)");
+        }
+
+        return getWebhooksAlmanaxIdCall(id, _callback);
+
+    }
 
     /**
      * Get Almanax Hook
-     *
      * Retrieve details about an existing Almanax Webhook with a given uuid.
-     *
+     * @param id  (required)
+     * @return AlmanaxWebhook
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/webhooks/almanax/{id}")
-    @Produces({ "application/json" })
-    AlmanaxWebhook getWebhooksAlmanaxId(@PathParam("id") String id) throws ApiException, ProcessingException;
+    public AlmanaxWebhook getWebhooksAlmanaxId(String id) throws ApiException {
+        ApiResponse<AlmanaxWebhook> localVarResp = getWebhooksAlmanaxIdWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Almanax Hook
+     * Retrieve details about an existing Almanax Webhook with a given uuid.
+     * @param id  (required)
+     * @return ApiResponse&lt;AlmanaxWebhook&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlmanaxWebhook> getWebhooksAlmanaxIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getWebhooksAlmanaxIdValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Almanax Hook (asynchronously)
+     * Retrieve details about an existing Almanax Webhook with a given uuid.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWebhooksAlmanaxIdAsync(String id, final ApiCallback<AlmanaxWebhook> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getWebhooksAlmanaxIdValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getWebhooksRssId
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWebhooksRssIdCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/rss/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getWebhooksRssIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getWebhooksRssId(Async)");
+        }
+
+        return getWebhooksRssIdCall(id, _callback);
+
+    }
 
     /**
      * Get RSS Hook
-     *
      * Retrieve details about an existing RSS Webhook with a given uuid.
-     *
+     * @param id  (required)
+     * @return RssWebhook
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/webhooks/rss/{id}")
-    @Produces({ "application/json" })
-    RssWebhook getWebhooksRssId(@PathParam("id") String id) throws ApiException, ProcessingException;
+    public RssWebhook getWebhooksRssId(String id) throws ApiException {
+        ApiResponse<RssWebhook> localVarResp = getWebhooksRssIdWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get RSS Hook
+     * Retrieve details about an existing RSS Webhook with a given uuid.
+     * @param id  (required)
+     * @return ApiResponse&lt;RssWebhook&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RssWebhook> getWebhooksRssIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getWebhooksRssIdValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get RSS Hook (asynchronously)
+     * Retrieve details about an existing RSS Webhook with a given uuid.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWebhooksRssIdAsync(String id, final ApiCallback<RssWebhook> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getWebhooksRssIdValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getWebhooksTwitterId
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWebhooksTwitterIdCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/twitter/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getWebhooksTwitterIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getWebhooksTwitterId(Async)");
+        }
+
+        return getWebhooksTwitterIdCall(id, _callback);
+
+    }
 
     /**
      * Get Twitter Hook
-     *
      * Retrieve details about an existing Twitter Webhook with a given uuid.
-     *
+     * @param id  (required)
+     * @return TwitterWebhook
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/webhooks/twitter/{id}")
-    @Produces({ "application/json" })
-    TwitterWebhook getWebhooksTwitterId(@PathParam("id") String id) throws ApiException, ProcessingException;
+    public TwitterWebhook getWebhooksTwitterId(String id) throws ApiException {
+        ApiResponse<TwitterWebhook> localVarResp = getWebhooksTwitterIdWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Twitter Hook
+     * Retrieve details about an existing Twitter Webhook with a given uuid.
+     * @param id  (required)
+     * @return ApiResponse&lt;TwitterWebhook&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TwitterWebhook> getWebhooksTwitterIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getWebhooksTwitterIdValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Twitter Hook (asynchronously)
+     * Retrieve details about an existing Twitter Webhook with a given uuid.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWebhooksTwitterIdAsync(String id, final ApiCallback<TwitterWebhook> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getWebhooksTwitterIdValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postWebhooksAlmanax
+     * @param createAlmanaxWebhook  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postWebhooksAlmanaxCall(CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createAlmanaxWebhook;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/almanax";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postWebhooksAlmanaxValidateBeforeCall(CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+        return postWebhooksAlmanaxCall(createAlmanaxWebhook, _callback);
+
+    }
 
     /**
      * Register Almanax Hook
-     *
      * Register a new Webhook to post Almanax updates.
-     *
+     * @param createAlmanaxWebhook  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @POST
-    @Path("/webhooks/almanax")
-    @Consumes({ "application/json" })
-    void postWebhooksAlmanax(CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException, ProcessingException;
+    public void postWebhooksAlmanax(CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException {
+        postWebhooksAlmanaxWithHttpInfo(createAlmanaxWebhook);
+    }
+
+    /**
+     * Register Almanax Hook
+     * Register a new Webhook to post Almanax updates.
+     * @param createAlmanaxWebhook  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> postWebhooksAlmanaxWithHttpInfo(CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException {
+        okhttp3.Call localVarCall = postWebhooksAlmanaxValidateBeforeCall(createAlmanaxWebhook, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Register Almanax Hook (asynchronously)
+     * Register a new Webhook to post Almanax updates.
+     * @param createAlmanaxWebhook  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postWebhooksAlmanaxAsync(CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postWebhooksAlmanaxValidateBeforeCall(createAlmanaxWebhook, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postWebhooksRss
+     * @param createRSSWebhook  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postWebhooksRssCall(CreateRSSWebhook createRSSWebhook, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createRSSWebhook;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/rss";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postWebhooksRssValidateBeforeCall(CreateRSSWebhook createRSSWebhook, final ApiCallback _callback) throws ApiException {
+        return postWebhooksRssCall(createRSSWebhook, _callback);
+
+    }
 
     /**
      * Register RSS Hook
-     *
      * Register a new Webhook to post RSS news as soon as they are posted.
-     *
+     * @param createRSSWebhook  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @POST
-    @Path("/webhooks/rss")
-    @Consumes({ "application/json" })
-    void postWebhooksRss(CreateRSSWebhook createRSSWebhook) throws ApiException, ProcessingException;
+    public void postWebhooksRss(CreateRSSWebhook createRSSWebhook) throws ApiException {
+        postWebhooksRssWithHttpInfo(createRSSWebhook);
+    }
+
+    /**
+     * Register RSS Hook
+     * Register a new Webhook to post RSS news as soon as they are posted.
+     * @param createRSSWebhook  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> postWebhooksRssWithHttpInfo(CreateRSSWebhook createRSSWebhook) throws ApiException {
+        okhttp3.Call localVarCall = postWebhooksRssValidateBeforeCall(createRSSWebhook, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Register RSS Hook (asynchronously)
+     * Register a new Webhook to post RSS news as soon as they are posted.
+     * @param createRSSWebhook  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postWebhooksRssAsync(CreateRSSWebhook createRSSWebhook, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postWebhooksRssValidateBeforeCall(createRSSWebhook, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postWebhooksTwitter
+     * @param createTwitterWebhook  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postWebhooksTwitterCall(CreateTwitterWebhook createTwitterWebhook, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createTwitterWebhook;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/twitter";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postWebhooksTwitterValidateBeforeCall(CreateTwitterWebhook createTwitterWebhook, final ApiCallback _callback) throws ApiException {
+        return postWebhooksTwitterCall(createTwitterWebhook, _callback);
+
+    }
 
     /**
      * Register Twitter Hook
-     *
      * Register a new Webhook to post Twitter updates as soon as they are posted.
-     *
+     * @param createTwitterWebhook  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @POST
-    @Path("/webhooks/twitter")
-    @Consumes({ "application/json" })
-    void postWebhooksTwitter(CreateTwitterWebhook createTwitterWebhook) throws ApiException, ProcessingException;
+    public void postWebhooksTwitter(CreateTwitterWebhook createTwitterWebhook) throws ApiException {
+        postWebhooksTwitterWithHttpInfo(createTwitterWebhook);
+    }
+
+    /**
+     * Register Twitter Hook
+     * Register a new Webhook to post Twitter updates as soon as they are posted.
+     * @param createTwitterWebhook  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> postWebhooksTwitterWithHttpInfo(CreateTwitterWebhook createTwitterWebhook) throws ApiException {
+        okhttp3.Call localVarCall = postWebhooksTwitterValidateBeforeCall(createTwitterWebhook, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Register Twitter Hook (asynchronously)
+     * Register a new Webhook to post Twitter updates as soon as they are posted.
+     * @param createTwitterWebhook  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postWebhooksTwitterAsync(CreateTwitterWebhook createTwitterWebhook, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postWebhooksTwitterValidateBeforeCall(createTwitterWebhook, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for putWebhooksAlmanaxId
+     * @param id  (required)
+     * @param putAlmanaxWebhook  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call putWebhooksAlmanaxIdCall(String id, PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = putAlmanaxWebhook;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/almanax/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call putWebhooksAlmanaxIdValidateBeforeCall(String id, PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling putWebhooksAlmanaxId(Async)");
+        }
+
+        return putWebhooksAlmanaxIdCall(id, putAlmanaxWebhook, _callback);
+
+    }
 
     /**
      * Update Almanax Hook
-     *
      * Update the details of an Almanax Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
-     *
+     * @param id  (required)
+     * @param putAlmanaxWebhook  (optional)
+     * @return AlmanaxWebhook
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @PUT
-    @Path("/webhooks/almanax/{id}")
-    @Consumes({ "application/json" })
-    @Produces({ "application/json" })
-    AlmanaxWebhook putWebhooksAlmanaxId(@PathParam("id") String id, PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException, ProcessingException;
+    public AlmanaxWebhook putWebhooksAlmanaxId(String id, PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException {
+        ApiResponse<AlmanaxWebhook> localVarResp = putWebhooksAlmanaxIdWithHttpInfo(id, putAlmanaxWebhook);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Almanax Hook
+     * Update the details of an Almanax Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
+     * @param id  (required)
+     * @param putAlmanaxWebhook  (optional)
+     * @return ApiResponse&lt;AlmanaxWebhook&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlmanaxWebhook> putWebhooksAlmanaxIdWithHttpInfo(String id, PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException {
+        okhttp3.Call localVarCall = putWebhooksAlmanaxIdValidateBeforeCall(id, putAlmanaxWebhook, null);
+        Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Almanax Hook (asynchronously)
+     * Update the details of an Almanax Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
+     * @param id  (required)
+     * @param putAlmanaxWebhook  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call putWebhooksAlmanaxIdAsync(String id, PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback<AlmanaxWebhook> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = putWebhooksAlmanaxIdValidateBeforeCall(id, putAlmanaxWebhook, _callback);
+        Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for putWebhooksRssId
+     * @param id  (required)
+     * @param putRSSWebhook  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call putWebhooksRssIdCall(String id, PutRSSWebhook putRSSWebhook, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = putRSSWebhook;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/rss/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call putWebhooksRssIdValidateBeforeCall(String id, PutRSSWebhook putRSSWebhook, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling putWebhooksRssId(Async)");
+        }
+
+        return putWebhooksRssIdCall(id, putRSSWebhook, _callback);
+
+    }
 
     /**
      * Update RSS Hook
-     *
      * Update the details of a RSS Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
-     *
+     * @param id  (required)
+     * @param putRSSWebhook  (optional)
+     * @return RssWebhook
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @PUT
-    @Path("/webhooks/rss/{id}")
-    @Consumes({ "application/json" })
-    @Produces({ "application/json" })
-    RssWebhook putWebhooksRssId(@PathParam("id") String id, PutRSSWebhook putRSSWebhook) throws ApiException, ProcessingException;
+    public RssWebhook putWebhooksRssId(String id, PutRSSWebhook putRSSWebhook) throws ApiException {
+        ApiResponse<RssWebhook> localVarResp = putWebhooksRssIdWithHttpInfo(id, putRSSWebhook);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update RSS Hook
+     * Update the details of a RSS Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
+     * @param id  (required)
+     * @param putRSSWebhook  (optional)
+     * @return ApiResponse&lt;RssWebhook&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RssWebhook> putWebhooksRssIdWithHttpInfo(String id, PutRSSWebhook putRSSWebhook) throws ApiException {
+        okhttp3.Call localVarCall = putWebhooksRssIdValidateBeforeCall(id, putRSSWebhook, null);
+        Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update RSS Hook (asynchronously)
+     * Update the details of a RSS Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
+     * @param id  (required)
+     * @param putRSSWebhook  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call putWebhooksRssIdAsync(String id, PutRSSWebhook putRSSWebhook, final ApiCallback<RssWebhook> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = putWebhooksRssIdValidateBeforeCall(id, putRSSWebhook, _callback);
+        Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for putWebhooksTwitterId
+     * @param id  (required)
+     * @param putTwitterWebhook  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call putWebhooksTwitterIdCall(String id, PutTwitterWebhook putTwitterWebhook, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = putTwitterWebhook;
+
+        // create path and map variables
+        String localVarPath = "/webhooks/twitter/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call putWebhooksTwitterIdValidateBeforeCall(String id, PutTwitterWebhook putTwitterWebhook, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling putWebhooksTwitterId(Async)");
+        }
+
+        return putWebhooksTwitterIdCall(id, putTwitterWebhook, _callback);
+
+    }
 
     /**
      * Update Twitter Hook
-     *
      * Update the details of a Twitter Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
-     *
+     * @param id  (required)
+     * @param putTwitterWebhook  (optional)
+     * @return TwitterWebhook
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
      */
-    @PUT
-    @Path("/webhooks/twitter/{id}")
-    @Consumes({ "application/json" })
-    @Produces({ "application/json" })
-    TwitterWebhook putWebhooksTwitterId(@PathParam("id") String id, PutTwitterWebhook putTwitterWebhook) throws ApiException, ProcessingException;
+    public TwitterWebhook putWebhooksTwitterId(String id, PutTwitterWebhook putTwitterWebhook) throws ApiException {
+        ApiResponse<TwitterWebhook> localVarResp = putWebhooksTwitterIdWithHttpInfo(id, putTwitterWebhook);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Twitter Hook
+     * Update the details of a Twitter Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
+     * @param id  (required)
+     * @param putTwitterWebhook  (optional)
+     * @return ApiResponse&lt;TwitterWebhook&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TwitterWebhook> putWebhooksTwitterIdWithHttpInfo(String id, PutTwitterWebhook putTwitterWebhook) throws ApiException {
+        okhttp3.Call localVarCall = putWebhooksTwitterIdValidateBeforeCall(id, putTwitterWebhook, null);
+        Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Twitter Hook (asynchronously)
+     * Update the details of a Twitter Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
+     * @param id  (required)
+     * @param putTwitterWebhook  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call putWebhooksTwitterIdAsync(String id, PutTwitterWebhook putTwitterWebhook, final ApiCallback<TwitterWebhook> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = putWebhooksTwitterIdValidateBeforeCall(id, putTwitterWebhook, _callback);
+        Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
 }

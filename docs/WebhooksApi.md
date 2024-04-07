@@ -21,17 +21,15 @@ All URIs are relative to *https://api.dofusdu.de*
 | [**putWebhooksTwitterId**](WebhooksApi.md#putWebhooksTwitterId) | **PUT** /webhooks/twitter/{id} | Update Twitter Hook |
 
 
-
-## deleteWebhooksAlmanaxId
-
-> void deleteWebhooksAlmanaxId(id)
+<a id="deleteWebhooksAlmanaxId"></a>
+# **deleteWebhooksAlmanaxId**
+> deleteWebhooksAlmanaxId(id)
 
 Unregister Almanax Hook
 
 Delete a Webhook from the service.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -41,28 +39,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        try {
-            void result = apiInstance.deleteWebhooksAlmanaxId(id);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#deleteWebhooksAlmanaxId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      apiInstance.deleteWebhooksAlmanaxId(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#deleteWebhooksAlmanaxId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -70,7 +66,7 @@ public class Example {
 
 ### Return type
 
-[**void**](Void.md)
+null (empty response body)
 
 ### Authorization
 
@@ -78,26 +74,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-
-## deleteWebhooksRssId
-
-> void deleteWebhooksRssId(id)
+<a id="deleteWebhooksRssId"></a>
+# **deleteWebhooksRssId**
+> deleteWebhooksRssId(id)
 
 Unregister RSS Hook
 
 Delete a Webhook from the service.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -107,28 +100,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        try {
-            void result = apiInstance.deleteWebhooksRssId(id);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#deleteWebhooksRssId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      apiInstance.deleteWebhooksRssId(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#deleteWebhooksRssId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -136,7 +127,7 @@ public class Example {
 
 ### Return type
 
-[**void**](Void.md)
+null (empty response body)
 
 ### Authorization
 
@@ -144,26 +135,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-
-## deleteWebhooksTwitterId
-
-> void deleteWebhooksTwitterId(id)
+<a id="deleteWebhooksTwitterId"></a>
+# **deleteWebhooksTwitterId**
+> deleteWebhooksTwitterId(id)
 
 Unregister Twitter Hook
 
 Delete a Webhook from the service.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -173,28 +161,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        try {
-            void result = apiInstance.deleteWebhooksTwitterId(id);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#deleteWebhooksTwitterId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      apiInstance.deleteWebhooksTwitterId(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#deleteWebhooksTwitterId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -202,7 +188,7 @@ public class Example {
 
 ### Return type
 
-[**void**](Void.md)
+null (empty response body)
 
 ### Authorization
 
@@ -210,18 +196,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-
-## getMetaWebhooksAlmanax
-
+<a id="getMetaWebhooksAlmanax"></a>
+# **getMetaWebhooksAlmanax**
 > GetMetaWebhooksTwitter200Response getMetaWebhooksAlmanax()
 
 Get Almanax Hook Metainfo
@@ -229,7 +213,6 @@ Get Almanax Hook Metainfo
 Get a list of all available subscriptions. 
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -239,27 +222,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        try {
-            GetMetaWebhooksTwitter200Response result = apiInstance.getMetaWebhooksAlmanax();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#getMetaWebhooksAlmanax");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    try {
+      GetMetaWebhooksTwitter200Response result = apiInstance.getMetaWebhooksAlmanax();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getMetaWebhooksAlmanax");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -272,18 +254,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## getMetaWebhooksRss
-
+<a id="getMetaWebhooksRss"></a>
+# **getMetaWebhooksRss**
 > GetMetaWebhooksTwitter200Response getMetaWebhooksRss()
 
 Get RSS Hook Metainfo
@@ -291,7 +271,6 @@ Get RSS Hook Metainfo
 Get a list of all available subscriptions. 
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -301,27 +280,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        try {
-            GetMetaWebhooksTwitter200Response result = apiInstance.getMetaWebhooksRss();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#getMetaWebhooksRss");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    try {
+      GetMetaWebhooksTwitter200Response result = apiInstance.getMetaWebhooksRss();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getMetaWebhooksRss");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -334,18 +312,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## getMetaWebhooksTwitter
-
+<a id="getMetaWebhooksTwitter"></a>
+# **getMetaWebhooksTwitter**
 > GetMetaWebhooksTwitter200Response getMetaWebhooksTwitter()
 
 Get Twitter Hook Metainfo
@@ -353,7 +329,6 @@ Get Twitter Hook Metainfo
 Get a list of all available subscriptions. 
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -363,27 +338,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        try {
-            GetMetaWebhooksTwitter200Response result = apiInstance.getMetaWebhooksTwitter();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#getMetaWebhooksTwitter");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    try {
+      GetMetaWebhooksTwitter200Response result = apiInstance.getMetaWebhooksTwitter();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getMetaWebhooksTwitter");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -396,18 +370,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## getWebhooksAlmanaxId
-
+<a id="getWebhooksAlmanaxId"></a>
+# **getWebhooksAlmanaxId**
 > AlmanaxWebhook getWebhooksAlmanaxId(id)
 
 Get Almanax Hook
@@ -415,7 +387,6 @@ Get Almanax Hook
 Retrieve details about an existing Almanax Webhook with a given uuid.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -425,28 +396,27 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        try {
-            AlmanaxWebhook result = apiInstance.getWebhooksAlmanaxId(id);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#getWebhooksAlmanaxId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      AlmanaxWebhook result = apiInstance.getWebhooksAlmanaxId(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getWebhooksAlmanaxId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -462,18 +432,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## getWebhooksRssId
-
+<a id="getWebhooksRssId"></a>
+# **getWebhooksRssId**
 > RssWebhook getWebhooksRssId(id)
 
 Get RSS Hook
@@ -481,7 +449,6 @@ Get RSS Hook
 Retrieve details about an existing RSS Webhook with a given uuid.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -491,28 +458,27 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        try {
-            RssWebhook result = apiInstance.getWebhooksRssId(id);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#getWebhooksRssId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      RssWebhook result = apiInstance.getWebhooksRssId(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getWebhooksRssId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -528,18 +494,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## getWebhooksTwitterId
-
+<a id="getWebhooksTwitterId"></a>
+# **getWebhooksTwitterId**
 > TwitterWebhook getWebhooksTwitterId(id)
 
 Get Twitter Hook
@@ -547,7 +511,6 @@ Get Twitter Hook
 Retrieve details about an existing Twitter Webhook with a given uuid.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -557,28 +520,27 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        try {
-            TwitterWebhook result = apiInstance.getWebhooksTwitterId(id);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#getWebhooksTwitterId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      TwitterWebhook result = apiInstance.getWebhooksTwitterId(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getWebhooksTwitterId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -594,26 +556,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## postWebhooksAlmanax
-
-> void postWebhooksAlmanax(createAlmanaxWebhook)
+<a id="postWebhooksAlmanax"></a>
+# **postWebhooksAlmanax**
+> postWebhooksAlmanax(createAlmanaxWebhook)
 
 Register Almanax Hook
 
 Register a new Webhook to post Almanax updates.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -623,28 +582,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        CreateAlmanaxWebhook createAlmanaxWebhook = new CreateAlmanaxWebhook(); // CreateAlmanaxWebhook | 
-        try {
-            void result = apiInstance.postWebhooksAlmanax(createAlmanaxWebhook);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#postWebhooksAlmanax");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    CreateAlmanaxWebhook createAlmanaxWebhook = new CreateAlmanaxWebhook(); // CreateAlmanaxWebhook | 
+    try {
+      apiInstance.postWebhooksAlmanax(createAlmanaxWebhook);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#postWebhooksAlmanax");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -652,7 +609,7 @@ public class Example {
 
 ### Return type
 
-[**void**](Void.md)
+null (empty response body)
 
 ### Authorization
 
@@ -660,26 +617,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## postWebhooksRss
-
-> void postWebhooksRss(createRSSWebhook)
+<a id="postWebhooksRss"></a>
+# **postWebhooksRss**
+> postWebhooksRss(createRSSWebhook)
 
 Register RSS Hook
 
 Register a new Webhook to post RSS news as soon as they are posted.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -689,28 +643,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        CreateRSSWebhook createRSSWebhook = new CreateRSSWebhook(); // CreateRSSWebhook | 
-        try {
-            void result = apiInstance.postWebhooksRss(createRSSWebhook);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#postWebhooksRss");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    CreateRSSWebhook createRSSWebhook = new CreateRSSWebhook(); // CreateRSSWebhook | 
+    try {
+      apiInstance.postWebhooksRss(createRSSWebhook);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#postWebhooksRss");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -718,7 +670,7 @@ public class Example {
 
 ### Return type
 
-[**void**](Void.md)
+null (empty response body)
 
 ### Authorization
 
@@ -726,26 +678,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## postWebhooksTwitter
-
-> void postWebhooksTwitter(createTwitterWebhook)
+<a id="postWebhooksTwitter"></a>
+# **postWebhooksTwitter**
+> postWebhooksTwitter(createTwitterWebhook)
 
 Register Twitter Hook
 
 Register a new Webhook to post Twitter updates as soon as they are posted.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -755,28 +704,26 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        CreateTwitterWebhook createTwitterWebhook = new CreateTwitterWebhook(); // CreateTwitterWebhook | 
-        try {
-            void result = apiInstance.postWebhooksTwitter(createTwitterWebhook);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#postWebhooksTwitter");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    CreateTwitterWebhook createTwitterWebhook = new CreateTwitterWebhook(); // CreateTwitterWebhook | 
+    try {
+      apiInstance.postWebhooksTwitter(createTwitterWebhook);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#postWebhooksTwitter");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -784,7 +731,7 @@ public class Example {
 
 ### Return type
 
-[**void**](Void.md)
+null (empty response body)
 
 ### Authorization
 
@@ -792,18 +739,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## putWebhooksAlmanaxId
-
+<a id="putWebhooksAlmanaxId"></a>
+# **putWebhooksAlmanaxId**
 > AlmanaxWebhook putWebhooksAlmanaxId(id, putAlmanaxWebhook)
 
 Update Almanax Hook
@@ -811,7 +756,6 @@ Update Almanax Hook
 Update the details of an Almanax Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -821,29 +765,28 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        PutAlmanaxWebhook putAlmanaxWebhook = new PutAlmanaxWebhook(); // PutAlmanaxWebhook | 
-        try {
-            AlmanaxWebhook result = apiInstance.putWebhooksAlmanaxId(id, putAlmanaxWebhook);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#putWebhooksAlmanaxId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    PutAlmanaxWebhook putAlmanaxWebhook = new PutAlmanaxWebhook(); // PutAlmanaxWebhook | 
+    try {
+      AlmanaxWebhook result = apiInstance.putWebhooksAlmanaxId(id, putAlmanaxWebhook);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#putWebhooksAlmanaxId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -860,18 +803,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## putWebhooksRssId
-
+<a id="putWebhooksRssId"></a>
+# **putWebhooksRssId**
 > RssWebhook putWebhooksRssId(id, putRSSWebhook)
 
 Update RSS Hook
@@ -879,7 +820,6 @@ Update RSS Hook
 Update the details of a RSS Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -889,29 +829,28 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        PutRSSWebhook putRSSWebhook = new PutRSSWebhook(); // PutRSSWebhook | 
-        try {
-            RssWebhook result = apiInstance.putWebhooksRssId(id, putRSSWebhook);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#putWebhooksRssId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    PutRSSWebhook putRSSWebhook = new PutRSSWebhook(); // PutRSSWebhook | 
+    try {
+      RssWebhook result = apiInstance.putWebhooksRssId(id, putRSSWebhook);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#putWebhooksRssId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -928,18 +867,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-
-## putWebhooksTwitterId
-
+<a id="putWebhooksTwitterId"></a>
+# **putWebhooksTwitterId**
 > TwitterWebhook putWebhooksTwitterId(id, putTwitterWebhook)
 
 Update Twitter Hook
@@ -947,7 +884,6 @@ Update Twitter Hook
 Update the details of a Twitter Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
 
 ### Example
-
 ```java
 // Import classes:
 import com.dofusdude.client.ApiClient;
@@ -957,29 +893,28 @@ import com.dofusdude.client.models.*;
 import com.dofusdude.client.api.WebhooksApi;
 
 public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.dofusdu.de");
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
 
-        WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        String id = "id_example"; // String | 
-        PutTwitterWebhook putTwitterWebhook = new PutTwitterWebhook(); // PutTwitterWebhook | 
-        try {
-            TwitterWebhook result = apiInstance.putWebhooksTwitterId(id, putTwitterWebhook);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling WebhooksApi#putWebhooksTwitterId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | 
+    PutTwitterWebhook putTwitterWebhook = new PutTwitterWebhook(); // PutTwitterWebhook | 
+    try {
+      TwitterWebhook result = apiInstance.putWebhooksTwitterId(id, putTwitterWebhook);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#putWebhooksTwitterId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 ```
 
 ### Parameters
-
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -996,9 +931,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

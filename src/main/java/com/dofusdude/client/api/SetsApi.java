@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -10,80 +10,760 @@
  * Do not edit the class manually.
  */
 
+
 package com.dofusdude.client.api;
+
+import com.dofusdude.client.ApiCallback;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.ApiResponse;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.Pair;
+import com.dofusdude.client.ProgressRequestBody;
+import com.dofusdude.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
 
 import com.dofusdude.client.model.EquipmentSet;
 import java.util.Set;
 import com.dofusdude.client.model.SetListEntry;
 import com.dofusdude.client.model.SetsListPaged;
 
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.MediaType;
-import org.apache.cxf.jaxrs.ext.multipart.*;
 
+public class SetsApi {
+    private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
-import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+    public SetsApi() {
+        this(Configuration.getDefaultApiClient());
+    }
 
-/**
- * dofusdude
- *
- * <p># A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
- *
- */
+    public SetsApi(ApiClient apiClient) {
+        this.localVarApiClient = apiClient;
+    }
 
-@RegisterRestClient
-@RegisterProvider(ApiExceptionMapper.class)
-@Path("/{game}/{language}/sets")
-public interface SetsApi  {
+    public ApiClient getApiClient() {
+        return localVarApiClient;
+    }
+
+    public void setApiClient(ApiClient apiClient) {
+        this.localVarApiClient = apiClient;
+    }
+
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
+    /**
+     * Build call for getAllSetsList
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param acceptEncoding optional compression for saving bandwidth (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAllSetsListCall(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/{game}/{language}/sets/all"
+            .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
+            .replace("{" + "game" + "}", localVarApiClient.escapeString(game.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (sortLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort[level]", sortLevel));
+        }
+
+        if (filterMinHighestEquipmentLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[min_highest_equipment_level]", filterMinHighestEquipmentLevel));
+        }
+
+        if (filterMaxHighestEquipmentLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[max_highest_equipment_level]", filterMaxHighestEquipmentLevel));
+        }
+
+        if (acceptEncoding != null) {
+            localVarHeaderParams.put("Accept-Encoding", localVarApiClient.parameterToString(acceptEncoding));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAllSetsListValidateBeforeCall(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'language' is set
+        if (language == null) {
+            throw new ApiException("Missing the required parameter 'language' when calling getAllSetsList(Async)");
+        }
+
+        // verify the required parameter 'game' is set
+        if (game == null) {
+            throw new ApiException("Missing the required parameter 'game' when calling getAllSetsList(Async)");
+        }
+
+        return getAllSetsListCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, _callback);
+
+    }
 
     /**
      * List All Sets
-     *
      * Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
-     *
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param acceptEncoding optional compression for saving bandwidth (optional)
+     * @return SetsListPaged
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/all")
-    @Produces({ "application/json" })
-    SetsListPaged getAllSetsList(@PathParam("language") String language, @PathParam("game") String game, @QueryParam("sort[level]") String sortLevel, @QueryParam("filter[min_highest_equipment_level]") Integer filterMinHighestEquipmentLevel, @QueryParam("filter[max_highest_equipment_level]") Integer filterMaxHighestEquipmentLevel, @HeaderParam("Accept-Encoding")  String acceptEncoding) throws ApiException, ProcessingException;
+    public SetsListPaged getAllSetsList(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding) throws ApiException {
+        ApiResponse<SetsListPaged> localVarResp = getAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List All Sets
+     * Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param acceptEncoding optional compression for saving bandwidth (optional)
+     * @return ApiResponse&lt;SetsListPaged&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SetsListPaged> getAllSetsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding) throws ApiException {
+        okhttp3.Call localVarCall = getAllSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, null);
+        Type localVarReturnType = new TypeToken<SetsListPaged>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List All Sets (asynchronously)
+     * Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param acceptEncoding optional compression for saving bandwidth (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAllSetsListAsync(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, final ApiCallback<SetsListPaged> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAllSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, _callback);
+        Type localVarReturnType = new TypeToken<SetsListPaged>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getSetsList
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+     * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+     * @param fieldsSet adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSetsListCall(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/{game}/{language}/sets"
+            .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
+            .replace("{" + "game" + "}", localVarApiClient.escapeString(game.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (sortLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort[level]", sortLevel));
+        }
+
+        if (filterMinHighestEquipmentLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[min_highest_equipment_level]", filterMinHighestEquipmentLevel));
+        }
+
+        if (filterMaxHighestEquipmentLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[max_highest_equipment_level]", filterMaxHighestEquipmentLevel));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
+        }
+
+        if (pageNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
+        }
+
+        if (fieldsSet != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("csv", "fields[set]", fieldsSet));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getSetsListValidateBeforeCall(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'language' is set
+        if (language == null) {
+            throw new ApiException("Missing the required parameter 'language' when calling getSetsList(Async)");
+        }
+
+        // verify the required parameter 'game' is set
+        if (game == null) {
+            throw new ApiException("Missing the required parameter 'game' when calling getSetsList(Async)");
+        }
+
+        return getSetsListCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, _callback);
+
+    }
 
     /**
      * List Sets
-     *
      * Retrieve a list of sets.
-     *
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+     * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+     * @param fieldsSet adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+     * @return SetsListPaged
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    
-    @Produces({ "application/json" })
-    SetsListPaged getSetsList(@PathParam("language") String language, @PathParam("game") String game, @QueryParam("sort[level]") String sortLevel, @QueryParam("filter[min_highest_equipment_level]") Integer filterMinHighestEquipmentLevel, @QueryParam("filter[max_highest_equipment_level]") Integer filterMaxHighestEquipmentLevel, @QueryParam("page[size]") Integer pageSize, @QueryParam("page[number]") Integer pageNumber, @QueryParam("fields[set]") Set<String> fieldsSet) throws ApiException, ProcessingException;
+    public SetsListPaged getSetsList(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet) throws ApiException {
+        ApiResponse<SetsListPaged> localVarResp = getSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Sets
+     * Retrieve a list of sets.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+     * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+     * @param fieldsSet adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+     * @return ApiResponse&lt;SetsListPaged&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SetsListPaged> getSetsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet) throws ApiException {
+        okhttp3.Call localVarCall = getSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, null);
+        Type localVarReturnType = new TypeToken<SetsListPaged>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Sets (asynchronously)
+     * Retrieve a list of sets.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param sortLevel sort the resulting list by level, default unsorted (optional)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+     * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+     * @param fieldsSet adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSetsListAsync(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, final ApiCallback<SetsListPaged> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, _callback);
+        Type localVarReturnType = new TypeToken<SetsListPaged>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getSetsSearch
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Sets Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSetsSearchCall(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/{game}/{language}/sets/search"
+            .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
+            .replace("{" + "game" + "}", localVarApiClient.escapeString(game.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (query != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("query", query));
+        }
+
+        if (filterMinHighestEquipmentLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[min_highest_equipment_level]", filterMinHighestEquipmentLevel));
+        }
+
+        if (filterMaxHighestEquipmentLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[max_highest_equipment_level]", filterMaxHighestEquipmentLevel));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getSetsSearchValidateBeforeCall(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'language' is set
+        if (language == null) {
+            throw new ApiException("Missing the required parameter 'language' when calling getSetsSearch(Async)");
+        }
+
+        // verify the required parameter 'game' is set
+        if (game == null) {
+            throw new ApiException("Missing the required parameter 'game' when calling getSetsSearch(Async)");
+        }
+
+        // verify the required parameter 'query' is set
+        if (query == null) {
+            throw new ApiException("Missing the required parameter 'query' when calling getSetsSearch(Async)");
+        }
+
+        return getSetsSearchCall(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, _callback);
+
+    }
 
     /**
      * Search Sets
-     *
      * Search in all names and descriptions of sets with a query.
-     *
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @return List&lt;SetListEntry&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Sets Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/search")
-    @Produces({ "application/json" })
-    List<SetListEntry> getSetsSearch(@PathParam("language") String language, @PathParam("game") String game, @QueryParam("query") String query, @QueryParam("filter[min_highest_equipment_level]") Integer filterMinHighestEquipmentLevel, @QueryParam("filter[max_highest_equipment_level]") Integer filterMaxHighestEquipmentLevel, @QueryParam("limit") @DefaultValue("8") Integer limit) throws ApiException, ProcessingException;
+    public List<SetListEntry> getSetsSearch(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit) throws ApiException {
+        ApiResponse<List<SetListEntry>> localVarResp = getSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search Sets
+     * Search in all names and descriptions of sets with a query.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @return ApiResponse&lt;List&lt;SetListEntry&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Sets Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<SetListEntry>> getSetsSearchWithHttpInfo(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = getSetsSearchValidateBeforeCall(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, null);
+        Type localVarReturnType = new TypeToken<List<SetListEntry>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search Sets (asynchronously)
+     * Search in all names and descriptions of sets with a query.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
+     * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Sets Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSetsSearchAsync(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, final ApiCallback<List<SetListEntry>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSetsSearchValidateBeforeCall(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, _callback);
+        Type localVarReturnType = new TypeToken<List<SetListEntry>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getSetsSingle
+     * @param language a valid language code (required)
+     * @param ankamaId identifier (required)
+     * @param game  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - invalid ankama id format  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSetsSingleCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/{game}/{language}/sets/{ankama_id}"
+            .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
+            .replace("{" + "ankama_id" + "}", localVarApiClient.escapeString(ankamaId.toString()))
+            .replace("{" + "game" + "}", localVarApiClient.escapeString(game.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getSetsSingleValidateBeforeCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'language' is set
+        if (language == null) {
+            throw new ApiException("Missing the required parameter 'language' when calling getSetsSingle(Async)");
+        }
+
+        // verify the required parameter 'ankamaId' is set
+        if (ankamaId == null) {
+            throw new ApiException("Missing the required parameter 'ankamaId' when calling getSetsSingle(Async)");
+        }
+
+        // verify the required parameter 'game' is set
+        if (game == null) {
+            throw new ApiException("Missing the required parameter 'game' when calling getSetsSingle(Async)");
+        }
+
+        return getSetsSingleCall(language, ankamaId, game, _callback);
+
+    }
 
     /**
      * Single Sets
-     *
      * Retrieve a specific set with id.
-     *
+     * @param language a valid language code (required)
+     * @param ankamaId identifier (required)
+     * @param game  (required)
+     * @return EquipmentSet
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - invalid ankama id format  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/{ankama_id}")
-    @Produces({ "application/json" })
-    EquipmentSet getSetsSingle(@PathParam("language") String language, @PathParam("ankama_id") Integer ankamaId, @PathParam("game") String game) throws ApiException, ProcessingException;
+    public EquipmentSet getSetsSingle(String language, Integer ankamaId, String game) throws ApiException {
+        ApiResponse<EquipmentSet> localVarResp = getSetsSingleWithHttpInfo(language, ankamaId, game);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Single Sets
+     * Retrieve a specific set with id.
+     * @param language a valid language code (required)
+     * @param ankamaId identifier (required)
+     * @param game  (required)
+     * @return ApiResponse&lt;EquipmentSet&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - invalid ankama id format  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EquipmentSet> getSetsSingleWithHttpInfo(String language, Integer ankamaId, String game) throws ApiException {
+        okhttp3.Call localVarCall = getSetsSingleValidateBeforeCall(language, ankamaId, game, null);
+        Type localVarReturnType = new TypeToken<EquipmentSet>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Single Sets (asynchronously)
+     * Retrieve a specific set with id.
+     * @param language a valid language code (required)
+     * @param ankamaId identifier (required)
+     * @param game  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Set Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - invalid ankama id format  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSetsSingleAsync(String language, Integer ankamaId, String game, final ApiCallback<EquipmentSet> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSetsSingleValidateBeforeCall(language, ankamaId, game, _callback);
+        Type localVarReturnType = new TypeToken<EquipmentSet>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
 }

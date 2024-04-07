@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -10,57 +10,432 @@
  * Do not edit the class manually.
  */
 
+
 package com.dofusdude.client.api;
+
+import com.dofusdude.client.ApiCallback;
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.ApiResponse;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.Pair;
+import com.dofusdude.client.ProgressRequestBody;
+import com.dofusdude.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
 
 import com.dofusdude.client.model.GetGameSearch200ResponseInner;
 import com.dofusdude.client.model.ItemsListEntryTyped;
 import java.util.Set;
 
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.MediaType;
-import org.apache.cxf.jaxrs.ext.multipart.*;
 
+public class GameApi {
+    private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
-import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+    public GameApi() {
+        this(Configuration.getDefaultApiClient());
+    }
 
-/**
- * dofusdude
- *
- * <p># A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
- *
- */
+    public GameApi(ApiClient apiClient) {
+        this.localVarApiClient = apiClient;
+    }
 
-@RegisterRestClient
-@RegisterProvider(ApiExceptionMapper.class)
-@Path("/{game}/{language}")
-public interface GameApi  {
+    public ApiClient getApiClient() {
+        return localVarApiClient;
+    }
+
+    public void setApiClient(ApiClient apiClient) {
+        this.localVarApiClient = apiClient;
+    }
+
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
+    /**
+     * Build call for getGameSearch
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query search query (required)
+     * @param filterType only results with all specific type (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param fieldsItem adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Game Search Result </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query - filter[type] does not exist  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getGameSearchCall(String language, String game, String query, Set<String> filterType, Integer limit, Set<String> fieldsItem, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/{game}/{language}/search"
+            .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
+            .replace("{" + "game" + "}", localVarApiClient.escapeString(game.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (query != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("query", query));
+        }
+
+        if (filterType != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("csv", "filter[type]", filterType));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (fieldsItem != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("csv", "fields[item]", fieldsItem));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getGameSearchValidateBeforeCall(String language, String game, String query, Set<String> filterType, Integer limit, Set<String> fieldsItem, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'language' is set
+        if (language == null) {
+            throw new ApiException("Missing the required parameter 'language' when calling getGameSearch(Async)");
+        }
+
+        // verify the required parameter 'game' is set
+        if (game == null) {
+            throw new ApiException("Missing the required parameter 'game' when calling getGameSearch(Async)");
+        }
+
+        // verify the required parameter 'query' is set
+        if (query == null) {
+            throw new ApiException("Missing the required parameter 'query' when calling getGameSearch(Async)");
+        }
+
+        return getGameSearchCall(language, game, query, filterType, limit, fieldsItem, _callback);
+
+    }
 
     /**
      * Game Search
-     *
      * Search in all names and descriptions of all supported types in the game. For the list of supported types see the endpoint /dofus2/meta/search/types.
-     *
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query search query (required)
+     * @param filterType only results with all specific type (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param fieldsItem adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
+     * @return List&lt;GetGameSearch200ResponseInner&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Game Search Result </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query - filter[type] does not exist  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/search")
-    @Produces({ "application/json" })
-    List<GetGameSearch200ResponseInner> getGameSearch(@PathParam("language") String language, @PathParam("game") String game, @QueryParam("query") String query, @QueryParam("filter[type]") Set<String> filterType, @QueryParam("limit") @DefaultValue("8") Integer limit, @QueryParam("fields[item]") Set<String> fieldsItem) throws ApiException, ProcessingException;
+    public List<GetGameSearch200ResponseInner> getGameSearch(String language, String game, String query, Set<String> filterType, Integer limit, Set<String> fieldsItem) throws ApiException {
+        ApiResponse<List<GetGameSearch200ResponseInner>> localVarResp = getGameSearchWithHttpInfo(language, game, query, filterType, limit, fieldsItem);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Game Search
+     * Search in all names and descriptions of all supported types in the game. For the list of supported types see the endpoint /dofus2/meta/search/types.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query search query (required)
+     * @param filterType only results with all specific type (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param fieldsItem adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
+     * @return ApiResponse&lt;List&lt;GetGameSearch200ResponseInner&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Game Search Result </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query - filter[type] does not exist  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<GetGameSearch200ResponseInner>> getGameSearchWithHttpInfo(String language, String game, String query, Set<String> filterType, Integer limit, Set<String> fieldsItem) throws ApiException {
+        okhttp3.Call localVarCall = getGameSearchValidateBeforeCall(language, game, query, filterType, limit, fieldsItem, null);
+        Type localVarReturnType = new TypeToken<List<GetGameSearch200ResponseInner>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Game Search (asynchronously)
+     * Search in all names and descriptions of all supported types in the game. For the list of supported types see the endpoint /dofus2/meta/search/types.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query search query (required)
+     * @param filterType only results with all specific type (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param fieldsItem adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Game Search Result </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query - filter[type] does not exist  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getGameSearchAsync(String language, String game, String query, Set<String> filterType, Integer limit, Set<String> fieldsItem, final ApiCallback<List<GetGameSearch200ResponseInner>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getGameSearchValidateBeforeCall(language, game, query, filterType, limit, fieldsItem, _callback);
+        Type localVarReturnType = new TypeToken<List<GetGameSearch200ResponseInner>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getItemsAllSearch
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterTypeName only results with the translated type name across all item_subtypes (optional)
+     * @param filterMinLevel only results which level is equal or above this value (optional)
+     * @param filterMaxLevel only results which level is equal or below this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Items Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getItemsAllSearchCall(String language, String game, String query, String filterTypeName, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/{game}/{language}/items/search"
+            .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
+            .replace("{" + "game" + "}", localVarApiClient.escapeString(game.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (query != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("query", query));
+        }
+
+        if (filterTypeName != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[type_name]", filterTypeName));
+        }
+
+        if (filterMinLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[min_level]", filterMinLevel));
+        }
+
+        if (filterMaxLevel != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[max_level]", filterMaxLevel));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getItemsAllSearchValidateBeforeCall(String language, String game, String query, String filterTypeName, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'language' is set
+        if (language == null) {
+            throw new ApiException("Missing the required parameter 'language' when calling getItemsAllSearch(Async)");
+        }
+
+        // verify the required parameter 'game' is set
+        if (game == null) {
+            throw new ApiException("Missing the required parameter 'game' when calling getItemsAllSearch(Async)");
+        }
+
+        // verify the required parameter 'query' is set
+        if (query == null) {
+            throw new ApiException("Missing the required parameter 'query' when calling getItemsAllSearch(Async)");
+        }
+
+        return getItemsAllSearchCall(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, _callback);
+
+    }
 
     /**
      * Search All Items
-     *
      * Search in all names and descriptions of Dofus items (including all subtypes) with a query.
-     *
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterTypeName only results with the translated type name across all item_subtypes (optional)
+     * @param filterMinLevel only results which level is equal or above this value (optional)
+     * @param filterMaxLevel only results which level is equal or below this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @return List&lt;ItemsListEntryTyped&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Items Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
      */
-    @GET
-    @Path("/items/search")
-    @Produces({ "application/json" })
-    List<ItemsListEntryTyped> getItemsAllSearch(@PathParam("language") String language, @PathParam("game") String game, @QueryParam("query") String query, @QueryParam("filter[type_name]") String filterTypeName, @QueryParam("filter[min_level]") Integer filterMinLevel, @QueryParam("filter[max_level]") Integer filterMaxLevel, @QueryParam("limit") @DefaultValue("8") Integer limit) throws ApiException, ProcessingException;
+    public List<ItemsListEntryTyped> getItemsAllSearch(String language, String game, String query, String filterTypeName, Integer filterMinLevel, Integer filterMaxLevel, Integer limit) throws ApiException {
+        ApiResponse<List<ItemsListEntryTyped>> localVarResp = getItemsAllSearchWithHttpInfo(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search All Items
+     * Search in all names and descriptions of Dofus items (including all subtypes) with a query.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterTypeName only results with the translated type name across all item_subtypes (optional)
+     * @param filterMinLevel only results which level is equal or above this value (optional)
+     * @param filterMaxLevel only results which level is equal or below this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @return ApiResponse&lt;List&lt;ItemsListEntryTyped&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Items Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<ItemsListEntryTyped>> getItemsAllSearchWithHttpInfo(String language, String game, String query, String filterTypeName, Integer filterMinLevel, Integer filterMaxLevel, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = getItemsAllSearchValidateBeforeCall(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, null);
+        Type localVarReturnType = new TypeToken<List<ItemsListEntryTyped>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search All Items (asynchronously)
+     * Search in all names and descriptions of Dofus items (including all subtypes) with a query.
+     * @param language a valid language code (required)
+     * @param game  (required)
+     * @param query case sensitive search query (required)
+     * @param filterTypeName only results with the translated type name across all item_subtypes (optional)
+     * @param filterMinLevel only results which level is equal or above this value (optional)
+     * @param filterMaxLevel only results which level is equal or below this value (optional)
+     * @param limit maximum number of returned results (optional, default to 8)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Items Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request  Possibilities: - empty or no query  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found  Possibilities: - no hits for query </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getItemsAllSearchAsync(String language, String game, String query, String filterTypeName, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, final ApiCallback<List<ItemsListEntryTyped>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getItemsAllSearchValidateBeforeCall(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, _callback);
+        Type localVarReturnType = new TypeToken<List<ItemsListEntryTyped>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
 }

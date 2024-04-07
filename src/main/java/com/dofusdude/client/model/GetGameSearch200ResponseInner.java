@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -10,53 +10,60 @@
  * Do not edit the class manually.
  */
 
+
 package com.dofusdude.client.model;
 
+import java.util.Objects;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
 import java.lang.reflect.Type;
-import javax.json.bind.annotation.JsonbTypeDeserializer;
-import javax.json.bind.annotation.JsonbTypeSerializer;
-import javax.json.bind.serializer.DeserializationContext;
-import javax.json.bind.serializer.JsonbDeserializer;
-import javax.json.bind.serializer.JsonbSerializer;
-import javax.json.bind.serializer.SerializationContext;
-import javax.json.stream.JsonGenerator;
-import javax.json.stream.JsonParser;
-import javax.json.bind.annotation.JsonbProperty;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import com.dofusdude.client.JSON;
 
-public class GetGameSearch200ResponseInner  {
-  
- /**
-   * Name of the hit. The query could still have matched with the description only.
-  **/
-  @JsonbProperty("name")
+/**
+ * GetGameSearch200ResponseInner
+ */
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T13:48:16.474050177Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+public class GetGameSearch200ResponseInner {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
- /**
-   * Ankama ID for retrieving more details in the type specific endpoint.
-  **/
-  @JsonbProperty("ankama_id")
+  public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
+  @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
   private Integer ankamaId;
 
- /**
-   * Type classification
-  **/
-  @JsonbProperty("type")
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   private String type;
 
- /**
-   * Name of the hit. The query could still have matched with the description only.
-   * @return name
-  **/
-  public String getName() {
-    return name;
-  }
-
-  /**
-    * Set name
-  **/
-  public void setName(String name) {
-    this.name = name;
+  public GetGameSearch200ResponseInner() {
   }
 
   public GetGameSearch200ResponseInner name(String name) {
@@ -64,55 +71,82 @@ public class GetGameSearch200ResponseInner  {
     return this;
   }
 
- /**
-   * Ankama ID for retrieving more details in the type specific endpoint.
-   * @return ankamaId
+   /**
+   * Name of the hit. The query could still have matched with the description only.
+   * @return name
   **/
-  public Integer getAnkamaId() {
-    return ankamaId;
+  @jakarta.annotation.Nullable
+  public String getName() {
+    return name;
   }
 
-  /**
-    * Set ankamaId
-  **/
-  public void setAnkamaId(Integer ankamaId) {
-    this.ankamaId = ankamaId;
+  public void setName(String name) {
+    this.name = name;
   }
+
 
   public GetGameSearch200ResponseInner ankamaId(Integer ankamaId) {
     this.ankamaId = ankamaId;
     return this;
   }
 
- /**
-   * Type classification
-   * @return type
+   /**
+   * Ankama ID for retrieving more details in the type specific endpoint.
+   * @return ankamaId
   **/
-  public String getType() {
-    return type;
+  @jakarta.annotation.Nullable
+  public Integer getAnkamaId() {
+    return ankamaId;
   }
 
-  /**
-    * Set type
-  **/
-  public void setType(String type) {
-    this.type = type;
+  public void setAnkamaId(Integer ankamaId) {
+    this.ankamaId = ankamaId;
   }
+
 
   public GetGameSearch200ResponseInner type(String type) {
     this.type = type;
     return this;
   }
 
-
-  /**
-    * Create a string representation of this pojo.
+   /**
+   * Type classification
+   * @return type
   **/
+  @jakarta.annotation.Nullable
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    GetGameSearch200ResponseInner getGameSearch200ResponseInner = (GetGameSearch200ResponseInner) o;
+    return Objects.equals(this.name, getGameSearch200ResponseInner.name) &&
+        Objects.equals(this.ankamaId, getGameSearch200ResponseInner.ankamaId) &&
+        Objects.equals(this.type, getGameSearch200ResponseInner.type);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, ankamaId, type);
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetGameSearch200ResponseInner {\n");
-    
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    ankamaId: ").append(toIndentedString(ankamaId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -124,10 +158,104 @@ public class GetGameSearch200ResponseInner  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
+
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("name");
+    openapiFields.add("ankama_id");
+    openapiFields.add("type");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to GetGameSearch200ResponseInner
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!GetGameSearch200ResponseInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetGameSearch200ResponseInner is not found in the empty JSON string", GetGameSearch200ResponseInner.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!GetGameSearch200ResponseInner.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetGameSearch200ResponseInner` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetGameSearch200ResponseInner.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetGameSearch200ResponseInner' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetGameSearch200ResponseInner> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetGameSearch200ResponseInner.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetGameSearch200ResponseInner>() {
+           @Override
+           public void write(JsonWriter out, GetGameSearch200ResponseInner value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetGameSearch200ResponseInner read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetGameSearch200ResponseInner given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetGameSearch200ResponseInner
+  * @throws IOException if the JSON string is invalid with respect to GetGameSearch200ResponseInner
+  */
+  public static GetGameSearch200ResponseInner fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetGameSearch200ResponseInner.class);
+  }
+
+ /**
+  * Convert an instance of GetGameSearch200ResponseInner to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
+

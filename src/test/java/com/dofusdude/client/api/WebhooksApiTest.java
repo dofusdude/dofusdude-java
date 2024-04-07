@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -13,6 +13,7 @@
 
 package com.dofusdude.client.api;
 
+import com.dofusdude.client.ApiException;
 import com.dofusdude.client.model.AlmanaxWebhook;
 import com.dofusdude.client.model.CreateAlmanaxWebhook;
 import com.dofusdude.client.model.CreateRSSWebhook;
@@ -23,307 +24,230 @@ import com.dofusdude.client.model.PutRSSWebhook;
 import com.dofusdude.client.model.PutTwitterWebhook;
 import com.dofusdude.client.model.RssWebhook;
 import com.dofusdude.client.model.TwitterWebhook;
-import org.junit.Test;
-import org.junit.Before;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import org.eclipse.microprofile.rest.client.RestClientBuilder;
-
-import java.net.URL;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
- * dofusdude Test
- *
  * API tests for WebhooksApi
  */
+@Disabled
 public class WebhooksApiTest {
 
-    private WebhooksApi client;
-    private String baseUrl = "http://localhost:9080";
+    private final WebhooksApi api = new WebhooksApi();
 
-    @Before
-    public void setup() throws MalformedURLException {
-        client = RestClientBuilder.newBuilder()
-                        .baseUrl(new URL(baseUrl))
-                        .register(ApiException.class)
-                        .build(WebhooksApi.class);
-    }
-
-    
     /**
      * Unregister Almanax Hook
      *
      * Delete a Webhook from the service.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteWebhooksAlmanaxIdTest() {
-        // TODO: test validations
+    public void deleteWebhooksAlmanaxIdTest() throws ApiException {
         String id = null;
-        //api.deleteWebhooksAlmanaxId(id);
-        //assertNotNull(response);
-
-
+        api.deleteWebhooksAlmanaxId(id);
+        // TODO: test validations
     }
-    
+
     /**
      * Unregister RSS Hook
      *
      * Delete a Webhook from the service.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteWebhooksRssIdTest() {
-        // TODO: test validations
+    public void deleteWebhooksRssIdTest() throws ApiException {
         String id = null;
-        //api.deleteWebhooksRssId(id);
-        //assertNotNull(response);
-
-
+        api.deleteWebhooksRssId(id);
+        // TODO: test validations
     }
-    
+
     /**
      * Unregister Twitter Hook
      *
      * Delete a Webhook from the service.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteWebhooksTwitterIdTest() {
-        // TODO: test validations
+    public void deleteWebhooksTwitterIdTest() throws ApiException {
         String id = null;
-        //api.deleteWebhooksTwitterId(id);
-        //assertNotNull(response);
-
-
+        api.deleteWebhooksTwitterId(id);
+        // TODO: test validations
     }
-    
+
     /**
      * Get Almanax Hook Metainfo
      *
      * Get a list of all available subscriptions. 
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void getMetaWebhooksAlmanaxTest() {
+    public void getMetaWebhooksAlmanaxTest() throws ApiException {
+        GetMetaWebhooksTwitter200Response response = api.getMetaWebhooksAlmanax();
         // TODO: test validations
-        //GetMetaWebhooksTwitter200Response response = api.getMetaWebhooksAlmanax();
-        //assertNotNull(response);
-
-
     }
-    
+
     /**
      * Get RSS Hook Metainfo
      *
      * Get a list of all available subscriptions. 
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void getMetaWebhooksRssTest() {
+    public void getMetaWebhooksRssTest() throws ApiException {
+        GetMetaWebhooksTwitter200Response response = api.getMetaWebhooksRss();
         // TODO: test validations
-        //GetMetaWebhooksTwitter200Response response = api.getMetaWebhooksRss();
-        //assertNotNull(response);
-
-
     }
-    
+
     /**
      * Get Twitter Hook Metainfo
      *
      * Get a list of all available subscriptions. 
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void getMetaWebhooksTwitterTest() {
+    public void getMetaWebhooksTwitterTest() throws ApiException {
+        GetMetaWebhooksTwitter200Response response = api.getMetaWebhooksTwitter();
         // TODO: test validations
-        //GetMetaWebhooksTwitter200Response response = api.getMetaWebhooksTwitter();
-        //assertNotNull(response);
-
-
     }
-    
+
     /**
      * Get Almanax Hook
      *
      * Retrieve details about an existing Almanax Webhook with a given uuid.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void getWebhooksAlmanaxIdTest() {
-        // TODO: test validations
+    public void getWebhooksAlmanaxIdTest() throws ApiException {
         String id = null;
-        //AlmanaxWebhook response = api.getWebhooksAlmanaxId(id);
-        //assertNotNull(response);
-
-
+        AlmanaxWebhook response = api.getWebhooksAlmanaxId(id);
+        // TODO: test validations
     }
-    
+
     /**
      * Get RSS Hook
      *
      * Retrieve details about an existing RSS Webhook with a given uuid.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void getWebhooksRssIdTest() {
-        // TODO: test validations
+    public void getWebhooksRssIdTest() throws ApiException {
         String id = null;
-        //RssWebhook response = api.getWebhooksRssId(id);
-        //assertNotNull(response);
-
-
+        RssWebhook response = api.getWebhooksRssId(id);
+        // TODO: test validations
     }
-    
+
     /**
      * Get Twitter Hook
      *
      * Retrieve details about an existing Twitter Webhook with a given uuid.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void getWebhooksTwitterIdTest() {
-        // TODO: test validations
+    public void getWebhooksTwitterIdTest() throws ApiException {
         String id = null;
-        //TwitterWebhook response = api.getWebhooksTwitterId(id);
-        //assertNotNull(response);
-
-
+        TwitterWebhook response = api.getWebhooksTwitterId(id);
+        // TODO: test validations
     }
-    
+
     /**
      * Register Almanax Hook
      *
      * Register a new Webhook to post Almanax updates.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void postWebhooksAlmanaxTest() {
-        // TODO: test validations
+    public void postWebhooksAlmanaxTest() throws ApiException {
         CreateAlmanaxWebhook createAlmanaxWebhook = null;
-        //api.postWebhooksAlmanax(createAlmanaxWebhook);
-        //assertNotNull(response);
-
-
+        api.postWebhooksAlmanax(createAlmanaxWebhook);
+        // TODO: test validations
     }
-    
+
     /**
      * Register RSS Hook
      *
      * Register a new Webhook to post RSS news as soon as they are posted.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void postWebhooksRssTest() {
-        // TODO: test validations
+    public void postWebhooksRssTest() throws ApiException {
         CreateRSSWebhook createRSSWebhook = null;
-        //api.postWebhooksRss(createRSSWebhook);
-        //assertNotNull(response);
-
-
+        api.postWebhooksRss(createRSSWebhook);
+        // TODO: test validations
     }
-    
+
     /**
      * Register Twitter Hook
      *
      * Register a new Webhook to post Twitter updates as soon as they are posted.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void postWebhooksTwitterTest() {
-        // TODO: test validations
+    public void postWebhooksTwitterTest() throws ApiException {
         CreateTwitterWebhook createTwitterWebhook = null;
-        //api.postWebhooksTwitter(createTwitterWebhook);
-        //assertNotNull(response);
-
-
+        api.postWebhooksTwitter(createTwitterWebhook);
+        // TODO: test validations
     }
-    
+
     /**
      * Update Almanax Hook
      *
      * Update the details of an Almanax Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void putWebhooksAlmanaxIdTest() {
-        // TODO: test validations
+    public void putWebhooksAlmanaxIdTest() throws ApiException {
         String id = null;
         PutAlmanaxWebhook putAlmanaxWebhook = null;
-        //AlmanaxWebhook response = api.putWebhooksAlmanaxId(id, putAlmanaxWebhook);
-        //assertNotNull(response);
-
-
+        AlmanaxWebhook response = api.putWebhooksAlmanaxId(id, putAlmanaxWebhook);
+        // TODO: test validations
     }
-    
+
     /**
      * Update RSS Hook
      *
      * Update the details of a RSS Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void putWebhooksRssIdTest() {
-        // TODO: test validations
+    public void putWebhooksRssIdTest() throws ApiException {
         String id = null;
         PutRSSWebhook putRSSWebhook = null;
-        //RssWebhook response = api.putWebhooksRssId(id, putRSSWebhook);
-        //assertNotNull(response);
-
-
+        RssWebhook response = api.putWebhooksRssId(id, putRSSWebhook);
+        // TODO: test validations
     }
-    
+
     /**
      * Update Twitter Hook
      *
      * Update the details of a Twitter Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void putWebhooksTwitterIdTest() {
-        // TODO: test validations
+    public void putWebhooksTwitterIdTest() throws ApiException {
         String id = null;
         PutTwitterWebhook putTwitterWebhook = null;
-        //TwitterWebhook response = api.putWebhooksTwitterId(id, putTwitterWebhook);
-        //assertNotNull(response);
-
-
+        TwitterWebhook response = api.putWebhooksTwitterId(id, putTwitterWebhook);
+        // TODO: test validations
     }
-    
+
 }

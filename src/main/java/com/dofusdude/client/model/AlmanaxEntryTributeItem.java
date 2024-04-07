@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -10,48 +10,65 @@
  * Do not edit the class manually.
  */
 
+
 package com.dofusdude.client.model;
 
+import java.util.Objects;
 import com.dofusdude.client.model.ImageUrls;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
 import java.lang.reflect.Type;
-import javax.json.bind.annotation.JsonbTypeDeserializer;
-import javax.json.bind.annotation.JsonbTypeSerializer;
-import javax.json.bind.serializer.DeserializationContext;
-import javax.json.bind.serializer.JsonbDeserializer;
-import javax.json.bind.serializer.JsonbSerializer;
-import javax.json.bind.serializer.SerializationContext;
-import javax.json.stream.JsonGenerator;
-import javax.json.stream.JsonParser;
-import javax.json.bind.annotation.JsonbProperty;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import com.dofusdude.client.JSON;
 
-public class AlmanaxEntryTributeItem  {
-  
-  @JsonbProperty("ankama_id")
+/**
+ * AlmanaxEntryTributeItem
+ */
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T13:48:16.474050177Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+public class AlmanaxEntryTributeItem {
+  public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
+  @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
   private Integer ankamaId;
 
-  @JsonbProperty("image_urls")
+  public static final String SERIALIZED_NAME_IMAGE_URLS = "image_urls";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URLS)
   private ImageUrls imageUrls;
 
-  @JsonbProperty("name")
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  @JsonbProperty("subtype")
+  public static final String SERIALIZED_NAME_SUBTYPE = "subtype";
+  @SerializedName(SERIALIZED_NAME_SUBTYPE)
   private String subtype;
 
- /**
-   * Get ankamaId
-   * @return ankamaId
-  **/
-  public Integer getAnkamaId() {
-    return ankamaId;
-  }
-
-  /**
-    * Set ankamaId
-  **/
-  public void setAnkamaId(Integer ankamaId) {
-    this.ankamaId = ankamaId;
+  public AlmanaxEntryTributeItem() {
   }
 
   public AlmanaxEntryTributeItem ankamaId(Integer ankamaId) {
@@ -59,75 +76,102 @@ public class AlmanaxEntryTributeItem  {
     return this;
   }
 
- /**
-   * Get imageUrls
-   * @return imageUrls
+   /**
+   * Get ankamaId
+   * @return ankamaId
   **/
-  public ImageUrls getImageUrls() {
-    return imageUrls;
+  @jakarta.annotation.Nullable
+  public Integer getAnkamaId() {
+    return ankamaId;
   }
 
-  /**
-    * Set imageUrls
-  **/
-  public void setImageUrls(ImageUrls imageUrls) {
-    this.imageUrls = imageUrls;
+  public void setAnkamaId(Integer ankamaId) {
+    this.ankamaId = ankamaId;
   }
+
 
   public AlmanaxEntryTributeItem imageUrls(ImageUrls imageUrls) {
     this.imageUrls = imageUrls;
     return this;
   }
 
- /**
-   * Get name
-   * @return name
+   /**
+   * Get imageUrls
+   * @return imageUrls
   **/
-  public String getName() {
-    return name;
+  @jakarta.annotation.Nullable
+  public ImageUrls getImageUrls() {
+    return imageUrls;
   }
 
-  /**
-    * Set name
-  **/
-  public void setName(String name) {
-    this.name = name;
+  public void setImageUrls(ImageUrls imageUrls) {
+    this.imageUrls = imageUrls;
   }
+
 
   public AlmanaxEntryTributeItem name(String name) {
     this.name = name;
     return this;
   }
 
- /**
-   * Get subtype
-   * @return subtype
+   /**
+   * Get name
+   * @return name
   **/
-  public String getSubtype() {
-    return subtype;
+  @jakarta.annotation.Nullable
+  public String getName() {
+    return name;
   }
 
-  /**
-    * Set subtype
-  **/
-  public void setSubtype(String subtype) {
-    this.subtype = subtype;
+  public void setName(String name) {
+    this.name = name;
   }
+
 
   public AlmanaxEntryTributeItem subtype(String subtype) {
     this.subtype = subtype;
     return this;
   }
 
-
-  /**
-    * Create a string representation of this pojo.
+   /**
+   * Get subtype
+   * @return subtype
   **/
+  @jakarta.annotation.Nullable
+  public String getSubtype() {
+    return subtype;
+  }
+
+  public void setSubtype(String subtype) {
+    this.subtype = subtype;
+  }
+
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    AlmanaxEntryTributeItem almanaxEntryTributeItem = (AlmanaxEntryTributeItem) o;
+    return Objects.equals(this.ankamaId, almanaxEntryTributeItem.ankamaId) &&
+        Objects.equals(this.imageUrls, almanaxEntryTributeItem.imageUrls) &&
+        Objects.equals(this.name, almanaxEntryTributeItem.name) &&
+        Objects.equals(this.subtype, almanaxEntryTributeItem.subtype);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(ankamaId, imageUrls, name, subtype);
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlmanaxEntryTributeItem {\n");
-    
     sb.append("    ankamaId: ").append(toIndentedString(ankamaId)).append("\n");
     sb.append("    imageUrls: ").append(toIndentedString(imageUrls)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -140,10 +184,109 @@ public class AlmanaxEntryTributeItem  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
+
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("ankama_id");
+    openapiFields.add("image_urls");
+    openapiFields.add("name");
+    openapiFields.add("subtype");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to AlmanaxEntryTributeItem
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AlmanaxEntryTributeItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in AlmanaxEntryTributeItem is not found in the empty JSON string", AlmanaxEntryTributeItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!AlmanaxEntryTributeItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AlmanaxEntryTributeItem` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `image_urls`
+      if (jsonObj.get("image_urls") != null && !jsonObj.get("image_urls").isJsonNull()) {
+        ImageUrls.validateJsonElement(jsonObj.get("image_urls"));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("subtype") != null && !jsonObj.get("subtype").isJsonNull()) && !jsonObj.get("subtype").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `subtype` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subtype").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!AlmanaxEntryTributeItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'AlmanaxEntryTributeItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<AlmanaxEntryTributeItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(AlmanaxEntryTributeItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<AlmanaxEntryTributeItem>() {
+           @Override
+           public void write(JsonWriter out, AlmanaxEntryTributeItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public AlmanaxEntryTributeItem read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of AlmanaxEntryTributeItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of AlmanaxEntryTributeItem
+  * @throws IOException if the JSON string is invalid with respect to AlmanaxEntryTributeItem
+  */
+  public static AlmanaxEntryTributeItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AlmanaxEntryTributeItem.class);
+  }
+
+ /**
+  * Convert an instance of AlmanaxEntryTributeItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
+

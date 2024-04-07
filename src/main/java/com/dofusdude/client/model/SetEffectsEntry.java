@@ -1,4 +1,4 @@
-/**
+/*
  * dofusdude
  * # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
  *
@@ -10,75 +10,77 @@
  * Do not edit the class manually.
  */
 
+
 package com.dofusdude.client.model;
 
+import java.util.Objects;
 import com.dofusdude.client.model.SetEffectsEntryType;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
 import java.lang.reflect.Type;
-import javax.json.bind.annotation.JsonbTypeDeserializer;
-import javax.json.bind.annotation.JsonbTypeSerializer;
-import javax.json.bind.serializer.DeserializationContext;
-import javax.json.bind.serializer.JsonbDeserializer;
-import javax.json.bind.serializer.JsonbSerializer;
-import javax.json.bind.serializer.SerializationContext;
-import javax.json.stream.JsonGenerator;
-import javax.json.stream.JsonParser;
-import javax.json.bind.annotation.JsonbProperty;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import com.dofusdude.client.JSON;
 
-public class SetEffectsEntry  {
-  
- /**
-   * minimum int value, can be a single if ignore_int_max and no ignore_int_min
-  **/
-  @JsonbProperty("int_minimum")
+/**
+ * SetEffectsEntry
+ */
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T13:48:16.474050177Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+public class SetEffectsEntry {
+  public static final String SERIALIZED_NAME_INT_MINIMUM = "int_minimum";
+  @SerializedName(SERIALIZED_NAME_INT_MINIMUM)
   private Integer intMinimum;
 
- /**
-   * maximum int value, if not ignore_int_max and not ignore_int_min, the effect has a range value
-  **/
-  @JsonbProperty("int_maximum")
+  public static final String SERIALIZED_NAME_INT_MAXIMUM = "int_maximum";
+  @SerializedName(SERIALIZED_NAME_INT_MAXIMUM)
   private Integer intMaximum;
 
-  @JsonbProperty("type")
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   private SetEffectsEntryType type;
 
- /**
-   * ignore the int min field because the actual value is a string. For readability the templated field is the only important field in this case. 
-  **/
-  @JsonbProperty("ignore_int_min")
+  public static final String SERIALIZED_NAME_IGNORE_INT_MIN = "ignore_int_min";
+  @SerializedName(SERIALIZED_NAME_IGNORE_INT_MIN)
   private Boolean ignoreIntMin;
 
- /**
-   * ignore the int max field, if ignore_int_min is true, int min is a single value
-  **/
-  @JsonbProperty("ignore_int_max")
+  public static final String SERIALIZED_NAME_IGNORE_INT_MAX = "ignore_int_max";
+  @SerializedName(SERIALIZED_NAME_IGNORE_INT_MAX)
   private Boolean ignoreIntMax;
 
- /**
-   * all fields from above encoded in a single string
-  **/
-  @JsonbProperty("formatted")
+  public static final String SERIALIZED_NAME_FORMATTED = "formatted";
+  @SerializedName(SERIALIZED_NAME_FORMATTED)
   private String formatted;
 
- /**
-   * how many items it needs to trigger this effect with the given set
-  **/
-  @JsonbProperty("item_combination")
+  public static final String SERIALIZED_NAME_ITEM_COMBINATION = "item_combination";
+  @SerializedName(SERIALIZED_NAME_ITEM_COMBINATION)
   private Integer itemCombination;
 
- /**
-   * minimum int value, can be a single if ignore_int_max and no ignore_int_min
-   * @return intMinimum
-  **/
-  public Integer getIntMinimum() {
-    return intMinimum;
-  }
-
-  /**
-    * Set intMinimum
-  **/
-  public void setIntMinimum(Integer intMinimum) {
-    this.intMinimum = intMinimum;
+  public SetEffectsEntry() {
   }
 
   public SetEffectsEntry intMinimum(Integer intMinimum) {
@@ -86,135 +88,162 @@ public class SetEffectsEntry  {
     return this;
   }
 
- /**
-   * maximum int value, if not ignore_int_max and not ignore_int_min, the effect has a range value
-   * @return intMaximum
+   /**
+   * minimum int value, can be a single if ignore_int_max and no ignore_int_min
+   * @return intMinimum
   **/
-  public Integer getIntMaximum() {
-    return intMaximum;
+  @jakarta.annotation.Nullable
+  public Integer getIntMinimum() {
+    return intMinimum;
   }
 
-  /**
-    * Set intMaximum
-  **/
-  public void setIntMaximum(Integer intMaximum) {
-    this.intMaximum = intMaximum;
+  public void setIntMinimum(Integer intMinimum) {
+    this.intMinimum = intMinimum;
   }
+
 
   public SetEffectsEntry intMaximum(Integer intMaximum) {
     this.intMaximum = intMaximum;
     return this;
   }
 
- /**
-   * Get type
-   * @return type
+   /**
+   * maximum int value, if not ignore_int_max and not ignore_int_min, the effect has a range value
+   * @return intMaximum
   **/
-  public SetEffectsEntryType getType() {
-    return type;
+  @jakarta.annotation.Nullable
+  public Integer getIntMaximum() {
+    return intMaximum;
   }
 
-  /**
-    * Set type
-  **/
-  public void setType(SetEffectsEntryType type) {
-    this.type = type;
+  public void setIntMaximum(Integer intMaximum) {
+    this.intMaximum = intMaximum;
   }
+
 
   public SetEffectsEntry type(SetEffectsEntryType type) {
     this.type = type;
     return this;
   }
 
- /**
-   * ignore the int min field because the actual value is a string. For readability the templated field is the only important field in this case. 
-   * @return ignoreIntMin
+   /**
+   * Get type
+   * @return type
   **/
-  public Boolean getIgnoreIntMin() {
-    return ignoreIntMin;
+  @jakarta.annotation.Nullable
+  public SetEffectsEntryType getType() {
+    return type;
   }
 
-  /**
-    * Set ignoreIntMin
-  **/
-  public void setIgnoreIntMin(Boolean ignoreIntMin) {
-    this.ignoreIntMin = ignoreIntMin;
+  public void setType(SetEffectsEntryType type) {
+    this.type = type;
   }
+
 
   public SetEffectsEntry ignoreIntMin(Boolean ignoreIntMin) {
     this.ignoreIntMin = ignoreIntMin;
     return this;
   }
 
- /**
-   * ignore the int max field, if ignore_int_min is true, int min is a single value
-   * @return ignoreIntMax
+   /**
+   * ignore the int min field because the actual value is a string. For readability the templated field is the only important field in this case. 
+   * @return ignoreIntMin
   **/
-  public Boolean getIgnoreIntMax() {
-    return ignoreIntMax;
+  @jakarta.annotation.Nullable
+  public Boolean getIgnoreIntMin() {
+    return ignoreIntMin;
   }
 
-  /**
-    * Set ignoreIntMax
-  **/
-  public void setIgnoreIntMax(Boolean ignoreIntMax) {
-    this.ignoreIntMax = ignoreIntMax;
+  public void setIgnoreIntMin(Boolean ignoreIntMin) {
+    this.ignoreIntMin = ignoreIntMin;
   }
+
 
   public SetEffectsEntry ignoreIntMax(Boolean ignoreIntMax) {
     this.ignoreIntMax = ignoreIntMax;
     return this;
   }
 
- /**
-   * all fields from above encoded in a single string
-   * @return formatted
+   /**
+   * ignore the int max field, if ignore_int_min is true, int min is a single value
+   * @return ignoreIntMax
   **/
-  public String getFormatted() {
-    return formatted;
+  @jakarta.annotation.Nullable
+  public Boolean getIgnoreIntMax() {
+    return ignoreIntMax;
   }
 
-  /**
-    * Set formatted
-  **/
-  public void setFormatted(String formatted) {
-    this.formatted = formatted;
+  public void setIgnoreIntMax(Boolean ignoreIntMax) {
+    this.ignoreIntMax = ignoreIntMax;
   }
+
 
   public SetEffectsEntry formatted(String formatted) {
     this.formatted = formatted;
     return this;
   }
 
- /**
-   * how many items it needs to trigger this effect with the given set
-   * @return itemCombination
+   /**
+   * all fields from above encoded in a single string
+   * @return formatted
   **/
-  public Integer getItemCombination() {
-    return itemCombination;
+  @jakarta.annotation.Nullable
+  public String getFormatted() {
+    return formatted;
   }
 
-  /**
-    * Set itemCombination
-  **/
-  public void setItemCombination(Integer itemCombination) {
-    this.itemCombination = itemCombination;
+  public void setFormatted(String formatted) {
+    this.formatted = formatted;
   }
+
 
   public SetEffectsEntry itemCombination(Integer itemCombination) {
     this.itemCombination = itemCombination;
     return this;
   }
 
-
-  /**
-    * Create a string representation of this pojo.
+   /**
+   * how many items it needs to trigger this effect with the given set
+   * @return itemCombination
   **/
+  @jakarta.annotation.Nullable
+  public Integer getItemCombination() {
+    return itemCombination;
+  }
+
+  public void setItemCombination(Integer itemCombination) {
+    this.itemCombination = itemCombination;
+  }
+
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    SetEffectsEntry setEffectsEntry = (SetEffectsEntry) o;
+    return Objects.equals(this.intMinimum, setEffectsEntry.intMinimum) &&
+        Objects.equals(this.intMaximum, setEffectsEntry.intMaximum) &&
+        Objects.equals(this.type, setEffectsEntry.type) &&
+        Objects.equals(this.ignoreIntMin, setEffectsEntry.ignoreIntMin) &&
+        Objects.equals(this.ignoreIntMax, setEffectsEntry.ignoreIntMax) &&
+        Objects.equals(this.formatted, setEffectsEntry.formatted) &&
+        Objects.equals(this.itemCombination, setEffectsEntry.itemCombination);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(intMinimum, intMaximum, type, ignoreIntMin, ignoreIntMax, formatted, itemCombination);
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SetEffectsEntry {\n");
-    
     sb.append("    intMinimum: ").append(toIndentedString(intMinimum)).append("\n");
     sb.append("    intMaximum: ").append(toIndentedString(intMaximum)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -230,10 +259,109 @@ public class SetEffectsEntry  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
+
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("int_minimum");
+    openapiFields.add("int_maximum");
+    openapiFields.add("type");
+    openapiFields.add("ignore_int_min");
+    openapiFields.add("ignore_int_max");
+    openapiFields.add("formatted");
+    openapiFields.add("item_combination");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SetEffectsEntry
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SetEffectsEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SetEffectsEntry is not found in the empty JSON string", SetEffectsEntry.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!SetEffectsEntry.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetEffectsEntry` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        SetEffectsEntryType.validateJsonElement(jsonObj.get("type"));
+      }
+      if ((jsonObj.get("formatted") != null && !jsonObj.get("formatted").isJsonNull()) && !jsonObj.get("formatted").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `formatted` to be a primitive type in the JSON string but got `%s`", jsonObj.get("formatted").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SetEffectsEntry.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SetEffectsEntry' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SetEffectsEntry> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SetEffectsEntry.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SetEffectsEntry>() {
+           @Override
+           public void write(JsonWriter out, SetEffectsEntry value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SetEffectsEntry read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SetEffectsEntry given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SetEffectsEntry
+  * @throws IOException if the JSON string is invalid with respect to SetEffectsEntry
+  */
+  public static SetEffectsEntry fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SetEffectsEntry.class);
+  }
+
+ /**
+  * Convert an instance of SetEffectsEntry to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
+
