@@ -1,26 +1,27 @@
 # dofusdude-java
 
 dofusdude
-- API version: 0.8.3
-  - Build date: 2024-04-07T14:00:59.454960382Z[Etc/UTC]
+- API version: 0.9.0
+  - Build date: 2024-04-07T21:36:12.182827189Z[Etc/UTC]
   - Generator version: 7.5.0-SNAPSHOT
 
 # A project for you - the developer.
 The all-in-one toolbelt for your next Ankama related project.
 
 ## Client SDKs
-- [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save
-- [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save
-- [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo
-- [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude
+- [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save`
+- [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save`
+- [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo`
+- [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude`
 - [PHP](https://github.com/dofusdude/dofusdude-php)
+- [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup
 
 Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.
 
 Your favorite language is missing? Please let me know!
 
 # Main Features
-- 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.
+- 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.
 
 - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.
 
@@ -36,17 +37,8 @@ Your favorite language is missing? Please let me know!
 
 - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.
 
-... and much more on the Roadmap on my Discord. 
+... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).
 
-## Deploy now. Use forever.
-Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.
-
-There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.
-
-## Thank you!
-I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.
-
-The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
 
   For more information, please visit [https://discord.gg/3EtHskZD8h](https://discord.gg/3EtHskZD8h)
 
@@ -83,7 +75,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>0.8.3</version>
+  <version>0.9.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -99,7 +91,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:0.8.3"
+     implementation "com.dofusdude:dofusdude-java:0.9.0"
   }
 ```
 
@@ -113,7 +105,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-0.8.3.jar`
+* `target/dofusdude-java-0.9.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
