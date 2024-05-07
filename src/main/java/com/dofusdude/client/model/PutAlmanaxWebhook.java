@@ -58,7 +58,7 @@ import com.dofusdude.client.JSON;
 /**
  * PutAlmanaxWebhook
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T13:23:04.641753611Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T13:27:52.033477054Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class PutAlmanaxWebhook {
   public static final String SERIALIZED_NAME_BONUS_WHITELIST = "bonus_whitelist";
   @SerializedName(SERIALIZED_NAME_BONUS_WHITELIST)

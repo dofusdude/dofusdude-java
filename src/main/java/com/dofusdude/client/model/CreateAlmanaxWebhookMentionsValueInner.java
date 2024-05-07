@@ -50,7 +50,7 @@ import com.dofusdude.client.JSON;
 /**
  * Mention
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T13:23:04.641753611Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T13:27:52.033477054Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class CreateAlmanaxWebhookMentionsValueInner {
   public static final String SERIALIZED_NAME_DISCORD_ID = "discord_id";
   @SerializedName(SERIALIZED_NAME_DISCORD_ID)
