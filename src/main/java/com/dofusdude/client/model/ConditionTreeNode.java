@@ -62,7 +62,7 @@ import com.google.gson.JsonParseException;
 
 import com.dofusdude.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T21:36:12.182827189Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T10:01:07.705593984Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class ConditionTreeNode extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ConditionTreeNode.class.getName());
 
@@ -87,15 +87,15 @@ public class ConditionTreeNode extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `ConditionTreeRelation`
                     if (value.getActualInstance() instanceof ConditionTreeRelation) {
-                      JsonElement element = adapterConditionTreeRelation.toJsonTree((ConditionTreeRelation)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterConditionTreeRelation.toJsonTree((ConditionTreeRelation)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `ConditionTreeLeaf`
                     if (value.getActualInstance() instanceof ConditionTreeLeaf) {
-                      JsonElement element = adapterConditionTreeLeaf.toJsonTree((ConditionTreeLeaf)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterConditionTreeLeaf.toJsonTree((ConditionTreeLeaf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ConditionTreeLeaf, ConditionTreeRelation");
                 }
@@ -111,27 +111,27 @@ public class ConditionTreeNode extends AbstractOpenApiSchema {
 
                     // deserialize ConditionTreeRelation
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      ConditionTreeRelation.validateJsonElement(jsonElement);
-                      actualAdapter = adapterConditionTreeRelation;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'ConditionTreeRelation'");
+                        // validate the JSON object to see if any exception is thrown
+                        ConditionTreeRelation.validateJsonElement(jsonElement);
+                        actualAdapter = adapterConditionTreeRelation;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ConditionTreeRelation'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for ConditionTreeRelation failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'ConditionTreeRelation'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ConditionTreeRelation failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ConditionTreeRelation'", e);
                     }
                     // deserialize ConditionTreeLeaf
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      ConditionTreeLeaf.validateJsonElement(jsonElement);
-                      actualAdapter = adapterConditionTreeLeaf;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'ConditionTreeLeaf'");
+                        // validate the JSON object to see if any exception is thrown
+                        ConditionTreeLeaf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterConditionTreeLeaf;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ConditionTreeLeaf'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for ConditionTreeLeaf failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'ConditionTreeLeaf'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ConditionTreeLeaf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ConditionTreeLeaf'", e);
                     }
 
                     if (match == 1) {
@@ -201,6 +201,7 @@ public class ConditionTreeNode extends AbstractOpenApiSchema {
      *
      * @return The actual instance (ConditionTreeLeaf, ConditionTreeRelation)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -227,55 +228,55 @@ public class ConditionTreeNode extends AbstractOpenApiSchema {
         return (ConditionTreeLeaf)super.getActualInstance();
     }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ConditionTreeNode
-  */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with ConditionTreeRelation
-    try {
-      ConditionTreeRelation.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for ConditionTreeRelation failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to ConditionTreeNode
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with ConditionTreeRelation
+        try {
+            ConditionTreeRelation.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for ConditionTreeRelation failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with ConditionTreeLeaf
+        try {
+            ConditionTreeLeaf.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for ConditionTreeLeaf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for ConditionTreeNode with oneOf schemas: ConditionTreeLeaf, ConditionTreeRelation. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    // validate the json string with ConditionTreeLeaf
-    try {
-      ConditionTreeLeaf.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for ConditionTreeLeaf failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ConditionTreeNode with oneOf schemas: ConditionTreeLeaf, ConditionTreeRelation. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
-    }
-  }
 
- /**
-  * Create an instance of ConditionTreeNode given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConditionTreeNode
-  * @throws IOException if the JSON string is invalid with respect to ConditionTreeNode
-  */
-  public static ConditionTreeNode fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ConditionTreeNode.class);
-  }
+    /**
+     * Create an instance of ConditionTreeNode given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of ConditionTreeNode
+     * @throws IOException if the JSON string is invalid with respect to ConditionTreeNode
+     */
+    public static ConditionTreeNode fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, ConditionTreeNode.class);
+    }
 
- /**
-  * Convert an instance of ConditionTreeNode to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of ConditionTreeNode to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

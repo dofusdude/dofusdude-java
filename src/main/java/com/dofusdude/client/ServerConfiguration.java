@@ -5,6 +5,7 @@ import java.util.Map;
 /**
  * Representing a Server configuration.
  */
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T10:01:07.705593984Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class ServerConfiguration {
     public String URL;
     public String description;
