@@ -52,7 +52,7 @@ import com.dofusdude.client.JSON;
 /**
  * ConditionTreeRelation
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T16:17:13.173014837Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T16:58:24.837338827Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class ConditionTreeRelation {
   public static final String SERIALIZED_NAME_IS_OPERAND = "is_operand";
   @SerializedName(SERIALIZED_NAME_IS_OPERAND)
