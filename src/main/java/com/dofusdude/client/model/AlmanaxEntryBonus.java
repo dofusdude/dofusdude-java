@@ -50,7 +50,7 @@ import com.dofusdude.client.JSON;
 /**
  * AlmanaxEntryBonus
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:32:09.498918130Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:47:39.364817240Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class AlmanaxEntryBonus {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
