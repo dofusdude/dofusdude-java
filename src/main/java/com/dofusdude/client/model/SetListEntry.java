@@ -53,7 +53,7 @@ import com.dofusdude.client.JSON;
 /**
  * SetListEntry
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-07T14:09:31.214283751Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:08:03.492983554Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class SetListEntry {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
