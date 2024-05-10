@@ -53,7 +53,7 @@ import com.dofusdude.client.JSON;
 /**
  * MountsListPaged
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:16:28.039984766Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:32:09.498918130Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class MountsListPaged {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
