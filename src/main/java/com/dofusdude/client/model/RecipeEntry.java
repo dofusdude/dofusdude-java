@@ -49,7 +49,7 @@ import com.dofusdude.client.JSON;
 /**
  * RecipeEntry
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:47:39.364817240Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T16:17:13.173014837Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class RecipeEntry {
   public static final String SERIALIZED_NAME_ITEM_ANKAMA_ID = "item_ankama_id";
   @SerializedName(SERIALIZED_NAME_ITEM_ANKAMA_ID)

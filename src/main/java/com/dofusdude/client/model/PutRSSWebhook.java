@@ -54,7 +54,7 @@ import com.dofusdude.client.JSON;
 /**
  * 
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T15:47:39.364817240Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T16:17:13.173014837Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class PutRSSWebhook {
   public static final String SERIALIZED_NAME_WHITELIST = "whitelist";
   @SerializedName(SERIALIZED_NAME_WHITELIST)
