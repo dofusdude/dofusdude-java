@@ -10,7 +10,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getGameSearch"></a>
 # **getGameSearch**
-> List&lt;GetGameSearch200ResponseInner&gt; getGameSearch(language, game, query, filterType, limit, fieldsItem)
+> List&lt;GetGameSearch200ResponseInner&gt; getGameSearch(language, game, query, filterType, limit, fieldsItem, filterTypeEnum)
 
 Game Search
 
@@ -37,8 +37,9 @@ public class Example {
     Set<String> filterType = Arrays.asList(); // Set<String> | only results with all specific type
     Integer limit = 8; // Integer | maximum number of returned results
     Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed.
+    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      List<GetGameSearch200ResponseInner> result = apiInstance.getGameSearch(language, game, query, filterType, limit, fieldsItem);
+      List<GetGameSearch200ResponseInner> result = apiInstance.getGameSearch(language, game, query, filterType, limit, fieldsItem, filterTypeEnum);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GameApi#getGameSearch");
@@ -61,6 +62,7 @@ public class Example {
 | **filterType** | [**Set&lt;String&gt;**](String.md)| only results with all specific type | [optional] [enum: items-consumables, items-cosmetics, items-resources, items-equipment, items-quest_items, mounts, sets] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
 | **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | [optional] [enum: level, image_urls, type] |
+| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
@@ -84,7 +86,7 @@ No authorization required
 
 <a id="getItemsAllSearch"></a>
 # **getItemsAllSearch**
-> List&lt;ItemsListEntryTyped&gt; getItemsAllSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit)
+> List&lt;ItemsListEntryTyped&gt; getItemsAllSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum)
 
 Search All Items
 
@@ -112,8 +114,9 @@ public class Example {
     Integer filterMinLevel = 190; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 200; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
+    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      List<ItemsListEntryTyped> result = apiInstance.getItemsAllSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+      List<ItemsListEntryTyped> result = apiInstance.getItemsAllSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GameApi#getItemsAllSearch");
@@ -137,6 +140,7 @@ public class Example {
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
+| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 

@@ -1,9 +1,9 @@
 # dofusdude-java
 
 dofusdude
-- API version: 0.9.0
-  - Build date: 2024-05-10T16:58:24.837338827Z[Etc/UTC]
-  - Generator version: 7.6.0-SNAPSHOT
+- API version: 0.9.1
+  - Build date: 2024-10-06T12:03:55.532645948Z[Etc/UTC]
+  - Generator version: 7.9.0-SNAPSHOT
 
 # A project for you - the developer.
 The all-in-one toolbelt for your next Ankama related project.
@@ -75,7 +75,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>0.9.0</version>
+  <version>0.9.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -91,7 +91,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:0.9.0"
+     implementation "com.dofusdude:dofusdude-java:0.9.1"
   }
 ```
 
@@ -105,7 +105,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-0.9.0.jar`
+* `target/dofusdude-java-0.9.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -118,7 +118,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 import com.dofusdude.client.ApiClient;
 import com.dofusdude.client.ApiException;
 import com.dofusdude.client.Configuration;
-import com.dofusdude.client.models.*;
+import com.dofusdude.client.model.*;
 import com.dofusdude.client.api.AlmanaxApi;
 
 public class Example {
@@ -167,9 +167,11 @@ Class | Method | HTTP request | Description
 *GameApi* | [**getGameSearch**](docs/GameApi.md#getGameSearch) | **GET** /{game}/{language}/search | Game Search
 *GameApi* | [**getItemsAllSearch**](docs/GameApi.md#getItemsAllSearch) | **GET** /{game}/{language}/items/search | Search All Items
 *MetaApi* | [**getGameSearchTypes**](docs/MetaApi.md#getGameSearchTypes) | **GET** /dofus2/meta/search/types | Available Game Search Types
+*MetaApi* | [**getItemTypes**](docs/MetaApi.md#getItemTypes) | **GET** /dofus2/meta/items/types | Available Item Types
 *MetaApi* | [**getMetaAlmanaxBonuses**](docs/MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
 *MetaApi* | [**getMetaAlmanaxBonusesSearch**](docs/MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
 *MetaApi* | [**getMetaElements**](docs/MetaApi.md#getMetaElements) | **GET** /dofus2/meta/elements | Effects and Condition Elements
+*MetaApi* | [**getMetaVersion**](docs/MetaApi.md#getMetaVersion) | **GET** /dofus2/meta/version | Game Version
 *MountsApi* | [**getAllMountsList**](docs/MountsApi.md#getAllMountsList) | **GET** /{game}/{language}/mounts/all | List All Mounts
 *MountsApi* | [**getMountsList**](docs/MountsApi.md#getMountsList) | **GET** /{game}/{language}/mounts | List Mounts
 *MountsApi* | [**getMountsSearch**](docs/MountsApi.md#getMountsSearch) | **GET** /{game}/{language}/mounts/search | Search Mounts
@@ -227,6 +229,7 @@ Class | Method | HTTP request | Description
  - [EquipmentSet](docs/EquipmentSet.md)
  - [GetGameSearch200ResponseInner](docs/GetGameSearch200ResponseInner.md)
  - [GetMetaAlmanaxBonuses200ResponseInner](docs/GetMetaAlmanaxBonuses200ResponseInner.md)
+ - [GetMetaVersion200Response](docs/GetMetaVersion200Response.md)
  - [GetMetaWebhooksTwitter200Response](docs/GetMetaWebhooksTwitter200Response.md)
  - [ImageUrls](docs/ImageUrls.md)
  - [ItemListEntry](docs/ItemListEntry.md)

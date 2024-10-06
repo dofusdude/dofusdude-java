@@ -14,17 +14,13 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
-import com.dofusdude.client.model.LinksPaged;
-import com.dofusdude.client.model.SetListEntry;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,64 +46,79 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * SetsListPaged
+ * GetMetaVersion200Response
  */
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-06T12:03:55.532645948Z[Etc/UTC]", comments = "Generator version: 7.9.0-SNAPSHOT")
-public class SetsListPaged {
-  public static final String SERIALIZED_NAME_LINKS = "_links";
-  @SerializedName(SERIALIZED_NAME_LINKS)
-  private LinksPaged links;
+public class GetMetaVersion200Response {
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
 
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<SetListEntry> items = new ArrayList<>();
+  public static final String SERIALIZED_NAME_RELEASE = "release";
+  @SerializedName(SERIALIZED_NAME_RELEASE)
+  private String release;
 
-  public SetsListPaged() {
+  public static final String SERIALIZED_NAME_UPDATE_STAMP = "update_stamp";
+  @SerializedName(SERIALIZED_NAME_UPDATE_STAMP)
+  private String updateStamp;
+
+  public GetMetaVersion200Response() {
   }
 
-  public SetsListPaged links(LinksPaged links) {
-    this.links = links;
+  public GetMetaVersion200Response version(String version) {
+    this.version = version;
     return this;
   }
 
   /**
-   * Get links
-   * @return links
+   * Get version
+   * @return version
    */
   @jakarta.annotation.Nullable
-  public LinksPaged getLinks() {
-    return links;
+  public String getVersion() {
+    return version;
   }
 
-  public void setLinks(LinksPaged links) {
-    this.links = links;
+  public void setVersion(String version) {
+    this.version = version;
   }
 
 
-  public SetsListPaged items(List<SetListEntry> items) {
-    this.items = items;
-    return this;
-  }
-
-  public SetsListPaged addItemsItem(SetListEntry itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<>();
-    }
-    this.items.add(itemsItem);
+  public GetMetaVersion200Response release(String release) {
+    this.release = release;
     return this;
   }
 
   /**
-   * Get items
-   * @return items
+   * Get release
+   * @return release
    */
   @jakarta.annotation.Nullable
-  public List<SetListEntry> getItems() {
-    return items;
+  public String getRelease() {
+    return release;
   }
 
-  public void setItems(List<SetListEntry> items) {
-    this.items = items;
+  public void setRelease(String release) {
+    this.release = release;
+  }
+
+
+  public GetMetaVersion200Response updateStamp(String updateStamp) {
+    this.updateStamp = updateStamp;
+    return this;
+  }
+
+  /**
+   * Get updateStamp
+   * @return updateStamp
+   */
+  @jakarta.annotation.Nullable
+  public String getUpdateStamp() {
+    return updateStamp;
+  }
+
+  public void setUpdateStamp(String updateStamp) {
+    this.updateStamp = updateStamp;
   }
 
 
@@ -120,22 +131,24 @@ public class SetsListPaged {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SetsListPaged setsListPaged = (SetsListPaged) o;
-    return Objects.equals(this.links, setsListPaged.links) &&
-        Objects.equals(this.items, setsListPaged.items);
+    GetMetaVersion200Response getMetaVersion200Response = (GetMetaVersion200Response) o;
+    return Objects.equals(this.version, getMetaVersion200Response.version) &&
+        Objects.equals(this.release, getMetaVersion200Response.release) &&
+        Objects.equals(this.updateStamp, getMetaVersion200Response.updateStamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, items);
+    return Objects.hash(version, release, updateStamp);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SetsListPaged {\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
+    sb.append("class GetMetaVersion200Response {\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    release: ").append(toIndentedString(release)).append("\n");
+    sb.append("    updateStamp: ").append(toIndentedString(updateStamp)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,8 +171,9 @@ public class SetsListPaged {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("items");
+    openapiFields.add("version");
+    openapiFields.add("release");
+    openapiFields.add("update_stamp");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -169,40 +183,31 @@ public class SetsListPaged {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SetsListPaged
+   * @throws IOException if the JSON Element is invalid with respect to GetMetaVersion200Response
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!SetsListPaged.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SetsListPaged is not found in the empty JSON string", SetsListPaged.openapiRequiredFields.toString()));
+        if (!GetMetaVersion200Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetMetaVersion200Response is not found in the empty JSON string", GetMetaVersion200Response.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!SetsListPaged.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetsListPaged` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GetMetaVersion200Response.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetMetaVersion200Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `_links`
-      if (jsonObj.get("_links") != null && !jsonObj.get("_links").isJsonNull()) {
-        LinksPaged.validateJsonElement(jsonObj.get("_links"));
+      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
-      if (jsonObj.get("items") != null && !jsonObj.get("items").isJsonNull()) {
-        JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
-        if (jsonArrayitems != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("items").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
-          }
-
-          // validate the optional field `items` (array)
-          for (int i = 0; i < jsonArrayitems.size(); i++) {
-            SetListEntry.validateJsonElement(jsonArrayitems.get(i));
-          };
-        }
+      if ((jsonObj.get("release") != null && !jsonObj.get("release").isJsonNull()) && !jsonObj.get("release").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `release` to be a primitive type in the JSON string but got `%s`", jsonObj.get("release").toString()));
+      }
+      if ((jsonObj.get("update_stamp") != null && !jsonObj.get("update_stamp").isJsonNull()) && !jsonObj.get("update_stamp").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `update_stamp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("update_stamp").toString()));
       }
   }
 
@@ -210,22 +215,22 @@ public class SetsListPaged {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SetsListPaged.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SetsListPaged' and its subtypes
+       if (!GetMetaVersion200Response.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetMetaVersion200Response' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SetsListPaged> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SetsListPaged.class));
+       final TypeAdapter<GetMetaVersion200Response> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetMetaVersion200Response.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<SetsListPaged>() {
+       return (TypeAdapter<T>) new TypeAdapter<GetMetaVersion200Response>() {
            @Override
-           public void write(JsonWriter out, SetsListPaged value) throws IOException {
+           public void write(JsonWriter out, GetMetaVersion200Response value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public SetsListPaged read(JsonReader in) throws IOException {
+           public GetMetaVersion200Response read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -236,18 +241,18 @@ public class SetsListPaged {
   }
 
   /**
-   * Create an instance of SetsListPaged given an JSON string
+   * Create an instance of GetMetaVersion200Response given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of SetsListPaged
-   * @throws IOException if the JSON string is invalid with respect to SetsListPaged
+   * @return An instance of GetMetaVersion200Response
+   * @throws IOException if the JSON string is invalid with respect to GetMetaVersion200Response
    */
-  public static SetsListPaged fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SetsListPaged.class);
+  public static GetMetaVersion200Response fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetMetaVersion200Response.class);
   }
 
   /**
-   * Convert an instance of SetsListPaged to an JSON string
+   * Convert an instance of GetMetaVersion200Response to an JSON string
    *
    * @return JSON string
    */

@@ -33,6 +33,7 @@ docs/EquipmentSet.md
 docs/GameApi.md
 docs/GetGameSearch200ResponseInner.md
 docs/GetMetaAlmanaxBonuses200ResponseInner.md
+docs/GetMetaVersion200Response.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/ImageUrls.md
 docs/ItemListEntry.md
@@ -124,6 +125,7 @@ src/main/java/com/dofusdude/client/model/Equipment.java
 src/main/java/com/dofusdude/client/model/EquipmentSet.java
 src/main/java/com/dofusdude/client/model/GetGameSearch200ResponseInner.java
 src/main/java/com/dofusdude/client/model/GetMetaAlmanaxBonuses200ResponseInner.java
+src/main/java/com/dofusdude/client/model/GetMetaVersion200Response.java
 src/main/java/com/dofusdude/client/model/GetMetaWebhooksTwitter200Response.java
 src/main/java/com/dofusdude/client/model/ImageUrls.java
 src/main/java/com/dofusdude/client/model/ItemListEntry.java
@@ -182,6 +184,7 @@ src/test/java/com/dofusdude/client/model/EquipmentSetTest.java
 src/test/java/com/dofusdude/client/model/EquipmentTest.java
 src/test/java/com/dofusdude/client/model/GetGameSearch200ResponseInnerTest.java
 src/test/java/com/dofusdude/client/model/GetMetaAlmanaxBonuses200ResponseInnerTest.java
+src/test/java/com/dofusdude/client/model/GetMetaVersion200ResponseTest.java
 src/test/java/com/dofusdude/client/model/GetMetaWebhooksTwitter200ResponseTest.java
 src/test/java/com/dofusdude/client/model/ImageUrlsTest.java
 src/test/java/com/dofusdude/client/model/ItemListEntryParentSetTest.java

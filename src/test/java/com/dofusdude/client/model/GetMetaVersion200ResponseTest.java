@@ -13,7 +13,6 @@
 
 package com.dofusdude.client.model;
 
-import com.dofusdude.client.model.ItemsListEntryTypedType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,41 +24,41 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ConditionEntry
+ * Model tests for GetMetaVersion200Response
  */
-public class ConditionEntryTest {
-    private final ConditionEntry model = new ConditionEntry();
+public class GetMetaVersion200ResponseTest {
+    private final GetMetaVersion200Response model = new GetMetaVersion200Response();
 
     /**
-     * Model tests for ConditionEntry
+     * Model tests for GetMetaVersion200Response
      */
     @Test
-    public void testConditionEntry() {
-        // TODO: test ConditionEntry
+    public void testGetMetaVersion200Response() {
+        // TODO: test GetMetaVersion200Response
     }
 
     /**
-     * Test the property 'operator'
+     * Test the property 'version'
      */
     @Test
-    public void operatorTest() {
-        // TODO: test operator
+    public void versionTest() {
+        // TODO: test version
     }
 
     /**
-     * Test the property 'intValue'
+     * Test the property 'release'
      */
     @Test
-    public void intValueTest() {
-        // TODO: test intValue
+    public void releaseTest() {
+        // TODO: test release
     }
 
     /**
-     * Test the property 'element'
+     * Test the property 'updateStamp'
      */
     @Test
-    public void elementTest() {
-        // TODO: test element
+    public void updateStampTest() {
+        // TODO: test updateStamp
     }
 
 }

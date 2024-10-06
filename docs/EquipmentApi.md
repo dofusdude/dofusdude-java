@@ -88,7 +88,7 @@ No authorization required
 
 <a id="getItemsEquipmentList"></a>
 # **getItemsEquipmentList**
-> ItemsListPaged getItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem)
+> ItemsListPaged getItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeEnum)
 
 List Equipment
 
@@ -118,8 +118,9 @@ public class Example {
     Integer pageSize = 5; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
     Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
+    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      ItemsListPaged result = apiInstance.getItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem);
+      ItemsListPaged result = apiInstance.getItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeEnum);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EquipmentApi#getItemsEquipmentList");
@@ -145,6 +146,7 @@ public class Example {
 | **pageSize** | **Integer**| size of the results from the list. -1 disables pagination and gets all in one response. | [optional] |
 | **pageNumber** | **Integer**| page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional] |
 | **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional] [enum: recipe, description, conditions, effects, is_weapon, pods, parent_set, critical_hit_probability, critical_hit_bonus, is_two_handed, max_cast_per_turn, ap_cost, range] |
+| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
@@ -168,7 +170,7 @@ No authorization required
 
 <a id="getItemsEquipmentSearch"></a>
 # **getItemsEquipmentSearch**
-> List&lt;ItemListEntry&gt; getItemsEquipmentSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit)
+> List&lt;ItemListEntry&gt; getItemsEquipmentSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum)
 
 Search Equipment
 
@@ -196,8 +198,9 @@ public class Example {
     Integer filterMinLevel = 150; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 200; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
+    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      List<ItemListEntry> result = apiInstance.getItemsEquipmentSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+      List<ItemListEntry> result = apiInstance.getItemsEquipmentSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EquipmentApi#getItemsEquipmentSearch");
@@ -221,6 +224,7 @@ public class Example {
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
+| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 

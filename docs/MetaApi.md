@@ -5,9 +5,11 @@ All URIs are relative to *https://api.dofusdu.de*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**getGameSearchTypes**](MetaApi.md#getGameSearchTypes) | **GET** /dofus2/meta/search/types | Available Game Search Types |
+| [**getItemTypes**](MetaApi.md#getItemTypes) | **GET** /dofus2/meta/items/types | Available Item Types |
 | [**getMetaAlmanaxBonuses**](MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
 | [**getMetaAlmanaxBonusesSearch**](MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
 | [**getMetaElements**](MetaApi.md#getMetaElements) | **GET** /dofus2/meta/elements | Effects and Condition Elements |
+| [**getMetaVersion**](MetaApi.md#getMetaVersion) | **GET** /dofus2/meta/version | Game Version |
 
 
 <a id="getGameSearchTypes"></a>
@@ -38,6 +40,64 @@ public class Example {
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetaApi#getGameSearchTypes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+<a id="getItemTypes"></a>
+# **getItemTypes**
+> List&lt;String&gt; getItemTypes()
+
+Available Item Types
+
+Get all types of all items. Primarily used for filtering more detailed types in listings or search endpoints. All names are english for comparing them inside applications. Ordering is not guaranteed to persist with game updates.
+
+### Example
+```java
+// Import classes:
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.MetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
+
+    MetaApi apiInstance = new MetaApi(defaultClient);
+    try {
+      List<String> result = apiInstance.getItemTypes();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MetaApi#getItemTypes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -239,6 +299,64 @@ This endpoint does not need any parameter.
 ### Return type
 
 **List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+<a id="getMetaVersion"></a>
+# **getMetaVersion**
+> GetMetaVersion200Response getMetaVersion()
+
+Game Version
+
+The current game version of the hosted data.
+
+### Example
+```java
+// Import classes:
+import com.dofusdude.client.ApiClient;
+import com.dofusdude.client.ApiException;
+import com.dofusdude.client.Configuration;
+import com.dofusdude.client.models.*;
+import com.dofusdude.client.api.MetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.dofusdu.de");
+
+    MetaApi apiInstance = new MetaApi(defaultClient);
+    try {
+      GetMetaVersion200Response result = apiInstance.getMetaVersion();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MetaApi#getMetaVersion");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetMetaVersion200Response**](GetMetaVersion200Response.md)
 
 ### Authorization
 
