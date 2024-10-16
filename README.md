@@ -1,8 +1,8 @@
 # dofusdude-java
 
 dofusdude
-- API version: 0.9.2
-  - Build date: 2024-10-14T17:47:36.552604635Z[Etc/UTC]
+- API version: 0.9.3
+  - Build date: 2024-10-16T21:16:57.737738674Z[Etc/UTC]
   - Generator version: 7.10.0-SNAPSHOT
 
 # A project for you - the developer.
@@ -75,7 +75,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>0.9.2</version>
+  <version>0.9.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -91,7 +91,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:0.9.2"
+     implementation "com.dofusdude:dofusdude-java:0.9.3"
   }
 ```
 
@@ -105,7 +105,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-0.9.2.jar`
+* `target/dofusdude-java-0.9.3.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getAllItemsEquipmentList"></a>
 # **getAllItemsEquipmentList**
-> ItemsListPaged getAllItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding)
+> ItemsListPaged getAllItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeEnum)
 
 List All Equipment
 
@@ -40,8 +40,9 @@ public class Example {
     Integer filterMinLevel = 10; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 60; // Integer | only results which level is equal or below this value
     String acceptEncoding = "gzip"; // String | optional compression for saving bandwidth
+    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      ItemsListPaged result = apiInstance.getAllItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding);
+      ItemsListPaged result = apiInstance.getAllItemsEquipmentList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeEnum);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EquipmentApi#getAllItemsEquipmentList");
@@ -65,6 +66,7 @@ public class Example {
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **acceptEncoding** | **String**| optional compression for saving bandwidth | [optional] [enum: gzip] |
+| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
