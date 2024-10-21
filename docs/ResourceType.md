@@ -1,6 +1,6 @@
 
 
-# CosmeticType
+# ResourceType
 
 
 ## Properties

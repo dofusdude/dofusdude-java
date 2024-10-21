@@ -147,7 +147,7 @@ public class Example {
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **pageSize** | **Integer**| size of the results from the list. -1 disables pagination and gets all in one response. | [optional] |
 | **pageNumber** | **Integer**| page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional] |
-| **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional] [enum: recipe, description, conditions, effects] |
+| **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional] [enum: recipe, description, conditions, effects, is_weapon, pods, parent_set, critical_hit_probability, critical_hit_bonus, is_two_handed, max_cast_per_turn, ap_cost, range] |
 | **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
@@ -250,7 +250,7 @@ No authorization required
 
 <a id="getCosmeticsSingle"></a>
 # **getCosmeticsSingle**
-> Cosmetic getCosmeticsSingle(language, ankamaId, game)
+> Equipment getCosmeticsSingle(language, ankamaId, game)
 
 Single Cosmetics
 
@@ -275,7 +275,7 @@ public class Example {
     Integer ankamaId = 24132; // Integer | identifier
     String game = "dofus2"; // String | 
     try {
-      Cosmetic result = apiInstance.getCosmeticsSingle(language, ankamaId, game);
+      Equipment result = apiInstance.getCosmeticsSingle(language, ankamaId, game);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CosmeticsApi#getCosmeticsSingle");
@@ -298,7 +298,7 @@ public class Example {
 
 ### Return type
 
-[**Cosmetic**](Cosmetic.md)
+[**Equipment**](Equipment.md)
 
 ### Authorization
 

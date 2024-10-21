@@ -5,7 +5,7 @@
     <artifactId>dofusdude-java</artifactId>
     <packaging>jar</packaging>
     <name>dofusdude-java</name>
-    <version>0.9.3</version>
+    <version>0.9.4</version>
     <url>https://github.com/dofusdude/dofusdude-java</url>
     <description>dofusdude-client</description>
     <scm>

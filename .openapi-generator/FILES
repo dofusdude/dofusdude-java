@@ -18,8 +18,6 @@ docs/ConditionTreeLeaf.md
 docs/ConditionTreeNode.md
 docs/ConditionTreeRelation.md
 docs/ConsumablesApi.md
-docs/Cosmetic.md
-docs/CosmeticType.md
 docs/CosmeticsApi.md
 docs/CreateAlmanaxWebhook.md
 docs/CreateAlmanaxWebhookDailySettings.md
@@ -54,6 +52,7 @@ docs/PutTwitterWebhook.md
 docs/QuestItemsApi.md
 docs/RecipeEntry.md
 docs/Resource.md
+docs/ResourceType.md
 docs/ResourcesApi.md
 docs/RssWebhook.md
 docs/SetEffectsEntry.md
@@ -113,8 +112,6 @@ src/main/java/com/dofusdude/client/model/ConditionEntry.java
 src/main/java/com/dofusdude/client/model/ConditionTreeLeaf.java
 src/main/java/com/dofusdude/client/model/ConditionTreeNode.java
 src/main/java/com/dofusdude/client/model/ConditionTreeRelation.java
-src/main/java/com/dofusdude/client/model/Cosmetic.java
-src/main/java/com/dofusdude/client/model/CosmeticType.java
 src/main/java/com/dofusdude/client/model/CreateAlmanaxWebhook.java
 src/main/java/com/dofusdude/client/model/CreateAlmanaxWebhookDailySettings.java
 src/main/java/com/dofusdude/client/model/CreateAlmanaxWebhookMentionsValueInner.java
@@ -143,6 +140,7 @@ src/main/java/com/dofusdude/client/model/PutRSSWebhook.java
 src/main/java/com/dofusdude/client/model/PutTwitterWebhook.java
 src/main/java/com/dofusdude/client/model/RecipeEntry.java
 src/main/java/com/dofusdude/client/model/Resource.java
+src/main/java/com/dofusdude/client/model/ResourceType.java
 src/main/java/com/dofusdude/client/model/RssWebhook.java
 src/main/java/com/dofusdude/client/model/SetEffectsEntry.java
 src/main/java/com/dofusdude/client/model/SetEffectsEntryType.java
@@ -172,8 +170,6 @@ src/test/java/com/dofusdude/client/model/ConditionEntryTest.java
 src/test/java/com/dofusdude/client/model/ConditionTreeLeafTest.java
 src/test/java/com/dofusdude/client/model/ConditionTreeNodeTest.java
 src/test/java/com/dofusdude/client/model/ConditionTreeRelationTest.java
-src/test/java/com/dofusdude/client/model/CosmeticTest.java
-src/test/java/com/dofusdude/client/model/CosmeticTypeTest.java
 src/test/java/com/dofusdude/client/model/CreateAlmanaxWebhookDailySettingsTest.java
 src/test/java/com/dofusdude/client/model/CreateAlmanaxWebhookMentionsValueInnerTest.java
 src/test/java/com/dofusdude/client/model/CreateAlmanaxWebhookTest.java
@@ -202,6 +198,7 @@ src/test/java/com/dofusdude/client/model/PutRSSWebhookTest.java
 src/test/java/com/dofusdude/client/model/PutTwitterWebhookTest.java
 src/test/java/com/dofusdude/client/model/RecipeEntryTest.java
 src/test/java/com/dofusdude/client/model/ResourceTest.java
+src/test/java/com/dofusdude/client/model/ResourceTypeTest.java
 src/test/java/com/dofusdude/client/model/RssWebhookTest.java
 src/test/java/com/dofusdude/client/model/SetEffectsEntryTest.java
 src/test/java/com/dofusdude/client/model/SetEffectsEntryTypeTest.java

@@ -1,8 +1,8 @@
 # dofusdude-java
 
 dofusdude
-- API version: 0.9.3
-  - Build date: 2024-10-16T21:16:57.737738674Z[Etc/UTC]
+- API version: 0.9.4
+  - Build date: 2024-10-21T20:57:15.239787910Z[Etc/UTC]
   - Generator version: 7.10.0-SNAPSHOT
 
 # A project for you - the developer.
@@ -75,7 +75,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>0.9.3</version>
+  <version>0.9.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -91,7 +91,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:0.9.3"
+     implementation "com.dofusdude:dofusdude-java:0.9.4"
   }
 ```
 
@@ -105,7 +105,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-0.9.3.jar`
+* `target/dofusdude-java-0.9.4.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -217,8 +217,6 @@ Class | Method | HTTP request | Description
  - [ConditionTreeLeaf](docs/ConditionTreeLeaf.md)
  - [ConditionTreeNode](docs/ConditionTreeNode.md)
  - [ConditionTreeRelation](docs/ConditionTreeRelation.md)
- - [Cosmetic](docs/Cosmetic.md)
- - [CosmeticType](docs/CosmeticType.md)
  - [CreateAlmanaxWebhook](docs/CreateAlmanaxWebhook.md)
  - [CreateAlmanaxWebhookDailySettings](docs/CreateAlmanaxWebhookDailySettings.md)
  - [CreateAlmanaxWebhookMentionsValueInner](docs/CreateAlmanaxWebhookMentionsValueInner.md)
@@ -247,6 +245,7 @@ Class | Method | HTTP request | Description
  - [PutTwitterWebhook](docs/PutTwitterWebhook.md)
  - [RecipeEntry](docs/RecipeEntry.md)
  - [Resource](docs/Resource.md)
+ - [ResourceType](docs/ResourceType.md)
  - [RssWebhook](docs/RssWebhook.md)
  - [SetEffectsEntry](docs/SetEffectsEntry.md)
  - [SetEffectsEntryType](docs/SetEffectsEntryType.md)

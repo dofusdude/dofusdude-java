@@ -11,7 +11,7 @@
 |**ankamaId** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**type** | [**CosmeticType**](CosmeticType.md) |  |  [optional] |
+|**type** | [**ResourceType**](ResourceType.md) |  |  [optional] |
 |**level** | **Integer** |  |  [optional] |
 |**pods** | **Integer** |  |  [optional] |
 |**imageUrls** | [**ImageUrls**](ImageUrls.md) |  |  [optional] |
