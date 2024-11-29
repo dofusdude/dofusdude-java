@@ -79,7 +79,7 @@ public class QuestItemsApi {
     /**
      * Build call for getAllItemsQuestList
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -184,7 +184,7 @@ public class QuestItemsApi {
      * List All Quest Items
      * Retrieve all quest items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -210,7 +210,7 @@ public class QuestItemsApi {
      * List All Quest Items
      * Retrieve all quest items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -237,7 +237,7 @@ public class QuestItemsApi {
      * List All Quest Items (asynchronously)
      * Retrieve all quest items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -266,7 +266,7 @@ public class QuestItemsApi {
      * Build call for getItemQuestSingle
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -352,7 +352,7 @@ public class QuestItemsApi {
      * Retrieve a specific quest item with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @return Resource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -374,7 +374,7 @@ public class QuestItemsApi {
      * Retrieve a specific quest item with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @return ApiResponse&lt;Resource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -397,7 +397,7 @@ public class QuestItemsApi {
      * Retrieve a specific quest item with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -420,7 +420,7 @@ public class QuestItemsApi {
     /**
      * Build call for getItemsQuestList
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -534,7 +534,7 @@ public class QuestItemsApi {
      * List Quest Items
      * Retrieve a list of quest items.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -562,7 +562,7 @@ public class QuestItemsApi {
      * List Quest Items
      * Retrieve a list of quest items.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -591,7 +591,7 @@ public class QuestItemsApi {
      * List Quest Items (asynchronously)
      * Retrieve a list of quest items.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -621,7 +621,7 @@ public class QuestItemsApi {
     /**
      * Build call for getItemsQuestSearch
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterTypeName only results with the translated type name (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
@@ -735,7 +735,7 @@ public class QuestItemsApi {
      * Search Quest Items
      * Search in all names and descriptions of quest items with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterTypeName only results with the translated type name (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
@@ -762,7 +762,7 @@ public class QuestItemsApi {
      * Search Quest Items
      * Search in all names and descriptions of quest items with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterTypeName only results with the translated type name (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)
@@ -790,7 +790,7 @@ public class QuestItemsApi {
      * Search Quest Items (asynchronously)
      * Search in all names and descriptions of quest items with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterTypeName only results with the translated type name (optional)
      * @param filterMinLevel only results which level is equal or above this value (optional)

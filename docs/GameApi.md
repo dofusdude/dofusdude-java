@@ -32,7 +32,7 @@ public class Example {
 
     GameApi apiInstance = new GameApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "paztek"; // String | search query
     Set<String> filterSearchIndex = Arrays.asList(); // Set<String> | only results with all specific type
     Integer limit = 8; // Integer | maximum number of returned results
@@ -57,7 +57,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| search query | |
 | **filterSearchIndex** | [**Set&lt;String&gt;**](String.md)| only results with all specific type | [optional] [enum: items-consumables, items-cosmetics, items-resources, items-equipment, items-quest_items, mounts, sets] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
@@ -108,7 +108,7 @@ public class Example {
 
     GameApi apiInstance = new GameApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "atcham"; // String | case sensitive search query
     Integer filterMinLevel = 190; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 200; // Integer | only results which level is equal or below this value
@@ -133,7 +133,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |

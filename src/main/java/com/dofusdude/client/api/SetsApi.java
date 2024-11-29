@@ -79,7 +79,7 @@ public class SetsApi {
     /**
      * Build call for getAllSetsList
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -189,7 +189,7 @@ public class SetsApi {
      * List All Sets
      * Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -216,7 +216,7 @@ public class SetsApi {
      * List All Sets
      * Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -244,7 +244,7 @@ public class SetsApi {
      * List All Sets (asynchronously)
      * Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -273,7 +273,7 @@ public class SetsApi {
     /**
      * Build call for getSetsList
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -392,7 +392,7 @@ public class SetsApi {
      * List Sets
      * Retrieve a list of sets.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -421,7 +421,7 @@ public class SetsApi {
      * List Sets
      * Retrieve a list of sets.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -451,7 +451,7 @@ public class SetsApi {
      * List Sets (asynchronously)
      * Retrieve a list of sets.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param sortLevel sort the resulting list by level, default unsorted (optional)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -482,7 +482,7 @@ public class SetsApi {
     /**
      * Build call for getSetsSearch
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -591,7 +591,7 @@ public class SetsApi {
      * Search Sets
      * Search in all names and descriptions of sets with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -617,7 +617,7 @@ public class SetsApi {
      * Search Sets
      * Search in all names and descriptions of sets with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -644,7 +644,7 @@ public class SetsApi {
      * Search Sets (asynchronously)
      * Search in all names and descriptions of sets with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinHighestEquipmentLevel only results where the equipment with the highest level is above or equal to this value (optional)
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
@@ -673,7 +673,7 @@ public class SetsApi {
      * Build call for getSetsSingle
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -759,7 +759,7 @@ public class SetsApi {
      * Retrieve a specific set with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @return EquipmentSet
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -781,7 +781,7 @@ public class SetsApi {
      * Retrieve a specific set with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @return ApiResponse&lt;EquipmentSet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -804,7 +804,7 @@ public class SetsApi {
      * Retrieve a specific set with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -16,7 +16,7 @@ package com.dofusdude.client;
 import java.util.Collection;
 import java.util.Iterator;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:25:33.452687453Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T23:09:16.084170801Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

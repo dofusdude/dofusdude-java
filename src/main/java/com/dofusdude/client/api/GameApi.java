@@ -78,7 +78,7 @@ public class GameApi {
     /**
      * Build call for getGameSearch
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query search query (required)
      * @param filterSearchIndex only results with all specific type (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -187,7 +187,7 @@ public class GameApi {
      * Game Search
      * Search in all names and descriptions of all supported types in the game. For the list of supported types see the endpoint /dofus3/meta/search/types.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query search query (required)
      * @param filterSearchIndex only results with all specific type (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -213,7 +213,7 @@ public class GameApi {
      * Game Search
      * Search in all names and descriptions of all supported types in the game. For the list of supported types see the endpoint /dofus3/meta/search/types.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query search query (required)
      * @param filterSearchIndex only results with all specific type (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -240,7 +240,7 @@ public class GameApi {
      * Game Search (asynchronously)
      * Search in all names and descriptions of all supported types in the game. For the list of supported types see the endpoint /dofus3/meta/search/types.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query search query (required)
      * @param filterSearchIndex only results with all specific type (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -268,7 +268,7 @@ public class GameApi {
     /**
      * Build call for getItemsAllSearch
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -377,7 +377,7 @@ public class GameApi {
      * Search All Items
      * Search in all names and descriptions of Dofus items (including all subtypes) with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -403,7 +403,7 @@ public class GameApi {
      * Search All Items
      * Search in all names and descriptions of Dofus items (including all subtypes) with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)
@@ -430,7 +430,7 @@ public class GameApi {
      * Search All Items (asynchronously)
      * Search in all names and descriptions of Dofus items (including all subtypes) with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterMinLevel only results which level is equal or above this value (optional)
      * @param filterMaxLevel only results which level is equal or below this value (optional)

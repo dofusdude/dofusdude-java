@@ -54,7 +54,7 @@ import com.dofusdude.client.JSON;
 /**
  * 
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:25:33.452687453Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T23:09:16.084170801Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
 public class CreateTwitterWebhook {
   public static final String SERIALIZED_NAME_WHITELIST = "whitelist";
   @SerializedName(SERIALIZED_NAME_WHITELIST)

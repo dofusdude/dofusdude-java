@@ -34,7 +34,7 @@ public class Example {
 
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
     Integer filterMinHighestEquipmentLevel = 190; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
@@ -60,7 +60,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
@@ -112,7 +112,7 @@ public class Example {
 
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
     Integer filterMinHighestEquipmentLevel = 190; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
@@ -140,7 +140,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
@@ -194,7 +194,7 @@ public class Example {
 
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "Des"; // String | case sensitive search query
     Integer filterMinHighestEquipmentLevel = 195; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
@@ -219,7 +219,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
@@ -271,7 +271,7 @@ public class Example {
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
     Integer ankamaId = 499; // Integer | identifier
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       EquipmentSet result = apiInstance.getSetsSingle(language, ankamaId, game);
       System.out.println(result);
@@ -292,7 +292,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 

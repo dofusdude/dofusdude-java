@@ -34,7 +34,7 @@ public class Example {
 
     MountsApi apiInstance = new MountsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String filterFamilyName = "Dragoturkey"; // String | only results with the translated family name
     String acceptEncoding = "gzip"; // String | optional compression for saving bandwidth
     Integer filterFamilyId = 56; // Integer | only results with the unique family id
@@ -57,7 +57,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **filterFamilyName** | **String**| only results with the translated family name | [optional] |
 | **acceptEncoding** | **String**| optional compression for saving bandwidth | [optional] [enum: gzip] |
 | **filterFamilyId** | **Integer**| only results with the unique family id | [optional] |
@@ -106,7 +106,7 @@ public class Example {
 
     MountsApi apiInstance = new MountsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String filterFamilyName = "Dragoturkey"; // String | only results with the translated family name
     Integer pageSize = 10; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
@@ -131,7 +131,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **filterFamilyName** | **String**| only results with the translated family name | [optional] |
 | **pageSize** | **Integer**| size of the results from the list. -1 disables pagination and gets all in one response. | [optional] |
 | **pageNumber** | **Integer**| page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional] |
@@ -182,7 +182,7 @@ public class Example {
 
     MountsApi apiInstance = new MountsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "Dorée"; // String | case sensitive search query
     String filterFamilyName = "Dragodinde"; // String | only results with the translated family name
     Integer limit = 8; // Integer | maximum number of returned results
@@ -205,7 +205,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterFamilyName** | **String**| only results with the translated family name | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
@@ -255,7 +255,7 @@ public class Example {
     MountsApi apiInstance = new MountsApi(defaultClient);
     String language = "en"; // String | a valid language code
     Integer ankamaId = 180; // Integer | identifier
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       Mount result = apiInstance.getMountsSingle(language, ankamaId, game);
       System.out.println(result);
@@ -276,7 +276,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 

@@ -34,7 +34,7 @@ public class Example {
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 50; // Integer | only results which level is equal or below this value
@@ -59,7 +59,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
@@ -111,7 +111,7 @@ public class Example {
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
     Integer ankamaId = 25256; // Integer | identifier
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       Resource result = apiInstance.getItemQuestSingle(language, ankamaId, game);
       System.out.println(result);
@@ -132,7 +132,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 50; // Integer | only results which level is equal or below this value
@@ -205,7 +205,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
@@ -258,7 +258,7 @@ public class Example {
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus3"; // String | dofus3 | dofus3beta
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "Ficha"; // String | case sensitive search query
     String filterTypeName = "Justicieros"; // String | only results with the translated type name
     Integer filterMinLevel = 60; // Integer | only results which level is equal or above this value
@@ -284,7 +284,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterTypeName** | **String**| only results with the translated type name | [optional] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |

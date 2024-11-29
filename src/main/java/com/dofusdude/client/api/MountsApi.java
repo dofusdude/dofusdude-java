@@ -78,7 +78,7 @@ public class MountsApi {
     /**
      * Build call for getAllMountsList
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param acceptEncoding optional compression for saving bandwidth (optional)
      * @param filterFamilyId only results with the unique family id (optional)
@@ -173,7 +173,7 @@ public class MountsApi {
      * List All Mounts
      * Retrieve all mounts with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param acceptEncoding optional compression for saving bandwidth (optional)
      * @param filterFamilyId only results with the unique family id (optional)
@@ -197,7 +197,7 @@ public class MountsApi {
      * List All Mounts
      * Retrieve all mounts with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param acceptEncoding optional compression for saving bandwidth (optional)
      * @param filterFamilyId only results with the unique family id (optional)
@@ -222,7 +222,7 @@ public class MountsApi {
      * List All Mounts (asynchronously)
      * Retrieve all mounts with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]&#x3D;-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header &#39;Accept-Encoding: gzip&#39; for saving bandwidth. You will need to uncompress it on your end. Example with cURL: &#x60;&#x60;&#x60; curl -sH &#39;Accept-Encoding: gzip&#39; &lt;api-endpoint&gt; | gunzip - &#x60;&#x60;&#x60;
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param acceptEncoding optional compression for saving bandwidth (optional)
      * @param filterFamilyId only results with the unique family id (optional)
@@ -248,7 +248,7 @@ public class MountsApi {
     /**
      * Build call for getMountsList
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
      * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
@@ -352,7 +352,7 @@ public class MountsApi {
      * List Mounts
      * Retrieve a list of mounts.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
      * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
@@ -378,7 +378,7 @@ public class MountsApi {
      * List Mounts
      * Retrieve a list of mounts.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
      * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
@@ -405,7 +405,7 @@ public class MountsApi {
      * List Mounts (asynchronously)
      * Retrieve a list of mounts.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param pageSize size of the results from the list. -1 disables pagination and gets all in one response. (optional)
      * @param pageNumber page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
@@ -433,7 +433,7 @@ public class MountsApi {
     /**
      * Build call for getMountsSearch
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -532,7 +532,7 @@ public class MountsApi {
      * Search Mounts
      * Search in all names and descriptions of mounts with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -556,7 +556,7 @@ public class MountsApi {
      * Search Mounts
      * Search in all names and descriptions of mounts with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -581,7 +581,7 @@ public class MountsApi {
      * Search Mounts (asynchronously)
      * Search in all names and descriptions of mounts with a query.
      * @param language a valid language code (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param query case sensitive search query (required)
      * @param filterFamilyName only results with the translated family name (optional)
      * @param limit maximum number of returned results (optional, default to 8)
@@ -608,7 +608,7 @@ public class MountsApi {
      * Build call for getMountsSingle
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -694,7 +694,7 @@ public class MountsApi {
      * Retrieve a specific mount with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @return Mount
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -716,7 +716,7 @@ public class MountsApi {
      * Retrieve a specific mount with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @return ApiResponse&lt;Mount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -739,7 +739,7 @@ public class MountsApi {
      * Retrieve a specific mount with id.
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
-     * @param game dofus3 | dofus3beta (required)
+     * @param game game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
