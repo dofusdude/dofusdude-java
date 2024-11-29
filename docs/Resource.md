@@ -3,7 +3,6 @@
 # Resource
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -11,14 +10,13 @@
 |**ankamaId** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**type** | [**ResourceType**](ResourceType.md) |  |  [optional] |
+|**type** | [**TranslatedId**](TranslatedId.md) |  |  [optional] |
 |**level** | **Integer** |  |  [optional] |
 |**pods** | **Integer** |  |  [optional] |
-|**imageUrls** | [**ImageUrls**](ImageUrls.md) |  |  [optional] |
-|**effects** | [**List&lt;EffectsEntry&gt;**](EffectsEntry.md) |  |  [optional] |
-|**conditions** | [**List&lt;ConditionEntry&gt;**](ConditionEntry.md) |  |  [optional] |
-|**conditionTree** | [**ConditionTreeNode**](ConditionTreeNode.md) |  |  [optional] |
-|**recipe** | [**List&lt;RecipeEntry&gt;**](RecipeEntry.md) |  |  [optional] |
+|**imageUrls** | [**Images**](Images.md) |  |  [optional] |
+|**effects** | [**List&lt;Effect&gt;**](Effect.md) |  |  [optional] |
+|**conditions** | [**ConditionNode**](ConditionNode.md) |  |  [optional] |
+|**recipe** | [**List&lt;Recipe&gt;**](Recipe.md) |  |  [optional] |
 
 
 

@@ -4,15 +4,15 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getAllCosmeticsList**](CosmeticsApi.md#getAllCosmeticsList) | **GET** /{game}/{language}/items/cosmetics/all | List All Cosmetics |
-| [**getCosmeticsList**](CosmeticsApi.md#getCosmeticsList) | **GET** /{game}/{language}/items/cosmetics | List Cosmetics |
-| [**getCosmeticsSearch**](CosmeticsApi.md#getCosmeticsSearch) | **GET** /{game}/{language}/items/cosmetics/search | Search Cosmetics |
-| [**getCosmeticsSingle**](CosmeticsApi.md#getCosmeticsSingle) | **GET** /{game}/{language}/items/cosmetics/{ankama_id} | Single Cosmetics |
+| [**getAllCosmeticsList**](CosmeticsApi.md#getAllCosmeticsList) | **GET** /{game}/v1/{language}/items/cosmetics/all | List All Cosmetics |
+| [**getCosmeticsList**](CosmeticsApi.md#getCosmeticsList) | **GET** /{game}/v1/{language}/items/cosmetics | List Cosmetics |
+| [**getCosmeticsSearch**](CosmeticsApi.md#getCosmeticsSearch) | **GET** /{game}/v1/{language}/items/cosmetics/search | Search Cosmetics |
+| [**getCosmeticsSingle**](CosmeticsApi.md#getCosmeticsSingle) | **GET** /{game}/v1/{language}/items/cosmetics/{ankama_id} | Single Cosmetics |
 
 
 <a id="getAllCosmeticsList"></a>
 # **getAllCosmeticsList**
-> ItemsListPaged getAllCosmeticsList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeEnum)
+> ListItems getAllCosmeticsList(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId)
 
 List All Cosmetics
 
@@ -34,15 +34,14 @@ public class Example {
 
     CosmeticsApi apiInstance = new CosmeticsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
-    String filterTypeName = "Chapeau d'apparat"; // String | only results with the translated type name
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 5; // Integer | only results which level is equal or below this value
     String acceptEncoding = "gzip"; // String | optional compression for saving bandwidth
-    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      ItemsListPaged result = apiInstance.getAllCosmeticsList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeEnum);
+      ListItems result = apiInstance.getAllCosmeticsList(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CosmeticsApi#getAllCosmeticsList");
@@ -60,17 +59,16 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
-| **filterTypeName** | **String**| only results with the translated type name | [optional] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **acceptEncoding** | **String**| optional compression for saving bandwidth | [optional] [enum: gzip] |
-| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
+| **filterTypeNameId** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
-[**ItemsListPaged**](ItemsListPaged.md)
+[**ListItems**](ListItems.md)
 
 ### Authorization
 
@@ -84,13 +82,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Cosmetics Found |  -  |
-| **400** | Bad Request  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 <a id="getCosmeticsList"></a>
 # **getCosmeticsList**
-> ItemsListPaged getCosmeticsList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeEnum)
+> ListItems getCosmeticsList(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId)
 
 List Cosmetics
 
@@ -112,17 +110,16 @@ public class Example {
 
     CosmeticsApi apiInstance = new CosmeticsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
-    String filterTypeName = "Chapeau d'apparat"; // String | only results with the translated type name
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 5; // Integer | only results which level is equal or below this value
     Integer pageSize = 5; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
     Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
-    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      ItemsListPaged result = apiInstance.getCosmeticsList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeEnum);
+      ListItems result = apiInstance.getCosmeticsList(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CosmeticsApi#getCosmeticsList");
@@ -140,19 +137,18 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
-| **filterTypeName** | **String**| only results with the translated type name | [optional] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **pageSize** | **Integer**| size of the results from the list. -1 disables pagination and gets all in one response. | [optional] |
 | **pageNumber** | **Integer**| page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional] |
-| **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional] [enum: recipe, description, conditions, effects, is_weapon, pods, parent_set, critical_hit_probability, critical_hit_bonus, is_two_handed, max_cast_per_turn, ap_cost, range] |
-| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
+| **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional] [enum: recipe, description, conditions, effects, is_weapon, pods, parent_set, critical_hit_probability, critical_hit_bonus, max_cast_per_turn, ap_cost, range] |
+| **filterTypeNameId** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
-[**ItemsListPaged**](ItemsListPaged.md)
+[**ListItems**](ListItems.md)
 
 ### Authorization
 
@@ -166,13 +162,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Cosmetics Found |  -  |
-| **400** | Bad Request  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 <a id="getCosmeticsSearch"></a>
 # **getCosmeticsSearch**
-> List&lt;ItemListEntry&gt; getCosmeticsSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum)
+> List&lt;ListItem&gt; getCosmeticsSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId)
 
 Search Cosmetics
 
@@ -194,15 +190,14 @@ public class Example {
 
     CosmeticsApi apiInstance = new CosmeticsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     String query = "nedora"; // String | case sensitive search query
-    String filterTypeName = "Wings"; // String | only results with the translated type name
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 2; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
-    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      List<ItemListEntry> result = apiInstance.getCosmeticsSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
+      List<ListItem> result = apiInstance.getCosmeticsSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CosmeticsApi#getCosmeticsSearch");
@@ -220,17 +215,16 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
-| **filterTypeName** | **String**| only results with the translated type name | [optional] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
-| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
+| **filterTypeNameId** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
-[**List&lt;ItemListEntry&gt;**](ItemListEntry.md)
+[**List&lt;ListItem&gt;**](ListItem.md)
 
 ### Authorization
 
@@ -244,9 +238,9 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Cosmetics found |  -  |
-| **400** | Bad Request  Possibilities: - empty or no query  |  -  |
-| **404** | Not Found  Possibilities: - no hits for query |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 <a id="getCosmeticsSingle"></a>
 # **getCosmeticsSingle**
@@ -273,7 +267,7 @@ public class Example {
     CosmeticsApi apiInstance = new CosmeticsApi(defaultClient);
     String language = "en"; // String | a valid language code
     Integer ankamaId = 24132; // Integer | identifier
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     try {
       Equipment result = apiInstance.getCosmeticsSingle(language, ankamaId, game);
       System.out.println(result);
@@ -294,7 +288,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 
 ### Return type
 
@@ -312,7 +306,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Cosmetic Found |  -  |
-| **400** | Bad Request  Possibilities: - invalid ankama id format  |  -  |
-| **404** | Not Found  Possibilities: - nothing found for this ankama_id |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 

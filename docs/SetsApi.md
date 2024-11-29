@@ -4,15 +4,15 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getAllSetsList**](SetsApi.md#getAllSetsList) | **GET** /{game}/{language}/sets/all | List All Sets |
-| [**getSetsList**](SetsApi.md#getSetsList) | **GET** /{game}/{language}/sets | List Sets |
-| [**getSetsSearch**](SetsApi.md#getSetsSearch) | **GET** /{game}/{language}/sets/search | Search Sets |
-| [**getSetsSingle**](SetsApi.md#getSetsSingle) | **GET** /{game}/{language}/sets/{ankama_id} | Single Sets |
+| [**getAllSetsList**](SetsApi.md#getAllSetsList) | **GET** /{game}/v1/{language}/sets/all | List All Sets |
+| [**getSetsList**](SetsApi.md#getSetsList) | **GET** /{game}/v1/{language}/sets | List Sets |
+| [**getSetsSearch**](SetsApi.md#getSetsSearch) | **GET** /{game}/v1/{language}/sets/search | Search Sets |
+| [**getSetsSingle**](SetsApi.md#getSetsSingle) | **GET** /{game}/v1/{language}/sets/{ankama_id} | Single Sets |
 
 
 <a id="getAllSetsList"></a>
 # **getAllSetsList**
-> SetsListPaged getAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterIsCosmetic)
+> ListSets getAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics)
 
 List All Sets
 
@@ -34,14 +34,15 @@ public class Example {
 
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
     Integer filterMinHighestEquipmentLevel = 190; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
     String acceptEncoding = "gzip"; // String | optional compression for saving bandwidth
-    Boolean filterIsCosmetic = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+    Boolean filterContainsCosmeticsOnly = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+    Boolean filterContainsCosmetics = true; // Boolean | filter sets based on if they got cosmetic items in it.
     try {
-      SetsListPaged result = apiInstance.getAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterIsCosmetic);
+      ListSets result = apiInstance.getAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SetsApi#getAllSetsList");
@@ -59,16 +60,17 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
 | **acceptEncoding** | **String**| optional compression for saving bandwidth | [optional] [enum: gzip] |
-| **filterIsCosmetic** | **Boolean**| filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional] |
+| **filterContainsCosmeticsOnly** | **Boolean**| filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional] |
+| **filterContainsCosmetics** | **Boolean**| filter sets based on if they got cosmetic items in it. | [optional] |
 
 ### Return type
 
-[**SetsListPaged**](SetsListPaged.md)
+[**ListSets**](ListSets.md)
 
 ### Authorization
 
@@ -82,13 +84,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Set Found |  -  |
-| **400** | Bad Request  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 <a id="getSetsList"></a>
 # **getSetsList**
-> SetsListPaged getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterIsCosmetic)
+> ListSets getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics)
 
 List Sets
 
@@ -110,16 +112,17 @@ public class Example {
 
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     String sortLevel = "asc"; // String | sort the resulting list by level, default unsorted
     Integer filterMinHighestEquipmentLevel = 190; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
     Integer pageSize = 20; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
     Set<String> fieldsSet = Arrays.asList(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
-    Boolean filterIsCosmetic = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+    Boolean filterContainsCosmeticsOnly = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+    Boolean filterContainsCosmetics = true; // Boolean | filter sets based on if they got cosmetic items in it.
     try {
-      SetsListPaged result = apiInstance.getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterIsCosmetic);
+      ListSets result = apiInstance.getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SetsApi#getSetsList");
@@ -137,18 +140,19 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
 | **pageSize** | **Integer**| size of the results from the list. -1 disables pagination and gets all in one response. | [optional] |
 | **pageNumber** | **Integer**| page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional] |
 | **fieldsSet** | [**Set&lt;String&gt;**](String.md)| adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional] [enum: effects, equipment_ids] |
-| **filterIsCosmetic** | **Boolean**| filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional] |
+| **filterContainsCosmeticsOnly** | **Boolean**| filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional] |
+| **filterContainsCosmetics** | **Boolean**| filter sets based on if they got cosmetic items in it. | [optional] |
 
 ### Return type
 
-[**SetsListPaged**](SetsListPaged.md)
+[**ListSets**](ListSets.md)
 
 ### Authorization
 
@@ -162,13 +166,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Set Found |  -  |
-| **400** | Bad Request  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 <a id="getSetsSearch"></a>
 # **getSetsSearch**
-> List&lt;SetListEntry&gt; getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic)
+> List&lt;ListSet&gt; getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic)
 
 Search Sets
 
@@ -190,14 +194,14 @@ public class Example {
 
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     String query = "Des"; // String | case sensitive search query
     Integer filterMinHighestEquipmentLevel = 195; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
     Integer limit = 8; // Integer | maximum number of returned results
     Boolean filterIsCosmetic = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
     try {
-      List<SetListEntry> result = apiInstance.getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+      List<ListSet> result = apiInstance.getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SetsApi#getSetsSearch");
@@ -215,7 +219,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
@@ -224,7 +228,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;SetListEntry&gt;**](SetListEntry.md)
+[**List&lt;ListSet&gt;**](ListSet.md)
 
 ### Authorization
 
@@ -238,13 +242,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Sets Found |  -  |
-| **400** | Bad Request  Possibilities: - empty or no query  |  -  |
-| **404** | Not Found  Possibilities: - no hits for query |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 <a id="getSetsSingle"></a>
 # **getSetsSingle**
-> EquipmentSet getSetsSingle(language, ankamaId, game)
+> Set getSetsSingle(language, ankamaId, game)
 
 Single Sets
 
@@ -267,9 +271,9 @@ public class Example {
     SetsApi apiInstance = new SetsApi(defaultClient);
     String language = "en"; // String | a valid language code
     Integer ankamaId = 499; // Integer | identifier
-    String game = "dofus2"; // String | 
+    String game = "dofus3"; // String | dofus3 | dofus3beta
     try {
-      EquipmentSet result = apiInstance.getSetsSingle(language, ankamaId, game);
+      Set result = apiInstance.getSetsSingle(language, ankamaId, game);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SetsApi#getSetsSingle");
@@ -288,11 +292,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
-| **game** | **String**|  | [enum: dofus2, dofus2beta] |
+| **game** | **String**| dofus3 | dofus3beta | [enum: dofus3, dofus3beta] |
 
 ### Return type
 
-[**EquipmentSet**](EquipmentSet.md)
+[**Set**](Set.md)
 
 ### Authorization
 
@@ -306,7 +310,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Set Found |  -  |
-| **400** | Bad Request  Possibilities: - invalid ankama id format  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 

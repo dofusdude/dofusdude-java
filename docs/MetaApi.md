@@ -4,12 +4,12 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getGameSearchTypes**](MetaApi.md#getGameSearchTypes) | **GET** /dofus2/meta/search/types | Available Game Search Types |
-| [**getItemTypes**](MetaApi.md#getItemTypes) | **GET** /dofus2/meta/items/types | Available Item Types |
-| [**getMetaAlmanaxBonuses**](MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
-| [**getMetaAlmanaxBonusesSearch**](MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
-| [**getMetaElements**](MetaApi.md#getMetaElements) | **GET** /dofus2/meta/elements | Effects and Condition Elements |
-| [**getMetaVersion**](MetaApi.md#getMetaVersion) | **GET** /dofus2/meta/version | Game Version |
+| [**getGameSearchTypes**](MetaApi.md#getGameSearchTypes) | **GET** /dofus3/meta/search/types | Available Game Search Types |
+| [**getItemTypes**](MetaApi.md#getItemTypes) | **GET** /dofus3/meta/items/types | Available Item Types |
+| [**getMetaAlmanaxBonuses**](MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus3/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
+| [**getMetaAlmanaxBonusesSearch**](MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus3/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
+| [**getMetaElements**](MetaApi.md#getMetaElements) | **GET** /dofus3/meta/elements | Effects and Condition Elements |
+| [**getMetaVersion**](MetaApi.md#getMetaVersion) | **GET** /dofus3/meta/version | Game Version |
 
 
 <a id="getGameSearchTypes"></a>
@@ -18,7 +18,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Available Game Search Types
 
-Get all types for /{game}/{lang}/search available for filtering. All names are english for comparing them inside applications. Order is fixed so you can compare indices instead of strings.
+Get all types for /{game}/v1/{lang}/search available for filtering. All names are english for comparing them inside applications. Order is fixed so you can compare indices instead of strings.
 
 ### Example
 ```java
@@ -151,7 +151,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
-    String language = "en"; // String | 
+    String language = "en"; // String | a valid language code
     try {
       List<GetMetaAlmanaxBonuses200ResponseInner> result = apiInstance.getMetaAlmanaxBonuses(language);
       System.out.println(result);
@@ -170,7 +170,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**|  | [enum: en, fr, de, it, es] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, it, es] |
 
 ### Return type
 
@@ -316,7 +316,7 @@ No authorization required
 
 <a id="getMetaVersion"></a>
 # **getMetaVersion**
-> GetMetaVersion200Response getMetaVersion()
+> Version getMetaVersion()
 
 Game Version
 
@@ -338,7 +338,7 @@ public class Example {
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     try {
-      GetMetaVersion200Response result = apiInstance.getMetaVersion();
+      Version result = apiInstance.getMetaVersion();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetaApi#getMetaVersion");
@@ -356,7 +356,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetMetaVersion200Response**](GetMetaVersion200Response.md)
+[**Version**](Version.md)
 
 ### Authorization
 
@@ -370,5 +370,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 

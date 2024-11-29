@@ -4,13 +4,13 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getAlmanaxDate**](AlmanaxApi.md#getAlmanaxDate) | **GET** /dofus2/{language}/almanax/{date} | Single Almanax Date |
-| [**getAlmanaxRange**](AlmanaxApi.md#getAlmanaxRange) | **GET** /dofus2/{language}/almanax | Almanax Range |
+| [**getAlmanaxDate**](AlmanaxApi.md#getAlmanaxDate) | **GET** /dofus3/{language}/almanax/{date} | Single Almanax Date |
+| [**getAlmanaxRange**](AlmanaxApi.md#getAlmanaxRange) | **GET** /dofus3/{language}/almanax | Almanax Range |
 
 
 <a id="getAlmanaxDate"></a>
 # **getAlmanaxDate**
-> AlmanaxEntry getAlmanaxDate(language, date)
+> Almanax getAlmanaxDate(language, date)
 
 Single Almanax Date
 
@@ -34,7 +34,7 @@ public class Example {
     String language = "en"; // String | code
     LocalDate date = LocalDate.parse("Tue Jul 14 00:00:00 UTC 2020"); // LocalDate | yyyy-mm-dd
     try {
-      AlmanaxEntry result = apiInstance.getAlmanaxDate(language, date);
+      Almanax result = apiInstance.getAlmanaxDate(language, date);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlmanaxApi#getAlmanaxDate");
@@ -56,7 +56,7 @@ public class Example {
 
 ### Return type
 
-[**AlmanaxEntry**](AlmanaxEntry.md)
+[**Almanax**](Almanax.md)
 
 ### Authorization
 
@@ -70,11 +70,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 <a id="getAlmanaxRange"></a>
 # **getAlmanaxRange**
-> List&lt;AlmanaxEntry&gt; getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone)
+> List&lt;Almanax&gt; getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone)
 
 Almanax Range
 
@@ -102,7 +102,7 @@ public class Example {
     Integer rangeSize = -1; // Integer | size of the returned range
     String timezone = "Europe/Paris"; // String | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location.
     try {
-      List<AlmanaxEntry> result = apiInstance.getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
+      List<Almanax> result = apiInstance.getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlmanaxApi#getAlmanaxRange");
@@ -128,7 +128,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;AlmanaxEntry&gt;**](AlmanaxEntry.md)
+[**List&lt;Almanax&gt;**](Almanax.md)
 
 ### Authorization
 
@@ -142,5 +142,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 

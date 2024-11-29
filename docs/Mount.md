@@ -9,9 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**ankamaId** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**familyName** | **String** |  |  [optional] |
-|**imageUrls** | [**ImageUrls**](ImageUrls.md) |  |  [optional] |
-|**effects** | [**List&lt;EffectsEntry&gt;**](EffectsEntry.md) |  |  [optional] |
+|**family** | [**MountFamily**](MountFamily.md) |  |  [optional] |
+|**imageUrls** | [**Images**](Images.md) |  |  [optional] |
+|**effects** | [**List&lt;Effect&gt;**](Effect.md) |  |  [optional] |
 
 
 

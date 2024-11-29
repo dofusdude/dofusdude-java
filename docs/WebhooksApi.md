@@ -44,7 +44,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     try {
       apiInstance.deleteWebhooksAlmanaxId(id);
     } catch (ApiException e) {
@@ -62,7 +62,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 
 ### Return type
 
@@ -105,7 +105,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     try {
       apiInstance.deleteWebhooksRssId(id);
     } catch (ApiException e) {
@@ -123,7 +123,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 
 ### Return type
 
@@ -166,7 +166,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     try {
       apiInstance.deleteWebhooksTwitterId(id);
     } catch (ApiException e) {
@@ -184,7 +184,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 
 ### Return type
 
@@ -401,7 +401,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     try {
       AlmanaxWebhook result = apiInstance.getWebhooksAlmanaxId(id);
       System.out.println(result);
@@ -420,7 +420,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 
 ### Return type
 
@@ -463,7 +463,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     try {
       RssWebhook result = apiInstance.getWebhooksRssId(id);
       System.out.println(result);
@@ -482,7 +482,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 
 ### Return type
 
@@ -525,7 +525,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     try {
       TwitterWebhook result = apiInstance.getWebhooksTwitterId(id);
       System.out.println(result);
@@ -544,7 +544,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 
 ### Return type
 
@@ -770,7 +770,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     PutAlmanaxWebhook putAlmanaxWebhook = new PutAlmanaxWebhook(); // PutAlmanaxWebhook | 
     try {
       AlmanaxWebhook result = apiInstance.putWebhooksAlmanaxId(id, putAlmanaxWebhook);
@@ -790,7 +790,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 | **putAlmanaxWebhook** | [**PutAlmanaxWebhook**](PutAlmanaxWebhook.md)|  | [optional] |
 
 ### Return type
@@ -834,7 +834,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     PutRSSWebhook putRSSWebhook = new PutRSSWebhook(); // PutRSSWebhook | 
     try {
       RssWebhook result = apiInstance.putWebhooksRssId(id, putRSSWebhook);
@@ -854,7 +854,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 | **putRSSWebhook** | [**PutRSSWebhook**](PutRSSWebhook.md)|  | [optional] |
 
 ### Return type
@@ -898,7 +898,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | the ID returned from the API when creating the webhook
     PutTwitterWebhook putTwitterWebhook = new PutTwitterWebhook(); // PutTwitterWebhook | 
     try {
       TwitterWebhook result = apiInstance.putWebhooksTwitterId(id, putTwitterWebhook);
@@ -918,7 +918,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| the ID returned from the API when creating the webhook | |
 | **putTwitterWebhook** | [**PutTwitterWebhook**](PutTwitterWebhook.md)|  | [optional] |
 
 ### Return type
