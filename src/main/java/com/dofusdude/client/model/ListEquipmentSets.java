@@ -14,7 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
-import com.dofusdude.client.model.ListSet;
+import com.dofusdude.client.model.ListEquipmentSet;
 import com.dofusdude.client.model.PagedLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -50,10 +50,10 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * ListSets
+ * ListEquipmentSets
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:12:41.641491730Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
-public class ListSets {
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:25:33.452687453Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
+public class ListEquipmentSets {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
   @jakarta.annotation.Nullable
@@ -62,12 +62,12 @@ public class ListSets {
   public static final String SERIALIZED_NAME_SETS = "sets";
   @SerializedName(SERIALIZED_NAME_SETS)
   @jakarta.annotation.Nullable
-  private List<ListSet> sets = new ArrayList<>();
+  private List<ListEquipmentSet> sets = new ArrayList<>();
 
-  public ListSets() {
+  public ListEquipmentSets() {
   }
 
-  public ListSets links(@jakarta.annotation.Nullable PagedLinks links) {
+  public ListEquipmentSets links(@jakarta.annotation.Nullable PagedLinks links) {
     this.links = links;
     return this;
   }
@@ -86,12 +86,12 @@ public class ListSets {
   }
 
 
-  public ListSets sets(@jakarta.annotation.Nullable List<ListSet> sets) {
+  public ListEquipmentSets sets(@jakarta.annotation.Nullable List<ListEquipmentSet> sets) {
     this.sets = sets;
     return this;
   }
 
-  public ListSets addSetsItem(ListSet setsItem) {
+  public ListEquipmentSets addSetsItem(ListEquipmentSet setsItem) {
     if (this.sets == null) {
       this.sets = new ArrayList<>();
     }
@@ -104,11 +104,11 @@ public class ListSets {
    * @return sets
    */
   @jakarta.annotation.Nullable
-  public List<ListSet> getSets() {
+  public List<ListEquipmentSet> getSets() {
     return sets;
   }
 
-  public void setSets(@jakarta.annotation.Nullable List<ListSet> sets) {
+  public void setSets(@jakarta.annotation.Nullable List<ListEquipmentSet> sets) {
     this.sets = sets;
   }
 
@@ -122,9 +122,9 @@ public class ListSets {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ListSets listSets = (ListSets) o;
-    return Objects.equals(this.links, listSets.links) &&
-        Objects.equals(this.sets, listSets.sets);
+    ListEquipmentSets listEquipmentSets = (ListEquipmentSets) o;
+    return Objects.equals(this.links, listEquipmentSets.links) &&
+        Objects.equals(this.sets, listEquipmentSets.sets);
   }
 
   @Override
@@ -135,7 +135,7 @@ public class ListSets {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ListSets {\n");
+    sb.append("class ListEquipmentSets {\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    sets: ").append(toIndentedString(sets)).append("\n");
     sb.append("}");
@@ -171,20 +171,20 @@ public class ListSets {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ListSets
+   * @throws IOException if the JSON Element is invalid with respect to ListEquipmentSets
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ListSets.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListSets is not found in the empty JSON string", ListSets.openapiRequiredFields.toString()));
+        if (!ListEquipmentSets.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListEquipmentSets is not found in the empty JSON string", ListEquipmentSets.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ListSets.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListSets` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ListEquipmentSets.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListEquipmentSets` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -202,7 +202,7 @@ public class ListSets {
 
           // validate the optional field `sets` (array)
           for (int i = 0; i < jsonArraysets.size(); i++) {
-            ListSet.validateJsonElement(jsonArraysets.get(i));
+            ListEquipmentSet.validateJsonElement(jsonArraysets.get(i));
           };
         }
       }
@@ -212,22 +212,22 @@ public class ListSets {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ListSets.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ListSets' and its subtypes
+       if (!ListEquipmentSets.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListEquipmentSets' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ListSets> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ListSets.class));
+       final TypeAdapter<ListEquipmentSets> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListEquipmentSets.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ListSets>() {
+       return (TypeAdapter<T>) new TypeAdapter<ListEquipmentSets>() {
            @Override
-           public void write(JsonWriter out, ListSets value) throws IOException {
+           public void write(JsonWriter out, ListEquipmentSets value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ListSets read(JsonReader in) throws IOException {
+           public ListEquipmentSets read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -238,18 +238,18 @@ public class ListSets {
   }
 
   /**
-   * Create an instance of ListSets given an JSON string
+   * Create an instance of ListEquipmentSets given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ListSets
-   * @throws IOException if the JSON string is invalid with respect to ListSets
+   * @return An instance of ListEquipmentSets
+   * @throws IOException if the JSON string is invalid with respect to ListEquipmentSets
    */
-  public static ListSets fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ListSets.class);
+  public static ListEquipmentSets fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListEquipmentSets.class);
   }
 
   /**
-   * Convert an instance of ListSets to an JSON string
+   * Convert an instance of ListEquipmentSets to an JSON string
    *
    * @return JSON string
    */

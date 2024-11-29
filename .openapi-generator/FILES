@@ -28,6 +28,7 @@ docs/Effect.md
 docs/EffectType.md
 docs/Equipment.md
 docs/EquipmentApi.md
+docs/EquipmentSet.md
 docs/Error.md
 docs/GameApi.md
 docs/GameSearch.md
@@ -37,12 +38,12 @@ docs/GetMetaAlmanaxBonuses200ResponseInner.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/Images.md
 docs/ItemSubtype.md
+docs/ListEquipmentSet.md
+docs/ListEquipmentSets.md
 docs/ListItem.md
 docs/ListItemGeneral.md
 docs/ListItems.md
 docs/ListMounts.md
-docs/ListSet.md
-docs/ListSets.md
 docs/MetaApi.md
 docs/Mount.md
 docs/MountFamily.md
@@ -57,7 +58,6 @@ docs/Recipe.md
 docs/Resource.md
 docs/ResourcesApi.md
 docs/RssWebhook.md
-docs/Set.md
 docs/SetsApi.md
 docs/TranslatedId.md
 docs/TwitterWebhook.md
@@ -120,6 +120,7 @@ src/main/java/com/dofusdude/client/model/CreateTwitterWebhook.java
 src/main/java/com/dofusdude/client/model/Effect.java
 src/main/java/com/dofusdude/client/model/EffectType.java
 src/main/java/com/dofusdude/client/model/Equipment.java
+src/main/java/com/dofusdude/client/model/EquipmentSet.java
 src/main/java/com/dofusdude/client/model/Error.java
 src/main/java/com/dofusdude/client/model/GameSearch.java
 src/main/java/com/dofusdude/client/model/GameSearchItem.java
@@ -128,12 +129,12 @@ src/main/java/com/dofusdude/client/model/GetMetaAlmanaxBonuses200ResponseInner.j
 src/main/java/com/dofusdude/client/model/GetMetaWebhooksTwitter200Response.java
 src/main/java/com/dofusdude/client/model/Images.java
 src/main/java/com/dofusdude/client/model/ItemSubtype.java
+src/main/java/com/dofusdude/client/model/ListEquipmentSet.java
+src/main/java/com/dofusdude/client/model/ListEquipmentSets.java
 src/main/java/com/dofusdude/client/model/ListItem.java
 src/main/java/com/dofusdude/client/model/ListItemGeneral.java
 src/main/java/com/dofusdude/client/model/ListItems.java
 src/main/java/com/dofusdude/client/model/ListMounts.java
-src/main/java/com/dofusdude/client/model/ListSet.java
-src/main/java/com/dofusdude/client/model/ListSets.java
 src/main/java/com/dofusdude/client/model/Mount.java
 src/main/java/com/dofusdude/client/model/MountFamily.java
 src/main/java/com/dofusdude/client/model/PagedLinks.java
@@ -144,7 +145,6 @@ src/main/java/com/dofusdude/client/model/Range.java
 src/main/java/com/dofusdude/client/model/Recipe.java
 src/main/java/com/dofusdude/client/model/Resource.java
 src/main/java/com/dofusdude/client/model/RssWebhook.java
-src/main/java/com/dofusdude/client/model/Set.java
 src/main/java/com/dofusdude/client/model/TranslatedId.java
 src/main/java/com/dofusdude/client/model/TwitterWebhook.java
 src/main/java/com/dofusdude/client/model/Version.java
@@ -177,6 +177,7 @@ src/test/java/com/dofusdude/client/model/CreateRSSWebhookTest.java
 src/test/java/com/dofusdude/client/model/CreateTwitterWebhookTest.java
 src/test/java/com/dofusdude/client/model/EffectTest.java
 src/test/java/com/dofusdude/client/model/EffectTypeTest.java
+src/test/java/com/dofusdude/client/model/EquipmentSetTest.java
 src/test/java/com/dofusdude/client/model/EquipmentTest.java
 src/test/java/com/dofusdude/client/model/ErrorTest.java
 src/test/java/com/dofusdude/client/model/GameSearchItemTest.java
@@ -186,12 +187,12 @@ src/test/java/com/dofusdude/client/model/GetMetaAlmanaxBonuses200ResponseInnerTe
 src/test/java/com/dofusdude/client/model/GetMetaWebhooksTwitter200ResponseTest.java
 src/test/java/com/dofusdude/client/model/ImagesTest.java
 src/test/java/com/dofusdude/client/model/ItemSubtypeTest.java
+src/test/java/com/dofusdude/client/model/ListEquipmentSetTest.java
+src/test/java/com/dofusdude/client/model/ListEquipmentSetsTest.java
 src/test/java/com/dofusdude/client/model/ListItemGeneralTest.java
 src/test/java/com/dofusdude/client/model/ListItemTest.java
 src/test/java/com/dofusdude/client/model/ListItemsTest.java
 src/test/java/com/dofusdude/client/model/ListMountsTest.java
-src/test/java/com/dofusdude/client/model/ListSetTest.java
-src/test/java/com/dofusdude/client/model/ListSetsTest.java
 src/test/java/com/dofusdude/client/model/MountFamilyTest.java
 src/test/java/com/dofusdude/client/model/MountTest.java
 src/test/java/com/dofusdude/client/model/PagedLinksTest.java
@@ -202,7 +203,6 @@ src/test/java/com/dofusdude/client/model/RangeTest.java
 src/test/java/com/dofusdude/client/model/RecipeTest.java
 src/test/java/com/dofusdude/client/model/ResourceTest.java
 src/test/java/com/dofusdude/client/model/RssWebhookTest.java
-src/test/java/com/dofusdude/client/model/SetTest.java
 src/test/java/com/dofusdude/client/model/TranslatedIdTest.java
 src/test/java/com/dofusdude/client/model/TwitterWebhookTest.java
 src/test/java/com/dofusdude/client/model/VersionTest.java

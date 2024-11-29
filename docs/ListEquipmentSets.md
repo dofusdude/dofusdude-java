@@ -1,6 +1,6 @@
 
 
-# ListSets
+# ListEquipmentSets
 
 
 ## Properties
@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**links** | [**PagedLinks**](PagedLinks.md) |  |  [optional] |
-|**sets** | [**List&lt;ListSet&gt;**](ListSet.md) |  |  [optional] |
+|**sets** | [**List&lt;ListEquipmentSet&gt;**](ListEquipmentSet.md) |  |  [optional] |
 
 
 

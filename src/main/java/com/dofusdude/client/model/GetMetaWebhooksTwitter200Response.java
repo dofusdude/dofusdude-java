@@ -50,7 +50,7 @@ import com.dofusdude.client.JSON;
 /**
  * GetMetaWebhooksTwitter200Response
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:12:41.641491730Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:25:33.452687453Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
 public class GetMetaWebhooksTwitter200Response {
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)

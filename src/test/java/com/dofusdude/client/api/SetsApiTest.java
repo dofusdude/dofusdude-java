@@ -14,9 +14,10 @@
 package com.dofusdude.client.api;
 
 import com.dofusdude.client.ApiException;
+import com.dofusdude.client.model.EquipmentSet;
 import com.dofusdude.client.model.Error;
-import com.dofusdude.client.model.ListSet;
-import com.dofusdude.client.model.ListSets;
+import com.dofusdude.client.model.ListEquipmentSet;
+import com.dofusdude.client.model.ListEquipmentSets;
 import java.util.Set;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -51,7 +52,7 @@ public class SetsApiTest {
         String acceptEncoding = null;
         Boolean filterContainsCosmeticsOnly = null;
         Boolean filterContainsCosmetics = null;
-        ListSets response = api.getAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
+        ListEquipmentSets response = api.getAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
         // TODO: test validations
     }
 
@@ -74,7 +75,7 @@ public class SetsApiTest {
         Set<String> fieldsSet = null;
         Boolean filterContainsCosmeticsOnly = null;
         Boolean filterContainsCosmetics = null;
-        ListSets response = api.getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
+        ListEquipmentSet response = api.getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
         // TODO: test validations
     }
 
@@ -94,7 +95,7 @@ public class SetsApiTest {
         Integer filterMaxHighestEquipmentLevel = null;
         Integer limit = null;
         Boolean filterIsCosmetic = null;
-        List<ListSet> response = api.getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+        List<ListEquipmentSet> response = api.getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
         // TODO: test validations
     }
 
@@ -110,7 +111,7 @@ public class SetsApiTest {
         String language = null;
         Integer ankamaId = null;
         String game = null;
-        Set response = api.getSetsSingle(language, ankamaId, game);
+        EquipmentSet response = api.getSetsSingle(language, ankamaId, game);
         // TODO: test validations
     }
 

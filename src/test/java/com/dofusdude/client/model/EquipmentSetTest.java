@@ -13,8 +13,7 @@
 
 package com.dofusdude.client.model;
 
-import com.dofusdude.client.model.ListSet;
-import com.dofusdude.client.model.PagedLinks;
+import com.dofusdude.client.model.Effect;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,38 +22,72 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ListSets
+ * Model tests for EquipmentSet
  */
-public class ListSetsTest {
-    private final ListSets model = new ListSets();
+public class EquipmentSetTest {
+    private final EquipmentSet model = new EquipmentSet();
 
     /**
-     * Model tests for ListSets
+     * Model tests for EquipmentSet
      */
     @Test
-    public void testListSets() {
-        // TODO: test ListSets
+    public void testEquipmentSet() {
+        // TODO: test EquipmentSet
     }
 
     /**
-     * Test the property 'links'
+     * Test the property 'ankamaId'
      */
     @Test
-    public void linksTest() {
-        // TODO: test links
+    public void ankamaIdTest() {
+        // TODO: test ankamaId
     }
 
     /**
-     * Test the property 'sets'
+     * Test the property 'name'
      */
     @Test
-    public void setsTest() {
-        // TODO: test sets
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
+     * Test the property 'equipmentIds'
+     */
+    @Test
+    public void equipmentIdsTest() {
+        // TODO: test equipmentIds
+    }
+
+    /**
+     * Test the property 'effects'
+     */
+    @Test
+    public void effectsTest() {
+        // TODO: test effects
+    }
+
+    /**
+     * Test the property 'highestEquipmentLevel'
+     */
+    @Test
+    public void highestEquipmentLevelTest() {
+        // TODO: test highestEquipmentLevel
+    }
+
+    /**
+     * Test the property 'isCosmetic'
+     */
+    @Test
+    public void isCosmeticTest() {
+        // TODO: test isCosmetic
     }
 
 }

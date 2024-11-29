@@ -13,7 +13,8 @@
 
 package com.dofusdude.client.model;
 
-import com.dofusdude.client.model.Effect;
+import com.dofusdude.client.model.ListEquipmentSet;
+import com.dofusdude.client.model.PagedLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,81 +23,38 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ListSet
+ * Model tests for ListEquipmentSets
  */
-public class ListSetTest {
-    private final ListSet model = new ListSet();
+public class ListEquipmentSetsTest {
+    private final ListEquipmentSets model = new ListEquipmentSets();
 
     /**
-     * Model tests for ListSet
+     * Model tests for ListEquipmentSets
      */
     @Test
-    public void testListSet() {
-        // TODO: test ListSet
+    public void testListEquipmentSets() {
+        // TODO: test ListEquipmentSets
     }
 
     /**
-     * Test the property 'ankamaId'
+     * Test the property 'links'
      */
     @Test
-    public void ankamaIdTest() {
-        // TODO: test ankamaId
+    public void linksTest() {
+        // TODO: test links
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'sets'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'items'
-     */
-    @Test
-    public void itemsTest() {
-        // TODO: test items
-    }
-
-    /**
-     * Test the property 'level'
-     */
-    @Test
-    public void levelTest() {
-        // TODO: test level
-    }
-
-    /**
-     * Test the property 'effects'
-     */
-    @Test
-    public void effectsTest() {
-        // TODO: test effects
-    }
-
-    /**
-     * Test the property 'equipmentIds'
-     */
-    @Test
-    public void equipmentIdsTest() {
-        // TODO: test equipmentIds
-    }
-
-    /**
-     * Test the property 'isCosmetic'
-     */
-    @Test
-    public void isCosmeticTest() {
-        // TODO: test isCosmetic
+    public void setsTest() {
+        // TODO: test sets
     }
 
 }

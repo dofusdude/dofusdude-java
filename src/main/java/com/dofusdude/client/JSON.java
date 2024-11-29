@@ -111,6 +111,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Effect.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.EffectType.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Equipment.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.EquipmentSet.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Error.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.GameSearch.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.GameSearchItem.CustomTypeAdapterFactory());
@@ -119,12 +120,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.GetMetaWebhooksTwitter200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Images.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ItemSubtype.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListEquipmentSet.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListEquipmentSets.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListItemGeneral.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListItems.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListMounts.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListSet.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ListSets.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Mount.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.MountFamily.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.PagedLinks.CustomTypeAdapterFactory());
@@ -135,7 +136,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Recipe.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Resource.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.RssWebhook.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Set.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.TranslatedId.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.TwitterWebhook.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Version.CustomTypeAdapterFactory());

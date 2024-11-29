@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,10 +52,10 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * Set
+ * ListEquipmentSet
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:12:41.641491730Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
-public class Set {
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-29T22:25:33.452687453Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
+public class ListEquipmentSet {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
   @jakarta.annotation.Nullable
@@ -65,30 +66,35 @@ public class Set {
   @jakarta.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_EQUIPMENT_IDS = "equipment_ids";
-  @SerializedName(SERIALIZED_NAME_EQUIPMENT_IDS)
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
   @jakarta.annotation.Nullable
-  private List<Integer> equipmentIds = new ArrayList<>();
+  private Integer items;
+
+  public static final String SERIALIZED_NAME_LEVEL = "level";
+  @SerializedName(SERIALIZED_NAME_LEVEL)
+  @jakarta.annotation.Nullable
+  private Integer level;
 
   public static final String SERIALIZED_NAME_EFFECTS = "effects";
   @SerializedName(SERIALIZED_NAME_EFFECTS)
   @jakarta.annotation.Nullable
   private Map<String, List<Effect>> effects = new HashMap<>();
 
-  public static final String SERIALIZED_NAME_HIGHEST_EQUIPMENT_LEVEL = "highest_equipment_level";
-  @SerializedName(SERIALIZED_NAME_HIGHEST_EQUIPMENT_LEVEL)
+  public static final String SERIALIZED_NAME_EQUIPMENT_IDS = "equipment_ids";
+  @SerializedName(SERIALIZED_NAME_EQUIPMENT_IDS)
   @jakarta.annotation.Nullable
-  private Integer highestEquipmentLevel;
+  private List<Integer> equipmentIds;
 
   public static final String SERIALIZED_NAME_IS_COSMETIC = "is_cosmetic";
   @SerializedName(SERIALIZED_NAME_IS_COSMETIC)
   @jakarta.annotation.Nullable
   private Boolean isCosmetic;
 
-  public Set() {
+  public ListEquipmentSet() {
   }
 
-  public Set ankamaId(@jakarta.annotation.Nullable Integer ankamaId) {
+  public ListEquipmentSet ankamaId(@jakarta.annotation.Nullable Integer ankamaId) {
     this.ankamaId = ankamaId;
     return this;
   }
@@ -107,7 +113,7 @@ public class Set {
   }
 
 
-  public Set name(@jakarta.annotation.Nullable String name) {
+  public ListEquipmentSet name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -126,39 +132,50 @@ public class Set {
   }
 
 
-  public Set equipmentIds(@jakarta.annotation.Nullable List<Integer> equipmentIds) {
-    this.equipmentIds = equipmentIds;
-    return this;
-  }
-
-  public Set addEquipmentIdsItem(Integer equipmentIdsItem) {
-    if (this.equipmentIds == null) {
-      this.equipmentIds = new ArrayList<>();
-    }
-    this.equipmentIds.add(equipmentIdsItem);
+  public ListEquipmentSet items(@jakarta.annotation.Nullable Integer items) {
+    this.items = items;
     return this;
   }
 
   /**
-   * Get equipmentIds
-   * @return equipmentIds
+   * amount
+   * @return items
    */
   @jakarta.annotation.Nullable
-  public List<Integer> getEquipmentIds() {
-    return equipmentIds;
+  public Integer getItems() {
+    return items;
   }
 
-  public void setEquipmentIds(@jakarta.annotation.Nullable List<Integer> equipmentIds) {
-    this.equipmentIds = equipmentIds;
+  public void setItems(@jakarta.annotation.Nullable Integer items) {
+    this.items = items;
   }
 
 
-  public Set effects(@jakarta.annotation.Nullable Map<String, List<Effect>> effects) {
+  public ListEquipmentSet level(@jakarta.annotation.Nullable Integer level) {
+    this.level = level;
+    return this;
+  }
+
+  /**
+   * Get level
+   * @return level
+   */
+  @jakarta.annotation.Nullable
+  public Integer getLevel() {
+    return level;
+  }
+
+  public void setLevel(@jakarta.annotation.Nullable Integer level) {
+    this.level = level;
+  }
+
+
+  public ListEquipmentSet effects(@jakarta.annotation.Nullable Map<String, List<Effect>> effects) {
     this.effects = effects;
     return this;
   }
 
-  public Set putEffectsItem(String key, List<Effect> effectsItem) {
+  public ListEquipmentSet putEffectsItem(String key, List<Effect> effectsItem) {
     if (this.effects == null) {
       this.effects = new HashMap<>();
     }
@@ -180,26 +197,34 @@ public class Set {
   }
 
 
-  public Set highestEquipmentLevel(@jakarta.annotation.Nullable Integer highestEquipmentLevel) {
-    this.highestEquipmentLevel = highestEquipmentLevel;
+  public ListEquipmentSet equipmentIds(@jakarta.annotation.Nullable List<Integer> equipmentIds) {
+    this.equipmentIds = equipmentIds;
+    return this;
+  }
+
+  public ListEquipmentSet addEquipmentIdsItem(Integer equipmentIdsItem) {
+    if (this.equipmentIds == null) {
+      this.equipmentIds = new ArrayList<>();
+    }
+    this.equipmentIds.add(equipmentIdsItem);
     return this;
   }
 
   /**
-   * Get highestEquipmentLevel
-   * @return highestEquipmentLevel
+   * Get equipmentIds
+   * @return equipmentIds
    */
   @jakarta.annotation.Nullable
-  public Integer getHighestEquipmentLevel() {
-    return highestEquipmentLevel;
+  public List<Integer> getEquipmentIds() {
+    return equipmentIds;
   }
 
-  public void setHighestEquipmentLevel(@jakarta.annotation.Nullable Integer highestEquipmentLevel) {
-    this.highestEquipmentLevel = highestEquipmentLevel;
+  public void setEquipmentIds(@jakarta.annotation.Nullable List<Integer> equipmentIds) {
+    this.equipmentIds = equipmentIds;
   }
 
 
-  public Set isCosmetic(@jakarta.annotation.Nullable Boolean isCosmetic) {
+  public ListEquipmentSet isCosmetic(@jakarta.annotation.Nullable Boolean isCosmetic) {
     this.isCosmetic = isCosmetic;
     return this;
   }
@@ -227,29 +252,42 @@ public class Set {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Set set = (Set) o;
-    return Objects.equals(this.ankamaId, set.ankamaId) &&
-        Objects.equals(this.name, set.name) &&
-        Objects.equals(this.equipmentIds, set.equipmentIds) &&
-        Objects.equals(this.effects, set.effects) &&
-        Objects.equals(this.highestEquipmentLevel, set.highestEquipmentLevel) &&
-        Objects.equals(this.isCosmetic, set.isCosmetic);
+    ListEquipmentSet listEquipmentSet = (ListEquipmentSet) o;
+    return Objects.equals(this.ankamaId, listEquipmentSet.ankamaId) &&
+        Objects.equals(this.name, listEquipmentSet.name) &&
+        Objects.equals(this.items, listEquipmentSet.items) &&
+        Objects.equals(this.level, listEquipmentSet.level) &&
+        Objects.equals(this.effects, listEquipmentSet.effects) &&
+        Objects.equals(this.equipmentIds, listEquipmentSet.equipmentIds) &&
+        Objects.equals(this.isCosmetic, listEquipmentSet.isCosmetic);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ankamaId, name, equipmentIds, effects, highestEquipmentLevel, isCosmetic);
+    return Objects.hash(ankamaId, name, items, level, effects, equipmentIds, isCosmetic);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Set {\n");
+    sb.append("class ListEquipmentSet {\n");
     sb.append("    ankamaId: ").append(toIndentedString(ankamaId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    equipmentIds: ").append(toIndentedString(equipmentIds)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
+    sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    effects: ").append(toIndentedString(effects)).append("\n");
-    sb.append("    highestEquipmentLevel: ").append(toIndentedString(highestEquipmentLevel)).append("\n");
+    sb.append("    equipmentIds: ").append(toIndentedString(equipmentIds)).append("\n");
     sb.append("    isCosmetic: ").append(toIndentedString(isCosmetic)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -275,9 +313,10 @@ public class Set {
     openapiFields = new HashSet<String>();
     openapiFields.add("ankama_id");
     openapiFields.add("name");
-    openapiFields.add("equipment_ids");
+    openapiFields.add("items");
+    openapiFields.add("level");
     openapiFields.add("effects");
-    openapiFields.add("highest_equipment_level");
+    openapiFields.add("equipment_ids");
     openapiFields.add("is_cosmetic");
 
     // a set of required properties/fields (JSON key names)
@@ -288,20 +327,20 @@ public class Set {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Set
+   * @throws IOException if the JSON Element is invalid with respect to ListEquipmentSet
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Set.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Set is not found in the empty JSON string", Set.openapiRequiredFields.toString()));
+        if (!ListEquipmentSet.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListEquipmentSet is not found in the empty JSON string", ListEquipmentSet.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Set.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Set` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ListEquipmentSet.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListEquipmentSet` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -318,22 +357,22 @@ public class Set {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Set.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Set' and its subtypes
+       if (!ListEquipmentSet.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListEquipmentSet' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Set> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Set.class));
+       final TypeAdapter<ListEquipmentSet> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListEquipmentSet.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Set>() {
+       return (TypeAdapter<T>) new TypeAdapter<ListEquipmentSet>() {
            @Override
-           public void write(JsonWriter out, Set value) throws IOException {
+           public void write(JsonWriter out, ListEquipmentSet value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Set read(JsonReader in) throws IOException {
+           public ListEquipmentSet read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -344,18 +383,18 @@ public class Set {
   }
 
   /**
-   * Create an instance of Set given an JSON string
+   * Create an instance of ListEquipmentSet given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Set
-   * @throws IOException if the JSON string is invalid with respect to Set
+   * @return An instance of ListEquipmentSet
+   * @throws IOException if the JSON string is invalid with respect to ListEquipmentSet
    */
-  public static Set fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Set.class);
+  public static ListEquipmentSet fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListEquipmentSet.class);
   }
 
   /**
-   * Convert an instance of Set to an JSON string
+   * Convert an instance of ListEquipmentSet to an JSON string
    *
    * @return JSON string
    */

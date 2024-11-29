@@ -1,6 +1,6 @@
 
 
-# ListSet
+# EquipmentSet
 
 
 ## Properties
@@ -9,10 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**ankamaId** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**items** | **Integer** | amount |  [optional] |
-|**level** | **Integer** |  |  [optional] |
-|**effects** | **Map&lt;String, List&lt;Effect&gt;&gt;** |  |  [optional] |
 |**equipmentIds** | **List&lt;Integer&gt;** |  |  [optional] |
+|**effects** | **Map&lt;String, List&lt;Effect&gt;&gt;** |  |  [optional] |
+|**highestEquipmentLevel** | **Integer** |  |  [optional] |
 |**isCosmetic** | **Boolean** |  |  [optional] |
 
 

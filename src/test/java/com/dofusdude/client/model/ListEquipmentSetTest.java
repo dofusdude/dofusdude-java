@@ -25,21 +25,22 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Set
+ * Model tests for ListEquipmentSet
  */
-public class SetTest {
-    private final Set model = new Set();
+public class ListEquipmentSetTest {
+    private final ListEquipmentSet model = new ListEquipmentSet();
 
     /**
-     * Model tests for Set
+     * Model tests for ListEquipmentSet
      */
     @Test
-    public void testSet() {
-        // TODO: test Set
+    public void testListEquipmentSet() {
+        // TODO: test ListEquipmentSet
     }
 
     /**
@@ -59,11 +60,19 @@ public class SetTest {
     }
 
     /**
-     * Test the property 'equipmentIds'
+     * Test the property 'items'
      */
     @Test
-    public void equipmentIdsTest() {
-        // TODO: test equipmentIds
+    public void itemsTest() {
+        // TODO: test items
+    }
+
+    /**
+     * Test the property 'level'
+     */
+    @Test
+    public void levelTest() {
+        // TODO: test level
     }
 
     /**
@@ -75,11 +84,11 @@ public class SetTest {
     }
 
     /**
-     * Test the property 'highestEquipmentLevel'
+     * Test the property 'equipmentIds'
      */
     @Test
-    public void highestEquipmentLevelTest() {
-        // TODO: test highestEquipmentLevel
+    public void equipmentIdsTest() {
+        // TODO: test equipmentIds
     }
 
     /**

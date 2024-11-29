@@ -2,7 +2,7 @@
 
 dofusdude
 - API version: 1.0.0-rc.2
-  - Build date: 2024-11-29T22:12:41.641491730Z[Etc/UTC]
+  - Build date: 2024-11-29T22:25:33.452687453Z[Etc/UTC]
   - Generator version: 7.11.0-SNAPSHOT
 
 # Open Ankama Developer Community
@@ -227,6 +227,7 @@ Class | Method | HTTP request | Description
  - [Effect](docs/Effect.md)
  - [EffectType](docs/EffectType.md)
  - [Equipment](docs/Equipment.md)
+ - [EquipmentSet](docs/EquipmentSet.md)
  - [Error](docs/Error.md)
  - [GameSearch](docs/GameSearch.md)
  - [GameSearchItem](docs/GameSearchItem.md)
@@ -235,12 +236,12 @@ Class | Method | HTTP request | Description
  - [GetMetaWebhooksTwitter200Response](docs/GetMetaWebhooksTwitter200Response.md)
  - [Images](docs/Images.md)
  - [ItemSubtype](docs/ItemSubtype.md)
+ - [ListEquipmentSet](docs/ListEquipmentSet.md)
+ - [ListEquipmentSets](docs/ListEquipmentSets.md)
  - [ListItem](docs/ListItem.md)
  - [ListItemGeneral](docs/ListItemGeneral.md)
  - [ListItems](docs/ListItems.md)
  - [ListMounts](docs/ListMounts.md)
- - [ListSet](docs/ListSet.md)
- - [ListSets](docs/ListSets.md)
  - [Mount](docs/Mount.md)
  - [MountFamily](docs/MountFamily.md)
  - [PagedLinks](docs/PagedLinks.md)
@@ -251,7 +252,6 @@ Class | Method | HTTP request | Description
  - [Recipe](docs/Recipe.md)
  - [Resource](docs/Resource.md)
  - [RssWebhook](docs/RssWebhook.md)
- - [Set](docs/Set.md)
  - [TranslatedId](docs/TranslatedId.md)
  - [TwitterWebhook](docs/TwitterWebhook.md)
  - [Version](docs/Version.md)

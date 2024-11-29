@@ -27,9 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.dofusdude.client.model.EquipmentSet;
 import com.dofusdude.client.model.Error;
-import com.dofusdude.client.model.ListSet;
-import com.dofusdude.client.model.ListSets;
+import com.dofusdude.client.model.ListEquipmentSet;
+import com.dofusdude.client.model.ListEquipmentSets;
 import java.util.Set;
 
 import java.lang.reflect.Type;
@@ -195,7 +196,7 @@ public class SetsApi {
      * @param acceptEncoding optional compression for saving bandwidth (optional)
      * @param filterContainsCosmeticsOnly filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
      * @param filterContainsCosmetics filter sets based on if they got cosmetic items in it. (optional)
-     * @return ListSets
+     * @return ListEquipmentSets
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -206,8 +207,8 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListSets getAllSetsList(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
-        ApiResponse<ListSets> localVarResp = getAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
+    public ListEquipmentSets getAllSetsList(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
+        ApiResponse<ListEquipmentSets> localVarResp = getAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
         return localVarResp.getData();
     }
 
@@ -222,7 +223,7 @@ public class SetsApi {
      * @param acceptEncoding optional compression for saving bandwidth (optional)
      * @param filterContainsCosmeticsOnly filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
      * @param filterContainsCosmetics filter sets based on if they got cosmetic items in it. (optional)
-     * @return ApiResponse&lt;ListSets&gt;
+     * @return ApiResponse&lt;ListEquipmentSets&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -233,9 +234,9 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListSets> getAllSetsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
+    public ApiResponse<ListEquipmentSets> getAllSetsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
         okhttp3.Call localVarCall = getAllSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics, null);
-        Type localVarReturnType = new TypeToken<ListSets>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListEquipmentSets>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -262,10 +263,10 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllSetsListAsync(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics, final ApiCallback<ListSets> _callback) throws ApiException {
+    public okhttp3.Call getAllSetsListAsync(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, String acceptEncoding, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics, final ApiCallback<ListEquipmentSets> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics, _callback);
-        Type localVarReturnType = new TypeToken<ListSets>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListEquipmentSets>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -400,7 +401,7 @@ public class SetsApi {
      * @param fieldsSet adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
      * @param filterContainsCosmeticsOnly filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
      * @param filterContainsCosmetics filter sets based on if they got cosmetic items in it. (optional)
-     * @return ListSets
+     * @return ListEquipmentSet
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -411,8 +412,8 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListSets getSetsList(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
-        ApiResponse<ListSets> localVarResp = getSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
+    public ListEquipmentSet getSetsList(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
+        ApiResponse<ListEquipmentSet> localVarResp = getSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
         return localVarResp.getData();
     }
 
@@ -429,7 +430,7 @@ public class SetsApi {
      * @param fieldsSet adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
      * @param filterContainsCosmeticsOnly filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
      * @param filterContainsCosmetics filter sets based on if they got cosmetic items in it. (optional)
-     * @return ApiResponse&lt;ListSets&gt;
+     * @return ApiResponse&lt;ListEquipmentSet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -440,9 +441,9 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListSets> getSetsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
+    public ApiResponse<ListEquipmentSet> getSetsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics) throws ApiException {
         okhttp3.Call localVarCall = getSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics, null);
-        Type localVarReturnType = new TypeToken<ListSets>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListEquipmentSet>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -471,10 +472,10 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSetsListAsync(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics, final ApiCallback<ListSets> _callback) throws ApiException {
+    public okhttp3.Call getSetsListAsync(String language, String game, String sortLevel, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsSet, Boolean filterContainsCosmeticsOnly, Boolean filterContainsCosmetics, final ApiCallback<ListEquipmentSet> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSetsListValidateBeforeCall(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics, _callback);
-        Type localVarReturnType = new TypeToken<ListSets>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListEquipmentSet>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -596,7 +597,7 @@ public class SetsApi {
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
      * @param limit maximum number of returned results (optional, default to 8)
      * @param filterIsCosmetic filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
-     * @return List&lt;ListSet&gt;
+     * @return List&lt;ListEquipmentSet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -607,8 +608,8 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public List<ListSet> getSetsSearch(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, Boolean filterIsCosmetic) throws ApiException {
-        ApiResponse<List<ListSet>> localVarResp = getSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+    public List<ListEquipmentSet> getSetsSearch(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, Boolean filterIsCosmetic) throws ApiException {
+        ApiResponse<List<ListEquipmentSet>> localVarResp = getSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
         return localVarResp.getData();
     }
 
@@ -622,7 +623,7 @@ public class SetsApi {
      * @param filterMaxHighestEquipmentLevel only results where the equipment with the highest level is below or equal to this value (optional)
      * @param limit maximum number of returned results (optional, default to 8)
      * @param filterIsCosmetic filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
-     * @return ApiResponse&lt;List&lt;ListSet&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ListEquipmentSet&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -633,9 +634,9 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ListSet>> getSetsSearchWithHttpInfo(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, Boolean filterIsCosmetic) throws ApiException {
+    public ApiResponse<List<ListEquipmentSet>> getSetsSearchWithHttpInfo(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, Boolean filterIsCosmetic) throws ApiException {
         okhttp3.Call localVarCall = getSetsSearchValidateBeforeCall(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic, null);
-        Type localVarReturnType = new TypeToken<List<ListSet>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ListEquipmentSet>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -661,10 +662,10 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSetsSearchAsync(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, Boolean filterIsCosmetic, final ApiCallback<List<ListSet>> _callback) throws ApiException {
+    public okhttp3.Call getSetsSearchAsync(String language, String game, String query, Integer filterMinHighestEquipmentLevel, Integer filterMaxHighestEquipmentLevel, Integer limit, Boolean filterIsCosmetic, final ApiCallback<List<ListEquipmentSet>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSetsSearchValidateBeforeCall(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic, _callback);
-        Type localVarReturnType = new TypeToken<List<ListSet>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ListEquipmentSet>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -759,7 +760,7 @@ public class SetsApi {
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
      * @param game dofus3 | dofus3beta (required)
-     * @return Set
+     * @return EquipmentSet
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -770,8 +771,8 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Set getSetsSingle(String language, Integer ankamaId, String game) throws ApiException {
-        ApiResponse<Set> localVarResp = getSetsSingleWithHttpInfo(language, ankamaId, game);
+    public EquipmentSet getSetsSingle(String language, Integer ankamaId, String game) throws ApiException {
+        ApiResponse<EquipmentSet> localVarResp = getSetsSingleWithHttpInfo(language, ankamaId, game);
         return localVarResp.getData();
     }
 
@@ -781,7 +782,7 @@ public class SetsApi {
      * @param language a valid language code (required)
      * @param ankamaId identifier (required)
      * @param game dofus3 | dofus3beta (required)
-     * @return ApiResponse&lt;Set&gt;
+     * @return ApiResponse&lt;EquipmentSet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -792,9 +793,9 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Set> getSetsSingleWithHttpInfo(String language, Integer ankamaId, String game) throws ApiException {
+    public ApiResponse<EquipmentSet> getSetsSingleWithHttpInfo(String language, Integer ankamaId, String game) throws ApiException {
         okhttp3.Call localVarCall = getSetsSingleValidateBeforeCall(language, ankamaId, game, null);
-        Type localVarReturnType = new TypeToken<Set>(){}.getType();
+        Type localVarReturnType = new TypeToken<EquipmentSet>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -816,10 +817,10 @@ public class SetsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSetsSingleAsync(String language, Integer ankamaId, String game, final ApiCallback<Set> _callback) throws ApiException {
+    public okhttp3.Call getSetsSingleAsync(String language, Integer ankamaId, String game, final ApiCallback<EquipmentSet> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSetsSingleValidateBeforeCall(language, ankamaId, game, _callback);
-        Type localVarReturnType = new TypeToken<Set>(){}.getType();
+        Type localVarReturnType = new TypeToken<EquipmentSet>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
