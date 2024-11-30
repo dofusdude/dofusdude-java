@@ -90,7 +90,7 @@ No authorization required
 
 <a id="getSetsList"></a>
 # **getSetsList**
-> ListEquipmentSet getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics)
+> ListEquipmentSets getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics)
 
 List Sets
 
@@ -122,7 +122,7 @@ public class Example {
     Boolean filterContainsCosmeticsOnly = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
     Boolean filterContainsCosmetics = true; // Boolean | filter sets based on if they got cosmetic items in it.
     try {
-      ListEquipmentSet result = apiInstance.getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
+      ListEquipmentSets result = apiInstance.getSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SetsApi#getSetsList");
@@ -152,7 +152,7 @@ public class Example {
 
 ### Return type
 
-[**ListEquipmentSet**](ListEquipmentSet.md)
+[**ListEquipmentSets**](ListEquipmentSets.md)
 
 ### Authorization
 
