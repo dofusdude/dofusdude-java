@@ -1,8 +1,8 @@
 # dofusdude-java
 
 dofusdude
-- API version: 1.0.0-rc.2
-  - Build date: 2024-11-30T00:38:54.296812490Z[Etc/UTC]
+- API version: 1.0.0-rc.3
+  - Build date: 2024-11-30T00:48:41.481361237Z[Etc/UTC]
   - Generator version: 7.11.0-SNAPSHOT
 
 # Open Ankama Developer Community
@@ -77,7 +77,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>1.0.0-rc.2</version>
+  <version>1.0.0-rc.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -93,7 +93,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:1.0.0-rc.2"
+     implementation "com.dofusdude:dofusdude-java:1.0.0-rc.3"
   }
 ```
 
@@ -107,7 +107,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-1.0.0-rc.2.jar`
+* `target/dofusdude-java-1.0.0-rc.3.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -173,7 +173,7 @@ Class | Method | HTTP request | Description
 *MetaApi* | [**getMetaAlmanaxBonuses**](docs/MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
 *MetaApi* | [**getMetaAlmanaxBonusesSearch**](docs/MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
 *MetaApi* | [**getMetaElements**](docs/MetaApi.md#getMetaElements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements
-*MetaApi* | [**getMetaVersion**](docs/MetaApi.md#getMetaVersion) | **GET** /dofus3beta/v1/meta/version | Game Version
+*MetaApi* | [**getMetaVersion**](docs/MetaApi.md#getMetaVersion) | **GET** /{game}/v1/meta/version | Game Version
 *MountsApi* | [**getAllMountsList**](docs/MountsApi.md#getAllMountsList) | **GET** /{game}/v1/{language}/mounts/all | List All Mounts
 *MountsApi* | [**getMountsList**](docs/MountsApi.md#getMountsList) | **GET** /{game}/v1/{language}/mounts | List Mounts
 *MountsApi* | [**getMountsSearch**](docs/MountsApi.md#getMountsSearch) | **GET** /{game}/v1/{language}/mounts/search | Search Mounts

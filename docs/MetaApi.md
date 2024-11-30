@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dofusdu.de*
 | [**getMetaAlmanaxBonuses**](MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
 | [**getMetaAlmanaxBonusesSearch**](MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
 | [**getMetaElements**](MetaApi.md#getMetaElements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements |
-| [**getMetaVersion**](MetaApi.md#getMetaVersion) | **GET** /dofus3beta/v1/meta/version | Game Version |
+| [**getMetaVersion**](MetaApi.md#getMetaVersion) | **GET** /{game}/v1/meta/version | Game Version |
 
 
 <a id="getGameSearchTypes"></a>
@@ -316,7 +316,7 @@ No authorization required
 
 <a id="getMetaVersion"></a>
 # **getMetaVersion**
-> Version getMetaVersion()
+> Version getMetaVersion(game)
 
 Game Version
 
@@ -337,8 +337,9 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
-      Version result = apiInstance.getMetaVersion();
+      Version result = apiInstance.getMetaVersion(game);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetaApi#getMetaVersion");
@@ -352,7 +353,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 
