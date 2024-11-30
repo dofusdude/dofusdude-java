@@ -93,7 +93,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -216,7 +216,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -309,7 +309,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -429,7 +429,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -560,7 +560,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -682,7 +682,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -805,7 +805,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: search query
@@ -955,7 +955,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -1077,7 +1077,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: case sensitive search query
@@ -1208,7 +1208,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1279,7 +1279,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1349,7 +1349,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1419,7 +1419,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1489,7 +1489,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1559,7 +1559,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1629,7 +1629,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       responses:
@@ -1690,7 +1690,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -1846,7 +1846,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: only results with the translated family name
@@ -1963,7 +1963,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2117,7 +2117,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2268,7 +2268,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2414,7 +2414,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2566,7 +2566,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2728,7 +2728,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: only results with the translated family name
@@ -2843,7 +2843,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2993,7 +2993,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3119,7 +3119,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3250,7 +3250,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3375,7 +3375,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3507,7 +3507,7 @@ paths:
           enum:
           - dofus3
           - dofus3beta
-          example: dofus3
+          example: dofus3beta
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3591,7 +3591,7 @@ paths:
         id: wbxzhlcid1l0w
       x-accepts:
       - application/json
-  /dofus3/{language}/almanax:
+  /dofus2/{language}/almanax:
     get:
       description: "Get a range of dates, defaults to today + 6 following days but\
         \ can specified by the query parameters. \n\nfilter[bonus_type] can be used\
@@ -3691,7 +3691,7 @@ paths:
         id: fy8l7o3sz1jyo
       x-accepts:
       - application/json
-  /dofus3/{language}/almanax/{date}:
+  /dofus2/{language}/almanax/{date}:
     get:
       description: Get a single date. There are not more details in the returned object
         than the normal range endpoint.
@@ -3737,7 +3737,7 @@ paths:
         id: d0000xjgaenyh
       x-accepts:
       - application/json
-  /dofus3/meta/elements:
+  /dofus3beta/v1/meta/elements:
     get:
       description: Get the mappings for all specific elements that are linked in the
         dataset. All names are english. Translations are not needed because of a global
@@ -3766,7 +3766,7 @@ paths:
         id: 4oyiu8nbwwgds
       x-accepts:
       - application/json
-  /dofus3/meta/version:
+  /dofus3beta/v1/meta/version:
     get:
       description: The current game version of the hosted data.
       operationId: get-meta-version
@@ -3786,7 +3786,7 @@ paths:
         id: ha9mde87rn0in
       x-accepts:
       - application/json
-  /dofus3/meta/search/types:
+  /dofus3beta/v1/meta/search/types:
     get:
       description: "Get all types for /{game}/v1/{lang}/search available for filtering.\
         \ All names are english for comparing them inside applications. Order is fixed\
@@ -3819,7 +3819,7 @@ paths:
         id: v67mknkhaif2h
       x-accepts:
       - application/json
-  /dofus3/meta/items/types:
+  /dofus3beta/v1/meta/items/types:
     get:
       description: |-
         Get all types of all items. Primarily used for filtering more detailed types in listings or search endpoints.
@@ -3853,7 +3853,7 @@ paths:
         id: j8a5zpi8i20xe
       x-accepts:
       - application/json
-  /dofus3/meta/{language}/almanax/bonuses:
+  /dofus2/meta/{language}/almanax/bonuses:
     get:
       description: Get all the available bonuses and their id for filtering them in
         the range endpoint.
@@ -3907,7 +3907,7 @@ paths:
         id: y3rp6gd28quli
       x-accepts:
       - application/json
-  /dofus3/meta/{language}/almanax/bonuses/search:
+  /dofus2/meta/{language}/almanax/bonuses/search:
     get:
       description: Search all the available bonuses and their id for filtering them
         in the range endpoint.

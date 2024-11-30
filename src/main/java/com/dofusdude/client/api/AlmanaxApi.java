@@ -104,7 +104,7 @@ public class AlmanaxApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/{language}/almanax/{date}"
+        String localVarPath = "/dofus2/{language}/almanax/{date}"
             .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()))
             .replace("{" + "date" + "}", localVarApiClient.escapeString(date.toString()));
 
@@ -245,7 +245,7 @@ public class AlmanaxApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/{language}/almanax"
+        String localVarPath = "/dofus2/{language}/almanax"
             .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

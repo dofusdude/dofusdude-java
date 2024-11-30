@@ -102,7 +102,7 @@ public class MetaApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/meta/search/types";
+        String localVarPath = "/dofus3beta/v1/meta/search/types";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -219,7 +219,7 @@ public class MetaApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/meta/items/types";
+        String localVarPath = "/dofus3beta/v1/meta/items/types";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -337,7 +337,7 @@ public class MetaApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/meta/{language}/almanax/bonuses"
+        String localVarPath = "/dofus2/meta/{language}/almanax/bonuses"
             .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -466,7 +466,7 @@ public class MetaApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/meta/{language}/almanax/bonuses/search"
+        String localVarPath = "/dofus2/meta/{language}/almanax/bonuses/search"
             .replace("{" + "language" + "}", localVarApiClient.escapeString(language.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -611,7 +611,7 @@ public class MetaApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/meta/elements";
+        String localVarPath = "/dofus3beta/v1/meta/elements";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -728,7 +728,7 @@ public class MetaApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/dofus3/meta/version";
+        String localVarPath = "/dofus3beta/v1/meta/version";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
