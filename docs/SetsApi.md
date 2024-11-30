@@ -172,7 +172,7 @@ No authorization required
 
 <a id="getSetsSearch"></a>
 # **getSetsSearch**
-> List&lt;ListEquipmentSet&gt; getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic)
+> List&lt;ListEquipmentSet&gt; getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterContainsCosmeticsOnly, filterContainsCosmetics)
 
 Search Sets
 
@@ -199,9 +199,10 @@ public class Example {
     Integer filterMinHighestEquipmentLevel = 195; // Integer | only results where the equipment with the highest level is above or equal to this value
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
     Integer limit = 8; // Integer | maximum number of returned results
-    Boolean filterIsCosmetic = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+    Boolean filterContainsCosmeticsOnly = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+    Boolean filterContainsCosmetics = true; // Boolean | filter sets based on if they got any cosmetic items in it
     try {
-      List<ListEquipmentSet> result = apiInstance.getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+      List<ListEquipmentSet> result = apiInstance.getSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterContainsCosmeticsOnly, filterContainsCosmetics);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SetsApi#getSetsSearch");
@@ -224,7 +225,8 @@ public class Example {
 | **filterMinHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is above or equal to this value | [optional] |
 | **filterMaxHighestEquipmentLevel** | **Integer**| only results where the equipment with the highest level is below or equal to this value | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
-| **filterIsCosmetic** | **Boolean**| filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional] |
+| **filterContainsCosmeticsOnly** | **Boolean**| filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional] |
+| **filterContainsCosmetics** | **Boolean**| filter sets based on if they got any cosmetic items in it | [optional] |
 
 ### Return type
 

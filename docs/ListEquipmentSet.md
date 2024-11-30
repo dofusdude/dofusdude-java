@@ -13,7 +13,8 @@
 |**level** | **Integer** |  |  [optional] |
 |**effects** | **Map&lt;String, List&lt;Effect&gt;&gt;** |  |  [optional] |
 |**equipmentIds** | **List&lt;Integer&gt;** |  |  [optional] |
-|**isCosmetic** | **Boolean** |  |  [optional] |
+|**containsCosmetics** | **Boolean** |  |  [optional] |
+|**containsCosmeticsOnly** | **Boolean** |  |  [optional] |
 
 
 

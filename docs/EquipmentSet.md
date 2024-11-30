@@ -12,7 +12,8 @@
 |**equipmentIds** | **List&lt;Integer&gt;** |  |  [optional] |
 |**effects** | **Map&lt;String, List&lt;Effect&gt;&gt;** |  |  [optional] |
 |**highestEquipmentLevel** | **Integer** |  |  [optional] |
-|**isCosmetic** | **Boolean** |  |  [optional] |
+|**containsCosmetics** | **Boolean** |  |  [optional] |
+|**containsCosmeticsOnly** | **Boolean** |  |  [optional] |
 
 
 
