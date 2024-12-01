@@ -36,8 +36,8 @@ public class Example {
     String query = "paztek"; // String | search query
     Set<String> filterSearchIndex = Arrays.asList(); // Set<String> | only results with all specific type
     Integer limit = 8; // Integer | maximum number of returned results
-    Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed.
-    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed.
+    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[search_index]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
       List<GameSearch> result = apiInstance.getGameSearch(language, game, query, filterSearchIndex, limit, fieldsItem, filterTypeNameId);
       System.out.println(result);
@@ -61,8 +61,8 @@ public class Example {
 | **query** | **String**| search query | |
 | **filterSearchIndex** | [**Set&lt;String&gt;**](String.md)| only results with all specific type | [optional] [enum: items-consumables, items-cosmetics, items-resources, items-equipment, items-quest_items, mounts, sets] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
-| **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | [optional] [enum: level, image_urls, type] |
-| **filterTypeNameId** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
+| **fieldsItem** | [**Set&lt;String&gt;**](String.md)| adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed. | [optional] [enum: level, image_urls, type] |
+| **filterTypeNameId** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[search_index]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
