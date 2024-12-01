@@ -58,7 +58,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
@@ -134,7 +134,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
@@ -212,7 +212,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
@@ -286,7 +286,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 

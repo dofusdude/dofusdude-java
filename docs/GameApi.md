@@ -56,7 +56,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| search query | |
 | **filterSearchIndex** | [**Set&lt;String&gt;**](String.md)| only results with all specific type | [optional] [enum: items-consumables, items-cosmetics, items-resources, items-equipment, items-quest_items, mounts, sets] |
@@ -132,7 +132,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |

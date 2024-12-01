@@ -56,7 +56,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **filterFamilyName** | **String**| only results with the translated family name | [optional] |
 | **acceptEncoding** | **String**| optional compression for saving bandwidth | [optional] [enum: gzip] |
@@ -130,7 +130,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **filterFamilyName** | **String**| only results with the translated family name | [optional] |
 | **pageSize** | **Integer**| size of the results from the list. -1 disables pagination and gets all in one response. | [optional] |
@@ -160,7 +160,7 @@ No authorization required
 
 <a id="getMountsSearch"></a>
 # **getMountsSearch**
-> List&lt;Mount&gt; getMountsSearch(language, game, query, filterFamilyName, limit)
+> List&lt;Mount&gt; getMountsSearch(language, game, query, filterFamilyName, limit, filterFamilyId)
 
 Search Mounts
 
@@ -186,8 +186,9 @@ public class Example {
     String query = "Dorée"; // String | case sensitive search query
     String filterFamilyName = "Dragodinde"; // String | only results with the translated family name
     Integer limit = 8; // Integer | maximum number of returned results
+    Integer filterFamilyId = 56; // Integer | only results with the unique family id
     try {
-      List<Mount> result = apiInstance.getMountsSearch(language, game, query, filterFamilyName, limit);
+      List<Mount> result = apiInstance.getMountsSearch(language, game, query, filterFamilyName, limit, filterFamilyId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MountsApi#getMountsSearch");
@@ -204,11 +205,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
 | **filterFamilyName** | **String**| only results with the translated family name | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
+| **filterFamilyId** | **Integer**| only results with the unique family id | [optional] |
 
 ### Return type
 
@@ -274,7 +276,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 

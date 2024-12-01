@@ -32,7 +32,7 @@ info:
     name: GPL-3.0
     url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 1.0.0-rc.5
+  version: 1.0.0-rc.6
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -76,7 +76,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: fr
@@ -199,7 +198,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: fr
@@ -231,7 +229,7 @@ paths:
       - description: only results with the translated family name
         explode: true
         in: query
-        name: "filter[family_name]"
+        name: "filter[family.name]"
         required: false
         schema:
           example: Dragodinde
@@ -247,6 +245,14 @@ paths:
           example: 8
           maximum: 100
           minimum: 1
+          type: integer
+        style: form
+      - description: only results with the unique family id
+        explode: true
+        in: query
+        name: "filter[family.id]"
+        required: false
+        schema:
           type: integer
         style: form
       responses:
@@ -293,7 +299,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -420,7 +425,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: es
@@ -447,15 +451,6 @@ paths:
         required: true
         schema:
           example: Ficha
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Justicieros
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -498,7 +493,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -552,7 +547,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -674,7 +668,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -797,7 +790,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -947,7 +939,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1069,7 +1060,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1191,7 +1181,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1262,7 +1251,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1332,7 +1320,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1402,7 +1389,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1472,7 +1458,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1542,7 +1527,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1612,7 +1596,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1682,7 +1665,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1838,7 +1820,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -1954,7 +1935,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: en
@@ -2109,7 +2089,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -2260,7 +2239,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -2405,7 +2383,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: fr
@@ -2557,7 +2534,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: fr
@@ -2720,7 +2696,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -2770,23 +2745,6 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                defaults:
-                  value:
-                    _links:
-                      first: null
-                      prev: null
-                      next: null
-                      last: null
-                    items:
-                    - ankama_id: 0
-                      name: string
-                      family_name: string
-                      image_urls:
-                        icon: string
-                        sd: string
-                        hq: string
-                        hd: string
               schema:
                 $ref: '#/components/schemas/ListMounts'
           description: ""
@@ -2835,7 +2793,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -2984,7 +2941,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: fr
@@ -3110,7 +3066,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: fr
@@ -3242,7 +3197,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -3367,7 +3321,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           maxLength: 2
@@ -3498,7 +3451,6 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
           - pt
           example: en

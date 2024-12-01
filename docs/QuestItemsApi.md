@@ -58,7 +58,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
@@ -130,7 +130,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **ankamaId** | **Integer**| identifier | |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
@@ -204,7 +204,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **sortLevel** | **String**| sort the resulting list by level, default unsorted | [optional] [enum: asc, desc] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
@@ -236,7 +236,7 @@ No authorization required
 
 <a id="getItemsQuestSearch"></a>
 # **getItemsQuestSearch**
-> List&lt;ListItem&gt; getItemsQuestSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum)
+> List&lt;ListItem&gt; getItemsQuestSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId)
 
 Search Quest Items
 
@@ -260,13 +260,12 @@ public class Example {
     String language = "en"; // String | a valid language code
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "Ficha"; // String | case sensitive search query
-    String filterTypeName = "Justicieros"; // String | only results with the translated type name
     Integer filterMinLevel = 60; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 70; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
-    Set<String> filterTypeEnum = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
-      List<ListItem> result = apiInstance.getItemsQuestSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
+      List<ListItem> result = apiInstance.getItemsQuestSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuestItemsApi#getItemsQuestSearch");
@@ -283,14 +282,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es, pt] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 | **query** | **String**| case sensitive search query | |
-| **filterTypeName** | **String**| only results with the translated type name | [optional] |
 | **filterMinLevel** | **Integer**| only results which level is equal or above this value | [optional] |
 | **filterMaxLevel** | **Integer**| only results which level is equal or below this value | [optional] |
 | **limit** | **Integer**| maximum number of returned results | [optional] [default to 8] |
-| **filterTypeEnum** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
+| **filterTypeNameId** | [**Set&lt;String&gt;**](String.md)| multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional] |
 
 ### Return type
 
