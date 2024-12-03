@@ -99,7 +99,7 @@ public class Example {
     String filterBonusType = "experience-points"; // String | ids from meta/{language}/almanax/bonuses
     LocalDate rangeFrom = LocalDate.now(); // LocalDate | yyyy-mm-dd
     LocalDate rangeTo = LocalDate.now(); // LocalDate | yyyy-mm-dd
-    Integer rangeSize = -1; // Integer | size of the returned range
+    Integer rangeSize = -1; // Integer | Size of the returned range. Disable to fully use the range by setting size to -1.
     String timezone = "Europe/Paris"; // String | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location.
     try {
       List<Almanax> result = apiInstance.getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
@@ -123,7 +123,7 @@ public class Example {
 | **filterBonusType** | **String**| ids from meta/{language}/almanax/bonuses | [optional] |
 | **rangeFrom** | **LocalDate**| yyyy-mm-dd | [optional] |
 | **rangeTo** | **LocalDate**| yyyy-mm-dd | [optional] |
-| **rangeSize** | **Integer**| size of the returned range | [optional] |
+| **rangeSize** | **Integer**| Size of the returned range. Disable to fully use the range by setting size to -1. | [optional] |
 | **timezone** | **String**| determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. | [optional] [default to Europe/Paris] |
 
 ### Return type

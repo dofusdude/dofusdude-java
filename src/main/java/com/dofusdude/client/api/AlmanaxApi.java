@@ -216,7 +216,7 @@ public class AlmanaxApi {
      * @param filterBonusType ids from meta/{language}/almanax/bonuses (optional)
      * @param rangeFrom yyyy-mm-dd (optional)
      * @param rangeTo yyyy-mm-dd (optional)
-     * @param rangeSize size of the returned range (optional)
+     * @param rangeSize Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
      * @param timezone determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to Europe/Paris)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -311,7 +311,7 @@ public class AlmanaxApi {
      * @param filterBonusType ids from meta/{language}/almanax/bonuses (optional)
      * @param rangeFrom yyyy-mm-dd (optional)
      * @param rangeTo yyyy-mm-dd (optional)
-     * @param rangeSize size of the returned range (optional)
+     * @param rangeSize Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
      * @param timezone determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to Europe/Paris)
      * @return List&lt;Almanax&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -334,7 +334,7 @@ public class AlmanaxApi {
      * @param filterBonusType ids from meta/{language}/almanax/bonuses (optional)
      * @param rangeFrom yyyy-mm-dd (optional)
      * @param rangeTo yyyy-mm-dd (optional)
-     * @param rangeSize size of the returned range (optional)
+     * @param rangeSize Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
      * @param timezone determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to Europe/Paris)
      * @return ApiResponse&lt;List&lt;Almanax&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -358,7 +358,7 @@ public class AlmanaxApi {
      * @param filterBonusType ids from meta/{language}/almanax/bonuses (optional)
      * @param rangeFrom yyyy-mm-dd (optional)
      * @param rangeTo yyyy-mm-dd (optional)
-     * @param rangeSize size of the returned range (optional)
+     * @param rangeSize Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
      * @param timezone determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to Europe/Paris)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
