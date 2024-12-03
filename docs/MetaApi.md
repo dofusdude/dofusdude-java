@@ -35,7 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
-    String game = "game_example"; // String | game main 'dofus3' or beta channel 'dofus3beta'
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       List<String> result = apiInstance.getGameSearchTypes(game);
       System.out.println(result);
@@ -54,7 +54,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 
@@ -97,7 +97,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
-    String game = "game_example"; // String | game main 'dofus3' or beta channel 'dofus3beta'
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       List<String> result = apiInstance.getItemTypes(game);
       System.out.println(result);
@@ -116,7 +116,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 
@@ -287,7 +287,7 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
-    String game = "game_example"; // String | game main 'dofus3' or beta channel 'dofus3beta'
+    String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       List<String> result = apiInstance.getMetaElements(game);
       System.out.println(result);
@@ -306,7 +306,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | |
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | [enum: dofus3, dofus3beta] |
 
 ### Return type
 

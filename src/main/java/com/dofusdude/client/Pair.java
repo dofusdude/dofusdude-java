@@ -13,7 +13,7 @@
 
 package com.dofusdude.client;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-03T11:58:09.304302806Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-03T12:11:42.585842663Z[Etc/UTC]", comments = "Generator version: 7.11.0-SNAPSHOT")
 public class Pair {
     private String name = "";
     private String value = "";
