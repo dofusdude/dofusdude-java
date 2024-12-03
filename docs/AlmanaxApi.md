@@ -97,8 +97,8 @@ public class Example {
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
     String filterBonusType = "experience-points"; // String | ids from meta/{language}/almanax/bonuses
-    LocalDate rangeFrom = LocalDate.parse("Thu Sep 15 00:00:00 UTC 2016"); // LocalDate | yyyy-mm-dd
-    LocalDate rangeTo = LocalDate.parse("Wed Sep 28 00:00:00 UTC 2016"); // LocalDate | yyyy-mm-dd
+    LocalDate rangeFrom = LocalDate.now(); // LocalDate | yyyy-mm-dd
+    LocalDate rangeTo = LocalDate.now(); // LocalDate | yyyy-mm-dd
     Integer rangeSize = -1; // Integer | size of the returned range
     String timezone = "Europe/Paris"; // String | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location.
     try {

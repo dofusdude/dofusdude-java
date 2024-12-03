@@ -3596,7 +3596,6 @@ paths:
         name: "range[from]"
         required: false
         schema:
-          example: 2016-09-15
           format: date
           type: string
         style: form
@@ -3606,7 +3605,6 @@ paths:
         name: "range[to]"
         required: false
         schema:
-          example: 2016-09-28
           format: date
           type: string
         style: form
