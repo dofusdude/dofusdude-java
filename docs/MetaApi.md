@@ -4,17 +4,17 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getGameSearchTypes**](MetaApi.md#getGameSearchTypes) | **GET** /dofus3beta/v1/meta/search/types | Available Game Search Types |
-| [**getItemTypes**](MetaApi.md#getItemTypes) | **GET** /dofus3beta/v1/meta/items/types | Available Item Types |
-| [**getMetaAlmanaxBonuses**](MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
-| [**getMetaAlmanaxBonusesSearch**](MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
-| [**getMetaElements**](MetaApi.md#getMetaElements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements |
+| [**getGameSearchTypes**](MetaApi.md#getGameSearchTypes) | **GET** /{game}/v1/meta/search/types | Available Game Search Types |
+| [**getItemTypes**](MetaApi.md#getItemTypes) | **GET** /{game}/v1/meta/items/types | Available Item Types |
+| [**getMetaAlmanaxBonuses**](MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
+| [**getMetaAlmanaxBonusesSearch**](MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
+| [**getMetaElements**](MetaApi.md#getMetaElements) | **GET** /{game}/v1/meta/elements | Effects and Condition Elements |
 | [**getMetaVersion**](MetaApi.md#getMetaVersion) | **GET** /{game}/v1/meta/version | Game Version |
 
 
 <a id="getGameSearchTypes"></a>
 # **getGameSearchTypes**
-> List&lt;String&gt; getGameSearchTypes()
+> List&lt;String&gt; getGameSearchTypes(game)
 
 Available Game Search Types
 
@@ -35,8 +35,9 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
+    String game = "game_example"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
-      List<String> result = apiInstance.getGameSearchTypes();
+      List<String> result = apiInstance.getGameSearchTypes(game);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetaApi#getGameSearchTypes");
@@ -50,7 +51,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | |
 
 ### Return type
 
@@ -72,7 +76,7 @@ No authorization required
 
 <a id="getItemTypes"></a>
 # **getItemTypes**
-> List&lt;String&gt; getItemTypes()
+> List&lt;String&gt; getItemTypes(game)
 
 Available Item Types
 
@@ -93,8 +97,9 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
+    String game = "game_example"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
-      List<String> result = apiInstance.getItemTypes();
+      List<String> result = apiInstance.getItemTypes(game);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetaApi#getItemTypes");
@@ -108,7 +113,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | |
 
 ### Return type
 
@@ -258,7 +266,7 @@ No authorization required
 
 <a id="getMetaElements"></a>
 # **getMetaElements**
-> List&lt;String&gt; getMetaElements()
+> List&lt;String&gt; getMetaElements(game)
 
 Effects and Condition Elements
 
@@ -279,8 +287,9 @@ public class Example {
     defaultClient.setBasePath("https://api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
+    String game = "game_example"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
-      List<String> result = apiInstance.getMetaElements();
+      List<String> result = apiInstance.getMetaElements(game);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetaApi#getMetaElements");
@@ -294,7 +303,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **game** | **String**| game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | |
 
 ### Return type
 

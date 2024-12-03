@@ -1,8 +1,8 @@
 # dofusdude-java
 
 dofusdude
-- API version: 1.0.0-rc.7
-  - Build date: 2024-12-01T19:14:21.697992966Z[Etc/UTC]
+- API version: 1.0.0-rc.8
+  - Build date: 2024-12-03T11:58:09.304302806Z[Etc/UTC]
   - Generator version: 7.11.0-SNAPSHOT
 
 # Open Ankama Developer Community
@@ -77,7 +77,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>1.0.0-rc.7</version>
+  <version>1.0.0-rc.8</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -93,7 +93,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:1.0.0-rc.7"
+     implementation "com.dofusdude:dofusdude-java:1.0.0-rc.8"
   }
 ```
 
@@ -107,7 +107,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-1.0.0-rc.7.jar`
+* `target/dofusdude-java-1.0.0-rc.8.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -152,8 +152,8 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AlmanaxApi* | [**getAlmanaxDate**](docs/AlmanaxApi.md#getAlmanaxDate) | **GET** /dofus2/{language}/almanax/{date} | Single Almanax Date
-*AlmanaxApi* | [**getAlmanaxRange**](docs/AlmanaxApi.md#getAlmanaxRange) | **GET** /dofus2/{language}/almanax | Almanax Range
+*AlmanaxApi* | [**getAlmanaxDate**](docs/AlmanaxApi.md#getAlmanaxDate) | **GET** /dofus3/v1/{language}/almanax/{date} | Single Almanax Date
+*AlmanaxApi* | [**getAlmanaxRange**](docs/AlmanaxApi.md#getAlmanaxRange) | **GET** /dofus3/v1/{language}/almanax | Almanax Range
 *ConsumablesApi* | [**getAllItemsConsumablesList**](docs/ConsumablesApi.md#getAllItemsConsumablesList) | **GET** /{game}/v1/{language}/items/consumables/all | List All Consumables
 *ConsumablesApi* | [**getItemsConsumablesList**](docs/ConsumablesApi.md#getItemsConsumablesList) | **GET** /{game}/v1/{language}/items/consumables | List Consumables
 *ConsumablesApi* | [**getItemsConsumablesSearch**](docs/ConsumablesApi.md#getItemsConsumablesSearch) | **GET** /{game}/v1/{language}/items/consumables/search | Search Consumables
@@ -168,11 +168,11 @@ Class | Method | HTTP request | Description
 *EquipmentApi* | [**getItemsEquipmentSingle**](docs/EquipmentApi.md#getItemsEquipmentSingle) | **GET** /{game}/v1/{language}/items/equipment/{ankama_id} | Single Equipment
 *GameApi* | [**getGameSearch**](docs/GameApi.md#getGameSearch) | **GET** /{game}/v1/{language}/search | Game Search
 *GameApi* | [**getItemsAllSearch**](docs/GameApi.md#getItemsAllSearch) | **GET** /{game}/v1/{language}/items/search | Search All Items
-*MetaApi* | [**getGameSearchTypes**](docs/MetaApi.md#getGameSearchTypes) | **GET** /dofus3beta/v1/meta/search/types | Available Game Search Types
-*MetaApi* | [**getItemTypes**](docs/MetaApi.md#getItemTypes) | **GET** /dofus3beta/v1/meta/items/types | Available Item Types
-*MetaApi* | [**getMetaAlmanaxBonuses**](docs/MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
-*MetaApi* | [**getMetaAlmanaxBonusesSearch**](docs/MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
-*MetaApi* | [**getMetaElements**](docs/MetaApi.md#getMetaElements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements
+*MetaApi* | [**getGameSearchTypes**](docs/MetaApi.md#getGameSearchTypes) | **GET** /{game}/v1/meta/search/types | Available Game Search Types
+*MetaApi* | [**getItemTypes**](docs/MetaApi.md#getItemTypes) | **GET** /{game}/v1/meta/items/types | Available Item Types
+*MetaApi* | [**getMetaAlmanaxBonuses**](docs/MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses | Available Almanax Bonuses
+*MetaApi* | [**getMetaAlmanaxBonusesSearch**](docs/MetaApi.md#getMetaAlmanaxBonusesSearch) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
+*MetaApi* | [**getMetaElements**](docs/MetaApi.md#getMetaElements) | **GET** /{game}/v1/meta/elements | Effects and Condition Elements
 *MetaApi* | [**getMetaVersion**](docs/MetaApi.md#getMetaVersion) | **GET** /{game}/v1/meta/version | Game Version
 *MountsApi* | [**getAllMountsList**](docs/MountsApi.md#getAllMountsList) | **GET** /{game}/v1/{language}/mounts/all | List All Mounts
 *MountsApi* | [**getMountsList**](docs/MountsApi.md#getMountsList) | **GET** /{game}/v1/{language}/mounts | List Mounts
