@@ -1,9 +1,9 @@
 # dofusdude-java
 
 dofusdude
-- API version: 1.0.0-rc.8
-  - Build date: 2024-12-03T12:20:40.270086531Z[Etc/UTC]
-  - Generator version: 7.11.0-SNAPSHOT
+- API version: 1.0.0-rc.9
+  - Build date: 2025-01-25T11:34:07.552413689Z[Etc/UTC]
+  - Generator version: 7.12.0-SNAPSHOT
 
 # Open Ankama Developer Community
 The all-in-one toolbelt for your next Ankama related project.
@@ -77,7 +77,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>1.0.0-rc.8</version>
+  <version>1.0.0-rc.9</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -93,7 +93,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:1.0.0-rc.8"
+     implementation "com.dofusdude:dofusdude-java:1.0.0-rc.9"
   }
 ```
 
@@ -107,7 +107,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-1.0.0-rc.8.jar`
+* `target/dofusdude-java-1.0.0-rc.9.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -131,8 +131,9 @@ public class Example {
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
     LocalDate date = LocalDate.parse("Tue Jul 14 00:00:00 UTC 2020"); // LocalDate | yyyy-mm-dd
+    Integer level = 56; // Integer | character level for the reward_xp field
     try {
-      Almanax result = apiInstance.getAlmanaxDate(language, date);
+      Almanax result = apiInstance.getAlmanaxDate(language, date, level);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlmanaxApi#getAlmanaxDate");

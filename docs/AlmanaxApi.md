@@ -10,7 +10,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getAlmanaxDate"></a>
 # **getAlmanaxDate**
-> Almanax getAlmanaxDate(language, date)
+> Almanax getAlmanaxDate(language, date, level)
 
 Single Almanax Date
 
@@ -33,8 +33,9 @@ public class Example {
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
     LocalDate date = LocalDate.parse("Tue Jul 14 00:00:00 UTC 2020"); // LocalDate | yyyy-mm-dd
+    Integer level = 56; // Integer | character level for the reward_xp field
     try {
-      Almanax result = apiInstance.getAlmanaxDate(language, date);
+      Almanax result = apiInstance.getAlmanaxDate(language, date, level);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlmanaxApi#getAlmanaxDate");
@@ -53,6 +54,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| code | [enum: en, fr, de, it, es] |
 | **date** | **LocalDate**| yyyy-mm-dd | |
+| **level** | **Integer**| character level for the reward_xp field | [optional] |
 
 ### Return type
 
@@ -74,7 +76,7 @@ No authorization required
 
 <a id="getAlmanaxRange"></a>
 # **getAlmanaxRange**
-> List&lt;Almanax&gt; getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone)
+> List&lt;Almanax&gt; getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level)
 
 Almanax Range
 
@@ -101,8 +103,9 @@ public class Example {
     LocalDate rangeTo = LocalDate.now(); // LocalDate | yyyy-mm-dd
     Integer rangeSize = -1; // Integer | Size of the returned range. Disable to fully use the range by setting size to -1.
     String timezone = "Europe/Paris"; // String | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location.
+    Integer level = 56; // Integer | character level for the reward_xp field
     try {
-      List<Almanax> result = apiInstance.getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
+      List<Almanax> result = apiInstance.getAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlmanaxApi#getAlmanaxRange");
@@ -125,6 +128,7 @@ public class Example {
 | **rangeTo** | **LocalDate**| yyyy-mm-dd | [optional] |
 | **rangeSize** | **Integer**| Size of the returned range. Disable to fully use the range by setting size to -1. | [optional] |
 | **timezone** | **String**| determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. | [optional] [default to Europe/Paris] |
+| **level** | **Integer**| character level for the reward_xp field | [optional] |
 
 ### Return type
 
