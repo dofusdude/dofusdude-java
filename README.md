@@ -2,7 +2,7 @@
 
 dofusdude
 - API version: 1.0.0-rc.9
-  - Build date: 2025-01-25T11:34:07.552413689Z[Etc/UTC]
+  - Build date: 2025-01-25T11:40:26.120771773Z[Etc/UTC]
   - Generator version: 7.12.0-SNAPSHOT
 
 # Open Ankama Developer Community
@@ -130,7 +130,7 @@ public class Example {
 
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
-    LocalDate date = LocalDate.parse("Tue Jul 14 00:00:00 UTC 2020"); // LocalDate | yyyy-mm-dd
+    LocalDate date = LocalDate.parse("Sat Jan 25 00:00:00 UTC 2025"); // LocalDate | yyyy-mm-dd
     Integer level = 56; // Integer | character level for the reward_xp field
     try {
       Almanax result = apiInstance.getAlmanaxDate(language, date, level);

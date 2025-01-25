@@ -50,7 +50,7 @@ import com.dofusdude.client.JSON;
 /**
  * GameSearch
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-25T11:34:07.552413689Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-25T11:40:26.120771773Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
 public class GameSearch {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
