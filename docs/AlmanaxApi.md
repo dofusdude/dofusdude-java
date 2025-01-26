@@ -52,7 +52,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| code | [enum: en, fr, de, it, es] |
+| **language** | **String**| code | [enum: en, fr, de, es, pt] |
 | **date** | **LocalDate**| yyyy-mm-dd | |
 | **level** | **Integer**| character level for the reward_xp field | [optional] |
 
@@ -122,7 +122,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| code | [enum: en, fr, de, it, es] |
+| **language** | **String**| code | [enum: en, fr, de, es, pt] |
 | **filterBonusType** | **String**| ids from meta/{language}/almanax/bonuses | [optional] |
 | **rangeFrom** | **LocalDate**| yyyy-mm-dd | [optional] |
 | **rangeTo** | **LocalDate**| yyyy-mm-dd | [optional] |

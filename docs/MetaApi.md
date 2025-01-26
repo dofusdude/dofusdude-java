@@ -178,7 +178,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 
 ### Return type
 
@@ -242,7 +242,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**| a valid language code | [enum: en, fr, de, it, es] |
+| **language** | **String**| a valid language code | [enum: en, fr, de, es, pt] |
 | **query** | **String**| case sensitive search query | |
 | **limit** | **Integer**| maximum number of returned results | [optional] |
 
