@@ -49,7 +49,7 @@ import com.dofusdude.client.JSON;
 /**
  * Effect
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class Effect {
   public static final String SERIALIZED_NAME_INT_MINIMUM = "int_minimum";
   @SerializedName(SERIALIZED_NAME_INT_MINIMUM)
@@ -252,16 +252,10 @@ public class Effect {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("int_minimum");
-    openapiFields.add("int_maximum");
-    openapiFields.add("type");
-    openapiFields.add("ignore_int_min");
-    openapiFields.add("ignore_int_max");
-    openapiFields.add("formatted");
+    openapiFields = new HashSet<String>(Arrays.asList("int_minimum", "int_maximum", "type", "ignore_int_min", "ignore_int_max", "formatted"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

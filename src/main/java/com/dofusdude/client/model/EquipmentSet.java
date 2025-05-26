@@ -53,7 +53,7 @@ import com.dofusdude.client.JSON;
 /**
  * EquipmentSet
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class EquipmentSet {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -298,17 +298,10 @@ public class EquipmentSet {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ankama_id");
-    openapiFields.add("name");
-    openapiFields.add("equipment_ids");
-    openapiFields.add("effects");
-    openapiFields.add("highest_equipment_level");
-    openapiFields.add("contains_cosmetics");
-    openapiFields.add("contains_cosmetics_only");
+    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "name", "equipment_ids", "effects", "highest_equipment_level", "contains_cosmetics", "contains_cosmetics_only"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

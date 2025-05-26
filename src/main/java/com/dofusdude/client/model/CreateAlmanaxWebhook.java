@@ -58,7 +58,7 @@ import com.dofusdude.client.JSON;
 /**
  * CreateAlmanaxWebhook
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class CreateAlmanaxWebhook {
   public static final String SERIALIZED_NAME_BONUS_WHITELIST = "bonus_whitelist";
   @SerializedName(SERIALIZED_NAME_BONUS_WHITELIST)
@@ -582,24 +582,10 @@ public class CreateAlmanaxWebhook {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bonus_whitelist");
-    openapiFields.add("bonus_blacklist");
-    openapiFields.add("subscriptions");
-    openapiFields.add("format");
-    openapiFields.add("callback");
-    openapiFields.add("daily_settings");
-    openapiFields.add("iso_date");
-    openapiFields.add("mentions");
-    openapiFields.add("intervals");
-    openapiFields.add("weekly_weekday");
+    openapiFields = new HashSet<String>(Arrays.asList("bonus_whitelist", "bonus_blacklist", "subscriptions", "format", "callback", "daily_settings", "iso_date", "mentions", "intervals", "weekly_weekday"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("subscriptions");
-    openapiRequiredFields.add("format");
-    openapiRequiredFields.add("callback");
-    openapiRequiredFields.add("intervals");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("subscriptions", "format", "callback", "intervals"));
   }
 
   /**

@@ -94,7 +94,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllMountsListCall(String language, String game, String filterFamilyName, String acceptEncoding, Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllMountsListCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -154,7 +154,7 @@ public class MountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllMountsListValidateBeforeCall(String language, String game, String filterFamilyName, String acceptEncoding, Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllMountsListValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getAllMountsList(Async)");
@@ -188,7 +188,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListMounts getAllMountsList(String language, String game, String filterFamilyName, String acceptEncoding, Integer filterFamilyId) throws ApiException {
+    public ListMounts getAllMountsList(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Integer filterFamilyId) throws ApiException {
         ApiResponse<ListMounts> localVarResp = getAllMountsListWithHttpInfo(language, game, filterFamilyName, acceptEncoding, filterFamilyId);
         return localVarResp.getData();
     }
@@ -212,7 +212,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListMounts> getAllMountsListWithHttpInfo(String language, String game, String filterFamilyName, String acceptEncoding, Integer filterFamilyId) throws ApiException {
+    public ApiResponse<ListMounts> getAllMountsListWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Integer filterFamilyId) throws ApiException {
         okhttp3.Call localVarCall = getAllMountsListValidateBeforeCall(language, game, filterFamilyName, acceptEncoding, filterFamilyId, null);
         Type localVarReturnType = new TypeToken<ListMounts>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -238,7 +238,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllMountsListAsync(String language, String game, String filterFamilyName, String acceptEncoding, Integer filterFamilyId, final ApiCallback<ListMounts> _callback) throws ApiException {
+    public okhttp3.Call getAllMountsListAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback<ListMounts> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllMountsListValidateBeforeCall(language, game, filterFamilyName, acceptEncoding, filterFamilyId, _callback);
         Type localVarReturnType = new TypeToken<ListMounts>(){}.getType();
@@ -266,7 +266,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMountsListCall(String language, String game, String filterFamilyName, Integer pageSize, Integer pageNumber, Set<String> fieldsMount, Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMountsListCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsMount, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -333,7 +333,7 @@ public class MountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMountsListValidateBeforeCall(String language, String game, String filterFamilyName, Integer pageSize, Integer pageNumber, Set<String> fieldsMount, Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMountsListValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsMount, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getMountsList(Async)");
@@ -369,7 +369,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListMounts getMountsList(String language, String game, String filterFamilyName, Integer pageSize, Integer pageNumber, Set<String> fieldsMount, Integer filterFamilyId) throws ApiException {
+    public ListMounts getMountsList(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsMount, @jakarta.annotation.Nullable Integer filterFamilyId) throws ApiException {
         ApiResponse<ListMounts> localVarResp = getMountsListWithHttpInfo(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount, filterFamilyId);
         return localVarResp.getData();
     }
@@ -395,7 +395,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListMounts> getMountsListWithHttpInfo(String language, String game, String filterFamilyName, Integer pageSize, Integer pageNumber, Set<String> fieldsMount, Integer filterFamilyId) throws ApiException {
+    public ApiResponse<ListMounts> getMountsListWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsMount, @jakarta.annotation.Nullable Integer filterFamilyId) throws ApiException {
         okhttp3.Call localVarCall = getMountsListValidateBeforeCall(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount, filterFamilyId, null);
         Type localVarReturnType = new TypeToken<ListMounts>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -423,7 +423,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMountsListAsync(String language, String game, String filterFamilyName, Integer pageSize, Integer pageNumber, Set<String> fieldsMount, Integer filterFamilyId, final ApiCallback<ListMounts> _callback) throws ApiException {
+    public okhttp3.Call getMountsListAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsMount, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback<ListMounts> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMountsListValidateBeforeCall(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount, filterFamilyId, _callback);
         Type localVarReturnType = new TypeToken<ListMounts>(){}.getType();
@@ -450,7 +450,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMountsSearchCall(String language, String game, String query, String filterFamilyName, Integer limit, Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMountsSearchCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -513,7 +513,7 @@ public class MountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMountsSearchValidateBeforeCall(String language, String game, String query, String filterFamilyName, Integer limit, Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMountsSearchValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getMountsSearch(Async)");
@@ -553,7 +553,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public List<Mount> getMountsSearch(String language, String game, String query, String filterFamilyName, Integer limit, Integer filterFamilyId) throws ApiException {
+    public List<Mount> getMountsSearch(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Integer filterFamilyId) throws ApiException {
         ApiResponse<List<Mount>> localVarResp = getMountsSearchWithHttpInfo(language, game, query, filterFamilyName, limit, filterFamilyId);
         return localVarResp.getData();
     }
@@ -578,7 +578,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Mount>> getMountsSearchWithHttpInfo(String language, String game, String query, String filterFamilyName, Integer limit, Integer filterFamilyId) throws ApiException {
+    public ApiResponse<List<Mount>> getMountsSearchWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Integer filterFamilyId) throws ApiException {
         okhttp3.Call localVarCall = getMountsSearchValidateBeforeCall(language, game, query, filterFamilyName, limit, filterFamilyId, null);
         Type localVarReturnType = new TypeToken<List<Mount>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -605,7 +605,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMountsSearchAsync(String language, String game, String query, String filterFamilyName, Integer limit, Integer filterFamilyId, final ApiCallback<List<Mount>> _callback) throws ApiException {
+    public okhttp3.Call getMountsSearchAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable String filterFamilyName, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Integer filterFamilyId, final ApiCallback<List<Mount>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMountsSearchValidateBeforeCall(language, game, query, filterFamilyName, limit, filterFamilyId, _callback);
         Type localVarReturnType = new TypeToken<List<Mount>>(){}.getType();
@@ -629,7 +629,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMountsSingleCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMountsSingleCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -677,7 +677,7 @@ public class MountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMountsSingleValidateBeforeCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMountsSingleValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getMountsSingle(Async)");
@@ -714,7 +714,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Mount getMountsSingle(String language, Integer ankamaId, String game) throws ApiException {
+    public Mount getMountsSingle(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<Mount> localVarResp = getMountsSingleWithHttpInfo(language, ankamaId, game);
         return localVarResp.getData();
     }
@@ -736,7 +736,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Mount> getMountsSingleWithHttpInfo(String language, Integer ankamaId, String game) throws ApiException {
+    public ApiResponse<Mount> getMountsSingleWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getMountsSingleValidateBeforeCall(language, ankamaId, game, null);
         Type localVarReturnType = new TypeToken<Mount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -760,7 +760,7 @@ public class MountsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMountsSingleAsync(String language, Integer ankamaId, String game, final ApiCallback<Mount> _callback) throws ApiException {
+    public okhttp3.Call getMountsSingleAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback<Mount> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMountsSingleValidateBeforeCall(language, ankamaId, game, _callback);
         Type localVarReturnType = new TypeToken<Mount>(){}.getType();

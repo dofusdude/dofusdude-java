@@ -53,7 +53,7 @@ import com.dofusdude.client.JSON;
 /**
  * TwitterWebhook
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class TwitterWebhook {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -421,19 +421,10 @@ public class TwitterWebhook {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("whitelist");
-    openapiFields.add("blacklist");
-    openapiFields.add("subscriptions");
-    openapiFields.add("format");
-    openapiFields.add("preview_length");
-    openapiFields.add("created_at");
-    openapiFields.add("last_fired_at");
-    openapiFields.add("updated_at");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "whitelist", "blacklist", "subscriptions", "format", "preview_length", "created_at", "last_fired_at", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

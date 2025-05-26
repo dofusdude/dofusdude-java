@@ -97,7 +97,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllItemsResourcesListCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllItemsResourcesListCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -165,7 +165,7 @@ public class ResourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllItemsResourcesListValidateBeforeCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllItemsResourcesListValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getAllItemsResourcesList(Async)");
@@ -201,7 +201,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListItems getAllItemsResourcesList(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId) throws ApiException {
+    public ListItems getAllItemsResourcesList(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         ApiResponse<ListItems> localVarResp = getAllItemsResourcesListWithHttpInfo(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId);
         return localVarResp.getData();
     }
@@ -227,7 +227,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListItems> getAllItemsResourcesListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId) throws ApiException {
+    public ApiResponse<ListItems> getAllItemsResourcesListWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         okhttp3.Call localVarCall = getAllItemsResourcesListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId, null);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -255,7 +255,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllItemsResourcesListAsync(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
+    public okhttp3.Call getAllItemsResourcesListAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllItemsResourcesListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId, _callback);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
@@ -283,7 +283,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemsResourceSearchCall(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getItemsResourceSearchCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -350,7 +350,7 @@ public class ResourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getItemsResourceSearchValidateBeforeCall(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getItemsResourceSearchValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getItemsResourceSearch(Async)");
@@ -391,7 +391,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public List<ListItem> getItemsResourceSearch(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId) throws ApiException {
+    public List<ListItem> getItemsResourceSearch(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         ApiResponse<List<ListItem>> localVarResp = getItemsResourceSearchWithHttpInfo(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
         return localVarResp.getData();
     }
@@ -417,7 +417,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ListItem>> getItemsResourceSearchWithHttpInfo(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId) throws ApiException {
+    public ApiResponse<List<ListItem>> getItemsResourceSearchWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         okhttp3.Call localVarCall = getItemsResourceSearchValidateBeforeCall(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId, null);
         Type localVarReturnType = new TypeToken<List<ListItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -445,7 +445,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemsResourceSearchAsync(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId, final ApiCallback<List<ListItem>> _callback) throws ApiException {
+    public okhttp3.Call getItemsResourceSearchAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback<List<ListItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getItemsResourceSearchValidateBeforeCall(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId, _callback);
         Type localVarReturnType = new TypeToken<List<ListItem>>(){}.getType();
@@ -475,7 +475,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemsResourcesListCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getItemsResourcesListCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -550,7 +550,7 @@ public class ResourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getItemsResourcesListValidateBeforeCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getItemsResourcesListValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getItemsResourcesList(Async)");
@@ -588,7 +588,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListItems getItemsResourcesList(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId) throws ApiException {
+    public ListItems getItemsResourcesList(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         ApiResponse<ListItems> localVarResp = getItemsResourcesListWithHttpInfo(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId);
         return localVarResp.getData();
     }
@@ -616,7 +616,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListItems> getItemsResourcesListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId) throws ApiException {
+    public ApiResponse<ListItems> getItemsResourcesListWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         okhttp3.Call localVarCall = getItemsResourcesListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId, null);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -646,7 +646,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemsResourcesListAsync(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
+    public okhttp3.Call getItemsResourcesListAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getItemsResourcesListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId, _callback);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
@@ -670,7 +670,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemsResourcesSingleCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getItemsResourcesSingleCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -718,7 +718,7 @@ public class ResourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getItemsResourcesSingleValidateBeforeCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getItemsResourcesSingleValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getItemsResourcesSingle(Async)");
@@ -755,7 +755,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Resource getItemsResourcesSingle(String language, Integer ankamaId, String game) throws ApiException {
+    public Resource getItemsResourcesSingle(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<Resource> localVarResp = getItemsResourcesSingleWithHttpInfo(language, ankamaId, game);
         return localVarResp.getData();
     }
@@ -777,7 +777,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Resource> getItemsResourcesSingleWithHttpInfo(String language, Integer ankamaId, String game) throws ApiException {
+    public ApiResponse<Resource> getItemsResourcesSingleWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getItemsResourcesSingleValidateBeforeCall(language, ankamaId, game, null);
         Type localVarReturnType = new TypeToken<Resource>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -801,7 +801,7 @@ public class ResourcesApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemsResourcesSingleAsync(String language, Integer ankamaId, String game, final ApiCallback<Resource> _callback) throws ApiException {
+    public okhttp3.Call getItemsResourcesSingleAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback<Resource> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getItemsResourcesSingleValidateBeforeCall(language, ankamaId, game, _callback);
         Type localVarReturnType = new TypeToken<Resource>(){}.getType();

@@ -94,7 +94,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksAlmanaxIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksAlmanaxIdCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhooksAlmanaxIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhooksAlmanaxIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksAlmanaxId(Async)");
@@ -161,7 +161,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWebhooksAlmanaxId(String id) throws ApiException {
+    public void deleteWebhooksAlmanaxId(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteWebhooksAlmanaxIdWithHttpInfo(id);
     }
 
@@ -178,7 +178,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWebhooksAlmanaxIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Void> deleteWebhooksAlmanaxIdWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhooksAlmanaxIdValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -197,7 +197,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksAlmanaxIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksAlmanaxIdAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhooksAlmanaxIdValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -216,7 +216,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksRssIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksRssIdCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -261,7 +261,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhooksRssIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhooksRssIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksRssId(Async)");
@@ -283,7 +283,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWebhooksRssId(String id) throws ApiException {
+    public void deleteWebhooksRssId(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteWebhooksRssIdWithHttpInfo(id);
     }
 
@@ -300,7 +300,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWebhooksRssIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Void> deleteWebhooksRssIdWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhooksRssIdValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -319,7 +319,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksRssIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksRssIdAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhooksRssIdValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -338,7 +338,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksTwitterIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksTwitterIdCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -383,7 +383,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhooksTwitterIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhooksTwitterIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksTwitterId(Async)");
@@ -405,7 +405,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWebhooksTwitterId(String id) throws ApiException {
+    public void deleteWebhooksTwitterId(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteWebhooksTwitterIdWithHttpInfo(id);
     }
 
@@ -422,7 +422,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWebhooksTwitterIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Void> deleteWebhooksTwitterIdWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhooksTwitterIdValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -441,7 +441,7 @@ public class WebhooksApi {
         <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksTwitterIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksTwitterIdAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhooksTwitterIdValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -811,7 +811,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksAlmanaxIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhooksAlmanaxIdCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -857,7 +857,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksAlmanaxIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksAlmanaxIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWebhooksAlmanaxId(Async)");
@@ -880,7 +880,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public AlmanaxWebhook getWebhooksAlmanaxId(String id) throws ApiException {
+    public AlmanaxWebhook getWebhooksAlmanaxId(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AlmanaxWebhook> localVarResp = getWebhooksAlmanaxIdWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -898,7 +898,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlmanaxWebhook> getWebhooksAlmanaxIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<AlmanaxWebhook> getWebhooksAlmanaxIdWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksAlmanaxIdValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -918,7 +918,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksAlmanaxIdAsync(String id, final ApiCallback<AlmanaxWebhook> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksAlmanaxIdAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AlmanaxWebhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksAlmanaxIdValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
@@ -938,7 +938,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksRssIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhooksRssIdCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -984,7 +984,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksRssIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksRssIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWebhooksRssId(Async)");
@@ -1007,7 +1007,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public RssWebhook getWebhooksRssId(String id) throws ApiException {
+    public RssWebhook getWebhooksRssId(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<RssWebhook> localVarResp = getWebhooksRssIdWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -1025,7 +1025,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RssWebhook> getWebhooksRssIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<RssWebhook> getWebhooksRssIdWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksRssIdValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1045,7 +1045,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksRssIdAsync(String id, final ApiCallback<RssWebhook> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksRssIdAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<RssWebhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksRssIdValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
@@ -1065,7 +1065,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksTwitterIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhooksTwitterIdCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1111,7 +1111,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksTwitterIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksTwitterIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWebhooksTwitterId(Async)");
@@ -1134,7 +1134,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public TwitterWebhook getWebhooksTwitterId(String id) throws ApiException {
+    public TwitterWebhook getWebhooksTwitterId(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<TwitterWebhook> localVarResp = getWebhooksTwitterIdWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -1152,7 +1152,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TwitterWebhook> getWebhooksTwitterIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<TwitterWebhook> getWebhooksTwitterIdWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksTwitterIdValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1172,7 +1172,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksTwitterIdAsync(String id, final ApiCallback<TwitterWebhook> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksTwitterIdAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<TwitterWebhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksTwitterIdValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
@@ -1192,7 +1192,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhooksAlmanaxCall(CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postWebhooksAlmanaxCall(@jakarta.annotation.Nullable CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1237,7 +1237,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postWebhooksAlmanaxValidateBeforeCall(CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postWebhooksAlmanaxValidateBeforeCall(@jakarta.annotation.Nullable CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
         return postWebhooksAlmanaxCall(createAlmanaxWebhook, _callback);
 
     }
@@ -1254,7 +1254,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void postWebhooksAlmanax(CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException {
+    public void postWebhooksAlmanax(@jakarta.annotation.Nullable CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException {
         postWebhooksAlmanaxWithHttpInfo(createAlmanaxWebhook);
     }
 
@@ -1271,7 +1271,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> postWebhooksAlmanaxWithHttpInfo(CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException {
+    public ApiResponse<Void> postWebhooksAlmanaxWithHttpInfo(@jakarta.annotation.Nullable CreateAlmanaxWebhook createAlmanaxWebhook) throws ApiException {
         okhttp3.Call localVarCall = postWebhooksAlmanaxValidateBeforeCall(createAlmanaxWebhook, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1290,7 +1290,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhooksAlmanaxAsync(CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call postWebhooksAlmanaxAsync(@jakarta.annotation.Nullable CreateAlmanaxWebhook createAlmanaxWebhook, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postWebhooksAlmanaxValidateBeforeCall(createAlmanaxWebhook, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1309,7 +1309,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhooksRssCall(CreateRSSWebhook createRSSWebhook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postWebhooksRssCall(@jakarta.annotation.Nullable CreateRSSWebhook createRSSWebhook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1354,7 +1354,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postWebhooksRssValidateBeforeCall(CreateRSSWebhook createRSSWebhook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postWebhooksRssValidateBeforeCall(@jakarta.annotation.Nullable CreateRSSWebhook createRSSWebhook, final ApiCallback _callback) throws ApiException {
         return postWebhooksRssCall(createRSSWebhook, _callback);
 
     }
@@ -1371,7 +1371,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void postWebhooksRss(CreateRSSWebhook createRSSWebhook) throws ApiException {
+    public void postWebhooksRss(@jakarta.annotation.Nullable CreateRSSWebhook createRSSWebhook) throws ApiException {
         postWebhooksRssWithHttpInfo(createRSSWebhook);
     }
 
@@ -1388,7 +1388,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> postWebhooksRssWithHttpInfo(CreateRSSWebhook createRSSWebhook) throws ApiException {
+    public ApiResponse<Void> postWebhooksRssWithHttpInfo(@jakarta.annotation.Nullable CreateRSSWebhook createRSSWebhook) throws ApiException {
         okhttp3.Call localVarCall = postWebhooksRssValidateBeforeCall(createRSSWebhook, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1407,7 +1407,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhooksRssAsync(CreateRSSWebhook createRSSWebhook, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call postWebhooksRssAsync(@jakarta.annotation.Nullable CreateRSSWebhook createRSSWebhook, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postWebhooksRssValidateBeforeCall(createRSSWebhook, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1426,7 +1426,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhooksTwitterCall(CreateTwitterWebhook createTwitterWebhook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postWebhooksTwitterCall(@jakarta.annotation.Nullable CreateTwitterWebhook createTwitterWebhook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1471,7 +1471,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postWebhooksTwitterValidateBeforeCall(CreateTwitterWebhook createTwitterWebhook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postWebhooksTwitterValidateBeforeCall(@jakarta.annotation.Nullable CreateTwitterWebhook createTwitterWebhook, final ApiCallback _callback) throws ApiException {
         return postWebhooksTwitterCall(createTwitterWebhook, _callback);
 
     }
@@ -1488,7 +1488,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void postWebhooksTwitter(CreateTwitterWebhook createTwitterWebhook) throws ApiException {
+    public void postWebhooksTwitter(@jakarta.annotation.Nullable CreateTwitterWebhook createTwitterWebhook) throws ApiException {
         postWebhooksTwitterWithHttpInfo(createTwitterWebhook);
     }
 
@@ -1505,7 +1505,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> postWebhooksTwitterWithHttpInfo(CreateTwitterWebhook createTwitterWebhook) throws ApiException {
+    public ApiResponse<Void> postWebhooksTwitterWithHttpInfo(@jakarta.annotation.Nullable CreateTwitterWebhook createTwitterWebhook) throws ApiException {
         okhttp3.Call localVarCall = postWebhooksTwitterValidateBeforeCall(createTwitterWebhook, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1524,7 +1524,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhooksTwitterAsync(CreateTwitterWebhook createTwitterWebhook, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call postWebhooksTwitterAsync(@jakarta.annotation.Nullable CreateTwitterWebhook createTwitterWebhook, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postWebhooksTwitterValidateBeforeCall(createTwitterWebhook, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1544,7 +1544,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putWebhooksAlmanaxIdCall(String id, PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putWebhooksAlmanaxIdCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1591,7 +1591,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putWebhooksAlmanaxIdValidateBeforeCall(String id, PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putWebhooksAlmanaxIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling putWebhooksAlmanaxId(Async)");
@@ -1615,7 +1615,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public AlmanaxWebhook putWebhooksAlmanaxId(String id, PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException {
+    public AlmanaxWebhook putWebhooksAlmanaxId(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException {
         ApiResponse<AlmanaxWebhook> localVarResp = putWebhooksAlmanaxIdWithHttpInfo(id, putAlmanaxWebhook);
         return localVarResp.getData();
     }
@@ -1634,7 +1634,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlmanaxWebhook> putWebhooksAlmanaxIdWithHttpInfo(String id, PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException {
+    public ApiResponse<AlmanaxWebhook> putWebhooksAlmanaxIdWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutAlmanaxWebhook putAlmanaxWebhook) throws ApiException {
         okhttp3.Call localVarCall = putWebhooksAlmanaxIdValidateBeforeCall(id, putAlmanaxWebhook, null);
         Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1655,7 +1655,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putWebhooksAlmanaxIdAsync(String id, PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback<AlmanaxWebhook> _callback) throws ApiException {
+    public okhttp3.Call putWebhooksAlmanaxIdAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutAlmanaxWebhook putAlmanaxWebhook, final ApiCallback<AlmanaxWebhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putWebhooksAlmanaxIdValidateBeforeCall(id, putAlmanaxWebhook, _callback);
         Type localVarReturnType = new TypeToken<AlmanaxWebhook>(){}.getType();
@@ -1676,7 +1676,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putWebhooksRssIdCall(String id, PutRSSWebhook putRSSWebhook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putWebhooksRssIdCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutRSSWebhook putRSSWebhook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1723,7 +1723,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putWebhooksRssIdValidateBeforeCall(String id, PutRSSWebhook putRSSWebhook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putWebhooksRssIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutRSSWebhook putRSSWebhook, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling putWebhooksRssId(Async)");
@@ -1747,7 +1747,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public RssWebhook putWebhooksRssId(String id, PutRSSWebhook putRSSWebhook) throws ApiException {
+    public RssWebhook putWebhooksRssId(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutRSSWebhook putRSSWebhook) throws ApiException {
         ApiResponse<RssWebhook> localVarResp = putWebhooksRssIdWithHttpInfo(id, putRSSWebhook);
         return localVarResp.getData();
     }
@@ -1766,7 +1766,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RssWebhook> putWebhooksRssIdWithHttpInfo(String id, PutRSSWebhook putRSSWebhook) throws ApiException {
+    public ApiResponse<RssWebhook> putWebhooksRssIdWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutRSSWebhook putRSSWebhook) throws ApiException {
         okhttp3.Call localVarCall = putWebhooksRssIdValidateBeforeCall(id, putRSSWebhook, null);
         Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1787,7 +1787,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putWebhooksRssIdAsync(String id, PutRSSWebhook putRSSWebhook, final ApiCallback<RssWebhook> _callback) throws ApiException {
+    public okhttp3.Call putWebhooksRssIdAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutRSSWebhook putRSSWebhook, final ApiCallback<RssWebhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putWebhooksRssIdValidateBeforeCall(id, putRSSWebhook, _callback);
         Type localVarReturnType = new TypeToken<RssWebhook>(){}.getType();
@@ -1808,7 +1808,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putWebhooksTwitterIdCall(String id, PutTwitterWebhook putTwitterWebhook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putWebhooksTwitterIdCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutTwitterWebhook putTwitterWebhook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1855,7 +1855,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putWebhooksTwitterIdValidateBeforeCall(String id, PutTwitterWebhook putTwitterWebhook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putWebhooksTwitterIdValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutTwitterWebhook putTwitterWebhook, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling putWebhooksTwitterId(Async)");
@@ -1879,7 +1879,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public TwitterWebhook putWebhooksTwitterId(String id, PutTwitterWebhook putTwitterWebhook) throws ApiException {
+    public TwitterWebhook putWebhooksTwitterId(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutTwitterWebhook putTwitterWebhook) throws ApiException {
         ApiResponse<TwitterWebhook> localVarResp = putWebhooksTwitterIdWithHttpInfo(id, putTwitterWebhook);
         return localVarResp.getData();
     }
@@ -1898,7 +1898,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TwitterWebhook> putWebhooksTwitterIdWithHttpInfo(String id, PutTwitterWebhook putTwitterWebhook) throws ApiException {
+    public ApiResponse<TwitterWebhook> putWebhooksTwitterIdWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutTwitterWebhook putTwitterWebhook) throws ApiException {
         okhttp3.Call localVarCall = putWebhooksTwitterIdValidateBeforeCall(id, putTwitterWebhook, null);
         Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1919,7 +1919,7 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putWebhooksTwitterIdAsync(String id, PutTwitterWebhook putTwitterWebhook, final ApiCallback<TwitterWebhook> _callback) throws ApiException {
+    public okhttp3.Call putWebhooksTwitterIdAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable PutTwitterWebhook putTwitterWebhook, final ApiCallback<TwitterWebhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putWebhooksTwitterIdValidateBeforeCall(id, putTwitterWebhook, _callback);
         Type localVarReturnType = new TypeToken<TwitterWebhook>(){}.getType();

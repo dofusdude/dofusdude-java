@@ -62,7 +62,7 @@ import com.google.gson.JsonParseException;
 
 import com.dofusdude.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class ConditionNode extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ConditionNode.class.getName());
 

@@ -49,7 +49,7 @@ import com.dofusdude.client.JSON;
 /**
  * Mention
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class CreateAlmanaxWebhookMentionsValueInner {
   public static final String SERIALIZED_NAME_DISCORD_ID = "discord_id";
   @SerializedName(SERIALIZED_NAME_DISCORD_ID)
@@ -187,13 +187,10 @@ public class CreateAlmanaxWebhookMentionsValueInner {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("discord_id");
-    openapiFields.add("is_role");
-    openapiFields.add("ping_days_before");
+    openapiFields = new HashSet<String>(Arrays.asList("discord_id", "is_role", "ping_days_before"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

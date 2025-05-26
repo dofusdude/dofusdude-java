@@ -86,7 +86,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGameSearchTypesCall(String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getGameSearchTypesCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -132,7 +132,7 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getGameSearchTypesValidateBeforeCall(String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getGameSearchTypesValidateBeforeCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'game' is set
         if (game == null) {
             throw new ApiException("Missing the required parameter 'game' when calling getGameSearchTypes(Async)");
@@ -155,7 +155,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getGameSearchTypes(String game) throws ApiException {
+    public List<String> getGameSearchTypes(@jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<List<String>> localVarResp = getGameSearchTypesWithHttpInfo(game);
         return localVarResp.getData();
     }
@@ -173,7 +173,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getGameSearchTypesWithHttpInfo(String game) throws ApiException {
+    public ApiResponse<List<String>> getGameSearchTypesWithHttpInfo(@jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getGameSearchTypesValidateBeforeCall(game, null);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -193,7 +193,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGameSearchTypesAsync(String game, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getGameSearchTypesAsync(@jakarta.annotation.Nonnull String game, final ApiCallback<List<String>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getGameSearchTypesValidateBeforeCall(game, _callback);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
@@ -213,7 +213,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemTypesCall(String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getItemTypesCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,7 +259,7 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getItemTypesValidateBeforeCall(String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getItemTypesValidateBeforeCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'game' is set
         if (game == null) {
             throw new ApiException("Missing the required parameter 'game' when calling getItemTypes(Async)");
@@ -282,7 +282,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getItemTypes(String game) throws ApiException {
+    public List<String> getItemTypes(@jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<List<String>> localVarResp = getItemTypesWithHttpInfo(game);
         return localVarResp.getData();
     }
@@ -300,7 +300,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getItemTypesWithHttpInfo(String game) throws ApiException {
+    public ApiResponse<List<String>> getItemTypesWithHttpInfo(@jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getItemTypesValidateBeforeCall(game, null);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -320,7 +320,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getItemTypesAsync(String game, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getItemTypesAsync(@jakarta.annotation.Nonnull String game, final ApiCallback<List<String>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getItemTypesValidateBeforeCall(game, _callback);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
@@ -340,7 +340,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaAlmanaxBonusesCall(String language, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetaAlmanaxBonusesCall(@jakarta.annotation.Nonnull String language, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -386,7 +386,7 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetaAlmanaxBonusesValidateBeforeCall(String language, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetaAlmanaxBonusesValidateBeforeCall(@jakarta.annotation.Nonnull String language, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getMetaAlmanaxBonuses(Async)");
@@ -409,7 +409,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<GetMetaAlmanaxBonuses200ResponseInner> getMetaAlmanaxBonuses(String language) throws ApiException {
+    public List<GetMetaAlmanaxBonuses200ResponseInner> getMetaAlmanaxBonuses(@jakarta.annotation.Nonnull String language) throws ApiException {
         ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> localVarResp = getMetaAlmanaxBonusesWithHttpInfo(language);
         return localVarResp.getData();
     }
@@ -427,7 +427,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> getMetaAlmanaxBonusesWithHttpInfo(String language) throws ApiException {
+    public ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> getMetaAlmanaxBonusesWithHttpInfo(@jakarta.annotation.Nonnull String language) throws ApiException {
         okhttp3.Call localVarCall = getMetaAlmanaxBonusesValidateBeforeCall(language, null);
         Type localVarReturnType = new TypeToken<List<GetMetaAlmanaxBonuses200ResponseInner>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -447,7 +447,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaAlmanaxBonusesAsync(String language, final ApiCallback<List<GetMetaAlmanaxBonuses200ResponseInner>> _callback) throws ApiException {
+    public okhttp3.Call getMetaAlmanaxBonusesAsync(@jakarta.annotation.Nonnull String language, final ApiCallback<List<GetMetaAlmanaxBonuses200ResponseInner>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetaAlmanaxBonusesValidateBeforeCall(language, _callback);
         Type localVarReturnType = new TypeToken<List<GetMetaAlmanaxBonuses200ResponseInner>>(){}.getType();
@@ -469,7 +469,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaAlmanaxBonusesSearchCall(String language, String query, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetaAlmanaxBonusesSearchCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -523,7 +523,7 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetaAlmanaxBonusesSearchValidateBeforeCall(String language, String query, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetaAlmanaxBonusesSearchValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getMetaAlmanaxBonusesSearch(Async)");
@@ -553,7 +553,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<GetMetaAlmanaxBonuses200ResponseInner> getMetaAlmanaxBonusesSearch(String language, String query, Integer limit) throws ApiException {
+    public List<GetMetaAlmanaxBonuses200ResponseInner> getMetaAlmanaxBonusesSearch(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> localVarResp = getMetaAlmanaxBonusesSearchWithHttpInfo(language, query, limit);
         return localVarResp.getData();
     }
@@ -573,7 +573,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> getMetaAlmanaxBonusesSearchWithHttpInfo(String language, String query, Integer limit) throws ApiException {
+    public ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> getMetaAlmanaxBonusesSearchWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getMetaAlmanaxBonusesSearchValidateBeforeCall(language, query, limit, null);
         Type localVarReturnType = new TypeToken<List<GetMetaAlmanaxBonuses200ResponseInner>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -595,7 +595,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaAlmanaxBonusesSearchAsync(String language, String query, Integer limit, final ApiCallback<List<GetMetaAlmanaxBonuses200ResponseInner>> _callback) throws ApiException {
+    public okhttp3.Call getMetaAlmanaxBonusesSearchAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer limit, final ApiCallback<List<GetMetaAlmanaxBonuses200ResponseInner>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetaAlmanaxBonusesSearchValidateBeforeCall(language, query, limit, _callback);
         Type localVarReturnType = new TypeToken<List<GetMetaAlmanaxBonuses200ResponseInner>>(){}.getType();
@@ -615,7 +615,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaElementsCall(String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetaElementsCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -661,7 +661,7 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetaElementsValidateBeforeCall(String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetaElementsValidateBeforeCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'game' is set
         if (game == null) {
             throw new ApiException("Missing the required parameter 'game' when calling getMetaElements(Async)");
@@ -684,7 +684,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getMetaElements(String game) throws ApiException {
+    public List<String> getMetaElements(@jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<List<String>> localVarResp = getMetaElementsWithHttpInfo(game);
         return localVarResp.getData();
     }
@@ -702,7 +702,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getMetaElementsWithHttpInfo(String game) throws ApiException {
+    public ApiResponse<List<String>> getMetaElementsWithHttpInfo(@jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getMetaElementsValidateBeforeCall(game, null);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -722,7 +722,7 @@ public class MetaApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaElementsAsync(String game, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getMetaElementsAsync(@jakarta.annotation.Nonnull String game, final ApiCallback<List<String>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetaElementsValidateBeforeCall(game, _callback);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
@@ -742,7 +742,7 @@ public class MetaApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaVersionCall(String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetaVersionCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -788,7 +788,7 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetaVersionValidateBeforeCall(String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetaVersionValidateBeforeCall(@jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'game' is set
         if (game == null) {
             throw new ApiException("Missing the required parameter 'game' when calling getMetaVersion(Async)");
@@ -811,7 +811,7 @@ public class MetaApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Version getMetaVersion(String game) throws ApiException {
+    public Version getMetaVersion(@jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<Version> localVarResp = getMetaVersionWithHttpInfo(game);
         return localVarResp.getData();
     }
@@ -829,7 +829,7 @@ public class MetaApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Version> getMetaVersionWithHttpInfo(String game) throws ApiException {
+    public ApiResponse<Version> getMetaVersionWithHttpInfo(@jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getMetaVersionValidateBeforeCall(game, null);
         Type localVarReturnType = new TypeToken<Version>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -849,7 +849,7 @@ public class MetaApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetaVersionAsync(String game, final ApiCallback<Version> _callback) throws ApiException {
+    public okhttp3.Call getMetaVersionAsync(@jakarta.annotation.Nonnull String game, final ApiCallback<Version> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetaVersionValidateBeforeCall(game, _callback);
         Type localVarReturnType = new TypeToken<Version>(){}.getType();

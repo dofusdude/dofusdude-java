@@ -266,7 +266,7 @@ public class Example {
 
     EquipmentApi apiInstance = new EquipmentApi(defaultClient);
     String language = "en"; // String | a valid language code
-    Integer ankamaId = 26009; // Integer | identifier
+    Integer ankamaId = 13971; // Integer | identifier
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       Weapon result = apiInstance.getItemsEquipmentSingle(language, ankamaId, game);

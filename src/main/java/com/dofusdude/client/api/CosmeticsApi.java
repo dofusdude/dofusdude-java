@@ -97,7 +97,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllCosmeticsListCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllCosmeticsListCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -165,7 +165,7 @@ public class CosmeticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllCosmeticsListValidateBeforeCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllCosmeticsListValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getAllCosmeticsList(Async)");
@@ -201,7 +201,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListItems getAllCosmeticsList(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId) throws ApiException {
+    public ListItems getAllCosmeticsList(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         ApiResponse<ListItems> localVarResp = getAllCosmeticsListWithHttpInfo(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId);
         return localVarResp.getData();
     }
@@ -227,7 +227,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListItems> getAllCosmeticsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId) throws ApiException {
+    public ApiResponse<ListItems> getAllCosmeticsListWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         okhttp3.Call localVarCall = getAllCosmeticsListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId, null);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -255,7 +255,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllCosmeticsListAsync(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, String acceptEncoding, Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
+    public okhttp3.Call getAllCosmeticsListAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable String acceptEncoding, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllCosmeticsListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId, _callback);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
@@ -285,7 +285,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticsListCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsListCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -360,7 +360,7 @@ public class CosmeticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCosmeticsListValidateBeforeCall(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCosmeticsListValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getCosmeticsList(Async)");
@@ -398,7 +398,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ListItems getCosmeticsList(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId) throws ApiException {
+    public ListItems getCosmeticsList(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         ApiResponse<ListItems> localVarResp = getCosmeticsListWithHttpInfo(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId);
         return localVarResp.getData();
     }
@@ -426,7 +426,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListItems> getCosmeticsListWithHttpInfo(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId) throws ApiException {
+    public ApiResponse<ListItems> getCosmeticsListWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         okhttp3.Call localVarCall = getCosmeticsListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId, null);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -456,7 +456,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticsListAsync(String language, String game, String sortLevel, Integer filterMinLevel, Integer filterMaxLevel, Integer pageSize, Integer pageNumber, Set<String> fieldsItem, Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsListAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nullable String sortLevel, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Set<String> fieldsItem, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback<ListItems> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCosmeticsListValidateBeforeCall(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId, _callback);
         Type localVarReturnType = new TypeToken<ListItems>(){}.getType();
@@ -484,7 +484,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticsSearchCall(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsSearchCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -551,7 +551,7 @@ public class CosmeticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCosmeticsSearchValidateBeforeCall(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCosmeticsSearchValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getCosmeticsSearch(Async)");
@@ -592,7 +592,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public List<ListItem> getCosmeticsSearch(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId) throws ApiException {
+    public List<ListItem> getCosmeticsSearch(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         ApiResponse<List<ListItem>> localVarResp = getCosmeticsSearchWithHttpInfo(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
         return localVarResp.getData();
     }
@@ -618,7 +618,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ListItem>> getCosmeticsSearchWithHttpInfo(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId) throws ApiException {
+    public ApiResponse<List<ListItem>> getCosmeticsSearchWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId) throws ApiException {
         okhttp3.Call localVarCall = getCosmeticsSearchValidateBeforeCall(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId, null);
         Type localVarReturnType = new TypeToken<List<ListItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -646,7 +646,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticsSearchAsync(String language, String game, String query, Integer filterMinLevel, Integer filterMaxLevel, Integer limit, Set<String> filterTypeNameId, final ApiCallback<List<ListItem>> _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsSearchAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull String game, @jakarta.annotation.Nonnull String query, @jakarta.annotation.Nullable Integer filterMinLevel, @jakarta.annotation.Nullable Integer filterMaxLevel, @jakarta.annotation.Nullable Integer limit, @jakarta.annotation.Nullable Set<String> filterTypeNameId, final ApiCallback<List<ListItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCosmeticsSearchValidateBeforeCall(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId, _callback);
         Type localVarReturnType = new TypeToken<List<ListItem>>(){}.getType();
@@ -670,7 +670,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticsSingleCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsSingleCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -718,7 +718,7 @@ public class CosmeticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCosmeticsSingleValidateBeforeCall(String language, Integer ankamaId, String game, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCosmeticsSingleValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getCosmeticsSingle(Async)");
@@ -755,7 +755,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Equipment getCosmeticsSingle(String language, Integer ankamaId, String game) throws ApiException {
+    public Equipment getCosmeticsSingle(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game) throws ApiException {
         ApiResponse<Equipment> localVarResp = getCosmeticsSingleWithHttpInfo(language, ankamaId, game);
         return localVarResp.getData();
     }
@@ -777,7 +777,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Equipment> getCosmeticsSingleWithHttpInfo(String language, Integer ankamaId, String game) throws ApiException {
+    public ApiResponse<Equipment> getCosmeticsSingleWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game) throws ApiException {
         okhttp3.Call localVarCall = getCosmeticsSingleValidateBeforeCall(language, ankamaId, game, null);
         Type localVarReturnType = new TypeToken<Equipment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -801,7 +801,7 @@ public class CosmeticsApi {
         <tr><td> 404 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticsSingleAsync(String language, Integer ankamaId, String game, final ApiCallback<Equipment> _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsSingleAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull Integer ankamaId, @jakarta.annotation.Nonnull String game, final ApiCallback<Equipment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCosmeticsSingleValidateBeforeCall(language, ankamaId, game, _callback);
         Type localVarReturnType = new TypeToken<Equipment>(){}.getType();

@@ -51,7 +51,7 @@ import com.dofusdude.client.JSON;
 /**
  * Almanax
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T15:20:08.698089650Z[Etc/UTC]", comments = "Generator version: 7.12.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class Almanax {
   public static final String SERIALIZED_NAME_BONUS = "bonus";
   @SerializedName(SERIALIZED_NAME_BONUS)
@@ -239,15 +239,10 @@ public class Almanax {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bonus");
-    openapiFields.add("date");
-    openapiFields.add("tribute");
-    openapiFields.add("reward_kamas");
-    openapiFields.add("reward_xp");
+    openapiFields = new HashSet<String>(Arrays.asList("bonus", "date", "tribute", "reward_kamas", "reward_xp"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

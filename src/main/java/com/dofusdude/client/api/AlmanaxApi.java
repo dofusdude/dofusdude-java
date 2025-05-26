@@ -88,7 +88,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlmanaxDateCall(String language, LocalDate date, Integer level, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlmanaxDateCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull LocalDate date, @jakarta.annotation.Nullable Integer level, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class AlmanaxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlmanaxDateValidateBeforeCall(String language, LocalDate date, Integer level, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlmanaxDateValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull LocalDate date, @jakarta.annotation.Nullable Integer level, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getAlmanaxDate(Async)");
@@ -169,7 +169,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Almanax getAlmanaxDate(String language, LocalDate date, Integer level) throws ApiException {
+    public Almanax getAlmanaxDate(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull LocalDate date, @jakarta.annotation.Nullable Integer level) throws ApiException {
         ApiResponse<Almanax> localVarResp = getAlmanaxDateWithHttpInfo(language, date, level);
         return localVarResp.getData();
     }
@@ -189,7 +189,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Almanax> getAlmanaxDateWithHttpInfo(String language, LocalDate date, Integer level) throws ApiException {
+    public ApiResponse<Almanax> getAlmanaxDateWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull LocalDate date, @jakarta.annotation.Nullable Integer level) throws ApiException {
         okhttp3.Call localVarCall = getAlmanaxDateValidateBeforeCall(language, date, level, null);
         Type localVarReturnType = new TypeToken<Almanax>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -211,7 +211,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlmanaxDateAsync(String language, LocalDate date, Integer level, final ApiCallback<Almanax> _callback) throws ApiException {
+    public okhttp3.Call getAlmanaxDateAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nonnull LocalDate date, @jakarta.annotation.Nullable Integer level, final ApiCallback<Almanax> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlmanaxDateValidateBeforeCall(language, date, level, _callback);
         Type localVarReturnType = new TypeToken<Almanax>(){}.getType();
@@ -237,7 +237,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlmanaxRangeCall(String language, String filterBonusType, LocalDate rangeFrom, LocalDate rangeTo, Integer rangeSize, String timezone, Integer level, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlmanaxRangeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nullable String filterBonusType, @jakarta.annotation.Nullable LocalDate rangeFrom, @jakarta.annotation.Nullable LocalDate rangeTo, @jakarta.annotation.Nullable Integer rangeSize, @jakarta.annotation.Nullable String timezone, @jakarta.annotation.Nullable Integer level, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -307,7 +307,7 @@ public class AlmanaxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlmanaxRangeValidateBeforeCall(String language, String filterBonusType, LocalDate rangeFrom, LocalDate rangeTo, Integer rangeSize, String timezone, Integer level, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlmanaxRangeValidateBeforeCall(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nullable String filterBonusType, @jakarta.annotation.Nullable LocalDate rangeFrom, @jakarta.annotation.Nullable LocalDate rangeTo, @jakarta.annotation.Nullable Integer rangeSize, @jakarta.annotation.Nullable String timezone, @jakarta.annotation.Nullable Integer level, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling getAlmanaxRange(Async)");
@@ -336,7 +336,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public List<Almanax> getAlmanaxRange(String language, String filterBonusType, LocalDate rangeFrom, LocalDate rangeTo, Integer rangeSize, String timezone, Integer level) throws ApiException {
+    public List<Almanax> getAlmanaxRange(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nullable String filterBonusType, @jakarta.annotation.Nullable LocalDate rangeFrom, @jakarta.annotation.Nullable LocalDate rangeTo, @jakarta.annotation.Nullable Integer rangeSize, @jakarta.annotation.Nullable String timezone, @jakarta.annotation.Nullable Integer level) throws ApiException {
         ApiResponse<List<Almanax>> localVarResp = getAlmanaxRangeWithHttpInfo(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level);
         return localVarResp.getData();
     }
@@ -360,7 +360,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Almanax>> getAlmanaxRangeWithHttpInfo(String language, String filterBonusType, LocalDate rangeFrom, LocalDate rangeTo, Integer rangeSize, String timezone, Integer level) throws ApiException {
+    public ApiResponse<List<Almanax>> getAlmanaxRangeWithHttpInfo(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nullable String filterBonusType, @jakarta.annotation.Nullable LocalDate rangeFrom, @jakarta.annotation.Nullable LocalDate rangeTo, @jakarta.annotation.Nullable Integer rangeSize, @jakarta.annotation.Nullable String timezone, @jakarta.annotation.Nullable Integer level) throws ApiException {
         okhttp3.Call localVarCall = getAlmanaxRangeValidateBeforeCall(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level, null);
         Type localVarReturnType = new TypeToken<List<Almanax>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -386,7 +386,7 @@ public class AlmanaxApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlmanaxRangeAsync(String language, String filterBonusType, LocalDate rangeFrom, LocalDate rangeTo, Integer rangeSize, String timezone, Integer level, final ApiCallback<List<Almanax>> _callback) throws ApiException {
+    public okhttp3.Call getAlmanaxRangeAsync(@jakarta.annotation.Nonnull String language, @jakarta.annotation.Nullable String filterBonusType, @jakarta.annotation.Nullable LocalDate rangeFrom, @jakarta.annotation.Nullable LocalDate rangeTo, @jakarta.annotation.Nullable Integer rangeSize, @jakarta.annotation.Nullable String timezone, @jakarta.annotation.Nullable Integer level, final ApiCallback<List<Almanax>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlmanaxRangeValidateBeforeCall(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level, _callback);
         Type localVarReturnType = new TypeToken<List<Almanax>>(){}.getType();
