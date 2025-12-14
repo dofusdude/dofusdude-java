@@ -56,7 +56,7 @@ import com.dofusdude.client.JSON;
 /**
  * Mount
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:58:10.322111758Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T20:00:25.397385540Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class Mount {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)

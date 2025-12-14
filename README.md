@@ -2,7 +2,7 @@
 
 dofusdude
 - API version: 1.0.0
-  - Build date: 2025-12-14T19:58:10.322111758Z[Etc/UTC]
+  - Build date: 2025-12-14T20:00:25.397385540Z[Etc/UTC]
   - Generator version: 7.18.0-SNAPSHOT
 
 # Open Ankama Developer Community
