@@ -161,20 +161,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListItemGeneral'
+                  $ref: "#/components/schemas/ListItemGeneral"
                 type: array
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search All Items
       tags:
@@ -262,20 +262,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Mount'
+                  $ref: "#/components/schemas/Mount"
                 type: array
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Mounts
       tags:
@@ -388,20 +388,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListEquipmentSet'
+                  $ref: "#/components/schemas/ListEquipmentSet"
                 type: array
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Sets
       tags:
@@ -509,20 +509,20 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ListItem'
+                  $ref: "#/components/schemas/ListItem"
                 type: array
           description: Quest Items Found
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Quest Items
       tags:
@@ -631,20 +631,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListItem'
+                  $ref: "#/components/schemas/ListItem"
                 type: array
           description: Consumables Found
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Consumables
       tags:
@@ -752,20 +752,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListItem'
+                  $ref: "#/components/schemas/ListItem"
                 type: array
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Resources
       tags:
@@ -890,7 +890,7 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/GameSearch'
+                  $ref: "#/components/schemas/GameSearch"
                 type: array
                 x-examples:
                   Example 1:
@@ -908,13 +908,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Game Search
       tags:
@@ -1023,20 +1023,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListItem'
+                  $ref: "#/components/schemas/ListItem"
                 type: array
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Equipment
       tags:
@@ -1144,20 +1144,20 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListItem'
+                  $ref: "#/components/schemas/ListItem"
                 type: array
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Search Cosmetics
       tags:
@@ -1214,19 +1214,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Equipment'
+                $ref: "#/components/schemas/Equipment"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Cosmetics
       tags:
@@ -1284,19 +1284,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Resource'
+                $ref: "#/components/schemas/Resource"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Resources
       tags:
@@ -1353,19 +1353,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Weapon'
+                $ref: "#/components/schemas/Weapon"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Equipment
       tags:
@@ -1422,19 +1422,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Resource'
+                $ref: "#/components/schemas/Resource"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Consumables
       tags:
@@ -1491,19 +1491,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Resource'
+                $ref: "#/components/schemas/Resource"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Quest Items
       tags:
@@ -1560,19 +1560,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Mount'
+                $ref: "#/components/schemas/Mount"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Mounts
       tags:
@@ -1629,19 +1629,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/EquipmentSet'
+                $ref: "#/components/schemas/EquipmentSet"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: Single Sets
       tags:
@@ -1784,19 +1784,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListEquipmentSets'
+                $ref: "#/components/schemas/ListEquipmentSets"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Sets
       tags:
@@ -1899,19 +1899,19 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/ListMounts'
+                $ref: "#/components/schemas/ListMounts"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Mounts
       tags:
@@ -2053,19 +2053,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Equipment
       tags:
@@ -2203,19 +2203,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Resources
       tags:
@@ -2347,19 +2347,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Consumables
       tags:
@@ -2498,19 +2498,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Quest Items
       tags:
@@ -2649,19 +2649,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List Cosmetics
       tags:
@@ -2746,19 +2746,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListMounts'
+                $ref: "#/components/schemas/ListMounts"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Mounts
       tags:
@@ -2894,19 +2894,19 @@ paths:
                       items: 0
                       level: 0
               schema:
-                $ref: '#/components/schemas/ListEquipmentSets'
+                $ref: "#/components/schemas/ListEquipmentSets"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Sets
       tags:
@@ -3019,19 +3019,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Cosmetics
       tags:
@@ -3150,19 +3150,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Quest Items
       tags:
@@ -3274,19 +3274,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Consumables
       tags:
@@ -3404,19 +3404,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Resources
       tags:
@@ -3530,19 +3530,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListItems'
+                $ref: "#/components/schemas/ListItems"
           description: ""
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
           description: ""
       summary: List All Equipment
       tags:
@@ -3647,7 +3647,7 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Almanax'
+                  $ref: "#/components/schemas/Almanax"
                 type: array
           description: ""
       summary: Almanax Range
@@ -3702,7 +3702,7 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Almanax'
+                $ref: "#/components/schemas/Almanax"
           description: ""
       summary: Single Almanax Date
       tags:
@@ -3775,7 +3775,7 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Version'
+                $ref: "#/components/schemas/Version"
           description: ""
       summary: Game Version
       tags:
@@ -3911,7 +3911,7 @@ paths:
                     name: Plenty of fish
               schema:
                 items:
-                  $ref: '#/components/schemas/get_meta_almanax_bonuses_200_response_inner'
+                  $ref: "#/components/schemas/get_meta_almanax_bonuses_200_response_inner"
                 type: array
                 x-examples:
                   example-1:
@@ -3982,7 +3982,7 @@ paths:
                     name: Plenty of fish
               schema:
                 items:
-                  $ref: '#/components/schemas/get_meta_almanax_bonuses_200_response_inner'
+                  $ref: "#/components/schemas/get_meta_almanax_bonuses_200_response_inner"
                 type: array
                 x-examples:
                   example-1:
@@ -4014,7 +4014,7 @@ paths:
                     subscriptions:
                     - string
               schema:
-                $ref: '#/components/schemas/get_meta_webhooks_twitter_200_response'
+                $ref: "#/components/schemas/get_meta_webhooks_twitter_200_response"
           description: OK
       summary: Get Twitter Hook Metainfo
       tags:
@@ -4032,7 +4032,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_meta_webhooks_twitter_200_response'
+                $ref: "#/components/schemas/get_meta_webhooks_twitter_200_response"
           description: OK
       summary: Get RSS Hook Metainfo
       tags:
@@ -4051,7 +4051,7 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/get_meta_webhooks_twitter_200_response'
+                $ref: "#/components/schemas/get_meta_webhooks_twitter_200_response"
           description: OK
       summary: Get Almanax Hook Metainfo
       tags:
@@ -4113,7 +4113,7 @@ paths:
                     last_fired_at: 2022-10-25T15:35:37.103240+02:00
                     updated_at: 2022-10-25T15:32:37.406281+02:00
               schema:
-                $ref: '#/components/schemas/RssWebhook'
+                $ref: "#/components/schemas/RssWebhook"
           description: OK
       summary: Get RSS Hook
       tags:
@@ -4146,7 +4146,7 @@ paths:
                   subscriptions: null
                   preview_length: 60
             schema:
-              $ref: '#/components/schemas/PutRSSWebhook'
+              $ref: "#/components/schemas/PutRSSWebhook"
         description: ""
       responses:
         "200":
@@ -4166,7 +4166,7 @@ paths:
                     last_fired_at: 2022-10-25T15:35:37.103240+02:00
                     updated_at: 2022-10-25T15:32:37.406281+02:00
               schema:
-                $ref: '#/components/schemas/RssWebhook'
+                $ref: "#/components/schemas/RssWebhook"
           description: OK
       summary: Update RSS Hook
       tags:
@@ -4232,7 +4232,7 @@ paths:
                     last_fired_at: 2022-10-25T15:35:37.103240+02:00
                     updated_at: 2022-10-25T15:32:37.406281+02:00
               schema:
-                $ref: '#/components/schemas/TwitterWebhook'
+                $ref: "#/components/schemas/TwitterWebhook"
           description: OK
       summary: Get Twitter Hook
       tags:
@@ -4267,7 +4267,7 @@ paths:
                   - dofus3-en-official-changelog
                   preview_length: null
             schema:
-              $ref: '#/components/schemas/PutTwitterWebhook'
+              $ref: "#/components/schemas/PutTwitterWebhook"
         description: ""
       responses:
         "200":
@@ -4289,7 +4289,7 @@ paths:
                     last_fired_at: 2022-10-25T15:35:37.103240+02:00
                     updated_at: 2022-10-25T15:32:37.406281+02:00
               schema:
-                $ref: '#/components/schemas/TwitterWebhook'
+                $ref: "#/components/schemas/TwitterWebhook"
           description: OK
       summary: Update Twitter Hook
       tags:
@@ -4364,7 +4364,7 @@ paths:
                     last_fired_at: 2019-08-24T14:15:22Z
                     updated_at: 2019-08-24T14:15:22Z
               schema:
-                $ref: '#/components/schemas/AlmanaxWebhook'
+                $ref: "#/components/schemas/AlmanaxWebhook"
           description: OK
       summary: Get Almanax Hook
       tags:
@@ -4408,7 +4408,7 @@ paths:
                   - daily
                   weekly_weekday: sunday
             schema:
-              $ref: '#/components/schemas/PutAlmanaxWebhook'
+              $ref: "#/components/schemas/PutAlmanaxWebhook"
       responses:
         "200":
           content:
@@ -4438,7 +4438,7 @@ paths:
                     last_fired_at: 2019-08-24T14:15:22Z
                     updated_at: 2019-08-24T14:15:22Z
               schema:
-                $ref: '#/components/schemas/AlmanaxWebhook'
+                $ref: "#/components/schemas/AlmanaxWebhook"
           description: OK
       summary: Update Almanax Hook
       tags:
@@ -4467,7 +4467,7 @@ paths:
                   preview_length: 2000
                   callback: https://discord.com/api/webhooks/XYZ
             schema:
-              $ref: '#/components/schemas/CreateRSSWebhook'
+              $ref: "#/components/schemas/CreateRSSWebhook"
         description: ""
       responses:
         "200":
@@ -4499,7 +4499,7 @@ paths:
                   preview_length: 280
                   callback: https://discord.com/api/webhooks/XYZ
             schema:
-              $ref: '#/components/schemas/CreateTwitterWebhook'
+              $ref: "#/components/schemas/CreateTwitterWebhook"
         description: ""
       responses:
         "200":
@@ -4541,7 +4541,7 @@ paths:
                   - daily
                   weekly_weekday: sunday
             schema:
-              $ref: '#/components/schemas/CreateAlmanaxWebhook'
+              $ref: "#/components/schemas/CreateAlmanaxWebhook"
         description: ""
       responses:
         "200":
@@ -4578,13 +4578,13 @@ components:
         name:
           type: string
         type:
-          $ref: '#/components/schemas/TranslatedId'
+          $ref: "#/components/schemas/TranslatedId"
         item_subtype:
-          $ref: '#/components/schemas/ItemSubtype'
+          $ref: "#/components/schemas/ItemSubtype"
         level:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
       title: ListItemGeneral
       type: object
       x-examples: {}
@@ -4649,14 +4649,14 @@ components:
         name:
           type: string
         type:
-          $ref: '#/components/schemas/TranslatedId'
+          $ref: "#/components/schemas/TranslatedId"
         level:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe'
+            $ref: "#/components/schemas/Recipe"
           nullable: true
           type: array
         description:
@@ -4666,11 +4666,11 @@ components:
             id: t04qfhnlgc4kw
         conditions:
           allOf:
-          - $ref: '#/components/schemas/ConditionNode'
+          - $ref: "#/components/schemas/ConditionNode"
           nullable: true
         effects:
           items:
-            $ref: '#/components/schemas/Effect'
+            $ref: "#/components/schemas/Effect"
           nullable: true
           type: array
         is_weapon:
@@ -4681,7 +4681,7 @@ components:
           type: integer
         parent_set:
           allOf:
-          - $ref: '#/components/schemas/TranslatedId'
+          - $ref: "#/components/schemas/TranslatedId"
           nullable: true
         critical_hit_probability:
           nullable: true
@@ -4696,7 +4696,7 @@ components:
           nullable: true
           type: integer
         range:
-          $ref: '#/components/schemas/Range'
+          $ref: "#/components/schemas/Range"
       title: ListItem
       type: object
       x-examples: {}
@@ -4741,7 +4741,7 @@ components:
             \ the effect has a range value"
           type: integer
         type:
-          $ref: '#/components/schemas/EffectType'
+          $ref: "#/components/schemas/EffectType"
         ignore_int_min:
           description: 'ignore the int min field because the actual value is a string.
             For readability the templated field is the only important field in this
@@ -4875,25 +4875,25 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/TranslatedId'
+          $ref: "#/components/schemas/TranslatedId"
         level:
           type: integer
         pods:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
         effects:
           items:
-            $ref: '#/components/schemas/Effect'
+            $ref: "#/components/schemas/Effect"
           nullable: true
           type: array
         conditions:
           allOf:
-          - $ref: '#/components/schemas/ConditionNode'
+          - $ref: "#/components/schemas/ConditionNode"
           nullable: true
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe'
+            $ref: "#/components/schemas/Recipe"
           nullable: true
           type: array
       title: Resource
@@ -4945,7 +4945,7 @@ components:
         effects:
           additionalProperties:
             items:
-              $ref: '#/components/schemas/Effect'
+              $ref: "#/components/schemas/Effect"
             minItems: 0
             type: array
             x-stoplight:
@@ -5014,7 +5014,7 @@ components:
         effects:
           additionalProperties:
             items:
-              $ref: '#/components/schemas/Effect'
+              $ref: "#/components/schemas/Effect"
             minItems: 0
             type: array
             x-stoplight:
@@ -5080,12 +5080,12 @@ components:
         name:
           type: string
         family:
-          $ref: '#/components/schemas/MountFamily'
+          $ref: "#/components/schemas/MountFamily"
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
         effects:
           items:
-            $ref: '#/components/schemas/Effect'
+            $ref: "#/components/schemas/Effect"
           nullable: true
           type: array
       title: Mount
@@ -5204,10 +5204,10 @@ components:
           ankama_id: 0
       properties:
         _links:
-          $ref: '#/components/schemas/PagedLinks'
+          $ref: "#/components/schemas/PagedLinks"
         items:
           items:
-            $ref: '#/components/schemas/ListItem'
+            $ref: "#/components/schemas/ListItem"
           type: array
       title: ListItems
       type: object
@@ -5285,10 +5285,10 @@ components:
           first: first
       properties:
         _links:
-          $ref: '#/components/schemas/PagedLinks'
+          $ref: "#/components/schemas/PagedLinks"
         sets:
           items:
-            $ref: '#/components/schemas/ListEquipmentSet'
+            $ref: "#/components/schemas/ListEquipmentSet"
           type: array
       title: ListSetPaged
       type: object
@@ -5366,10 +5366,10 @@ components:
           ankama_id: 0
       properties:
         _links:
-          $ref: '#/components/schemas/PagedLinks'
+          $ref: "#/components/schemas/PagedLinks"
         items:
           items:
-            $ref: '#/components/schemas/Mount'
+            $ref: "#/components/schemas/Mount"
           type: array
       title: ListMounts
       type: object
@@ -5405,14 +5405,14 @@ components:
         int_value:
           type: integer
         element:
-          $ref: '#/components/schemas/TranslatedId'
+          $ref: "#/components/schemas/TranslatedId"
       type: object
       x-stoplight:
         id: cfe46yvylz0b5
     ConditionNode:
       oneOf:
-      - $ref: '#/components/schemas/ConditionRelation'
-      - $ref: '#/components/schemas/ConditionLeaf'
+      - $ref: "#/components/schemas/ConditionRelation"
+      - $ref: "#/components/schemas/ConditionLeaf"
       title: ConditionNode
       x-stoplight:
         id: kv2rib65himdt
@@ -5424,7 +5424,7 @@ components:
           description: always "true" for the leaf of a tree
           type: boolean
         condition:
-          $ref: '#/components/schemas/Condition'
+          $ref: "#/components/schemas/Condition"
       type: object
       x-stoplight:
         id: qpb8of1ljcb4y
@@ -5444,7 +5444,7 @@ components:
         children:
           items:
             allOf:
-            - $ref: '#/components/schemas/ConditionNode'
+            - $ref: "#/components/schemas/ConditionNode"
             nullable: true
             x-stoplight:
               id: i3dqn2ib2hjfl
@@ -5509,7 +5509,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/TranslatedId'
+          $ref: "#/components/schemas/TranslatedId"
         is_weapon:
           type: boolean
         level:
@@ -5517,24 +5517,24 @@ components:
         pods:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
         effects:
           items:
-            $ref: '#/components/schemas/Effect'
+            $ref: "#/components/schemas/Effect"
           nullable: true
           type: array
         conditions:
           allOf:
-          - $ref: '#/components/schemas/ConditionNode'
+          - $ref: "#/components/schemas/ConditionNode"
           nullable: true
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe'
+            $ref: "#/components/schemas/Recipe"
           nullable: true
           type: array
         parent_set:
           allOf:
-          - $ref: '#/components/schemas/TranslatedId'
+          - $ref: "#/components/schemas/TranslatedId"
           nullable: true
       type: object
       x-examples: {}
@@ -5601,7 +5601,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/TranslatedId'
+          $ref: "#/components/schemas/TranslatedId"
         is_weapon:
           description: always true when the item is a weapon. Many fields are now
             available. Always check for this flag first when getting single equipment
@@ -5612,15 +5612,15 @@ components:
         pods:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
         effects:
           items:
-            $ref: '#/components/schemas/Effect'
+            $ref: "#/components/schemas/Effect"
           nullable: true
           type: array
         conditions:
           allOf:
-          - $ref: '#/components/schemas/ConditionNode'
+          - $ref: "#/components/schemas/ConditionNode"
           nullable: true
         critical_hit_probability:
           type: integer
@@ -5631,15 +5631,15 @@ components:
         ap_cost:
           type: integer
         range:
-          $ref: '#/components/schemas/Range'
+          $ref: "#/components/schemas/Range"
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe'
+            $ref: "#/components/schemas/Recipe"
           nullable: true
           type: array
         parent_set:
           allOf:
-          - $ref: '#/components/schemas/TranslatedId'
+          - $ref: "#/components/schemas/TranslatedId"
           nullable: true
       type: object
       x-examples: {}
@@ -5666,7 +5666,7 @@ components:
     EquipmentSetEffects:
       additionalProperties:
         items:
-          $ref: '#/components/schemas/Effect'
+          $ref: "#/components/schemas/Effect"
         minItems: 0
         type: array
         x-stoplight:
@@ -5769,11 +5769,11 @@ components:
           quantity: 6
       properties:
         bonus:
-          $ref: '#/components/schemas/Almanax_bonus'
+          $ref: "#/components/schemas/Almanax_bonus"
         date:
           type: string
         tribute:
-          $ref: '#/components/schemas/Almanax_tribute'
+          $ref: "#/components/schemas/Almanax_tribute"
         reward_kamas:
           description: Amount of Kamas you get as reward for finishing this Almanax
             quest.
@@ -6070,7 +6070,7 @@ components:
           format: uri
           type: string
         daily_settings:
-          $ref: '#/components/schemas/CreateAlmanaxWebhook_daily_settings'
+          $ref: "#/components/schemas/CreateAlmanaxWebhook_daily_settings"
         iso_date:
           default: false
           description: "If false, it will use common local time formats and weekday\
@@ -6080,7 +6080,7 @@ components:
         mentions:
           additionalProperties:
             items:
-              $ref: '#/components/schemas/CreateAlmanaxWebhook_mentions_value_inner'
+              $ref: "#/components/schemas/CreateAlmanaxWebhook_mentions_value_inner"
             type: array
           description: Almanax bonus ids mapped to array of mentions.
           example:
@@ -6191,7 +6191,7 @@ components:
           nullable: true
           type: array
         daily_settings:
-          $ref: '#/components/schemas/CreateAlmanaxWebhook_daily_settings'
+          $ref: "#/components/schemas/CreateAlmanaxWebhook_daily_settings"
         iso_date:
           default: false
           description: "If false, it will use common local time formats and weekday\
@@ -6201,7 +6201,7 @@ components:
         mentions:
           additionalProperties:
             items:
-              $ref: '#/components/schemas/CreateAlmanaxWebhook_mentions_value_inner'
+              $ref: "#/components/schemas/CreateAlmanaxWebhook_mentions_value_inner"
             type: array
           description: Almanax bonus ids mapped to array of mentions.
           example:
@@ -6433,7 +6433,7 @@ components:
           format: uuid
           type: string
         daily_settings:
-          $ref: '#/components/schemas/AlmanaxWebhook_daily_settings'
+          $ref: "#/components/schemas/AlmanaxWebhook_daily_settings"
         bonus_whitelist:
           description: |-
             Only post when these bonuses come up.
@@ -6463,7 +6463,7 @@ components:
         mentions:
           additionalProperties:
             items:
-              $ref: '#/components/schemas/CreateAlmanaxWebhook_mentions_value_inner'
+              $ref: "#/components/schemas/CreateAlmanaxWebhook_mentions_value_inner"
             type: array
           description: Almanax bonus ids mapped to array of mentions.
           example:
@@ -6579,9 +6579,9 @@ components:
           x-stoplight:
             id: 8476cadtxa064
         type:
-          $ref: '#/components/schemas/GameSearchType'
+          $ref: "#/components/schemas/GameSearchType"
         item_fields:
-          $ref: '#/components/schemas/GameSearchItem'
+          $ref: "#/components/schemas/GameSearchItem"
       title: GameSearch
       type: object
       x-stoplight:
@@ -6610,14 +6610,14 @@ components:
           name_id: name_id
       properties:
         type:
-          $ref: '#/components/schemas/GameSearchType'
+          $ref: "#/components/schemas/GameSearchType"
         level:
           nullable: true
           type: integer
           x-stoplight:
             id: e80w3jwdolhm5
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
       title: GameSearchItem
       type: object
       x-stoplight:
@@ -6680,7 +6680,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/get_meta_almanax_bonuses_200_response_inner'
+          $ref: "#/components/schemas/get_meta_almanax_bonuses_200_response_inner"
       type: object
     Almanax_tribute_item:
       example:
@@ -6696,7 +6696,7 @@ components:
         ankama_id:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Images'
+          $ref: "#/components/schemas/Images"
         name:
           type: string
         subtype:
@@ -6716,7 +6716,7 @@ components:
         quantity: 6
       properties:
         item:
-          $ref: '#/components/schemas/Almanax_tribute_item'
+          $ref: "#/components/schemas/Almanax_tribute_item"
         quantity:
           type: integer
       type: object

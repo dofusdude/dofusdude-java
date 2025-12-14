@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * All images except icon are rendered in the background which can take some time (up to hours if all data is completely generated from scratch). Because of this, they can be null if they are not yet rendered.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:34:07.626420960Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class Images {
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
@@ -226,7 +228,7 @@ public class Images {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Images.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Images is not found in the empty JSON string", Images.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Images is not found in the empty JSON string", Images.openapiRequiredFields.toString()));
         }
       }
 
@@ -234,21 +236,21 @@ public class Images {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Images.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Images` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Images` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("icon") != null && !jsonObj.get("icon").isJsonNull()) && !jsonObj.get("icon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `icon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icon").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `icon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icon").toString()));
       }
       if ((jsonObj.get("sd") != null && !jsonObj.get("sd").isJsonNull()) && !jsonObj.get("sd").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sd` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sd").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sd` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sd").toString()));
       }
       if ((jsonObj.get("hq") != null && !jsonObj.get("hq").isJsonNull()) && !jsonObj.get("hq").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hq` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hq").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hq` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hq").toString()));
       }
       if ((jsonObj.get("hd") != null && !jsonObj.get("hd").isJsonNull()) && !jsonObj.get("hd").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hd` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hd").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hd` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hd").toString()));
       }
   }
 

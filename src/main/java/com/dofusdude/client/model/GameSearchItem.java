@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.dofusdude.client.model.GameSearchType;
 import com.dofusdude.client.model.Images;
 import com.google.gson.TypeAdapter;
@@ -45,13 +46,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * GameSearchItem
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:34:07.626420960Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class GameSearchItem {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -202,7 +204,7 @@ public class GameSearchItem {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GameSearchItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GameSearchItem is not found in the empty JSON string", GameSearchItem.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in GameSearchItem is not found in the empty JSON string", GameSearchItem.openapiRequiredFields.toString()));
         }
       }
 
@@ -210,7 +212,7 @@ public class GameSearchItem {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GameSearchItem.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GameSearchItem` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GameSearchItem` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

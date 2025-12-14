@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.dofusdude.client.model.Images;
 import com.dofusdude.client.model.ItemSubtype;
 import com.dofusdude.client.model.TranslatedId;
@@ -45,13 +46,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * ListItemGeneral
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:34:07.626420960Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class ListItemGeneral {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -269,7 +271,7 @@ public class ListItemGeneral {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ListItemGeneral.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListItemGeneral is not found in the empty JSON string", ListItemGeneral.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ListItemGeneral is not found in the empty JSON string", ListItemGeneral.openapiRequiredFields.toString()));
         }
       }
 
@@ -277,12 +279,12 @@ public class ListItemGeneral {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ListItemGeneral.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListItemGeneral` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ListItemGeneral` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {

@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.dofusdude.client.model.Condition;
 import com.dofusdude.client.model.ConditionLeaf;
 import com.dofusdude.client.model.ConditionRelation;
@@ -39,6 +40,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import com.dofusdude.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:34:07.626420960Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class ConditionNode extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ConditionNode.class.getName());
 
@@ -118,7 +120,7 @@ public class ConditionNode extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ConditionRelation'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ConditionRelation failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for ConditionRelation failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ConditionRelation'", e);
                     }
                     // deserialize ConditionLeaf
@@ -130,7 +132,7 @@ public class ConditionNode extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ConditionLeaf'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ConditionLeaf failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for ConditionLeaf failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ConditionLeaf'", e);
                     }
 
@@ -140,7 +142,7 @@ public class ConditionNode extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ConditionNode: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for ConditionNode: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -239,7 +241,7 @@ public class ConditionNode extends AbstractOpenApiSchema {
             ConditionRelation.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ConditionRelation failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for ConditionRelation failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with ConditionLeaf
@@ -247,11 +249,11 @@ public class ConditionNode extends AbstractOpenApiSchema {
             ConditionLeaf.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ConditionLeaf failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for ConditionLeaf failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for ConditionNode with oneOf schemas: ConditionLeaf, ConditionRelation. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for ConditionNode with oneOf schemas: ConditionLeaf, ConditionRelation. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

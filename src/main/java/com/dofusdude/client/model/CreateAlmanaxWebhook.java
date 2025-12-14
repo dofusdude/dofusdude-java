@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.dofusdude.client.model.CreateAlmanaxWebhookDailySettings;
 import com.dofusdude.client.model.CreateAlmanaxWebhookMentionsValueInner;
 import com.google.gson.TypeAdapter;
@@ -52,13 +53,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * CreateAlmanaxWebhook
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:34:07.626420960Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class CreateAlmanaxWebhook {
   public static final String SERIALIZED_NAME_BONUS_WHITELIST = "bonus_whitelist";
   @SerializedName(SERIALIZED_NAME_BONUS_WHITELIST)
@@ -597,7 +599,7 @@ public class CreateAlmanaxWebhook {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateAlmanaxWebhook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateAlmanaxWebhook is not found in the empty JSON string", CreateAlmanaxWebhook.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CreateAlmanaxWebhook is not found in the empty JSON string", CreateAlmanaxWebhook.openapiRequiredFields.toString()));
         }
       }
 
@@ -605,38 +607,38 @@ public class CreateAlmanaxWebhook {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CreateAlmanaxWebhook.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateAlmanaxWebhook` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CreateAlmanaxWebhook` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateAlmanaxWebhook.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("bonus_whitelist") != null && !jsonObj.get("bonus_whitelist").isJsonNull() && !jsonObj.get("bonus_whitelist").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bonus_whitelist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_whitelist").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bonus_whitelist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_whitelist").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("bonus_blacklist") != null && !jsonObj.get("bonus_blacklist").isJsonNull() && !jsonObj.get("bonus_blacklist").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bonus_blacklist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_blacklist").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bonus_blacklist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_blacklist").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("subscriptions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("subscriptions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
       }
       if (!jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
       // validate the required field `format`
       FormatEnum.validateJsonElement(jsonObj.get("format"));
       if (!jsonObj.get("callback").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `callback` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callback").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `callback` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callback").toString()));
       }
       // validate the optional field `daily_settings`
       if (jsonObj.get("daily_settings") != null && !jsonObj.get("daily_settings").isJsonNull()) {
@@ -646,10 +648,10 @@ public class CreateAlmanaxWebhook {
       if (jsonObj.get("intervals") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("intervals").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `intervals` to be an array in the JSON string but got `%s`", jsonObj.get("intervals").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `intervals` to be an array in the JSON string but got `%s`", jsonObj.get("intervals").toString()));
       }
       if ((jsonObj.get("weekly_weekday") != null && !jsonObj.get("weekly_weekday").isJsonNull()) && !jsonObj.get("weekly_weekday").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `weekly_weekday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("weekly_weekday").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `weekly_weekday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("weekly_weekday").toString()));
       }
       // validate the optional field `weekly_weekday`
       if (jsonObj.get("weekly_weekday") != null && !jsonObj.get("weekly_weekday").isJsonNull()) {

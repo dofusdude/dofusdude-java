@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.dofusdude.client.model.ConditionNode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -45,13 +46,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * 
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T19:30:53.853622924Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T19:34:07.626420960Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
 public class ConditionRelation {
   public static final String SERIALIZED_NAME_IS_OPERAND = "is_operand";
   @SerializedName(SERIALIZED_NAME_IS_OPERAND)
@@ -199,7 +201,7 @@ public class ConditionRelation {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConditionRelation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConditionRelation is not found in the empty JSON string", ConditionRelation.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ConditionRelation is not found in the empty JSON string", ConditionRelation.openapiRequiredFields.toString()));
         }
       }
 
@@ -207,19 +209,19 @@ public class ConditionRelation {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ConditionRelation.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ConditionRelation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ConditionRelation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("relation") != null && !jsonObj.get("relation").isJsonNull()) && !jsonObj.get("relation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `relation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relation").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `relation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relation").toString()));
       }
       if (jsonObj.get("children") != null && !jsonObj.get("children").isJsonNull()) {
         JsonArray jsonArraychildren = jsonObj.getAsJsonArray("children");
         if (jsonArraychildren != null) {
           // ensure the json data is an array
           if (!jsonObj.get("children").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `children` to be an array in the JSON string but got `%s`", jsonObj.get("children").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `children` to be an array in the JSON string but got `%s`", jsonObj.get("children").toString()));
           }
 
           // validate the optional field `children` (array)
