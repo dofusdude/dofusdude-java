@@ -14,7 +14,6 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.dofusdude.client.model.EffectType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -44,14 +43,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * Effect
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T20:00:25.397385540Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-08T21:53:54.204931554Z[Etc/UTC]", comments = "Generator version: 7.21.0-SNAPSHOT")
 public class Effect {
   public static final String SERIALIZED_NAME_INT_MINIMUM = "int_minimum";
   @SerializedName(SERIALIZED_NAME_INT_MINIMUM)
@@ -269,7 +267,7 @@ public class Effect {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Effect.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Effect is not found in the empty JSON string", Effect.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Effect is not found in the empty JSON string", Effect.openapiRequiredFields.toString()));
         }
       }
 
@@ -277,7 +275,7 @@ public class Effect {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Effect.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Effect` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Effect` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -286,7 +284,7 @@ public class Effect {
         EffectType.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("formatted") != null && !jsonObj.get("formatted").isJsonNull()) && !jsonObj.get("formatted").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `formatted` to be a primitive type in the JSON string but got `%s`", jsonObj.get("formatted").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `formatted` to be a primitive type in the JSON string but got `%s`", jsonObj.get("formatted").toString()));
       }
   }
 

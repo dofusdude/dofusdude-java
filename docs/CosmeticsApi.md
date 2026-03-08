@@ -39,7 +39,7 @@ public class Example {
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 5; // Integer | only results which level is equal or below this value
     String acceptEncoding = "gzip"; // String | optional compression for saving bandwidth
-    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = new LinkedHashSet<>(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
       ListItems result = apiInstance.getAllCosmeticsList(language, game, sortLevel, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeNameId);
       System.out.println(result);
@@ -116,8 +116,8 @@ public class Example {
     Integer filterMaxLevel = 5; // Integer | only results which level is equal or below this value
     Integer pageSize = 5; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
-    Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
-    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> fieldsItem = new LinkedHashSet<>(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
+    Set<String> filterTypeNameId = new LinkedHashSet<>(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
       ListItems result = apiInstance.getCosmeticsList(language, game, sortLevel, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeNameId);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
     Integer filterMinLevel = 1; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 2; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
-    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = new LinkedHashSet<>(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
       List<ListItem> result = apiInstance.getCosmeticsSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
       System.out.println(result);

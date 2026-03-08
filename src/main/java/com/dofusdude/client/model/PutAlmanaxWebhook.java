@@ -14,7 +14,6 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.dofusdude.client.model.CreateAlmanaxWebhookDailySettings;
 import com.dofusdude.client.model.CreateAlmanaxWebhookMentionsValueInner;
 import com.google.gson.TypeAdapter;
@@ -52,14 +51,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * PutAlmanaxWebhook
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T20:00:25.397385540Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-08T21:53:54.204931554Z[Etc/UTC]", comments = "Generator version: 7.21.0-SNAPSHOT")
 public class PutAlmanaxWebhook {
   public static final String SERIALIZED_NAME_BONUS_WHITELIST = "bonus_whitelist";
   @SerializedName(SERIALIZED_NAME_BONUS_WHITELIST)
@@ -496,7 +494,7 @@ public class PutAlmanaxWebhook {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PutAlmanaxWebhook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PutAlmanaxWebhook is not found in the empty JSON string", PutAlmanaxWebhook.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PutAlmanaxWebhook is not found in the empty JSON string", PutAlmanaxWebhook.openapiRequiredFields.toString()));
         }
       }
 
@@ -504,21 +502,21 @@ public class PutAlmanaxWebhook {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PutAlmanaxWebhook.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PutAlmanaxWebhook` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PutAlmanaxWebhook` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("bonus_whitelist") != null && !jsonObj.get("bonus_whitelist").isJsonNull() && !jsonObj.get("bonus_whitelist").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bonus_whitelist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_whitelist").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bonus_whitelist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_whitelist").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("bonus_blacklist") != null && !jsonObj.get("bonus_blacklist").isJsonNull() && !jsonObj.get("bonus_blacklist").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bonus_blacklist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_blacklist").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bonus_blacklist` to be an array in the JSON string but got `%s`", jsonObj.get("bonus_blacklist").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("subscriptions") != null && !jsonObj.get("subscriptions").isJsonNull() && !jsonObj.get("subscriptions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
       }
       // validate the optional field `daily_settings`
       if (jsonObj.get("daily_settings") != null && !jsonObj.get("daily_settings").isJsonNull()) {
@@ -526,10 +524,10 @@ public class PutAlmanaxWebhook {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("intervals") != null && !jsonObj.get("intervals").isJsonNull() && !jsonObj.get("intervals").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `intervals` to be an array in the JSON string but got `%s`", jsonObj.get("intervals").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `intervals` to be an array in the JSON string but got `%s`", jsonObj.get("intervals").toString()));
       }
       if ((jsonObj.get("weekly_weekday") != null && !jsonObj.get("weekly_weekday").isJsonNull()) && !jsonObj.get("weekly_weekday").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `weekly_weekday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("weekly_weekday").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `weekly_weekday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("weekly_weekday").toString()));
       }
       // validate the optional field `weekly_weekday`
       if (jsonObj.get("weekly_weekday") != null && !jsonObj.get("weekly_weekday").isJsonNull()) {

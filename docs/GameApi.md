@@ -34,10 +34,10 @@ public class Example {
     String language = "en"; // String | a valid language code
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     String query = "paztek"; // String | search query
-    Set<String> filterSearchIndex = Arrays.asList(); // Set<String> | only results with all specific type
+    Set<String> filterSearchIndex = new LinkedHashSet<>(); // Set<String> | only results with all specific type
     Integer limit = 8; // Integer | maximum number of returned results
-    Set<String> fieldsItem = Arrays.asList(); // Set<String> | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed.
-    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[search_index]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> fieldsItem = new LinkedHashSet<>(); // Set<String> | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed.
+    Set<String> filterTypeNameId = new LinkedHashSet<>(); // Set<String> | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[search_index]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
       List<GameSearch> result = apiInstance.getGameSearch(language, game, query, filterSearchIndex, limit, fieldsItem, filterTypeNameId);
       System.out.println(result);
@@ -113,7 +113,7 @@ public class Example {
     Integer filterMinLevel = 190; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 200; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
-    Set<String> filterTypeNameId = Arrays.asList(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
+    Set<String> filterTypeNameId = new LinkedHashSet<>(); // Set<String> | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\".
     try {
       List<ListItemGeneral> result = apiInstance.getItemsAllSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
       System.out.println(result);

@@ -14,7 +14,6 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.dofusdude.client.model.AlmanaxBonus;
 import com.dofusdude.client.model.AlmanaxTribute;
 import com.google.gson.TypeAdapter;
@@ -46,14 +45,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import com.dofusdude.client.JSON;
 
 /**
  * Almanax
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-14T20:00:25.397385540Z[Etc/UTC]", comments = "Generator version: 7.18.0-SNAPSHOT")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-08T21:53:54.204931554Z[Etc/UTC]", comments = "Generator version: 7.21.0-SNAPSHOT")
 public class Almanax {
   public static final String SERIALIZED_NAME_BONUS = "bonus";
   @SerializedName(SERIALIZED_NAME_BONUS)
@@ -256,7 +254,7 @@ public class Almanax {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Almanax.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Almanax is not found in the empty JSON string", Almanax.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Almanax is not found in the empty JSON string", Almanax.openapiRequiredFields.toString()));
         }
       }
 
@@ -264,7 +262,7 @@ public class Almanax {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Almanax.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Almanax` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Almanax` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -273,7 +271,7 @@ public class Almanax {
         AlmanaxBonus.validateJsonElement(jsonObj.get("bonus"));
       }
       if ((jsonObj.get("date") != null && !jsonObj.get("date").isJsonNull()) && !jsonObj.get("date").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("date").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("date").toString()));
       }
       // validate the optional field `tribute`
       if (jsonObj.get("tribute") != null && !jsonObj.get("tribute").isJsonNull()) {

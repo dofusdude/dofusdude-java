@@ -118,7 +118,7 @@ public class Example {
     Integer filterMaxHighestEquipmentLevel = 200; // Integer | only results where the equipment with the highest level is below or equal to this value
     Integer pageSize = 20; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
-    Set<String> fieldsSet = Arrays.asList(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
+    Set<String> fieldsSet = new LinkedHashSet<>(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
     Boolean filterContainsCosmeticsOnly = true; // Boolean | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
     Boolean filterContainsCosmetics = true; // Boolean | filter sets based on if they got cosmetic items in it.
     try {

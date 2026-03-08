@@ -110,7 +110,7 @@ public class Example {
     String filterFamilyName = "Dragoturkey"; // String | only results with the translated family name
     Integer pageSize = 10; // Integer | size of the results from the list. -1 disables pagination and gets all in one response.
     Integer pageNumber = 1; // Integer | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16.
-    Set<String> fieldsMount = Arrays.asList(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
+    Set<String> fieldsMount = new LinkedHashSet<>(); // Set<String> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
     Integer filterFamilyId = 56; // Integer | only results with the unique family id
     try {
       ListMounts result = apiInstance.getMountsList(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount, filterFamilyId);
@@ -256,7 +256,7 @@ public class Example {
 
     MountsApi apiInstance = new MountsApi(defaultClient);
     String language = "en"; // String | a valid language code
-    Integer ankamaId = 180; // Integer | identifier
+    Integer ankamaId = 33216; // Integer | identifier
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       Mount result = apiInstance.getMountsSingle(language, ankamaId, game);
