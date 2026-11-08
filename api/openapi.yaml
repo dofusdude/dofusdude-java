@@ -225,7 +225,7 @@ paths:
         name: query
         required: true
         schema:
-          example: Dorée
+          example: almond
           type: string
         style: form
       - description: only results with the translated family name
@@ -234,7 +234,7 @@ paths:
         name: "filter[family.name]"
         required: false
         schema:
-          example: Dragodinde
+          example: Dragoturkey
           type: string
         style: form
       - description: maximum number of returned results
@@ -452,7 +452,7 @@ paths:
         name: query
         required: true
         schema:
-          example: Ficha
+          example: training
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -1086,7 +1086,7 @@ paths:
         name: query
         required: true
         schema:
-          example: nedora
+          example: astrowig
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -1133,7 +1133,7 @@ paths:
         required: false
         schema:
           example:
-          - ceremonial-wings
+          - ceremonial-hat
           items:
             type: string
           type: array
@@ -1265,7 +1265,7 @@ paths:
         name: ankama_id
         required: true
         schema:
-          example: 7295
+          example: 274
           type: integer
         style: simple
       - description: game main 'dofus3' or beta channel 'dofus3beta'
@@ -1334,7 +1334,7 @@ paths:
         name: ankama_id
         required: true
         schema:
-          example: 13971
+          example: 44
           type: integer
         style: simple
       - description: game main 'dofus3' or beta channel 'dofus3beta'
@@ -3010,7 +3010,7 @@ paths:
         required: false
         schema:
           example:
-          - ceremonial-wings
+          - ceremonial-hat
           items:
             type: string
           type: array
@@ -3686,7 +3686,7 @@ paths:
         name: date
         required: true
         schema:
-          example: 2025-01-25
+          example: 2026-11-08
           format: date
           type: string
         style: simple
@@ -3958,7 +3958,7 @@ paths:
         name: query
         required: true
         schema:
-          example: abond
+          example: experience
           type: string
         style: form
       - description: maximum number of returned results
@@ -4764,6 +4764,7 @@ paths:
         name: ankama_id
         required: true
         schema:
+          example: 1
           type: integer
         style: simple
       responses:
@@ -4992,6 +4993,7 @@ paths:
         name: ankama_id
         required: true
         schema:
+          example: 201
           type: integer
         style: simple
       - description: Return only the requested mapped spell grade in `levels`.
@@ -5076,10 +5078,9 @@ paths:
           - all
           type: string
         style: form
-      - description: Controls monster spell relationships. By default each monster
-          grade contains a compact relationship whose URL selects the assigned spell
-          grade. `spells.grade` inlines that grade only; `spells` inlines the complete
-          spell with every available grade.
+      - description: Optional spell expansion for monster responses. Leave include
+          unset to return spell URLs. Use `spells.grade` to embed the assigned spell
+          grade. Use `spells` to embed every available grade of each assigned spell.
         explode: true
         in: query
         name: include
@@ -5135,10 +5136,9 @@ paths:
           - pt
           type: string
         style: simple
-      - description: Controls monster spell relationships. By default each monster
-          grade contains a compact relationship whose URL selects the assigned spell
-          grade. `spells.grade` inlines that grade only; `spells` inlines the complete
-          spell with every available grade.
+      - description: Optional spell expansion for monster responses. Leave include
+          unset to return spell URLs. Use `spells.grade` to embed the assigned spell
+          grade. Use `spells` to embed every available grade of each assigned spell.
         explode: true
         in: query
         name: include
@@ -5257,12 +5257,12 @@ paths:
         name: ankama_id
         required: true
         schema:
+          example: 31
           type: integer
         style: simple
-      - description: Controls monster spell relationships. By default each monster
-          grade contains a compact relationship whose URL selects the assigned spell
-          grade. `spells.grade` inlines that grade only; `spells` inlines the complete
-          spell with every available grade.
+      - description: Optional spell expansion for monster responses. Leave include
+          unset to return spell URLs. Use `spells.grade` to embed the assigned spell
+          grade. Use `spells` to embed every available grade of each assigned spell.
         explode: true
         in: query
         name: include
@@ -5499,6 +5499,7 @@ paths:
         name: ankama_id
         required: true
         schema:
+          example: 0
           type: integer
         style: simple
       responses:
@@ -5727,6 +5728,7 @@ paths:
         name: ankama_id
         required: true
         schema:
+          example: 0
           type: integer
         style: simple
       responses:
@@ -5955,6 +5957,7 @@ paths:
         name: ankama_id
         required: true
         schema:
+          example: 1
           type: integer
         style: simple
       responses:
@@ -6024,10 +6027,9 @@ components:
         type: integer
       style: form
     MonsterSpellInclude:
-      description: Controls monster spell relationships. By default each monster grade
-        contains a compact relationship whose URL selects the assigned spell grade.
-        `spells.grade` inlines that grade only; `spells` inlines the complete spell
-        with every available grade.
+      description: Optional spell expansion for monster responses. Leave include unset
+        to return spell URLs. Use `spells.grade` to embed the assigned spell grade.
+        Use `spells` to embed every available grade of each assigned spell.
       explode: true
       in: query
       name: include
@@ -6434,7 +6436,7 @@ components:
         shape:
           $ref: "#/components/schemas/ZoneShape"
         size:
-          description: Effective outer size of the area. A point has size 0; whole-map
+          description: Effective outer size of the area. A point has size 0. Whole-map
             and custom-cell shapes omit it.
           nullable: true
           type: integer
@@ -7224,6 +7226,7 @@ components:
       type: object
     Spell:
       additionalProperties: true
+      description: "A spell with its available grades, effects and casting rules."
       example:
         ankama_id: 7
         name: name
@@ -9633,6 +9636,8 @@ components:
       type: object
     Class:
       additionalProperties: true
+      description: "A playable class with its characteristics, appearance and class\
+        \ spell assignments."
       example:
         ankama_id: 0
         name: name
@@ -13932,6 +13937,8 @@ components:
       type: object
     Monster:
       additionalProperties: true
+      description: "A monster with its grades, family, spawn locations and drops.\
+        \ Spell expansion is optional."
       example:
         ankama_id: 0
         name: name
@@ -14375,7 +14382,7 @@ components:
           description: The spell grade assigned to this monster grade.
           type: integer
         url:
-          description: Grade-specific spell URL; already includes the `grade` query
+          description: URL for the assigned spell grade. Includes the `grade` query
             parameter.
           format: uri
           type: string

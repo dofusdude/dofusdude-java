@@ -177,7 +177,7 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    String include = "spells.grade"; // String | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. `spells.grade` inlines that grade only; `spells` inlines the complete spell with every available grade.
+    String include = "spells.grade"; // String | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use `spells.grade` to embed the assigned spell grade. Use `spells` to embed every available grade of each assigned spell.
     try {
       MappedEntityCollection result = apiInstance.getAllMonsters(game, language, include);
       System.out.println(result);
@@ -198,7 +198,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **game** | **String**|  | [enum: dofus3, dofus3beta] |
 | **language** | **String**|  | [enum: en, fr, de, es, pt] |
-| **include** | **String**| Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | [optional] [enum: spells.grade, spells] |
+| **include** | **String**| Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | [optional] [enum: spells.grade, spells] |
 
 ### Return type
 
@@ -427,7 +427,7 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    Integer ankamaId = 56; // Integer | 
+    Integer ankamaId = 0; // Integer | 
     try {
       WorldArea result = apiInstance.getAreaById(game, language, ankamaId);
       System.out.println(result);
@@ -561,7 +561,7 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    Integer ankamaId = 56; // Integer | 
+    Integer ankamaId = 1; // Integer | 
     try {
       ModelClass result = apiInstance.getClassById(game, language, ankamaId);
       System.out.println(result);
@@ -695,8 +695,8 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    Integer ankamaId = 56; // Integer | 
-    String include = "spells.grade"; // String | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. `spells.grade` inlines that grade only; `spells` inlines the complete spell with every available grade.
+    Integer ankamaId = 31; // Integer | 
+    String include = "spells.grade"; // String | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use `spells.grade` to embed the assigned spell grade. Use `spells` to embed every available grade of each assigned spell.
     try {
       Monster result = apiInstance.getMonsterById(game, language, ankamaId, include);
       System.out.println(result);
@@ -718,7 +718,7 @@ public class Example {
 | **game** | **String**|  | [enum: dofus3, dofus3beta] |
 | **language** | **String**|  | [enum: en, fr, de, es, pt] |
 | **ankamaId** | **Integer**|  | |
-| **include** | **String**| Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | [optional] [enum: spells.grade, spells] |
+| **include** | **String**| Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | [optional] [enum: spells.grade, spells] |
 
 ### Return type
 
@@ -765,7 +765,7 @@ public class Example {
     Integer pageNumber = 1; // Integer | 
     Integer pageSize = 20; // Integer | 
     String fieldsMonsters = "all"; // String | 
-    String include = "spells.grade"; // String | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. `spells.grade` inlines that grade only; `spells` inlines the complete spell with every available grade.
+    String include = "spells.grade"; // String | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use `spells.grade` to embed the assigned spell grade. Use `spells` to embed every available grade of each assigned spell.
     try {
       MappedEntityCollection result = apiInstance.getMonsters(game, language, pageNumber, pageSize, fieldsMonsters, include);
       System.out.println(result);
@@ -789,7 +789,7 @@ public class Example {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] |
 | **pageSize** | **Integer**|  | [optional] [default to 20] |
 | **fieldsMonsters** | **String**|  | [optional] [enum: all] |
-| **include** | **String**| Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | [optional] [enum: spells.grade, spells] |
+| **include** | **String**| Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | [optional] [enum: spells.grade, spells] |
 
 ### Return type
 
@@ -833,7 +833,7 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    Integer ankamaId = 56; // Integer | 
+    Integer ankamaId = 201; // Integer | 
     Integer grade = 56; // Integer | Return only the requested mapped spell grade in `levels`.
     try {
       Spell result = apiInstance.getSpellById(game, language, ankamaId, grade);
@@ -969,7 +969,7 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    Integer ankamaId = 56; // Integer | 
+    Integer ankamaId = 1; // Integer | 
     try {
       WorldArea result = apiInstance.getSubareaById(game, language, ankamaId);
       System.out.println(result);
@@ -1103,7 +1103,7 @@ public class Example {
     GameDataApi apiInstance = new GameDataApi(defaultClient);
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
-    Integer ankamaId = 56; // Integer | 
+    Integer ankamaId = 0; // Integer | 
     try {
       WorldArea result = apiInstance.getSuperAreaById(game, language, ankamaId);
       System.out.println(result);

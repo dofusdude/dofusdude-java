@@ -53,7 +53,7 @@ import com.dofusdude.client.JSON;
 /**
  * TargetSelector
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T11:06:16.424841088Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:25:20.649612902Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class TargetSelector {
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)

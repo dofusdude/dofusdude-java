@@ -222,7 +222,7 @@ public class Example {
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String language = "en"; // String | a valid language code
-    String query = "abond"; // String | case sensitive search query
+    String query = "experience"; // String | case sensitive search query
     Integer limit = 56; // Integer | maximum number of returned results
     try {
       List<GetMetaAlmanaxBonuses200ResponseInner> result = apiInstance.getMetaAlmanaxBonusesSearch(language, query, limit);

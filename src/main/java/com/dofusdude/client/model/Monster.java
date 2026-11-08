@@ -58,9 +58,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * Monster
+ * A monster with its grades, family, spawn locations and drops. Spell expansion is optional.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T11:06:16.424841088Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:25:20.649612902Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class Monster {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)

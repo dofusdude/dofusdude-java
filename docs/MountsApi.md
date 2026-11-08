@@ -183,8 +183,8 @@ public class Example {
     MountsApi apiInstance = new MountsApi(defaultClient);
     String language = "en"; // String | a valid language code
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
-    String query = "Dorée"; // String | case sensitive search query
-    String filterFamilyName = "Dragodinde"; // String | only results with the translated family name
+    String query = "almond"; // String | case sensitive search query
+    String filterFamilyName = "Dragoturkey"; // String | only results with the translated family name
     Integer limit = 8; // Integer | maximum number of returned results
     Integer filterFamilyId = 56; // Integer | only results with the unique family id
     try {

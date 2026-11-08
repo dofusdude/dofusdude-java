@@ -32,7 +32,7 @@ public class Example {
 
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
-    LocalDate date = LocalDate.parse("Sat Jan 25 00:00:00 UTC 2025"); // LocalDate | yyyy-mm-dd
+    LocalDate date = LocalDate.parse("Sun Nov 08 00:00:00 UTC 2026"); // LocalDate | yyyy-mm-dd
     Integer level = 56; // Integer | character level for the reward_xp field
     try {
       Almanax result = apiInstance.getAlmanaxDate(language, date, level);

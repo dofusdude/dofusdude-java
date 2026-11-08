@@ -266,7 +266,7 @@ public class Example {
 
     ResourcesApi apiInstance = new ResourcesApi(defaultClient);
     String language = "en"; // String | a valid language code
-    Integer ankamaId = 7295; // Integer | identifier
+    Integer ankamaId = 274; // Integer | identifier
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
     try {
       Resource result = apiInstance.getItemsResourcesSingle(language, ankamaId, game);

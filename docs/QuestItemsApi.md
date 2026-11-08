@@ -259,7 +259,7 @@ public class Example {
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
-    String query = "Ficha"; // String | case sensitive search query
+    String query = "training"; // String | case sensitive search query
     Integer filterMinLevel = 60; // Integer | only results which level is equal or above this value
     Integer filterMaxLevel = 70; // Integer | only results which level is equal or below this value
     Integer limit = 8; // Integer | maximum number of returned results
