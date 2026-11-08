@@ -2,9 +2,9 @@
 
 # dofusdude-java
 
-dofusdude
+DoduAPI software beta
 - API version: 1.1.0-beta.1
-  - Build date: 2026-11-08T21:25:20.649612902Z[Etc/UTC]
+  - Build date: 2026-11-08T21:28:00.619866560Z[Etc/UTC]
   - Generator version: 7.27.0
 
 # Open Ankama Developer Community
@@ -128,7 +128,7 @@ import com.dofusdude.client.api.AlmanaxApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
@@ -151,7 +151,7 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.dofusdu.de*
+All URIs are relative to *https://beta.api.dofusdu.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

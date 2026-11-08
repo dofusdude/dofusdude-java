@@ -1,6 +1,6 @@
 # QuestItemsApi
 
-All URIs are relative to *https://api.dofusdu.de*
+All URIs are relative to *https://beta.api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -30,7 +30,7 @@ import com.dofusdude.client.api.QuestItemsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
@@ -106,7 +106,7 @@ import com.dofusdude.client.api.QuestItemsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
@@ -174,7 +174,7 @@ import com.dofusdude.client.api.QuestItemsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code
@@ -254,7 +254,7 @@ import com.dofusdude.client.api.QuestItemsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     QuestItemsApi apiInstance = new QuestItemsApi(defaultClient);
     String language = "en"; // String | a valid language code

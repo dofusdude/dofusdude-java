@@ -1,6 +1,6 @@
 # MetaApi
 
-All URIs are relative to *https://api.dofusdu.de*
+All URIs are relative to *https://beta.api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -32,7 +32,7 @@ import com.dofusdude.client.api.MetaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
@@ -94,7 +94,7 @@ import com.dofusdude.client.api.MetaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
@@ -156,7 +156,7 @@ import com.dofusdude.client.api.MetaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String language = "en"; // String | a valid language code
@@ -218,7 +218,7 @@ import com.dofusdude.client.api.MetaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String language = "en"; // String | a valid language code
@@ -284,7 +284,7 @@ import com.dofusdude.client.api.MetaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
@@ -346,7 +346,7 @@ import com.dofusdude.client.api.MetaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dofusdu.de");
+    defaultClient.setBasePath("https://beta.api.dofusdu.de");
 
     MetaApi apiInstance = new MetaApi(defaultClient);
     String game = "dofus3"; // String | game main 'dofus3' or beta channel 'dofus3beta'
