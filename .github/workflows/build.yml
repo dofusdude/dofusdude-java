@@ -1,18 +1,22 @@
 name: Build
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - beta
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - beta
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Java
-      uses: actions/setup-java@v4
-      with:
-        java-version: "17"
-        distribution: "temurin"
-    - name: Verify and test
-      run: mvn --batch-mode --update-snapshots verify && mvn test
+      - uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: temurin
+      - name: Verify and test
+        run: mvn --batch-mode --update-snapshots verify && mvn test

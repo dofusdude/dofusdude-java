@@ -1,9 +1,11 @@
+> Beta SDK 1.1.0-beta.1. This SDK provides GET operations only. HTTP QUERY is available in the API and full OpenAPI 3.2 documentation, but is not included in this generated SDK.
+
 # dofusdude-java
 
 dofusdude
-- API version: 1.0.0
-  - Build date: 2026-03-08T21:53:54.204931554Z[Etc/UTC]
-  - Generator version: 7.21.0-SNAPSHOT
+- API version: 1.1.0-beta.1
+  - Build date: 2026-11-08T11:01:22.826740358Z[Etc/UTC]
+  - Generator version: 7.27.0
 
 # Open Ankama Developer Community
 The all-in-one toolbelt for your next Ankama related project.
@@ -11,13 +13,13 @@ The all-in-one toolbelt for your next Ankama related project.
 ## Versions
 - [Dofus 2](https://docs.dofusdu.de/dofus2/)
 - [Dofus 3](https://docs.dofusdu.de/dofus3/)
-  - v1 [latest] (you are here) 
+  - v1.1.0 beta [preview] (you are here) 
 
 ## Client SDKs
-- [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save`
-- [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save`
-- [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo`
-- [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude`
+- [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js@beta --save`
+- [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts@beta --save`
+- [Go](https://github.com/dofusdude/dodugo) `go get github.com/dofusdude/dodugo@v1.1.0-beta.1`
+- [Python](https://github.com/dofusdude/dofusdude-py) `pip install --pre dofusdude`
 - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup
 
 Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.
@@ -77,7 +79,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0-beta.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -93,7 +95,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:1.0.0"
+     implementation "com.dofusdude:dofusdude-java:1.1.0-beta.1"
   }
 ```
 
@@ -107,7 +109,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-1.0.0.jar`
+* `target/dofusdude-java-1.1.0-beta.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -169,6 +171,30 @@ Class | Method | HTTP request | Description
 *EquipmentApi* | [**getItemsEquipmentSingle**](docs/EquipmentApi.md#getItemsEquipmentSingle) | **GET** /{game}/v1/{language}/items/equipment/{ankama_id} | Single Equipment
 *GameApi* | [**getGameSearch**](docs/GameApi.md#getGameSearch) | **GET** /{game}/v1/{language}/search | Game Search
 *GameApi* | [**getItemsAllSearch**](docs/GameApi.md#getItemsAllSearch) | **GET** /{game}/v1/{language}/items/search | Search All Items
+*GameDataApi* | [**getAllAreas**](docs/GameDataApi.md#getAllAreas) | **GET** /{game}/v1/{language}/areas/all | Get all areas
+*GameDataApi* | [**getAllClasses**](docs/GameDataApi.md#getAllClasses) | **GET** /{game}/v1/{language}/classes/all | Get all classes
+*GameDataApi* | [**getAllMonsters**](docs/GameDataApi.md#getAllMonsters) | **GET** /{game}/v1/{language}/monsters/all | Get all monsters
+*GameDataApi* | [**getAllSpells**](docs/GameDataApi.md#getAllSpells) | **GET** /{game}/v1/{language}/spells/all | Get all spells
+*GameDataApi* | [**getAllSubareas**](docs/GameDataApi.md#getAllSubareas) | **GET** /{game}/v1/{language}/subareas/all | Get all subareas
+*GameDataApi* | [**getAllSuperAreas**](docs/GameDataApi.md#getAllSuperAreas) | **GET** /{game}/v1/{language}/super-areas/all | Get all super-areas
+*GameDataApi* | [**getAreaById**](docs/GameDataApi.md#getAreaById) | **GET** /{game}/v1/{language}/areas/{ankama_id} | Get one area
+*GameDataApi* | [**getAreas**](docs/GameDataApi.md#getAreas) | **GET** /{game}/v1/{language}/areas | List areas
+*GameDataApi* | [**getClassById**](docs/GameDataApi.md#getClassById) | **GET** /{game}/v1/{language}/classes/{ankama_id} | Get one class
+*GameDataApi* | [**getClasses**](docs/GameDataApi.md#getClasses) | **GET** /{game}/v1/{language}/classes | List classes
+*GameDataApi* | [**getMonsterById**](docs/GameDataApi.md#getMonsterById) | **GET** /{game}/v1/{language}/monsters/{ankama_id} | Get one monster
+*GameDataApi* | [**getMonsters**](docs/GameDataApi.md#getMonsters) | **GET** /{game}/v1/{language}/monsters | List monsters
+*GameDataApi* | [**getSpellById**](docs/GameDataApi.md#getSpellById) | **GET** /{game}/v1/{language}/spells/{ankama_id} | Get one spell
+*GameDataApi* | [**getSpells**](docs/GameDataApi.md#getSpells) | **GET** /{game}/v1/{language}/spells | List spells
+*GameDataApi* | [**getSubareaById**](docs/GameDataApi.md#getSubareaById) | **GET** /{game}/v1/{language}/subareas/{ankama_id} | Get one subarea
+*GameDataApi* | [**getSubareas**](docs/GameDataApi.md#getSubareas) | **GET** /{game}/v1/{language}/subareas | List subareas
+*GameDataApi* | [**getSuperAreaById**](docs/GameDataApi.md#getSuperAreaById) | **GET** /{game}/v1/{language}/super-areas/{ankama_id} | Get one super-area
+*GameDataApi* | [**getSuperAreas**](docs/GameDataApi.md#getSuperAreas) | **GET** /{game}/v1/{language}/super-areas | List super-areas
+*GameDataApi* | [**searchAreas**](docs/GameDataApi.md#searchAreas) | **GET** /{game}/v1/{language}/areas/search | Search areas
+*GameDataApi* | [**searchClasses**](docs/GameDataApi.md#searchClasses) | **GET** /{game}/v1/{language}/classes/search | Search classes
+*GameDataApi* | [**searchMonsters**](docs/GameDataApi.md#searchMonsters) | **GET** /{game}/v1/{language}/monsters/search | Search monsters
+*GameDataApi* | [**searchSpells**](docs/GameDataApi.md#searchSpells) | **GET** /{game}/v1/{language}/spells/search | Search spells
+*GameDataApi* | [**searchSubareas**](docs/GameDataApi.md#searchSubareas) | **GET** /{game}/v1/{language}/subareas/search | Search subareas
+*GameDataApi* | [**searchSuperAreas**](docs/GameDataApi.md#searchSuperAreas) | **GET** /{game}/v1/{language}/super-areas/search | Search super-areas
 *MetaApi* | [**getGameSearchTypes**](docs/MetaApi.md#getGameSearchTypes) | **GET** /{game}/v1/meta/search/types | Available Game Search Types
 *MetaApi* | [**getItemTypes**](docs/MetaApi.md#getItemTypes) | **GET** /{game}/v1/meta/items/types | Available Item Types
 *MetaApi* | [**getMetaAlmanaxBonuses**](docs/MetaApi.md#getMetaAlmanaxBonuses) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses | Available Almanax Bonuses
@@ -216,6 +242,12 @@ Class | Method | HTTP request | Description
  - [AlmanaxTributeItem](docs/AlmanaxTributeItem.md)
  - [AlmanaxWebhook](docs/AlmanaxWebhook.md)
  - [AlmanaxWebhookDailySettings](docs/AlmanaxWebhookDailySettings.md)
+ - [ClassAppearance](docs/ClassAppearance.md)
+ - [ClassAppearanceScalePercent](docs/ClassAppearanceScalePercent.md)
+ - [ClassCharacteristicCostsValueInner](docs/ClassCharacteristicCostsValueInner.md)
+ - [ClassLooks](docs/ClassLooks.md)
+ - [CombatCondition](docs/CombatCondition.md)
+ - [CombatReference](docs/CombatReference.md)
  - [Condition](docs/Condition.md)
  - [ConditionLeaf](docs/ConditionLeaf.md)
  - [ConditionNode](docs/ConditionNode.md)
@@ -227,6 +259,10 @@ Class | Method | HTTP request | Description
  - [CreateTwitterWebhook](docs/CreateTwitterWebhook.md)
  - [Effect](docs/Effect.md)
  - [EffectType](docs/EffectType.md)
+ - [EffectZone](docs/EffectZone.md)
+ - [EligibilityNode](docs/EligibilityNode.md)
+ - [EligibilityNodeCondition](docs/EligibilityNodeCondition.md)
+ - [EligibilityNodeConditionElement](docs/EligibilityNodeConditionElement.md)
  - [Equipment](docs/Equipment.md)
  - [EquipmentSet](docs/EquipmentSet.md)
  - [Error](docs/Error.md)
@@ -243,6 +279,23 @@ Class | Method | HTTP request | Description
  - [ListItemGeneral](docs/ListItemGeneral.md)
  - [ListItems](docs/ListItems.md)
  - [ListMounts](docs/ListMounts.md)
+ - [MappedEntityCollection](docs/MappedEntityCollection.md)
+ - [MappedEntityCollectionClassesInner](docs/MappedEntityCollectionClassesInner.md)
+ - [MappedEntityCollectionMonstersInner](docs/MappedEntityCollectionMonstersInner.md)
+ - [MappedEntityCollectionSpellsInner](docs/MappedEntityCollectionSpellsInner.md)
+ - [MappedEntityCollectionSuperAreasInner](docs/MappedEntityCollectionSuperAreasInner.md)
+ - [MappedEntityListEntry](docs/MappedEntityListEntry.md)
+ - [ModelClass](docs/ModelClass.md)
+ - [Monster](docs/Monster.md)
+ - [MonsterDrop](docs/MonsterDrop.md)
+ - [MonsterDropRatesPercentInner](docs/MonsterDropRatesPercentInner.md)
+ - [MonsterGlobalDrop](docs/MonsterGlobalDrop.md)
+ - [MonsterGrade](docs/MonsterGrade.md)
+ - [MonsterGradeSpellsInner](docs/MonsterGradeSpellsInner.md)
+ - [MonsterRace](docs/MonsterRace.md)
+ - [MonsterSpawnLocation](docs/MonsterSpawnLocation.md)
+ - [MonsterSpawnLocationSubareaMapsInner](docs/MonsterSpawnLocationSubareaMapsInner.md)
+ - [MonsterSpellRelationship](docs/MonsterSpellRelationship.md)
  - [Mount](docs/Mount.md)
  - [MountFamily](docs/MountFamily.md)
  - [PagedLinks](docs/PagedLinks.md)
@@ -253,10 +306,21 @@ Class | Method | HTTP request | Description
  - [Recipe](docs/Recipe.md)
  - [Resource](docs/Resource.md)
  - [RssWebhook](docs/RssWebhook.md)
+ - [Spell](docs/Spell.md)
+ - [SpellEffect](docs/SpellEffect.md)
+ - [SpellLevel](docs/SpellLevel.md)
+ - [SpellScriptUsage](docs/SpellScriptUsage.md)
+ - [SpellTrigger](docs/SpellTrigger.md)
+ - [SpellTriggers](docs/SpellTriggers.md)
+ - [TargetMask](docs/TargetMask.md)
+ - [TargetSelector](docs/TargetSelector.md)
  - [TranslatedId](docs/TranslatedId.md)
  - [TwitterWebhook](docs/TwitterWebhook.md)
  - [Version](docs/Version.md)
  - [Weapon](docs/Weapon.md)
+ - [WeaponCombat](docs/WeaponCombat.md)
+ - [WorldArea](docs/WorldArea.md)
+ - [ZoneShape](docs/ZoneShape.md)
 
 
 <a id="documentation-for-authorization"></a>

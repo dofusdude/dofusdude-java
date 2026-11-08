@@ -24,6 +24,7 @@
 |**maxCastPerTurn** | **Integer** |  |  [optional] |
 |**apCost** | **Integer** |  |  [optional] |
 |**range** | [**Range**](Range.md) |  |  [optional] |
+|**combat** | [**WeaponCombat**](WeaponCombat.md) |  |  [optional] |
 
 
 
