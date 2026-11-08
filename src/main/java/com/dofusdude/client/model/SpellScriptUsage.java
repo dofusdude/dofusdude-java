@@ -56,7 +56,7 @@ import com.dofusdude.client.JSON;
 /**
  * Resolved client-side spell script binding, including target selection and areas.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T11:01:22.826740358Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T11:04:06.333828914Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class SpellScriptUsage {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
