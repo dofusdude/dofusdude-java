@@ -53,7 +53,7 @@ import com.dofusdude.client.JSON;
 /**
  * Determines who an effect may affect. Combine the resolved selectors and conditions using logic. This is distinct from the zone geometry and from the event that triggers the effect.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:36:48.428505137Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class TargetMask {
   public static final String SERIALIZED_NAME_RAW = "raw";
   @SerializedName(SERIALIZED_NAME_RAW)

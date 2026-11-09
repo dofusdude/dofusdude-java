@@ -50,7 +50,7 @@ import com.dofusdude.client.JSON;
 /**
  * Monster taxonomy. Race is the monster&#39;s family and super_race is the broader grouping. Neither is a playable class or a monster grade.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:36:48.428505137Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MonsterRace {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)

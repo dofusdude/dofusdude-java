@@ -4,7 +4,7 @@
 
 DoduAPI software beta
 - API version: 1.1.0-beta.1
-  - Build date: 2026-11-09T07:29:57.673061581Z[Etc/UTC]
+  - Build date: 2026-11-09T07:36:48.428505137Z[Etc/UTC]
   - Generator version: 7.27.0
 
 # Open Ankama Developer Community

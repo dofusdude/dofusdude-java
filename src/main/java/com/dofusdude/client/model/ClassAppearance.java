@@ -52,7 +52,7 @@ import com.dofusdude.client.JSON;
 /**
  * Structured client appearance data for an asset renderer. Bone and skin IDs are not image URLs. Use the parent record&#39;s image_urls for ready-to-display artwork.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:36:48.428505137Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class ClassAppearance {
   public static final String SERIALIZED_NAME_BONES_ID = "bones_id";
   @SerializedName(SERIALIZED_NAME_BONES_ID)
