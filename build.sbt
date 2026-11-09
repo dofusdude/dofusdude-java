@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.dofusdude",
     name := "dofusdude-java",
-    version := "1.1.0-beta.1",
+    version := "1.1.0-beta.2",
     scalaVersion := "2.13.6",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),

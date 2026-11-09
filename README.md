@@ -1,10 +1,10 @@
-> Beta SDK 1.1.0-beta.1. This SDK provides GET operations only. HTTP QUERY is available in the API and full OpenAPI 3.2 documentation, but is not included in this generated SDK.
+> Beta SDK 1.1.0-beta.2. This SDK provides GET operations only. HTTP QUERY is available in the API and full OpenAPI 3.2 documentation, but is not included in this generated SDK.
 
 # dofusdude-java
 
-DoduAPI software beta
-- API version: 1.1.0-beta.1
-  - Build date: 2026-11-09T07:36:48.428505137Z[Etc/UTC]
+doduapi beta
+- API version: 1.1.0-beta.2
+  - Build date: 2026-11-09T07:41:55.379583783Z[Etc/UTC]
   - Generator version: 7.27.0
 
 # Open Ankama Developer Community
@@ -18,7 +18,7 @@ The all-in-one toolbelt for your next Ankama related project.
 ## Client SDKs
 - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js@beta --save`
 - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts@beta --save`
-- [Go](https://github.com/dofusdude/dodugo) `go get github.com/dofusdude/dodugo@v1.1.0-beta.1`
+- [Go](https://github.com/dofusdude/dodugo) `go get github.com/dofusdude/dodugo@v1.1.0-beta.2`
 - [Python](https://github.com/dofusdude/dofusdude-py) `pip install --pre dofusdude`
 - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup
 
@@ -79,7 +79,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.dofusdude</groupId>
   <artifactId>dofusdude-java</artifactId>
-  <version>1.1.0-beta.1</version>
+  <version>1.1.0-beta.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -95,7 +95,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.dofusdude:dofusdude-java:1.1.0-beta.1"
+     implementation "com.dofusdude:dofusdude-java:1.1.0-beta.2"
   }
 ```
 
@@ -109,7 +109,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dofusdude-java-1.1.0-beta.1.jar`
+* `target/dofusdude-java-1.1.0-beta.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

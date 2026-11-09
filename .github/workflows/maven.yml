@@ -10,7 +10,7 @@ on:
       - beta
 jobs:
   build:
-    name: Build DoduAPI software beta
+    name: Build doduapi beta
     runs-on: ubuntu-latest
     strategy:
       matrix:
