@@ -14,7 +14,9 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import com.dofusdude.client.model.EligibilityNode;
 import com.dofusdude.client.model.SpellEffect;
+import com.dofusdude.client.model.SpellPreviewZone;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,6 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,9 +53,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * SpellLevel
+ * One grade of a spell. The levels array contains these spell variants, not player levels. Grade numbers are local to the containing spell and are independent of monster grades.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class SpellLevel {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -68,6 +71,16 @@ public class SpellLevel {
   @SerializedName(SERIALIZED_NAME_AP_COST)
   @jakarta.annotation.Nullable
   private Integer apCost;
+
+  public static final String SERIALIZED_NAME_CRITICAL_HIT_PROBABILITY = "critical_hit_probability";
+  @SerializedName(SERIALIZED_NAME_CRITICAL_HIT_PROBABILITY)
+  @jakarta.annotation.Nullable
+  private Integer criticalHitProbability;
+
+  public static final String SERIALIZED_NAME_MIN_PLAYER_LEVEL = "min_player_level";
+  @SerializedName(SERIALIZED_NAME_MIN_PLAYER_LEVEL)
+  @jakarta.annotation.Nullable
+  private Integer minPlayerLevel;
 
   public static final String SERIALIZED_NAME_MIN_RANGE = "min_range";
   @SerializedName(SERIALIZED_NAME_MIN_RANGE)
@@ -124,6 +137,16 @@ public class SpellLevel {
   @jakarta.annotation.Nullable
   private Integer spellBreed;
 
+  public static final String SERIALIZED_NAME_STATES_CRITERION = "states_criterion";
+  @SerializedName(SERIALIZED_NAME_STATES_CRITERION)
+  @jakarta.annotation.Nullable
+  private EligibilityNode statesCriterion;
+
+  public static final String SERIALIZED_NAME_PREVIEW_ZONES = "preview_zones";
+  @SerializedName(SERIALIZED_NAME_PREVIEW_ZONES)
+  @jakarta.annotation.Nullable
+  private List<SpellPreviewZone> previewZones = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_EFFECTS = "effects";
   @SerializedName(SERIALIZED_NAME_EFFECTS)
   @jakarta.annotation.Nullable
@@ -143,7 +166,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get ankamaId
+   * ID of the spell-level definition. Different from the parent spell ID and from the grade number. Used by explicit spell-level references such as script spell_level_ids.
    * @return ankamaId
    */
   @jakarta.annotation.Nullable
@@ -162,7 +185,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get grade
+   * Number identifying this variant within its spell. Select by this value, not by the array position. Used by the spell detail endpoint&#39;s grade parameter.
    * @return grade
    */
   @jakarta.annotation.Nullable
@@ -181,7 +204,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get apCost
+   * Action points required to cast this spell grade.
    * @return apCost
    */
   @jakarta.annotation.Nullable
@@ -194,13 +217,51 @@ public class SpellLevel {
   }
 
 
+  public SpellLevel criticalHitProbability(@jakarta.annotation.Nullable Integer criticalHitProbability) {
+    this.criticalHitProbability = criticalHitProbability;
+    return this;
+  }
+
+  /**
+   * Base critical-hit percentage recorded for this spell grade, before fighter-specific modifiers.
+   * @return criticalHitProbability
+   */
+  @jakarta.annotation.Nullable
+  public Integer getCriticalHitProbability() {
+    return criticalHitProbability;
+  }
+
+  public void setCriticalHitProbability(@jakarta.annotation.Nullable Integer criticalHitProbability) {
+    this.criticalHitProbability = criticalHitProbability;
+  }
+
+
+  public SpellLevel minPlayerLevel(@jakarta.annotation.Nullable Integer minPlayerLevel) {
+    this.minPlayerLevel = minPlayerLevel;
+    return this;
+  }
+
+  /**
+   * Player-level requirement recorded for this spell grade. This is not its grade number or a monster combat level.
+   * @return minPlayerLevel
+   */
+  @jakarta.annotation.Nullable
+  public Integer getMinPlayerLevel() {
+    return minPlayerLevel;
+  }
+
+  public void setMinPlayerLevel(@jakarta.annotation.Nullable Integer minPlayerLevel) {
+    this.minPlayerLevel = minPlayerLevel;
+  }
+
+
   public SpellLevel minRange(@jakarta.annotation.Nullable Integer minRange) {
     this.minRange = minRange;
     return this;
   }
 
   /**
-   * Get minRange
+   * Minimum casting range in combat cells.
    * @return minRange
    */
   @jakarta.annotation.Nullable
@@ -219,7 +280,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get maxRange
+   * Maximum casting range in combat cells as defined by this grade.
    * @return maxRange
    */
   @jakarta.annotation.Nullable
@@ -238,7 +299,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get maxCastPerTurn
+   * Per-caster cast limit within a turn as recorded by the source.
    * @return maxCastPerTurn
    */
   @jakarta.annotation.Nullable
@@ -314,7 +375,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get minCastInterval
+   * Minimum interval between casts, measured in fight turns.
    * @return minCastInterval
    */
   @jakarta.annotation.Nullable
@@ -333,7 +394,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get initialCooldown
+   * Initial wait before casting, measured in fight turns.
    * @return initialCooldown
    */
   @jakarta.annotation.Nullable
@@ -403,6 +464,52 @@ public class SpellLevel {
   }
 
 
+  public SpellLevel statesCriterion(@jakarta.annotation.Nullable EligibilityNode statesCriterion) {
+    this.statesCriterion = statesCriterion;
+    return this;
+  }
+
+  /**
+   * Available client-side state requirements for this spell grade. Null does not assert that the server imposes no restriction.
+   * @return statesCriterion
+   */
+  @jakarta.annotation.Nullable
+  public EligibilityNode getStatesCriterion() {
+    return statesCriterion;
+  }
+
+  public void setStatesCriterion(@jakarta.annotation.Nullable EligibilityNode statesCriterion) {
+    this.statesCriterion = statesCriterion;
+  }
+
+
+  public SpellLevel previewZones(@jakarta.annotation.Nullable List<SpellPreviewZone> previewZones) {
+    this.previewZones = previewZones;
+    return this;
+  }
+
+  public SpellLevel addPreviewZonesItem(SpellPreviewZone previewZonesItem) {
+    if (this.previewZones == null) {
+      this.previewZones = new ArrayList<>();
+    }
+    this.previewZones.add(previewZonesItem);
+    return this;
+  }
+
+  /**
+   * Client preview and activation geometry for this grade. Use each effect&#39;s zone for its actual effect-area definition.
+   * @return previewZones
+   */
+  @jakarta.annotation.Nullable
+  public List<SpellPreviewZone> getPreviewZones() {
+    return previewZones;
+  }
+
+  public void setPreviewZones(@jakarta.annotation.Nullable List<SpellPreviewZone> previewZones) {
+    this.previewZones = previewZones;
+  }
+
+
   public SpellLevel effects(@jakarta.annotation.Nullable List<SpellEffect> effects) {
     this.effects = effects;
     return this;
@@ -417,7 +524,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get effects
+   * Normal-cast effects for this grade. Each entry has independent targeting and area geometry.
    * @return effects
    */
   @jakarta.annotation.Nullable
@@ -444,7 +551,7 @@ public class SpellLevel {
   }
 
   /**
-   * Get criticalEffects
+   * Critical-cast effects for this grade. Keep separate from normal effects rather than applying both arrays to every cast.
    * @return criticalEffects
    */
   @jakarta.annotation.Nullable
@@ -514,6 +621,8 @@ public class SpellLevel {
     return Objects.equals(this.ankamaId, spellLevel.ankamaId) &&
         Objects.equals(this.grade, spellLevel.grade) &&
         Objects.equals(this.apCost, spellLevel.apCost) &&
+        Objects.equals(this.criticalHitProbability, spellLevel.criticalHitProbability) &&
+        Objects.equals(this.minPlayerLevel, spellLevel.minPlayerLevel) &&
         Objects.equals(this.minRange, spellLevel.minRange) &&
         Objects.equals(this.maxRange, spellLevel.maxRange) &&
         Objects.equals(this.maxCastPerTurn, spellLevel.maxCastPerTurn) &&
@@ -525,14 +634,27 @@ public class SpellLevel {
         Objects.equals(this.globalCooldown, spellLevel.globalCooldown) &&
         Objects.equals(this.ignorePrisonGlyph, spellLevel.ignorePrisonGlyph) &&
         Objects.equals(this.spellBreed, spellLevel.spellBreed) &&
+        Objects.equals(this.statesCriterion, spellLevel.statesCriterion) &&
+        Objects.equals(this.previewZones, spellLevel.previewZones) &&
         Objects.equals(this.effects, spellLevel.effects) &&
         Objects.equals(this.criticalEffects, spellLevel.criticalEffects)&&
         Objects.equals(this.additionalProperties, spellLevel.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(ankamaId, grade, apCost, minRange, maxRange, maxCastPerTurn, maxCastPerTarget, maxGlobalCastPerTurn, maxGlobalCastPerTarget, minCastInterval, initialCooldown, globalCooldown, ignorePrisonGlyph, spellBreed, effects, criticalEffects, additionalProperties);
+    return Objects.hash(ankamaId, grade, apCost, criticalHitProbability, minPlayerLevel, minRange, maxRange, maxCastPerTurn, maxCastPerTarget, maxGlobalCastPerTurn, maxGlobalCastPerTarget, minCastInterval, initialCooldown, globalCooldown, ignorePrisonGlyph, spellBreed, statesCriterion, previewZones, effects, criticalEffects, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -542,6 +664,8 @@ public class SpellLevel {
     sb.append("    ankamaId: ").append(toIndentedString(ankamaId)).append("\n");
     sb.append("    grade: ").append(toIndentedString(grade)).append("\n");
     sb.append("    apCost: ").append(toIndentedString(apCost)).append("\n");
+    sb.append("    criticalHitProbability: ").append(toIndentedString(criticalHitProbability)).append("\n");
+    sb.append("    minPlayerLevel: ").append(toIndentedString(minPlayerLevel)).append("\n");
     sb.append("    minRange: ").append(toIndentedString(minRange)).append("\n");
     sb.append("    maxRange: ").append(toIndentedString(maxRange)).append("\n");
     sb.append("    maxCastPerTurn: ").append(toIndentedString(maxCastPerTurn)).append("\n");
@@ -553,6 +677,8 @@ public class SpellLevel {
     sb.append("    globalCooldown: ").append(toIndentedString(globalCooldown)).append("\n");
     sb.append("    ignorePrisonGlyph: ").append(toIndentedString(ignorePrisonGlyph)).append("\n");
     sb.append("    spellBreed: ").append(toIndentedString(spellBreed)).append("\n");
+    sb.append("    statesCriterion: ").append(toIndentedString(statesCriterion)).append("\n");
+    sb.append("    previewZones: ").append(toIndentedString(previewZones)).append("\n");
     sb.append("    effects: ").append(toIndentedString(effects)).append("\n");
     sb.append("    criticalEffects: ").append(toIndentedString(criticalEffects)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -574,7 +700,7 @@ public class SpellLevel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "grade", "ap_cost", "min_range", "max_range", "max_cast_per_turn", "max_cast_per_target", "max_global_cast_per_turn", "max_global_cast_per_target", "min_cast_interval", "initial_cooldown", "global_cooldown", "ignore_prison_glyph", "spell_breed", "effects", "critical_effects"));
+    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "grade", "ap_cost", "critical_hit_probability", "min_player_level", "min_range", "max_range", "max_cast_per_turn", "max_cast_per_target", "max_global_cast_per_turn", "max_global_cast_per_target", "min_cast_interval", "initial_cooldown", "global_cooldown", "ignore_prison_glyph", "spell_breed", "states_criterion", "preview_zones", "effects", "critical_effects"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -593,6 +719,24 @@ public class SpellLevel {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `states_criterion`
+      if (jsonObj.get("states_criterion") != null && !jsonObj.get("states_criterion").isJsonNull()) {
+        EligibilityNode.validateJsonElement(jsonObj.get("states_criterion"));
+      }
+      if (jsonObj.get("preview_zones") != null && !jsonObj.get("preview_zones").isJsonNull()) {
+        JsonArray jsonArraypreviewZones = jsonObj.getAsJsonArray("preview_zones");
+        if (jsonArraypreviewZones != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("preview_zones").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `preview_zones` to be an array in the JSON string but got `%s`", jsonObj.get("preview_zones").toString()));
+          }
+
+          // validate the optional field `preview_zones` (array)
+          for (int i = 0; i < jsonArraypreviewZones.size(); i++) {
+            SpellPreviewZone.validateJsonElement(jsonArraypreviewZones.get(i));
+          };
+        }
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("effects") != null && !jsonObj.get("effects").isJsonNull() && !jsonObj.get("effects").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `effects` to be an array in the JSON string but got `%s`", jsonObj.get("effects").toString()));

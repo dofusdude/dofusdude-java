@@ -17,6 +17,7 @@ import com.dofusdude.client.model.CombatReference;
 import com.dofusdude.client.model.Images;
 import com.dofusdude.client.model.MappedEntityListEntry;
 import com.dofusdude.client.model.WorldArea;
+import com.dofusdude.client.model.WorldMapReference;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -65,6 +66,46 @@ public class MappedEntityCollectionSuperAreasInnerTest {
     @Test
     public void imageUrlsTest() {
         // TODO: test imageUrls
+    }
+
+    /**
+     * Test the property 'worldMapId'
+     */
+    @Test
+    public void worldMapIdTest() {
+        // TODO: test worldMapId
+    }
+
+    /**
+     * Test the property 'areas'
+     */
+    @Test
+    public void areasTest() {
+        // TODO: test areas
+    }
+
+    /**
+     * Test the property 'level'
+     */
+    @Test
+    public void levelTest() {
+        // TODO: test level
+    }
+
+    /**
+     * Test the property 'dungeonId'
+     */
+    @Test
+    public void dungeonIdTest() {
+        // TODO: test dungeonId
+    }
+
+    /**
+     * Test the property 'maps'
+     */
+    @Test
+    public void mapsTest() {
+        // TODO: test maps
     }
 
     /**

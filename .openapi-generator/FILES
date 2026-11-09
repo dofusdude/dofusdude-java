@@ -90,9 +90,11 @@ docs/SetsApi.md
 docs/Spell.md
 docs/SpellEffect.md
 docs/SpellLevel.md
+docs/SpellPreviewZone.md
 docs/SpellScriptUsage.md
 docs/SpellTrigger.md
 docs/SpellTriggers.md
+docs/SpellType.md
 docs/TargetMask.md
 docs/TargetSelector.md
 docs/TranslatedId.md
@@ -102,6 +104,7 @@ docs/Weapon.md
 docs/WeaponCombat.md
 docs/WebhooksApi.md
 docs/WorldArea.md
+docs/WorldMapReference.md
 docs/ZoneShape.md
 git_push.sh
 gradle.properties
@@ -215,9 +218,11 @@ src/main/java/com/dofusdude/client/model/RssWebhook.java
 src/main/java/com/dofusdude/client/model/Spell.java
 src/main/java/com/dofusdude/client/model/SpellEffect.java
 src/main/java/com/dofusdude/client/model/SpellLevel.java
+src/main/java/com/dofusdude/client/model/SpellPreviewZone.java
 src/main/java/com/dofusdude/client/model/SpellScriptUsage.java
 src/main/java/com/dofusdude/client/model/SpellTrigger.java
 src/main/java/com/dofusdude/client/model/SpellTriggers.java
+src/main/java/com/dofusdude/client/model/SpellType.java
 src/main/java/com/dofusdude/client/model/TargetMask.java
 src/main/java/com/dofusdude/client/model/TargetSelector.java
 src/main/java/com/dofusdude/client/model/TranslatedId.java
@@ -226,6 +231,7 @@ src/main/java/com/dofusdude/client/model/Version.java
 src/main/java/com/dofusdude/client/model/Weapon.java
 src/main/java/com/dofusdude/client/model/WeaponCombat.java
 src/main/java/com/dofusdude/client/model/WorldArea.java
+src/main/java/com/dofusdude/client/model/WorldMapReference.java
 src/main/java/com/dofusdude/client/model/ZoneShape.java
 src/test/java/com/dofusdude/client/api/AlmanaxApiTest.java
 src/test/java/com/dofusdude/client/api/ConsumablesApiTest.java
@@ -311,10 +317,12 @@ src/test/java/com/dofusdude/client/model/ResourceTest.java
 src/test/java/com/dofusdude/client/model/RssWebhookTest.java
 src/test/java/com/dofusdude/client/model/SpellEffectTest.java
 src/test/java/com/dofusdude/client/model/SpellLevelTest.java
+src/test/java/com/dofusdude/client/model/SpellPreviewZoneTest.java
 src/test/java/com/dofusdude/client/model/SpellScriptUsageTest.java
 src/test/java/com/dofusdude/client/model/SpellTest.java
 src/test/java/com/dofusdude/client/model/SpellTriggerTest.java
 src/test/java/com/dofusdude/client/model/SpellTriggersTest.java
+src/test/java/com/dofusdude/client/model/SpellTypeTest.java
 src/test/java/com/dofusdude/client/model/TargetMaskTest.java
 src/test/java/com/dofusdude/client/model/TargetSelectorTest.java
 src/test/java/com/dofusdude/client/model/TranslatedIdTest.java
@@ -323,4 +331,5 @@ src/test/java/com/dofusdude/client/model/VersionTest.java
 src/test/java/com/dofusdude/client/model/WeaponCombatTest.java
 src/test/java/com/dofusdude/client/model/WeaponTest.java
 src/test/java/com/dofusdude/client/model/WorldAreaTest.java
+src/test/java/com/dofusdude/client/model/WorldMapReferenceTest.java
 src/test/java/com/dofusdude/client/model/ZoneShapeTest.java

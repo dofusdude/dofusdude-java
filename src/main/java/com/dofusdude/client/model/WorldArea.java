@@ -15,6 +15,7 @@ package com.dofusdude.client.model;
 
 import java.util.Objects;
 import com.dofusdude.client.model.CombatReference;
+import com.dofusdude.client.model.WorldMapReference;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,9 +51,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * WorldArea
+ * Geographic data from a super-area, area or subarea endpoint. The hierarchy is super-area to area to subarea to map. Field availability depends on the selected geographic resource. Unrelated to combat-cell effect zones.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class WorldArea {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -63,6 +64,31 @@ public class WorldArea {
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
+
+  public static final String SERIALIZED_NAME_WORLD_MAP_ID = "world_map_id";
+  @SerializedName(SERIALIZED_NAME_WORLD_MAP_ID)
+  @jakarta.annotation.Nullable
+  private Integer worldMapId;
+
+  public static final String SERIALIZED_NAME_AREAS = "areas";
+  @SerializedName(SERIALIZED_NAME_AREAS)
+  @jakarta.annotation.Nullable
+  private List<CombatReference> areas = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_LEVEL = "level";
+  @SerializedName(SERIALIZED_NAME_LEVEL)
+  @jakarta.annotation.Nullable
+  private Integer level;
+
+  public static final String SERIALIZED_NAME_DUNGEON_ID = "dungeon_id";
+  @SerializedName(SERIALIZED_NAME_DUNGEON_ID)
+  @jakarta.annotation.Nullable
+  private Integer dungeonId;
+
+  public static final String SERIALIZED_NAME_MAPS = "maps";
+  @SerializedName(SERIALIZED_NAME_MAPS)
+  @jakarta.annotation.Nullable
+  private List<WorldMapReference> maps = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUPER_AREA = "super_area";
   @SerializedName(SERIALIZED_NAME_SUPER_AREA)
@@ -122,6 +148,117 @@ public class WorldArea {
 
   public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
+  }
+
+
+  public WorldArea worldMapId(@jakarta.annotation.Nullable Integer worldMapId) {
+    this.worldMapId = worldMapId;
+    return this;
+  }
+
+  /**
+   * World-map context supplied on super-area records.
+   * @return worldMapId
+   */
+  @jakarta.annotation.Nullable
+  public Integer getWorldMapId() {
+    return worldMapId;
+  }
+
+  public void setWorldMapId(@jakarta.annotation.Nullable Integer worldMapId) {
+    this.worldMapId = worldMapId;
+  }
+
+
+  public WorldArea areas(@jakarta.annotation.Nullable List<CombatReference> areas) {
+    this.areas = areas;
+    return this;
+  }
+
+  public WorldArea addAreasItem(CombatReference areasItem) {
+    if (this.areas == null) {
+      this.areas = new ArrayList<>();
+    }
+    this.areas.add(areasItem);
+    return this;
+  }
+
+  /**
+   * Child area references supplied on super-area records.
+   * @return areas
+   */
+  @jakarta.annotation.Nullable
+  public List<CombatReference> getAreas() {
+    return areas;
+  }
+
+  public void setAreas(@jakarta.annotation.Nullable List<CombatReference> areas) {
+    this.areas = areas;
+  }
+
+
+  public WorldArea level(@jakarta.annotation.Nullable Integer level) {
+    this.level = level;
+    return this;
+  }
+
+  /**
+   * Suggested geographic difficulty level supplied on subarea records. Not a monster grade or the level of every monster there.
+   * @return level
+   */
+  @jakarta.annotation.Nullable
+  public Integer getLevel() {
+    return level;
+  }
+
+  public void setLevel(@jakarta.annotation.Nullable Integer level) {
+    this.level = level;
+  }
+
+
+  public WorldArea dungeonId(@jakarta.annotation.Nullable Integer dungeonId) {
+    this.dungeonId = dungeonId;
+    return this;
+  }
+
+  /**
+   * Dungeon association when supplied by the subarea data.
+   * @return dungeonId
+   */
+  @jakarta.annotation.Nullable
+  public Integer getDungeonId() {
+    return dungeonId;
+  }
+
+  public void setDungeonId(@jakarta.annotation.Nullable Integer dungeonId) {
+    this.dungeonId = dungeonId;
+  }
+
+
+  public WorldArea maps(@jakarta.annotation.Nullable List<WorldMapReference> maps) {
+    this.maps = maps;
+    return this;
+  }
+
+  public WorldArea addMapsItem(WorldMapReference mapsItem) {
+    if (this.maps == null) {
+      this.maps = new ArrayList<>();
+    }
+    this.maps.add(mapsItem);
+    return this;
+  }
+
+  /**
+   * Map membership supplied on subarea records. Does not imply a spawn on every map.
+   * @return maps
+   */
+  @jakarta.annotation.Nullable
+  public List<WorldMapReference> getMaps() {
+    return maps;
+  }
+
+  public void setMaps(@jakarta.annotation.Nullable List<WorldMapReference> maps) {
+    this.maps = maps;
   }
 
 
@@ -273,6 +410,11 @@ public class WorldArea {
     WorldArea worldArea = (WorldArea) o;
     return Objects.equals(this.ankamaId, worldArea.ankamaId) &&
         Objects.equals(this.name, worldArea.name) &&
+        Objects.equals(this.worldMapId, worldArea.worldMapId) &&
+        Objects.equals(this.areas, worldArea.areas) &&
+        Objects.equals(this.level, worldArea.level) &&
+        Objects.equals(this.dungeonId, worldArea.dungeonId) &&
+        Objects.equals(this.maps, worldArea.maps) &&
         Objects.equals(this.superArea, worldArea.superArea) &&
         Objects.equals(this.area, worldArea.area) &&
         Objects.equals(this.subareas, worldArea.subareas) &&
@@ -282,7 +424,7 @@ public class WorldArea {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ankamaId, name, superArea, area, subareas, monsters, additionalProperties);
+    return Objects.hash(ankamaId, name, worldMapId, areas, level, dungeonId, maps, superArea, area, subareas, monsters, additionalProperties);
   }
 
   @Override
@@ -291,6 +433,11 @@ public class WorldArea {
     sb.append("class WorldArea {\n");
     sb.append("    ankamaId: ").append(toIndentedString(ankamaId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    worldMapId: ").append(toIndentedString(worldMapId)).append("\n");
+    sb.append("    areas: ").append(toIndentedString(areas)).append("\n");
+    sb.append("    level: ").append(toIndentedString(level)).append("\n");
+    sb.append("    dungeonId: ").append(toIndentedString(dungeonId)).append("\n");
+    sb.append("    maps: ").append(toIndentedString(maps)).append("\n");
     sb.append("    superArea: ").append(toIndentedString(superArea)).append("\n");
     sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    subareas: ").append(toIndentedString(subareas)).append("\n");
@@ -314,7 +461,7 @@ public class WorldArea {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "name", "super_area", "area", "subareas", "monsters"));
+    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "name", "world_map_id", "areas", "level", "dungeon_id", "maps", "super_area", "area", "subareas", "monsters"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("ankama_id", "name"));
@@ -342,6 +489,24 @@ public class WorldArea {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("areas") != null && !jsonObj.get("areas").isJsonNull() && !jsonObj.get("areas").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `areas` to be an array in the JSON string but got `%s`", jsonObj.get("areas").toString()));
+      }
+      if (jsonObj.get("maps") != null && !jsonObj.get("maps").isJsonNull()) {
+        JsonArray jsonArraymaps = jsonObj.getAsJsonArray("maps");
+        if (jsonArraymaps != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("maps").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maps` to be an array in the JSON string but got `%s`", jsonObj.get("maps").toString()));
+          }
+
+          // validate the optional field `maps` (array)
+          for (int i = 0; i < jsonArraymaps.size(); i++) {
+            WorldMapReference.validateJsonElement(jsonArraymaps.get(i));
+          };
+        }
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("subareas") != null && !jsonObj.get("subareas").isJsonNull() && !jsonObj.get("subareas").isJsonArray()) {

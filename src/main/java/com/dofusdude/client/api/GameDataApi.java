@@ -1877,7 +1877,7 @@ public class GameDataApi {
      * @param game  (required)
      * @param language  (required)
      * @param ankamaId  (required)
-     * @param grade Return only the requested mapped spell grade in &#x60;levels&#x60;. (optional)
+     * @param grade Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1967,7 +1967,7 @@ public class GameDataApi {
      * @param game  (required)
      * @param language  (required)
      * @param ankamaId  (required)
-     * @param grade Return only the requested mapped spell grade in &#x60;levels&#x60;. (optional)
+     * @param grade Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. (optional)
      * @return Spell
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1989,7 +1989,7 @@ public class GameDataApi {
      * @param game  (required)
      * @param language  (required)
      * @param ankamaId  (required)
-     * @param grade Return only the requested mapped spell grade in &#x60;levels&#x60;. (optional)
+     * @param grade Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. (optional)
      * @return ApiResponse&lt;Spell&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2012,7 +2012,7 @@ public class GameDataApi {
      * @param game  (required)
      * @param language  (required)
      * @param ankamaId  (required)
-     * @param grade Return only the requested mapped spell grade in &#x60;levels&#x60;. (optional)
+     * @param grade Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

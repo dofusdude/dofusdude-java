@@ -54,9 +54,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * MonsterDrop
+ * A possible item drop with base rates indexed by monster grade. Final player-specific chances also depend on conditions and game modifiers.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MonsterDrop {
   public static final String SERIALIZED_NAME_ITEM = "item";
   @SerializedName(SERIALIZED_NAME_ITEM)
@@ -139,7 +139,7 @@ public class MonsterDrop {
   }
 
   /**
-   * Base drop percentage for each monster grade.
+   * Base drop percentages indexed by MonsterGrade.grade, not spell grade or array position. A value of 5 means 5 percent, not 0.05 percent. These are not spawn percentages.
    * @return ratesPercent
    */
   @jakarta.annotation.Nonnull
@@ -158,7 +158,7 @@ public class MonsterDrop {
   }
 
   /**
-   * Get hasConditions
+   * The source reports restrictions. Can be true without a complete client-side condition tree because server-only predicates are not exposed.
    * @return hasConditions
    */
   @jakarta.annotation.Nonnull

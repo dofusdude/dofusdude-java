@@ -13,7 +13,6 @@
 
 package com.dofusdude.client.model;
 
-import com.dofusdude.client.model.CombatReference;
 import com.dofusdude.client.model.EffectZone;
 import com.dofusdude.client.model.SpellTriggers;
 import com.dofusdude.client.model.TargetMask;
@@ -23,9 +22,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

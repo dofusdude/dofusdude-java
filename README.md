@@ -4,7 +4,7 @@
 
 DoduAPI software beta
 - API version: 1.1.0-beta.1
-  - Build date: 2026-11-08T21:28:00.619866560Z[Etc/UTC]
+  - Build date: 2026-11-09T07:29:57.673061581Z[Etc/UTC]
   - Generator version: 7.27.0
 
 # Open Ankama Developer Community
@@ -309,9 +309,11 @@ Class | Method | HTTP request | Description
  - [Spell](docs/Spell.md)
  - [SpellEffect](docs/SpellEffect.md)
  - [SpellLevel](docs/SpellLevel.md)
+ - [SpellPreviewZone](docs/SpellPreviewZone.md)
  - [SpellScriptUsage](docs/SpellScriptUsage.md)
  - [SpellTrigger](docs/SpellTrigger.md)
  - [SpellTriggers](docs/SpellTriggers.md)
+ - [SpellType](docs/SpellType.md)
  - [TargetMask](docs/TargetMask.md)
  - [TargetSelector](docs/TargetSelector.md)
  - [TranslatedId](docs/TranslatedId.md)
@@ -320,6 +322,7 @@ Class | Method | HTTP request | Description
  - [Weapon](docs/Weapon.md)
  - [WeaponCombat](docs/WeaponCombat.md)
  - [WorldArea](docs/WorldArea.md)
+ - [WorldMapReference](docs/WorldMapReference.md)
  - [ZoneShape](docs/ZoneShape.md)
 
 

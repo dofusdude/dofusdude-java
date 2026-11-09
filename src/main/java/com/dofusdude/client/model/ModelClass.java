@@ -57,7 +57,7 @@ import com.dofusdude.client.JSON;
 /**
  * A playable class with its characteristics, appearance and class spell assignments.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class ModelClass {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -361,7 +361,7 @@ public class ModelClass {
   }
 
   /**
-   * Fully mapped class spells, including levels, effects, targeting, and zones.
+   * Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint.
    * @return spells
    */
   @jakarta.annotation.Nonnull

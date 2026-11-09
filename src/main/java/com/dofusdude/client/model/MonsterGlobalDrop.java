@@ -51,9 +51,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * MonsterGlobalDrop
+ * A separate global-drop entry with a base percentage range. It is not the per-monster-grade rates table and does not by itself define a final player-specific drop chance.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MonsterGlobalDrop {
   public static final String SERIALIZED_NAME_HAS_CONDITIONS = "has_conditions";
   @SerializedName(SERIALIZED_NAME_HAS_CONDITIONS)

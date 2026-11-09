@@ -14,11 +14,13 @@
 package com.dofusdude.client.model;
 
 import com.dofusdude.client.model.CombatReference;
+import com.dofusdude.client.model.EffectZone;
 import com.dofusdude.client.model.Images;
 import com.dofusdude.client.model.MappedEntityListEntry;
 import com.dofusdude.client.model.Spell;
 import com.dofusdude.client.model.SpellLevel;
 import com.dofusdude.client.model.SpellScriptUsage;
+import com.dofusdude.client.model.SpellType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -107,6 +109,14 @@ public class MappedEntityCollectionSpellsInnerTest {
     @Test
     public void typeTest() {
         // TODO: test type
+    }
+
+    /**
+     * Test the property 'basePreviewZone'
+     */
+    @Test
+    public void basePreviewZoneTest() {
+        // TODO: test basePreviewZone
     }
 
     /**

@@ -10,7 +10,7 @@
 |**ankamaId** | **Integer** |  |  |
 |**positionX** | **Integer** |  |  |
 |**positionY** | **Integer** |  |  |
-|**worldMapId** | **Integer** |  |  |
+|**worldMapId** | **Integer** | World-map context for these coordinates. Coordinates alone are not a globally unique map identifier. |  |
 
 
 

@@ -13,7 +13,9 @@
 
 package com.dofusdude.client.model;
 
+import com.dofusdude.client.model.EligibilityNode;
 import com.dofusdude.client.model.SpellEffect;
+import com.dofusdude.client.model.SpellPreviewZone;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -62,6 +65,22 @@ public class SpellLevelTest {
     @Test
     public void apCostTest() {
         // TODO: test apCost
+    }
+
+    /**
+     * Test the property 'criticalHitProbability'
+     */
+    @Test
+    public void criticalHitProbabilityTest() {
+        // TODO: test criticalHitProbability
+    }
+
+    /**
+     * Test the property 'minPlayerLevel'
+     */
+    @Test
+    public void minPlayerLevelTest() {
+        // TODO: test minPlayerLevel
     }
 
     /**
@@ -150,6 +169,22 @@ public class SpellLevelTest {
     @Test
     public void spellBreedTest() {
         // TODO: test spellBreed
+    }
+
+    /**
+     * Test the property 'statesCriterion'
+     */
+    @Test
+    public void statesCriterionTest() {
+        // TODO: test statesCriterion
+    }
+
+    /**
+     * Test the property 'previewZones'
+     */
+    @Test
+    public void previewZonesTest() {
+        // TODO: test previewZones
     }
 
     /**

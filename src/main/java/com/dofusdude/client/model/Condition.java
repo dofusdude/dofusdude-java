@@ -14,6 +14,7 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
+import com.dofusdude.client.model.CombatReference;
 import com.dofusdude.client.model.TranslatedId;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -50,7 +51,7 @@ import com.dofusdude.client.JSON;
 /**
  * Condition
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class Condition {
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
@@ -67,6 +68,41 @@ public class Condition {
   @jakarta.annotation.Nullable
   private TranslatedId element;
 
+  public static final String SERIALIZED_NAME_KIND = "kind";
+  @SerializedName(SERIALIZED_NAME_KIND)
+  @jakarta.annotation.Nullable
+  private String kind;
+
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
+  @jakarta.annotation.Nullable
+  private String unit;
+
+  public static final String SERIALIZED_NAME_QUANTITY = "quantity";
+  @SerializedName(SERIALIZED_NAME_QUANTITY)
+  @jakarta.annotation.Nullable
+  private Integer quantity;
+
+  public static final String SERIALIZED_NAME_STRING_VALUE = "string_value";
+  @SerializedName(SERIALIZED_NAME_STRING_VALUE)
+  @jakarta.annotation.Nullable
+  private String stringValue;
+
+  public static final String SERIALIZED_NAME_VALUE_LABEL = "value_label";
+  @SerializedName(SERIALIZED_NAME_VALUE_LABEL)
+  @jakarta.annotation.Nullable
+  private String valueLabel;
+
+  public static final String SERIALIZED_NAME_REFERENCE = "reference";
+  @SerializedName(SERIALIZED_NAME_REFERENCE)
+  @jakarta.annotation.Nullable
+  private CombatReference reference;
+
+  public static final String SERIALIZED_NAME_SECONDARY_REFERENCE = "secondary_reference";
+  @SerializedName(SERIALIZED_NAME_SECONDARY_REFERENCE)
+  @jakarta.annotation.Nullable
+  private CombatReference secondaryReference;
+
   public Condition() {
   }
 
@@ -76,7 +112,7 @@ public class Condition {
   }
 
   /**
-   * Get operator
+   * Comparison to apply to the interpreted requirement value.
    * @return operator
    */
   @jakarta.annotation.Nullable
@@ -127,6 +163,139 @@ public class Condition {
   }
 
 
+  public Condition kind(@jakarta.annotation.Nullable String kind) {
+    this.kind = kind;
+    return this;
+  }
+
+  /**
+   * Interpreted requirement category, such as profession_level or item_received_age. Use this with the operator, values and references rather than decoding original condition tokens.
+   * @return kind
+   */
+  @jakarta.annotation.Nullable
+  public String getKind() {
+    return kind;
+  }
+
+  public void setKind(@jakarta.annotation.Nullable String kind) {
+    this.kind = kind;
+  }
+
+
+  public Condition unit(@jakarta.annotation.Nullable String unit) {
+    this.unit = unit;
+    return this;
+  }
+
+  /**
+   * Unit associated with the requirement value when the interpreted condition supplies one.
+   * @return unit
+   */
+  @jakarta.annotation.Nullable
+  public String getUnit() {
+    return unit;
+  }
+
+  public void setUnit(@jakarta.annotation.Nullable String unit) {
+    this.unit = unit;
+  }
+
+
+  public Condition quantity(@jakarta.annotation.Nullable Integer quantity) {
+    this.quantity = quantity;
+    return this;
+  }
+
+  /**
+   * Get quantity
+   * @return quantity
+   */
+  @jakarta.annotation.Nullable
+  public Integer getQuantity() {
+    return quantity;
+  }
+
+  public void setQuantity(@jakarta.annotation.Nullable Integer quantity) {
+    this.quantity = quantity;
+  }
+
+
+  public Condition stringValue(@jakarta.annotation.Nullable String stringValue) {
+    this.stringValue = stringValue;
+    return this;
+  }
+
+  /**
+   * Get stringValue
+   * @return stringValue
+   */
+  @jakarta.annotation.Nullable
+  public String getStringValue() {
+    return stringValue;
+  }
+
+  public void setStringValue(@jakarta.annotation.Nullable String stringValue) {
+    this.stringValue = stringValue;
+  }
+
+
+  public Condition valueLabel(@jakarta.annotation.Nullable String valueLabel) {
+    this.valueLabel = valueLabel;
+    return this;
+  }
+
+  /**
+   * Get valueLabel
+   * @return valueLabel
+   */
+  @jakarta.annotation.Nullable
+  public String getValueLabel() {
+    return valueLabel;
+  }
+
+  public void setValueLabel(@jakarta.annotation.Nullable String valueLabel) {
+    this.valueLabel = valueLabel;
+  }
+
+
+  public Condition reference(@jakarta.annotation.Nullable CombatReference reference) {
+    this.reference = reference;
+    return this;
+  }
+
+  /**
+   * Get reference
+   * @return reference
+   */
+  @jakarta.annotation.Nullable
+  public CombatReference getReference() {
+    return reference;
+  }
+
+  public void setReference(@jakarta.annotation.Nullable CombatReference reference) {
+    this.reference = reference;
+  }
+
+
+  public Condition secondaryReference(@jakarta.annotation.Nullable CombatReference secondaryReference) {
+    this.secondaryReference = secondaryReference;
+    return this;
+  }
+
+  /**
+   * Get secondaryReference
+   * @return secondaryReference
+   */
+  @jakarta.annotation.Nullable
+  public CombatReference getSecondaryReference() {
+    return secondaryReference;
+  }
+
+  public void setSecondaryReference(@jakarta.annotation.Nullable CombatReference secondaryReference) {
+    this.secondaryReference = secondaryReference;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -139,12 +308,19 @@ public class Condition {
     Condition condition = (Condition) o;
     return Objects.equals(this.operator, condition.operator) &&
         Objects.equals(this.intValue, condition.intValue) &&
-        Objects.equals(this.element, condition.element);
+        Objects.equals(this.element, condition.element) &&
+        Objects.equals(this.kind, condition.kind) &&
+        Objects.equals(this.unit, condition.unit) &&
+        Objects.equals(this.quantity, condition.quantity) &&
+        Objects.equals(this.stringValue, condition.stringValue) &&
+        Objects.equals(this.valueLabel, condition.valueLabel) &&
+        Objects.equals(this.reference, condition.reference) &&
+        Objects.equals(this.secondaryReference, condition.secondaryReference);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operator, intValue, element);
+    return Objects.hash(operator, intValue, element, kind, unit, quantity, stringValue, valueLabel, reference, secondaryReference);
   }
 
   @Override
@@ -154,6 +330,13 @@ public class Condition {
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    intValue: ").append(toIndentedString(intValue)).append("\n");
     sb.append("    element: ").append(toIndentedString(element)).append("\n");
+    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    stringValue: ").append(toIndentedString(stringValue)).append("\n");
+    sb.append("    valueLabel: ").append(toIndentedString(valueLabel)).append("\n");
+    sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
+    sb.append("    secondaryReference: ").append(toIndentedString(secondaryReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -172,7 +355,7 @@ public class Condition {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("operator", "int_value", "element"));
+    openapiFields = new HashSet<String>(Arrays.asList("operator", "int_value", "element", "kind", "unit", "quantity", "string_value", "value_label", "reference", "secondary_reference"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -205,6 +388,18 @@ public class Condition {
       // validate the optional field `element`
       if (jsonObj.get("element") != null && !jsonObj.get("element").isJsonNull()) {
         TranslatedId.validateJsonElement(jsonObj.get("element"));
+      }
+      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      }
+      if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+      if ((jsonObj.get("string_value") != null && !jsonObj.get("string_value").isJsonNull()) && !jsonObj.get("string_value").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `string_value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("string_value").toString()));
+      }
+      if ((jsonObj.get("value_label") != null && !jsonObj.get("value_label").isJsonNull()) && !jsonObj.get("value_label").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value_label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value_label").toString()));
       }
   }
 

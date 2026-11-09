@@ -11,8 +11,8 @@
 |**name** | **String** |  |  |
 |**imageUrls** | [**Images**](Images.md) |  |  [optional] |
 |**race** | [**MonsterRace**](MonsterRace.md) |  |  |
-|**grades** | **List&lt;MonsterGrade&gt;** | Monster statistics and spells grouped by the monster grade that uses them. |  |
-|**spawnLocations** | [**List&lt;MonsterSpawnLocation&gt;**](MonsterSpawnLocation.md) | Spawn subareas taken from the monster&#39;s authoritative subarea list. |  |
+|**grades** | **List&lt;MonsterGrade&gt;** | Variants of this monster. Each has its own combat level, statistics and assigned spells. The monster grade number is not a spell grade number or combat level. |  |
+|**spawnLocations** | [**List&lt;MonsterSpawnLocation&gt;**](MonsterSpawnLocation.md) | Known spawn subareas and their geographic parents. This is not live population data or a per-map spawn probability. Maps listed within a subarea are not guaranteed individual spawn points. |  |
 |**drops** | [**List&lt;MonsterDrop&gt;**](MonsterDrop.md) |  |  |
 |**globalDrops** | [**List&lt;MonsterGlobalDrop&gt;**](MonsterGlobalDrop.md) |  |  [optional] |
 |**appearance** | [**ClassAppearance**](ClassAppearance.md) |  |  [optional] |

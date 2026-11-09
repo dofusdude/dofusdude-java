@@ -52,9 +52,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * MonsterGrade
+ * One variant of this monster, combining combat level, statistics and spell assignments. Match grade-specific drop rates using its grade value. Do not use it to infer a spell grade.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MonsterGrade {
   public static final String SERIALIZED_NAME_GRADE = "grade";
   @SerializedName(SERIALIZED_NAME_GRADE)
@@ -175,7 +175,7 @@ public class MonsterGrade {
   }
 
   /**
-   * Get grade
+   * Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell.
    * @return grade
    */
   @jakarta.annotation.Nonnull
@@ -194,7 +194,7 @@ public class MonsterGrade {
   }
 
   /**
-   * Get level
+   * Combat level of this monster variant. Distinct from its grade number.
    * @return level
    */
   @jakarta.annotation.Nonnull

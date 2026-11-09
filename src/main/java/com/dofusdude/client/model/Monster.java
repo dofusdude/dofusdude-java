@@ -60,7 +60,7 @@ import com.dofusdude.client.JSON;
 /**
  * A monster with its grades, family, spawn locations and drops. Spell expansion is optional.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class Monster {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -240,7 +240,7 @@ public class Monster {
   }
 
   /**
-   * Monster statistics and spells grouped by the monster grade that uses them.
+   * Variants of this monster. Each has its own combat level, statistics and assigned spells. The monster grade number is not a spell grade number or combat level.
    * @return grades
    */
   @jakarta.annotation.Nonnull
@@ -267,7 +267,7 @@ public class Monster {
   }
 
   /**
-   * Spawn subareas taken from the monster&#39;s authoritative subarea list.
+   * Known spawn subareas and their geographic parents. This is not live population data or a per-map spawn probability. Maps listed within a subarea are not guaranteed individual spawn points.
    * @return spawnLocations
    */
   @jakarta.annotation.Nonnull

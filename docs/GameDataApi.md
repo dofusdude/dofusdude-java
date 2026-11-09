@@ -834,7 +834,7 @@ public class Example {
     String game = "dofus3"; // String | 
     String language = "en"; // String | 
     Integer ankamaId = 201; // Integer | 
-    Integer grade = 56; // Integer | Return only the requested mapped spell grade in `levels`.
+    Integer grade = 56; // Integer | Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404.
     try {
       Spell result = apiInstance.getSpellById(game, language, ankamaId, grade);
       System.out.println(result);
@@ -856,7 +856,7 @@ public class Example {
 | **game** | **String**|  | [enum: dofus3, dofus3beta] |
 | **language** | **String**|  | [enum: en, fr, de, es, pt] |
 | **ankamaId** | **Integer**|  | |
-| **grade** | **Integer**| Return only the requested mapped spell grade in &#x60;levels&#x60;. | [optional] |
+| **grade** | **Integer**| Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. | [optional] |
 
 ### Return type
 

@@ -22,7 +22,7 @@ Resolved client-side spell script binding, including target selection and areas.
 |**condition** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**targetsAffectedConcurrently** | **Boolean** |  |  [optional] |
 |**targetTreatedAsCaster** | **Boolean** |  |  [optional] |
-|**spellLevelIds** | **List&lt;Integer&gt;** |  |  [optional] |
+|**spellLevelIds** | **List&lt;Integer&gt;** | Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade. |  [optional] |
 
 
 

@@ -14,7 +14,6 @@
 package com.dofusdude.client.model;
 
 import java.util.Objects;
-import com.dofusdude.client.model.CombatReference;
 import com.dofusdude.client.model.EffectZone;
 import com.dofusdude.client.model.SpellTriggers;
 import com.dofusdude.client.model.TargetMask;
@@ -24,9 +23,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,14 +51,14 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * SpellEffect
+ * One normal or critical effect of a particular spell grade. Its zone defines where it applies, target_mask defines eligible targets and triggers defines activation events. Templated text is for display, not a formula to parse.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class SpellEffect {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @jakarta.annotation.Nullable
-  private CombatReference type;
+  private String type;
 
   public static final String SERIALIZED_NAME_MIN = "min";
   @SerializedName(SERIALIZED_NAME_MIN)
@@ -85,7 +83,7 @@ public class SpellEffect {
   public static final String SERIALIZED_NAME_RANDOM = "random";
   @SerializedName(SERIALIZED_NAME_RANDOM)
   @jakarta.annotation.Nullable
-  private Integer random;
+  private BigDecimal random;
 
   public static final String SERIALIZED_NAME_GROUP = "group";
   @SerializedName(SERIALIZED_NAME_GROUP)
@@ -140,26 +138,26 @@ public class SpellEffect {
   public static final String SERIALIZED_NAME_TEMPLATED = "templated";
   @SerializedName(SERIALIZED_NAME_TEMPLATED)
   @jakarta.annotation.Nullable
-  private Map<String, Object> templated = new HashMap<>();
+  private String templated;
 
   public SpellEffect() {
   }
 
-  public SpellEffect type(@jakarta.annotation.Nullable CombatReference type) {
+  public SpellEffect type(@jakarta.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Get type
+   * Localized effect category, such as Air damage. This is not a spell ID or a structured game reference.
    * @return type
    */
   @jakarta.annotation.Nullable
-  public CombatReference getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(@jakarta.annotation.Nullable CombatReference type) {
+  public void setType(@jakarta.annotation.Nullable String type) {
     this.type = type;
   }
 
@@ -208,7 +206,7 @@ public class SpellEffect {
   }
 
   /**
-   * Get duration
+   * Effect duration in fight turns as represented by the source. Not a real-time duration in seconds.
    * @return duration
    */
   @jakarta.annotation.Nullable
@@ -227,7 +225,7 @@ public class SpellEffect {
   }
 
   /**
-   * Get delay
+   * Delay before the effect in fight turns as represented by the source.
    * @return delay
    */
   @jakarta.annotation.Nullable
@@ -240,21 +238,21 @@ public class SpellEffect {
   }
 
 
-  public SpellEffect random(@jakarta.annotation.Nullable Integer random) {
+  public SpellEffect random(@jakarta.annotation.Nullable BigDecimal random) {
     this.random = random;
     return this;
   }
 
   /**
-   * Get random
+   * Source random-selection value. Do not interpret it as a percentage without the effect&#39;s selection rules.
    * @return random
    */
   @jakarta.annotation.Nullable
-  public Integer getRandom() {
+  public BigDecimal getRandom() {
     return random;
   }
 
-  public void setRandom(@jakarta.annotation.Nullable Integer random) {
+  public void setRandom(@jakarta.annotation.Nullable BigDecimal random) {
     this.random = random;
   }
 
@@ -449,29 +447,21 @@ public class SpellEffect {
   }
 
 
-  public SpellEffect templated(@jakarta.annotation.Nullable Map<String, Object> templated) {
+  public SpellEffect templated(@jakarta.annotation.Nullable String templated) {
     this.templated = templated;
     return this;
   }
 
-  public SpellEffect putTemplatedItem(String key, Object templatedItem) {
-    if (this.templated == null) {
-      this.templated = new HashMap<>();
-    }
-    this.templated.put(key, templatedItem);
-    return this;
-  }
-
   /**
-   * Get templated
+   * Localized effect text suitable for display. Numeric effect properties remain available separately.
    * @return templated
    */
   @jakarta.annotation.Nullable
-  public Map<String, Object> getTemplated() {
+  public String getTemplated() {
     return templated;
   }
 
-  public void setTemplated(@jakarta.annotation.Nullable Map<String, Object> templated) {
+  public void setTemplated(@jakarta.annotation.Nullable String templated) {
     this.templated = templated;
   }
 
@@ -614,6 +604,9 @@ public class SpellEffect {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
       // validate the optional field `zone`
       if (jsonObj.get("zone") != null && !jsonObj.get("zone").isJsonNull()) {
         EffectZone.validateJsonElement(jsonObj.get("zone"));
@@ -625,6 +618,9 @@ public class SpellEffect {
       // validate the optional field `triggers`
       if (jsonObj.get("triggers") != null && !jsonObj.get("triggers").isJsonNull()) {
         SpellTriggers.validateJsonElement(jsonObj.get("triggers"));
+      }
+      if ((jsonObj.get("templated") != null && !jsonObj.get("templated").isJsonNull()) && !jsonObj.get("templated").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `templated` to be a primitive type in the JSON string but got `%s`", jsonObj.get("templated").toString()));
       }
   }
 

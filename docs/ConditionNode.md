@@ -2,6 +2,7 @@
 
 # ConditionNode
 
+Client-side requirement tree. Leaf nodes contain one condition and relation nodes combine children with and or or. Preserves grouping. Not an authoritative server eligibility decision.
 
 ## Properties
 

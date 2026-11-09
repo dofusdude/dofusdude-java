@@ -18,6 +18,7 @@ import com.dofusdude.client.model.CombatReference;
 import com.dofusdude.client.model.Images;
 import com.dofusdude.client.model.MappedEntityListEntry;
 import com.dofusdude.client.model.WorldArea;
+import com.dofusdude.client.model.WorldMapReference;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -63,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import com.dofusdude.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MappedEntityCollectionSuperAreasInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(MappedEntityCollectionSuperAreasInner.class.getName());
 

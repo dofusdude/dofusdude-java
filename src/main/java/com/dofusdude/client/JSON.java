@@ -173,9 +173,11 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Spell.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellEffect.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellLevel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellPreviewZone.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellScriptUsage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellTrigger.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellTriggers.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.SpellType.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.TargetMask.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.TargetSelector.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.TranslatedId.CustomTypeAdapterFactory());
@@ -184,6 +186,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.Weapon.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.WeaponCombat.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.WorldArea.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.WorldMapReference.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.dofusdude.client.model.ZoneShape.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }

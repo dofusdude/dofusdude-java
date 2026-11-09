@@ -57,7 +57,7 @@ import com.dofusdude.client.JSON;
 /**
  * The populated array property matches the selected resource.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MappedEntityCollection {
   public static final String SERIALIZED_NAME_CLASSES = "classes";
   @SerializedName(SERIALIZED_NAME_CLASSES)

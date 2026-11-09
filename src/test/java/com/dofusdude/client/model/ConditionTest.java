@@ -13,6 +13,7 @@
 
 package com.dofusdude.client.model;
 
+import com.dofusdude.client.model.CombatReference;
 import com.dofusdude.client.model.TranslatedId;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -60,6 +61,62 @@ public class ConditionTest {
     @Test
     public void elementTest() {
         // TODO: test element
+    }
+
+    /**
+     * Test the property 'kind'
+     */
+    @Test
+    public void kindTest() {
+        // TODO: test kind
+    }
+
+    /**
+     * Test the property 'unit'
+     */
+    @Test
+    public void unitTest() {
+        // TODO: test unit
+    }
+
+    /**
+     * Test the property 'quantity'
+     */
+    @Test
+    public void quantityTest() {
+        // TODO: test quantity
+    }
+
+    /**
+     * Test the property 'stringValue'
+     */
+    @Test
+    public void stringValueTest() {
+        // TODO: test stringValue
+    }
+
+    /**
+     * Test the property 'valueLabel'
+     */
+    @Test
+    public void valueLabelTest() {
+        // TODO: test valueLabel
+    }
+
+    /**
+     * Test the property 'reference'
+     */
+    @Test
+    public void referenceTest() {
+        // TODO: test reference
+    }
+
+    /**
+     * Test the property 'secondaryReference'
+     */
+    @Test
+    public void secondaryReferenceTest() {
+        // TODO: test secondaryReference
     }
 
 }

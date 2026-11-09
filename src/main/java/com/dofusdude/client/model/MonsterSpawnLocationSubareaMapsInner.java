@@ -49,7 +49,7 @@ import com.dofusdude.client.JSON;
 /**
  * MonsterSpawnLocationSubareaMapsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MonsterSpawnLocationSubareaMapsInner {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -137,7 +137,7 @@ public class MonsterSpawnLocationSubareaMapsInner {
   }
 
   /**
-   * Get worldMapId
+   * World-map context for these coordinates. Coordinates alone are not a globally unique map identifier.
    * @return worldMapId
    */
   @jakarta.annotation.Nonnull

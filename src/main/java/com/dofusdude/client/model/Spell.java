@@ -15,9 +15,11 @@ package com.dofusdude.client.model;
 
 import java.util.Objects;
 import com.dofusdude.client.model.CombatReference;
+import com.dofusdude.client.model.EffectZone;
 import com.dofusdude.client.model.Images;
 import com.dofusdude.client.model.SpellLevel;
 import com.dofusdude.client.model.SpellScriptUsage;
+import com.dofusdude.client.model.SpellType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -55,7 +57,7 @@ import com.dofusdude.client.JSON;
 /**
  * A spell with its available grades, effects and casting rules.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class Spell {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)
@@ -95,7 +97,12 @@ public class Spell {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @jakarta.annotation.Nullable
-  private CombatReference type;
+  private SpellType type;
+
+  public static final String SERIALIZED_NAME_BASE_PREVIEW_ZONE = "base_preview_zone";
+  @SerializedName(SERIALIZED_NAME_BASE_PREVIEW_ZONE)
+  @jakarta.annotation.Nullable
+  private EffectZone basePreviewZone;
 
   public static final String SERIALIZED_NAME_CLASSES = "classes";
   @SerializedName(SERIALIZED_NAME_CLASSES)
@@ -258,7 +265,7 @@ public class Spell {
   }
 
 
-  public Spell type(@jakarta.annotation.Nullable CombatReference type) {
+  public Spell type(@jakarta.annotation.Nullable SpellType type) {
     this.type = type;
     return this;
   }
@@ -268,12 +275,31 @@ public class Spell {
    * @return type
    */
   @jakarta.annotation.Nullable
-  public CombatReference getType() {
+  public SpellType getType() {
     return type;
   }
 
-  public void setType(@jakarta.annotation.Nullable CombatReference type) {
+  public void setType(@jakarta.annotation.Nullable SpellType type) {
     this.type = type;
+  }
+
+
+  public Spell basePreviewZone(@jakarta.annotation.Nullable EffectZone basePreviewZone) {
+    this.basePreviewZone = basePreviewZone;
+    return this;
+  }
+
+  /**
+   * Get basePreviewZone
+   * @return basePreviewZone
+   */
+  @jakarta.annotation.Nullable
+  public EffectZone getBasePreviewZone() {
+    return basePreviewZone;
+  }
+
+  public void setBasePreviewZone(@jakarta.annotation.Nullable EffectZone basePreviewZone) {
+    this.basePreviewZone = basePreviewZone;
   }
 
 
@@ -291,7 +317,7 @@ public class Spell {
   }
 
   /**
-   * Get classes
+   * Reverse references to playable classes associated with this spell. These are compact references, not complete class documents.
    * @return classes
    */
   @jakarta.annotation.Nullable
@@ -318,7 +344,7 @@ public class Spell {
   }
 
   /**
-   * Get monsters
+   * Reverse references to monsters associated with this spell. Use a monster&#39;s grade-specific assignments to determine which spell grade it uses.
    * @return monsters
    */
   @jakarta.annotation.Nullable
@@ -345,7 +371,7 @@ public class Spell {
   }
 
   /**
-   * Get levels
+   * Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object.
    * @return levels
    */
   @jakarta.annotation.Nonnull
@@ -474,6 +500,7 @@ public class Spell {
         Objects.equals(this.order, spell.order) &&
         Objects.equals(this.imageUrls, spell.imageUrls) &&
         Objects.equals(this.type, spell.type) &&
+        Objects.equals(this.basePreviewZone, spell.basePreviewZone) &&
         Objects.equals(this.classes, spell.classes) &&
         Objects.equals(this.monsters, spell.monsters) &&
         Objects.equals(this.levels, spell.levels) &&
@@ -484,7 +511,7 @@ public class Spell {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ankamaId, name, description, iconId, adminName, order, imageUrls, type, classes, monsters, levels, scripts, criticalScripts, additionalProperties);
+    return Objects.hash(ankamaId, name, description, iconId, adminName, order, imageUrls, type, basePreviewZone, classes, monsters, levels, scripts, criticalScripts, additionalProperties);
   }
 
   @Override
@@ -499,6 +526,7 @@ public class Spell {
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    imageUrls: ").append(toIndentedString(imageUrls)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    basePreviewZone: ").append(toIndentedString(basePreviewZone)).append("\n");
     sb.append("    classes: ").append(toIndentedString(classes)).append("\n");
     sb.append("    monsters: ").append(toIndentedString(monsters)).append("\n");
     sb.append("    levels: ").append(toIndentedString(levels)).append("\n");
@@ -523,7 +551,7 @@ public class Spell {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "name", "description", "icon_id", "admin_name", "order", "image_urls", "type", "classes", "monsters", "levels", "scripts", "critical_scripts"));
+    openapiFields = new HashSet<String>(Arrays.asList("ankama_id", "name", "description", "icon_id", "admin_name", "order", "image_urls", "type", "base_preview_zone", "classes", "monsters", "levels", "scripts", "critical_scripts"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("ankama_id", "name", "levels"));
@@ -561,6 +589,14 @@ public class Spell {
       // validate the optional field `image_urls`
       if (jsonObj.get("image_urls") != null && !jsonObj.get("image_urls").isJsonNull()) {
         Images.validateJsonElement(jsonObj.get("image_urls"));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        SpellType.validateJsonElement(jsonObj.get("type"));
+      }
+      // validate the optional field `base_preview_zone`
+      if (jsonObj.get("base_preview_zone") != null && !jsonObj.get("base_preview_zone").isJsonNull()) {
+        EffectZone.validateJsonElement(jsonObj.get("base_preview_zone"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("classes") != null && !jsonObj.get("classes").isJsonNull() && !jsonObj.get("classes").isJsonArray()) {

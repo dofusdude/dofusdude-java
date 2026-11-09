@@ -48,9 +48,9 @@ import java.util.Set;
 import com.dofusdude.client.JSON;
 
 /**
- * MappedEntityListEntry
+ * Compact collection summary. A missing detail field here does not mean the resource lacks that data. Request the single-record endpoint or the collection&#39;s full fields to obtain details.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MappedEntityListEntry {
   public static final String SERIALIZED_NAME_ANKAMA_ID = "ankama_id";
   @SerializedName(SERIALIZED_NAME_ANKAMA_ID)

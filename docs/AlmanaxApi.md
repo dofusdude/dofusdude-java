@@ -98,7 +98,7 @@ public class Example {
 
     AlmanaxApi apiInstance = new AlmanaxApi(defaultClient);
     String language = "en"; // String | code
-    String filterBonusType = "experience-points"; // String | ids from meta/{language}/almanax/bonuses
+    String filterBonusType = "filterBonusType_example"; // String | Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range.
     LocalDate rangeFrom = LocalDate.now(); // LocalDate | yyyy-mm-dd
     LocalDate rangeTo = LocalDate.now(); // LocalDate | yyyy-mm-dd
     Integer rangeSize = -1; // Integer | Size of the returned range. Disable to fully use the range by setting size to -1.
@@ -123,7 +123,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**| code | [enum: en, fr, de, es, pt] |
-| **filterBonusType** | **String**| ids from meta/{language}/almanax/bonuses | [optional] |
+| **filterBonusType** | **String**| Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. | [optional] |
 | **rangeFrom** | **LocalDate**| yyyy-mm-dd | [optional] |
 | **rangeTo** | **LocalDate**| yyyy-mm-dd | [optional] |
 | **rangeSize** | **Integer**| Size of the returned range. Disable to fully use the range by setting size to -1. | [optional] |

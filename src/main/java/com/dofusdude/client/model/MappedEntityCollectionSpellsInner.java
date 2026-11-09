@@ -15,11 +15,13 @@ package com.dofusdude.client.model;
 
 import java.util.Objects;
 import com.dofusdude.client.model.CombatReference;
+import com.dofusdude.client.model.EffectZone;
 import com.dofusdude.client.model.Images;
 import com.dofusdude.client.model.MappedEntityListEntry;
 import com.dofusdude.client.model.Spell;
 import com.dofusdude.client.model.SpellLevel;
 import com.dofusdude.client.model.SpellScriptUsage;
+import com.dofusdude.client.model.SpellType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -65,7 +67,7 @@ import com.google.gson.JsonParseException;
 
 import com.dofusdude.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-08T21:28:00.619866560Z[Etc/UTC]", comments = "Generator version: 7.27.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-09T07:29:57.673061581Z[Etc/UTC]", comments = "Generator version: 7.27.0")
 public class MappedEntityCollectionSpellsInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(MappedEntityCollectionSpellsInner.class.getName());
 
